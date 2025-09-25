@@ -1,0 +1,1 @@
+export type idDto = { id: number }
