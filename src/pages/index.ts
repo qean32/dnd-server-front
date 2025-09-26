@@ -1,0 +1,8 @@
+export { AuthPage } from './auth'
+export { CommunityPage } from './community'
+export { GamePage } from './game'
+export { MainPage } from './main'
+export { PostPage } from './post'
+export { PostsPage } from './posts'
+export { ProfilePage } from './profile'
+export { TestPage } from './test'
