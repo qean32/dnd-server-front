@@ -20,7 +20,7 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
     }
 
     return (
-        <div className={cn('bg-color-light cursor-pointer relative min-w-[200px]', className)} onClick={swap} >
+        <div className={cn('cursor-pointer relative min-w-[200px]', className)} onClick={swap} >
             <input type="text" hidden value={value} />
             <div className='flex gap-2 px-2 py-1 justify-between' >
                 <p>{value ?? 'Выберите опцию'}</p>

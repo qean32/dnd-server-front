@@ -76,8 +76,8 @@ body {
 }
 
 .icon-sm {
-    width: 22px;
-    height: 22px;
+    width: 25px;
+    height: 25px;
 }
 
 .icon-sm- {
@@ -126,4 +126,10 @@ body {
 .ava-lg {
     width: 90px;
     height: 90px;
+}
+
+.children-no-outline-hover {
+    &>*:hover {
+        outline: none !important;
+    }
 }
