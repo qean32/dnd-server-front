@@ -1,3 +1,6 @@
-export { Select, TextInput, PasswordInput, InputFile, Checkbox } from './custom-input'
+export { Select, TextInput, PasswordInput, InputFile, Checkbox, Search } from './custom-input'
 export { Button } from './castom-button'
+export { IconAndText } from './icon-and-text'
 export { Ava } from './ava'
+export { Shadow } from './shadow'
+export { Logo } from './logo'

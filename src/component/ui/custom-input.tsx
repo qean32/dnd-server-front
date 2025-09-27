@@ -103,7 +103,7 @@ export const InputFile: React.FC<InputFileProps> = ({ className, title }: InputF
     )
 }
 
-type CheckboxProps = {
+interface CheckboxProps {
     value: boolean
     fn: Function
     title: string
@@ -121,4 +121,18 @@ export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className 
             />
         </div>
     );
+}
+
+interface SearchProps {
+    className?: string
+}
+
+
+export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
+    return (
+        <div className={cn('relative fit-content', className)}>
+            <input type="text" placeholder='поиск..' />
+            <img src="icon/search.svg" alt="" className='absolute top-3 right-3' />
+        </div>
+    )
 }

@@ -1,5 +1,6 @@
 @use 'import.scss' as *;
 @use './castom/input.scss';
+@use './castom/modal.scss';
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=WDXL+Lubrifont+JP+N&display=swap');
 
 *::-webkit-scrollbar {
@@ -115,4 +116,14 @@ body {
 .ava-md {
     width: 60px;
     height: 60px;
+}
+
+.ava-sm {
+    width: 30px;
+    height: 30px;
+}
+
+.ava-lg {
+    width: 90px;
+    height: 90px;
 }

@@ -7,6 +7,10 @@ input {
     cursor: pointer;
 }
 
+input:focus {
+    outline: 1px solid $bg-color-light;
+}
+
 .text-warning {
     font-size: 18px;
     padding: 5px 0 0 2px;
@@ -15,7 +19,7 @@ input {
 }
 
 button {
-    outline: 1px solid $bg-color-light;
+    outline: 0px solid $bg-color-light;
 }
 
 button:hover {

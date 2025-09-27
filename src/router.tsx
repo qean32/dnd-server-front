@@ -1,9 +1,13 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import * as pages from './pages'
+import { RefreshToken } from "./component/general"
+import { Header } from "./component/shared"
 
 export const Router = () => {
     return (
         <BrowserRouter>
+            <RefreshToken />
+            <Header />
             <Routes>
                 <Route element={<pages.MainPage />} path="/" />
                 <Route element={<pages.AuthPage />} path="/auth" />
