@@ -22,7 +22,11 @@ button {
     outline: 0px solid $bg-color-light;
 }
 
-button:hover {
+.btn-in-group:hover {
     background-color: $bg-color !important;
+}
+
+button:hover {
+    // background-color: $bg-color-light !important;
     outline: 1px solid $bg-color-light;
 }

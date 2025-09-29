@@ -9,7 +9,7 @@ interface Props {
 
 export const Header: React.FC<Props> = ({ className }: Props) => {
     return (
-        <div className={cn('bg-color-dark flex justify-around py-2 items-center', className)}>
+        <div className={cn('bg-color-darkness flex justify-around py-2 items-center', className)}>
             <div className='flex gap-2'>
                 <p>Форум</p>
                 <p>Библиотека</p>

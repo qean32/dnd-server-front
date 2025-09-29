@@ -14,7 +14,7 @@
 * {
     // padding: 0;
     font-size: 22px;
-    margin: 0;
+    // margin: 0;
     // outline: #E74343 1px solid;
     color: $text-color;
     text-decoration: none;
@@ -63,18 +63,6 @@ body {
     }
 }
 
-.bg-color {
-    background-color: $bg-color !important;
-}
-
-.bg-color-dark {
-    background-color: $bg-color-dark !important;
-}
-
-.bg-color-light {
-    background-color: $bg-color-light !important;
-}
-
 .icon-sm {
     width: 25px;
     height: 25px;
@@ -114,8 +102,8 @@ body {
 }
 
 .ava-md {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
 }
 
 .ava-sm {
@@ -132,4 +120,14 @@ body {
     &>*:hover {
         outline: none !important;
     }
+}
+
+.children-font-sm {
+    &>* {
+        font-size: 14px;
+    }
+}
+
+.bg-color-hover:hover {
+    background-color: $bg-color;
 }

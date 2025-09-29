@@ -1,11 +1,10 @@
-import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './style/app.css'
 import './style/core.scss'
 import { Router } from './router'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <Router />
-  </React.StrictMode>,
+  // <React.StrictMode>
+  <Router />
+  // </React.StrictMode>,
 )

@@ -16,7 +16,7 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
 
     const selectHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
-        setValue(e.target.children[1].innerHTML)
+        setValue(e.target.children[0].children[1].innerHTML)
     }
 
     return (
@@ -24,7 +24,7 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
             <input type="text" hidden value={value} />
             <div className='flex gap-2 px-2 py-1 justify-between' >
                 <p>{value ?? 'Выберите опцию'}</p>
-                <img src="icon/character.svg" alt="" className={cn('transition07', boolean && 'rotate-90')} />
+                <img src="icon/arrow.svg" alt="" className={cn('transition07', !boolean && 'rotate-90')} />
             </div>
             {boolean &&
                 <div className='absolute bg-color-dark w-[100%] rounded-b-sm' onClick={fn ?? selectHandler}>
