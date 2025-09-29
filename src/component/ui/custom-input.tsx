@@ -24,7 +24,7 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
             <input type="text" hidden value={value} />
             <div className='flex gap-2 px-2 py-1 justify-between' >
                 <p>{value ?? 'Выберите опцию'}</p>
-                <img src="icon/arrow.svg" alt="" className={cn('transition07', !boolean && 'rotate-90')} />
+                <img src="/icon/arrow.svg" alt="" className={cn('transition07', !boolean && 'rotate-90')} />
             </div>
             {boolean &&
                 <div className='absolute bg-color-dark w-[100%] rounded-b-sm' onClick={fn ?? selectHandler}>
@@ -49,7 +49,9 @@ export const TextInput: React.FC<TextInputProps> = ({ className, placeHolder }: 
     return (
         <div className={cn('w-[100%]', className)}>
             <input type="text" name={placeHolder} placeholder={placeHolder} />
-            <div><p className='text-warning'>Используйте латиницу!</p></div>
+            <div><p className='text-warning'>
+                {/* Используйте латиницу! */}
+            </p></div>
         </div>
     )
 }
@@ -66,7 +68,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHo
         <div className={cn('w-[100%] fit-content', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
-                <img src={view.boolean ? 'icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-3.5 right-2.5' />
+                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-3.5 right-2.5' />
             </div>
             <div><p className='text-warning'>Используйте латиницу!</p></div>
         </div>
@@ -115,7 +117,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className 
         <div onClick={() => fn()} className={cn('cursor-pointer fit-content relative', className)} >
             <p>{title}</p>
             <input type='checkbox' className={cn('transition03 absolute -right-6 top-2', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
-            <img src='icon/character.svg'
+            <img src='/icon/character.svg'
                 alt=''
                 className={cn('transition03 absolute -right-7 top-1', (!value && 'opacity-0'))}
             />
@@ -132,7 +134,7 @@ export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
     return (
         <div className={cn('relative fit-content', className)}>
             <input type="text" placeholder='поиск..' />
-            <img src="icon/search.svg" alt="" className='absolute top-3 right-3' />
+            <img src="/icon/search.svg" alt="" className='absolute top-3 right-3' />
         </div>
     )
 }

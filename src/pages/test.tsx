@@ -1,16 +1,9 @@
-import { RightSideGame } from "../component/general"
-import { HeightToolGame } from "../component/shared"
+import { DftLayout } from "../component/general"
 
 export const TestPage = () => {
     return (
-        <>
-            <RightSideGame />
-            <HeightToolGame />
-            <main className="w-[100%]" style={{ height: "100vh" }}>
-                <div className="w-[1380px] h-[776px]">
-
-                </div>
-            </main >
-        </>
+        <DftLayout>
+            
+        </DftLayout>
     )
 }
