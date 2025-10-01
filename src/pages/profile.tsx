@@ -6,7 +6,7 @@ export const ProfilePage = () => {
         <DftLayout>
             <div className="flex gap-5">
                 <Ava size="ava-lg" path="" className="bg-color-dark" />
-                <p className="font-30">NICKNAME</p>
+                <p className="f-30">NICKNAME</p>
             </div >
             <div className="container mt-5 flex flex-col items-center">
                 <div className="flex gap-2 pt-3 pb-2 px-4 w-[100%]">

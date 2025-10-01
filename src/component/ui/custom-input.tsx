@@ -20,7 +20,7 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
     }
 
     return (
-        <div className={cn('cursor-pointer relative min-w-[200px]', className)} onClick={swap} >
+        <div className={cn('cursor-pointer relative w-[100%]', className)} onClick={swap} >
             <input type="text" hidden value={value} />
             <div className='flex gap-2 px-2 py-1 justify-between' >
                 <p>{value ?? 'Выберите опцию'}</p>
@@ -42,16 +42,15 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
 interface TextInputProps {
     className?: string,
     placeHolder: string
+    validate?: boolean
 }
 
 
-export const TextInput: React.FC<TextInputProps> = ({ className, placeHolder }: TextInputProps) => {
+export const TextInput: React.FC<TextInputProps> = ({ className = 'w-[100%]', placeHolder, validate = true }: TextInputProps) => {
     return (
-        <div className={cn('w-[100%]', className)}>
+        <div className={cn('', className)}>
             <input type="text" name={placeHolder} placeholder={placeHolder} />
-            <div><p className='text-warning'>
-                {/* Используйте латиницу! */}
-            </p></div>
+            {validate && <div><p className='text-warning'>{/* Используйте латиницу! */}</p></div>}
         </div>
     )
 }
@@ -65,7 +64,7 @@ interface PasswordInputProps {
 export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder }: PasswordInputProps) => {
     const view = useBoolean(false)
     return (
-        <div className={cn('w-[100%] fit-content', className)}>
+        <div className={cn('w-[100%]', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
                 <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-3.5 right-2.5' />
@@ -82,7 +81,7 @@ interface InputFileProps {
 }
 
 
-export const InputFile: React.FC<InputFileProps> = ({ className, title }: InputFileProps) => {
+export const ImgInput: React.FC<InputFileProps> = ({ className, title }: InputFileProps) => {
     const id = generateId().toString()
     const [src, setSrc] = React.useState<any>([]);
     const urls = src.map((file: any) => URL.createObjectURL(file));
@@ -95,10 +94,16 @@ export const InputFile: React.FC<InputFileProps> = ({ className, title }: InputF
     }
 
     return (
-        <div className={cn('', className)}>
+        <div className={cn('w-[100%]', className)}>
             <label htmlFor={id} className='cursor-pointer'>
-                <Ava path={urls[0] ?? 'icon/upload.svg'} size='ava-md' />
-                {title}
+                {urls[0] ?
+                    <Ava path={urls[0]} size='ava-lg' />
+                    :
+                    <img src="/icon/upload.svg" alt="" className='icon-lg' />
+                }
+                <p className='pt-2'>
+                    {title}
+                </p>
             </label>
             <input accept='image/png, image/jpeg, image/svg, image/jpg, image/webp' type='file' id={id} className='d-none' onChange={changeHandler} />
         </div>
@@ -132,9 +137,27 @@ interface SearchProps {
 
 export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
     return (
-        <div className={cn('relative fit-content', className)}>
+        <div className={cn('relative w-[100%]', className)}>
             <input type="text" placeholder='поиск..' />
             <img src="/icon/search.svg" alt="" className='absolute top-3 right-3' />
+        </div>
+    )
+}
+
+
+interface Props {
+    className?: string
+}
+
+
+export const FileInput: React.FC<Props> = ({ className }: Props) => {
+    const id = generateId().toString()
+    return (
+        <div className={cn('', className)}>
+            <input type="file" name="" id={id} hidden />
+            <label htmlFor={id}>
+                <img src='/icon/upload.svg' className='icon-md cursor-pointer' />
+            </label>
         </div>
     )
 }

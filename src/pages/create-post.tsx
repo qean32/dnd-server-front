@@ -6,7 +6,7 @@ export const CreatePostPage = () => {
         <DftLayout>
             <div className="flex justify-between pb-4">
                 <div className="flex">
-                    <p className="font-30">НАЗВАНИЕ</p>
+                    <p className="f-30">НАЗВАНИЕ</p>
                     <GroupTag>
                         <Tag tag={{ color: "", text: "zxc" }} />
                         <Tag tag={{ color: "", text: "zxc1" }} />
@@ -21,8 +21,8 @@ export const CreatePostPage = () => {
             </div>
             <textarea placeholder="Ваш пост!" className="container p-2 px-3 h-[600px]"></textarea>
             <div className="flex flex-col gap-2">
-                <File />
-                <File />
+                <File className="px-3 bg-color-dark" />
+                <File className="px-3 bg-color-dark" />
             </div>
         </DftLayout>
     )

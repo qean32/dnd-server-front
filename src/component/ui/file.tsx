@@ -1,13 +1,15 @@
 import React from 'react'
+import { cn } from '../../lib/function'
 
 interface Props {
+    className?: string
 }
 
 
-export const File: React.FC<Props> = ({ }: Props) => {
+export const File: React.FC<Props> = ({ className }: Props) => {
     return (
-        <div className='bg-color-dark py-2 px-4 rounded-sm'>
-            <p className='underline cursor-pointer'>zxczxc.php</p>
+        <div className={cn(className, 'py-2 rounded-sm')}>
+            <p className='underline cursor-pointer fit-content'>zxczxc.php</p>
         </div>
     )
 }
