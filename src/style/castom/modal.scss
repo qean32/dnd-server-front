@@ -1,0 +1,16 @@
+.shadow {
+    position: fixed;
+    inset: 0 0 0 0;
+    background-color: rgba(0, 0, 0, 0.678);
+    animation: shadowAnim .7s;
+}
+
+@keyframes shadowAnim {
+    from {
+        opacity: .6;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
