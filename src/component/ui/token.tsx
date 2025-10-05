@@ -3,7 +3,7 @@ import { useDraggable } from '../../lib/castom-hook'
 import { entityDto } from '../../model'
 
 interface Props {
-    entity: entityDto
+    entity?: entityDto
 }
 
 
@@ -11,7 +11,8 @@ export const Token: React.FC<Props> = ({ entity = {
     discription: 'no',
     id: 1,
     path: '/img/goblin.jpg',
-    position: { left: 0, top: 0 }
+    position: { left: 0, top: 0 },
+    status: 'live'
 } }: Props) => {
     const { dragEndHandler, ref } = useDraggable()
 

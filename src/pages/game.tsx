@@ -1,4 +1,4 @@
-import { LeftSideGame } from "../component/general"
+import { LeftSideGame } from "../component/shared"
 import { GameArea, HeightToolGame } from "../component/shared"
 import { Token } from "../component/ui"
 

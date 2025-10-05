@@ -5,4 +5,5 @@ export interface entityDto {
     position: positionDto
     path: string
     discription: string
+    status: 'live' | 'dead' | 'stan'
 }

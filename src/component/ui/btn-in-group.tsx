@@ -4,14 +4,14 @@ import { cn } from '../../lib/function'
 interface Props {
     className?: string
     fn: React.MouseEventHandler<HTMLButtonElement>
-    path: string
+    children: React.ReactNode
 }
 
 
-export const ButtonInGroup: React.FC<Props> = ({ className, fn, path }: Props) => {
+export const ButtonInGroup: React.FC<Props> = ({ className, fn, children }: Props) => {
     return (
-        <button className={cn("p-2.5 btn-in-group flex justify-center items-center cursor-pointer", className)} onClick={fn}>
-            <img className="icon-sm" src={path} alt="" />
+        <button className={cn("p-3 btn-in-group flex justify-center items-center cursor-pointer", className)} onClick={fn}>
+            {children}
         </button>
     )
 }

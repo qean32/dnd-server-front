@@ -1,5 +1,4 @@
 export { HookFormProvider } from './hook-form-provider'
 export { RefreshToken } from './refresh-token'
-export { LeftSideGame } from './left-side-game'
 export { DftLayout } from './dft-layout'
 export { Navigate } from './navigate'
