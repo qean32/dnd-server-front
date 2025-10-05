@@ -7,9 +7,9 @@ interface Props {
 }
 
 
-export const RightSideGame: React.FC<Props> = ({ className }: Props) => {
+export const LeftSideGame: React.FC<Props> = ({ className }: Props) => {
     return (
-        <div className={cn('fixed w-[15%] h-[100%] bg-color-dark', className)}>
+        <div className={cn('fixed z-10 w-[15%] h-[100%] bg-color-dark', className)}>
             <Select
                 className='w-[100%]'
                 options={[

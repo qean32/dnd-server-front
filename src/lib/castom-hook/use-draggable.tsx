@@ -8,8 +8,10 @@ export const useDraggable = () => {
     const dragEndHandler = (e: any) => {
         e.stopPropagation()
         if (ref.current) {
-            ref.current.style.top = e.pageY - e.target.parentElement.parentElement.offsetTop - offset.top + 'px'
-            ref.current.style.left = e.pageX - e.target.parentElement.parentElement.offsetLeft - offset.left + 'px'
+            const top = e.pageY - e.target.parentElement.parentElement.offsetTop - offset.top
+            const left = e.pageX - e.target.parentElement.parentElement.offsetLeft - offset.left
+            ref.current.style.top = (top < 0 ? 0 : (top > window.innerHeight - 100 ? top - 50 : top)) + 'px'
+            ref.current.style.left = (left < 0 ? 0 : (left > window.innerWidth - 100 ? left - 50 : left)) + 'px'
         }
     }
 
