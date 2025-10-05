@@ -9,7 +9,10 @@ export const GamePage = () => {
             <LeftSideGame />
             <HeightToolGame />
             <main className="w-[100%] h-[90vh] relative z-0">
-                <GameArea>
+                <GameArea
+                    height={600}
+                    width={600}
+                >
                     <Token />
                     <Token />
                 </GameArea>

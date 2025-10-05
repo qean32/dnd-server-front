@@ -6,4 +6,5 @@ export interface entityDto {
     path: string
     discription: string
     status: 'live' | 'dead' | 'stan'
+    view: boolean
 }
