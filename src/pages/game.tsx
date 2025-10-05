@@ -1,40 +1,26 @@
-import React from "react";
 import { RightSideGame } from "../component/general"
 import { HeightToolGame } from "../component/shared"
-import { positionDto } from "../model";
+import { Token } from "../component/token"
+import { useDraggable } from "../lib/castom-hook"
 
 export const GamePage = () => {
-    const ref = React.useRef<HTMLDivElement>(null);
-    const [offset, setOffset] = React.useState<positionDto>({ left: 0, top: 0 })
-
-    const dragEndHandler = (e: any) => {
-        if (ref.current) {
-            ref.current.style.top = (e.pageY - offset.top) + 'px'
-            ref.current.style.left = (e.pageX - offset.left) + 'px'
-        }
-    }
-
-    React.useEffect(() => {
-        const signal = new AbortController
-        ref.current?.addEventListener('dragstart', (e) => {
-            setOffset({ left: e.offsetX, top: e.offsetY })
-        }, signal)
-
-        return () => signal.abort()
-    }, [])
+    const { dragEndHandler, ref } = useDraggable()
 
     return (
         <>
             <RightSideGame />
             <HeightToolGame />
-            <main className="w-[100%] h-[90vh]">
+            <main className="w-[100%] h-[90vh] relative">
                 <div
-                    draggable
                     ref={ref}
+                    draggable
                     onDragEnd={dragEndHandler}
-                    className="w-[1400px] h-[750px] rounded-lg fixed overflow-hidden bg-color-dark cursor-pointer"
+                    className="w-[1400px] h-[750px] rounded-lg fixed overflow-hidden bg-color-dark cursor-pointer top-1/5 left-1/4"
                 >
-                    <div className="area w-full h-full" style={{ scale: '1.005' }}></div>
+                    <div className="area w-full h-full relative" style={{ scale: '1.005' }}>
+                        <div className="absolute top-1/2 left-1/2 -translate-1/2">center</div>
+                        <Token />
+                    </div>
                 </div>
             </main >
         </>
