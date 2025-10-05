@@ -10,6 +10,6 @@ interface Props {
 
 export const Ava: React.FC<Props> = ({ className, size = 'ava-md', path }: Props) => {
     return (
-        <div className={cn('bck-image bg-color rounded-sm cursor-pointer', size, className)} style={{ backgroundImage: `url(${path})` }} ></div>
+        <div className={cn('bg-img bg-color rounded-sm cursor-pointer', size, className)} style={{ backgroundImage: `url(${path})` }} ></div>
     )
 }

@@ -13,7 +13,7 @@ export const RightSideGame: React.FC<Props> = ({ className }: Props) => {
             <Select
                 className='w-[100%]'
                 options={[
-                    <IconAndText icon={<img src='/icon/character.svg' />} title='персонажи' />,
+                    <IconAndText icon={<img src='/icon/human.svg' />} title='персонажи' />,
                     <IconAndText icon={<img src='/icon/dragon.svg' />} title='бестиарий' />,
                     <IconAndText icon={<img src='/icon/object.svg' />} title='обьекты' />,
                     <IconAndText icon={<img src='/icon/queue.svg' />} title='очередь' />

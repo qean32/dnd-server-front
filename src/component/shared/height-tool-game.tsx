@@ -10,7 +10,7 @@ export const HeightToolGame: React.FC<Props> = ({ }: Props) => {
         <>
             <div className="fixed top-[55px] right-35">
                 <GroupButton>
-                    <ButtonInGroup fn={() => { }} path='/icon/character.svg' />
+                    <ButtonInGroup fn={() => { }} path='/icon/human.svg' />
                     <ButtonInGroup fn={() => { }} path='/icon/grid.svg' />
                     <ButtonInGroup fn={() => { }} path='/icon/object.svg' />
                     <ButtonInGroup fn={() => { }} path='/icon/dragon.svg' />

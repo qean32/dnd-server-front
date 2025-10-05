@@ -69,7 +69,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHo
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
                 <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-3.5 right-2.5' />
             </div>
-            <div><p className='text-warning'>Используйте латиницу!</p></div>
+            <div><p className='text-warning'>Минимальная длина - 8, Используйте латиницу и цифры!</p></div>
         </div>
     )
 }
@@ -94,7 +94,7 @@ export const ImgInput: React.FC<InputFileProps> = ({ className, title }: InputFi
     }
 
     return (
-        <div className={cn('w-[100%]', className)}>
+        <div className={cn('fit-content', className)}>
             <label htmlFor={id} className='cursor-pointer'>
                 {urls[0] ?
                     <Ava path={urls[0]} size='ava-lg' />
@@ -119,12 +119,13 @@ interface CheckboxProps {
 
 export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className }: CheckboxProps) => {
     return (
-        <div onClick={() => fn()} className={cn('cursor-pointer fit-content relative', className)} >
+        <div onClick={() => fn()} className={cn('cursor-pointer fit-content flex gap-3.5', className)} >
             <p>{title}</p>
-            <input type='checkbox' className={cn('transition03 absolute -right-6 top-2', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
-            <img src='/icon/character.svg'
+            <input type='checkbox' className={cn('transition03 border-0', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
+            <img src='/icon/accept.svg'
                 alt=''
-                className={cn('transition03 absolute -right-7 top-1', (!value && 'opacity-0'))}
+                className={cn('transition03 w-[19px]', (!value && 'opacity-0'))}
+                style={{ transform: 'translateX(-160%)' }}
             />
         </div>
     );
@@ -153,7 +154,7 @@ interface Props {
 export const FileInput: React.FC<Props> = ({ className }: Props) => {
     const id = generateId().toString()
     return (
-        <div className={cn('', className)}>
+        <div className={cn('fit-content', className)}>
             <input type="file" name="" id={id} hidden />
             <label htmlFor={id}>
                 <img src='/icon/upload.svg' className='icon-md cursor-pointer' />

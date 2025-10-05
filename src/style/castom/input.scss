@@ -21,14 +21,17 @@ input:focus {
 }
 
 button {
-    outline: 0px solid $bg-color-light;
-}
-
-.btn-in-group:hover {
-    background-color: $bg-color !important;
-}
-
-button:hover {
-    // background-color: $bg-color-light !important;
     outline: 1px solid $bg-color-light;
+
+    &:hover {
+        background-color: $bg-color-light;
+    }
+}
+
+.btn-in-group {
+    outline: none;
+
+    &:hover {
+        background-color: $bg-color !important;
+    }
 }

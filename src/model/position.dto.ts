@@ -1,1 +1,1 @@
-export type positionDto = { top: string, left: string }
+export type positionDto = { top: number, left: number }

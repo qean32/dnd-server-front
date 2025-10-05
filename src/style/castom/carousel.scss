@@ -1,0 +1,35 @@
+.carousel {
+    display: flex;
+    display: -webkit-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+
+
+    &:hover>div {
+        animation: animate 27s linear infinite paused !important;
+    }
+}
+
+.carousel>div {
+    animation: animate 50s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+@-webkit-keyframes animate {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
