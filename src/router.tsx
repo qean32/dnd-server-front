@@ -1,13 +1,14 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import * as pages from './pages'
-import { Navigate, RefreshToken } from "./component/general"
-import { Header } from "./component/shared"
+import { RefreshToken, Toast } from "./component/general"
+import { Header, Navigate } from "./component/shared"
 
 export const Router = () => {
     return (
         <BrowserRouter>
             <RefreshToken />
             <Header />
+            <Toast />
             <Navigate />
             <Routes>
                 <Route element={<pages.CreatePostPage />} path="/create-post" />

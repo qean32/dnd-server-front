@@ -1,9 +1,9 @@
-import { DftLayout } from "../component/general"
+import { DefaultSetPage } from "../component/general"
 import { Button, File, GroupTag, Tag } from "../component/ui"
 
 export const CreatePostPage = () => {
     return (
-        <DftLayout>
+        <DefaultSetPage>
             <div className="flex justify-between pb-4">
                 <div className="flex">
                     <p className="f-30">НАЗВАНИЕ</p>
@@ -24,6 +24,6 @@ export const CreatePostPage = () => {
                 <File className="px-3 bg-color-dark" />
                 <File className="px-3 bg-color-dark" />
             </div>
-        </DftLayout>
+        </DefaultSetPage>
     )
 }

@@ -1,10 +1,10 @@
-import { DftLayout } from "../component/general"
+import { DefaultSetPage } from "../component/general"
 import { User } from "../component/shared"
 import { Search } from "../component/ui"
 
 export const CommunityPage = () => {
     return (
-        <DftLayout size="w-[45%]">
+        <DefaultSetPage size="w-[45%]">
             <div className="container pb-2">
                 <div className="py-2 px-2">
                     <Search />
@@ -20,6 +20,6 @@ export const CommunityPage = () => {
                 <User />
                 <User />
             </div>
-        </DftLayout>
+        </DefaultSetPage>
     )
 }

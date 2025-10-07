@@ -1,9 +1,9 @@
-import { DftLayout } from "../component/general"
+import { DefaultSetPage } from "../component/general"
 import { Ava } from "../component/ui"
 
 export const ProfilePage = () => {
     return (
-        <DftLayout>
+        <DefaultSetPage>
             <div className="flex gap-5">
                 <Ava size="ava-lg" path="" className="bg-color-dark" />
                 <p className="f-30">NICKNAME</p>
@@ -25,6 +25,6 @@ export const ProfilePage = () => {
             <div className="pt-1">
                 <p>изменить профиль</p>
             </div>
-        </DftLayout>
+        </DefaultSetPage>
     )
 }

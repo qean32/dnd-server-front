@@ -1,0 +1,1 @@
+export type toastKeyDto = 'create-entity' | 'event'
