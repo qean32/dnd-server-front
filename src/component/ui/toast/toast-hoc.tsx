@@ -9,7 +9,7 @@ interface Props {
 
 export const Toast: React.FC<Props> = ({ className, children }: Props) => {
     return (
-        <div className={cn('fit-content rounded-md overflow-hidden', className)}>
+        <div className={cn('fit-content rounded-md overflow-hidden mt-2', className)}>
             {children}
         </div>
     )

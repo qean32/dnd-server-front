@@ -4,9 +4,7 @@ import { idDto, toastDto } from '../model'
 type stateDto = { toasts: toastDto[] }
 
 const initialState: stateDto = {
-    toasts: [
-        { id: 1, key: 'create-entity', payload: {} }
-    ]
+    toasts: []
 }
 
 const ToastSlice = createSlice({
