@@ -7,9 +7,9 @@ interface Props {
 
 export const User: React.FC<Props> = ({ }: Props) => {
     return (
-        <div className='px-4 py-4 flex gap-4 bg-color-hover cursor-pointer transition03'>
+        <div className='px-4 py-4 flex gap-4 cursor-pointer transition03 bg-color-light-hover'>
             <Ava path='' size='ava-md' />
-            <p>NICKNAME</p>
+            <p className='text-lg'>NICKNAME</p>
         </div>
     )
 }

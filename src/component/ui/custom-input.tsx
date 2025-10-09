@@ -139,8 +139,8 @@ interface SearchProps {
 export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
     return (
         <div className={cn('relative w-[100%]', className)}>
-            <input type="text" placeholder='поиск..' />
-            <img src="/icon/search.svg" alt="" className='absolute top-3 right-3' />
+            <input type="search" placeholder='поиск..' />
+            <img src="/icon/search.svg" alt="" className='absolute top-4 right-4' />
         </div>
     )
 }

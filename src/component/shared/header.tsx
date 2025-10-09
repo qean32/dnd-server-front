@@ -11,13 +11,13 @@ export const Header: React.FC<Props> = ({ className }: Props) => {
     return (
         <div className={cn('bg-color-darkness z-50 sticky flex justify-around py-2 items-center', className)}>
             <div className='flex gap-2'>
-                <p>Форум</p>
-                <p>Библиотека</p>
+                <p className='cursor-pointer'>Форум</p>
+                <p className='cursor-pointer'>Библиотека</p>
             </div>
             <Logo />
-            <div className='flex gap-2'>
+            <div className='flex gap-2 items-center'>
                 <Ava path={''} size='ava-sm' />
-                <p>Профиль</p>
+                <p className='cursor-pointer'>Профиль</p>
             </div>
         </div>
     )

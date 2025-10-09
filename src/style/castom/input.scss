@@ -12,6 +12,10 @@ input:focus {
     outline: 1px solid $bg-color-light;
 }
 
+input[type="search"] {
+    padding: 13px 20px;
+}
+
 .text-warning {
     font-size: 18px;
     padding: 5px 0 0 2px;

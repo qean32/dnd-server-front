@@ -2,15 +2,68 @@
     position: fixed;
     inset: 0 0 0 0;
     background-color: rgba(0, 0, 0, 0.678);
-    animation: shadowAnim .7s;
+    z-index: 60;
+    animation: shadow-open-anim .7s;
+    opacity: 1;
 }
 
-@keyframes shadowAnim {
+.shadow-close {
+    animation: shadow-close-anim .7s !important;
+    opacity: 0;
+}
+
+.modal-open {
+    animation: modal-open-anim .7s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.modal-close {
+    animation: modal-close-anim .7s;
+    transform: translate(0, 50%);
+    opacity: 0;
+}
+
+@keyframes shadow-open-anim {
     from {
-        opacity: .6;
+        opacity: .4;
     }
 
     to {
         opacity: 1;
+    }
+}
+
+@keyframes shadow-close-anim {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes modal-open-anim {
+    from {
+        transform: translate(0, -15%);
+        opacity: .2;
+    }
+
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes modal-close-anim {
+    from {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(0, 15%);
+        opacity: 0;
     }
 }

@@ -1,7 +1,6 @@
 export { Header } from './header'
 export { HeightToolGame } from './height-tool-game'
 export { CommentInput } from './comment-input'
-export { User } from './user'
 export { AuthBG } from './auth-bg'
 export { GameArea } from './game-area'
 export { LeftSideGame } from './left-side-game'
