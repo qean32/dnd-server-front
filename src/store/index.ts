@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
-import { toastReducer } from './toast'
+import { toastReducer } from './toast-store'
 
 
 const rootReducer = combineReducers({

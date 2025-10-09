@@ -3,7 +3,7 @@ import { toastKeyDto } from "../../model"
 
 
 
-export const toastHook = (key: toastKeyDto, key_: number, payload: any) => {
-    if (key == "create-entity") return <ToastCreateEntity key={key_} {...payload} />
-    if (key == "event") return <ToastCreateEntity key={key_} {...payload} />
+export const toastHook = (key: toastKeyDto, key_: number, view: boolean, payload: any) => {
+    if (key == "create-entity") return <ToastCreateEntity view={view} key={key_} {...payload} />
+    if (key == "event") return <ToastCreateEntity view={view} key={key_} {...payload} />
 }

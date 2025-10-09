@@ -11,7 +11,7 @@ export const Toast: React.FC<Props> = ({ }: Props) => {
     return (
         <div className='fixed z-50 pointer-events-none' style={{ inset: '70px 40px' }}>
             {!!toasts.length && toasts.map(item => {
-                return toastHook(item.key, item.id, item.payload)
+                return toastHook(item.key, item.id, item.view, item.payload)
             })}
         </div>
     )

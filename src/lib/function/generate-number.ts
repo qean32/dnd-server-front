@@ -1,3 +1,3 @@
 export const generateId = () => {
-    return Math.round(Math.random() * 1000)
+    return Math.round(Math.random() * 10000)
 }

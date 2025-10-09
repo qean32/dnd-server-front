@@ -12,17 +12,24 @@ export const Token: React.FC<Props> = ({ entity = {
     id: 1,
     path: '/img/goblin.jpg',
     position: { left: 0, top: 0 },
-    status: 'live'
+    status: 'live',
+    view: true
 } }: Props) => {
     const { dragEndHandler, ref } = useDraggable()
 
     return (
-        <div
-            draggable
-            ref={ref}
-            className="p-5 fixed bg-color-dark z-30 transition03 bg-img rounded-xl"
-            style={{ backgroundImage: `url(${entity.path})`, ...entity.position }}
-            onDragEnd={dragEndHandler}
-        ></div>
+        <>
+            {entity.view &&
+                <div
+                    draggable
+                    ref={ref}
+                    className="fixed bg-color-dark z-30 transition03 bg-img rounded-2xl w-[65px]"
+                    style={{ backgroundImage: `url(${entity.path})`, ...entity.position, aspectRatio: '1/1' }}
+                    onDragEnd={dragEndHandler}
+                >
+                    <p hidden className='absolute -bottom-2 left-1/2 -translate-x-1/2'>{entity.status}</p>
+                </div>
+            }
+        </>
     )
 }

@@ -12,10 +12,15 @@ const ToastSlice = createSlice({
     initialState,
     reducers: {
         add: (state: stateDto, { payload }: PayloadAction<toastDto>) => {
-            state.toasts = [...state.toasts, payload]
+            state.toasts = [...state.toasts, { ...payload, view: true }]
         },
         remove: (state: stateDto, { payload }: PayloadAction<idDto>) => {
-            state.toasts = state.toasts.filter(item => item.id != payload.id)
+            state.toasts = [
+                // @ts-ignore
+                ...state.toasts.filter(item => item.id != payload.id),
+                // @ts-ignore
+                { ...state.toasts.find(item => item.id == payload.id), view: false }
+            ]
         },
     },
 })

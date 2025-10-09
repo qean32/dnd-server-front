@@ -12,13 +12,12 @@ export const LeftSideGame: React.FC<Props> = ({ className }: Props) => {
     const { boolean, swap } = useBoolean(false)
 
     return (
-        <div className={cn('fixed z-10 w-[15%] h-[100%] bg-color-dark transition07', (!boolean && 'w-[70px]'), className)}>
-            <ButtonInGroup className='absolute right-0 translate-x-11/12 bg-color-dark rounded-sm bg-color-dark-hover' fn={swap}>
-                <img
-                    src='/icon/double-arrow.svg'
-                    className={cn('bg-color-dark rounded-r-sm transition07 icon-sm', (boolean && 'rotate-180'))}
-                />
-            </ButtonInGroup>
+        <div className={cn('fixed z-10 w-[15%] h-[100%] bg-color-dark transition07', (!boolean && 'w-[60px]'), className)}>
+            {boolean &&
+                <ButtonInGroup className='absolute right-0 translate-x-11/12 bg-color-dark rounded-sm bg-color-dark-hover' fn={swap}>
+                    <img src='/icon/double-arrow.svg' className={cn('bg-color-dark rounded-r-sm icon-sm')} />
+                </ButtonInGroup>
+            }
             {boolean &&
                 <>
                     <div className='flex justify-between'>
@@ -41,12 +40,14 @@ export const LeftSideGame: React.FC<Props> = ({ className }: Props) => {
                 </>}
             {
                 !boolean &&
-                <>
-                    <ButtonInGroup className='px-4' fn={() => { }} ><img className='icon-sm' src='/icon/dragon.svg' /></ButtonInGroup>
-                    <ButtonInGroup className='px-4' fn={() => { }} ><img className='icon-sm' src='/icon/object.svg' /></ButtonInGroup>
-                    <ButtonInGroup className='px-4' fn={() => { }} ><img className='icon-sm' src='/icon/human.svg' /></ButtonInGroup>
-                    <ButtonInGroup className='px-4' fn={() => { }} ><img className='icon-sm' src='/icon/queue.svg' /></ButtonInGroup>
-                </>
+                <div className='flex flex-col'>
+                    <ButtonInGroup className='px-3' fn={swap} ><img className='icon-sm rotate-180 translate-x-0.5' src='/icon/double-arrow.svg' /></ButtonInGroup>
+                    <ButtonInGroup className='px-3' fn={() => { }} ><img className='icon-sm' src='/icon/dragon.svg' /></ButtonInGroup>
+                    <ButtonInGroup className='px-3' fn={() => { }} ><img className='icon-sm' src='/icon/object.svg' /></ButtonInGroup>
+                    <ButtonInGroup className='px-3' fn={() => { }} ><img className='icon-sm' src='/icon/human.svg' /></ButtonInGroup>
+                    <ButtonInGroup className='px-3' fn={() => { }} ><img className='icon-sm' src='/icon/queue.svg' /></ButtonInGroup>
+                    <ButtonInGroup className='px-3' fn={() => { }}><img className='icon-sm' src='/icon/dice-6.svg' /></ButtonInGroup>
+                </div>
             }
         </div>
     )

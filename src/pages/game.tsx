@@ -11,7 +11,7 @@ export const GamePage = () => {
             <main className="w-[100%] h-[90vh] relative z-0">
                 <GameArea
                     height={600}
-                    width={600}
+                    width={800}
                 >
                     <Token />
                     <Token />

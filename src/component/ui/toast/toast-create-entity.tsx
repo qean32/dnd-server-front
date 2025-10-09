@@ -5,12 +5,13 @@ import { Toast } from './toast-hoc'
 interface Props {
     className?: string
     name: string
+    view: boolean
 }
 
 
-export const ToastCreateEntity: React.FC<Props> = ({ className, name }: Props) => {
+export const ToastCreateEntity: React.FC<Props> = ({ className, view, name }: Props) => {
     return (
-        <Toast>
+        <Toast view={view}>
             <div className={cn("py-2 px-3 bg-color-dark flex gap-2 items-center", className)}>
                 <img src="/icon/dragon.svg" className='icon-sm' alt="" />
                 <p>добавлен {name}</p>

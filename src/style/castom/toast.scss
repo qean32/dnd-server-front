@@ -1,0 +1,35 @@
+.toast-open {
+    animation: toast-open-anim 1s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.toast-close {
+    animation: toast-close-anim 1s;
+    transform: translate(0, 50%);
+    opacity: 0;
+}
+
+@keyframes toast-open-anim {
+    from {
+        transform: translate(0, -50%);
+        opacity: .2;
+    }
+
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes toast-close-anim {
+    from {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(0, 50%);
+        opacity: 0;
+    }
+}
