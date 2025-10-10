@@ -12,7 +12,7 @@ export const Post: React.FC<Props> = ({ }: Props) => {
                 <p className='text-sm'>Описание</p>
             </div>
             <p>zxccused</p>
-            <p>Тема</p>
+            <p>Раздел</p>
             <p className='translate-x-0.5'>444</p>
         </div>
     )

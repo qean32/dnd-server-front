@@ -2,10 +2,14 @@
 
 input {
     background-color: $bg-color-darkness;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border-radius: 5px;
     width: 100%;
     cursor: pointer;
+}
+
+textarea:focus {
+    outline: 1px solid $bg-color-light;
 }
 
 input:focus {
@@ -38,5 +42,14 @@ button {
 
     &:hover {
         background-color: $bg-color-darkness;
+    }
+}
+
+.fake-input {
+    background-color: #00000000;
+    padding: 0;
+
+    &:hover, &:focus {
+        outline: none !important;
     }
 }

@@ -4,7 +4,7 @@ import { Ava, Post } from "../component/ui"
 
 export const ProfilePage = () => {
     return (
-        <DefaultSetPage size="w-[60%]" className="h-full">
+        <DefaultSetPage className="h-full">
             <div className="flex-col flex h-full pb-3">
                 <div className="flex gap-6 mt-4">
                     <Ava size="ava-lg" path="" className="bg-color-dark" />
@@ -26,7 +26,7 @@ export const ProfilePage = () => {
                     <Post />
                     <Post />
                 </div>
-                <Link to='/edit-profile'><p className="cursor-pointer">изменить профиль</p></Link>
+                <Link to='/edit-profile'><p className="cursor-pointer underline">изменить профиль</p></Link>
             </div>
         </DefaultSetPage >
     )

@@ -1,0 +1,1 @@
+export { RightImgModal } from './right-img-modal'

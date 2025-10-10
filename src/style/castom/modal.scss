@@ -67,3 +67,39 @@
         opacity: 0;
     }
 }
+
+.right-modal-open {
+    animation: right-modal-open-anim .7s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.right-modal-close {
+    animation: right-modal-close-anim .7s;
+    transform: translate(100%, 0);
+    opacity: 0;
+}
+
+@keyframes right-modal-open-anim {
+    from {
+        transform: translate(100%, 0);
+        opacity: .2;
+    }
+
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes right-modal-close-anim {
+    from {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(100%, 0);
+        opacity: 0;
+    }
+}

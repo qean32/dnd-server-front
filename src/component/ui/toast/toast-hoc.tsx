@@ -20,7 +20,7 @@ export const Toast: React.FC<Props> = ({ className, children, view }: Props) => 
     return (
         <>
             {display ?
-                <div className={cn('fit-content rounded-md overflow-hidden mt-2', className, (view ? 'toast-open' : 'toast-close'))}>
+                <div className={cn('w-fit absolute rounded-md overflow-hidden mt-2 left-1/2 -translate-x-1/2', className, (view ? 'toast-open' : 'toast-close'))}>
                     {children}
                 </div>
                 :

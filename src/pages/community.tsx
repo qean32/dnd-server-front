@@ -3,7 +3,7 @@ import { Search, User } from "../component/ui"
 
 export const CommunityPage = () => {
     return (
-        <DefaultSetPage size="w-[60%]">
+        <DefaultSetPage>
             <div className="relative">
                 <div className="absolute left-0 -translate-x-full pr-4 pt-6">
                 </div>

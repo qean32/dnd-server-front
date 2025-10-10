@@ -12,7 +12,7 @@ export const LeftSideGame: React.FC<Props> = ({ className }: Props) => {
     const { boolean, swap } = useBoolean(false)
 
     return (
-        <div className={cn('fixed z-10 w-[15%] h-[100%] bg-color-dark transition07', (!boolean && 'w-[60px]'), className)}>
+        <div className={cn('fixed z-10 w-[15%] h-[100%] bg-color-dark transition07 pt-14', (!boolean && 'w-[60px]'), className)}>
             {boolean &&
                 <ButtonInGroup className='absolute right-0 translate-x-11/12 bg-color-dark rounded-sm bg-color-dark-hover' fn={swap}>
                     <img src='/icon/double-arrow.svg' className={cn('bg-color-dark rounded-r-sm icon-sm')} />
@@ -28,6 +28,7 @@ export const LeftSideGame: React.FC<Props> = ({ className }: Props) => {
                     </div>
                     <div className='h-[80%]'>
                         <p className='pl-2'>БЕСТИАРИЙ</p>
+                        <Character />
                         <Character />
                         <Character />
                         <Character />

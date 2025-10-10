@@ -10,7 +10,7 @@ interface SelectProps {
 }
 
 
-export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, options }: SelectProps) => {
+export const Select: React.FC<SelectProps> = ({ className = 'w-fit', fn, options }: SelectProps) => {
     const [value, setValue] = React.useState()
     const { boolean, swap } = useBoolean(false)
 
@@ -20,14 +20,14 @@ export const Select: React.FC<SelectProps> = ({ className = 'fit-content', fn, o
     }
 
     return (
-        <div className={cn('cursor-pointer relative w-[100%]', className)} onClick={swap} >
+        <div className={cn('cursor-pointer relative w-full', className)} onClick={swap} >
             <input type="text" hidden value={value} />
             <div className='flex gap-2 px-2 py-1 justify-between' >
                 <p>{value ?? 'Выберите опцию'}</p>
                 <img src="/icon/arrow.svg" alt="" className={cn('transition07', !boolean && 'rotate-90')} />
             </div>
             {boolean &&
-                <div className='absolute bg-color-dark w-[100%] rounded-b-sm' onClick={fn ?? selectHandler}>
+                <div className='absolute bg-color-dark w-full rounded-b-sm' onClick={fn ?? selectHandler}>
                     {options.map((item, _) => {
                         return (
                             <div key={_} className='px-2 py-1 flex gap-2 child-no-event'>{item}</div>
@@ -46,7 +46,7 @@ interface TextInputProps {
 }
 
 
-export const TextInput: React.FC<TextInputProps> = ({ className = 'w-[100%]', placeHolder, validate = true }: TextInputProps) => {
+export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true }: TextInputProps) => {
     return (
         <div className={cn('', className)}>
             <input type="text" name={placeHolder} placeholder={placeHolder} />
@@ -64,10 +64,10 @@ interface PasswordInputProps {
 export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder }: PasswordInputProps) => {
     const view = useBoolean(false)
     return (
-        <div className={cn('w-[100%]', className)}>
+        <div className={cn('w-full', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
-                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-3.5 right-2.5' />
+                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4.5 right-3' />
             </div>
             <div><p className='text-warning'>Минимальная длина - 8, Используйте латиницу и цифры!</p></div>
         </div>
@@ -94,14 +94,10 @@ export const ImgInput: React.FC<InputFileProps> = ({ className, title }: InputFi
     }
 
     return (
-        <div className={cn('fit-content', className)}>
+        <div className={cn('w-fit', className)}>
             <label htmlFor={id} className='cursor-pointer'>
-                {urls[0] ?
-                    <Ava path={urls[0]} size='ava-lg' className='ml-1' />
-                    :
-                    <img src="/icon/upload.svg" alt="" className='ava-lg' style={{ width: '60px' }} />
-                }
-                <p className='pt-2'>
+                <Ava path={urls[0]} size='ava-lg' className='ml-1' />
+                <p className='pt-2 pl-1'>
                     {title}
                 </p>
             </label>
@@ -119,7 +115,7 @@ interface CheckboxProps {
 
 export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className }: CheckboxProps) => {
     return (
-        <div onClick={() => fn()} className={cn('cursor-pointer fit-content flex gap-3.5', className)} >
+        <div onClick={() => fn()} className={cn('cursor-pointer w-fit flex gap-3.5', className)} >
             <p>{title}</p>
             <input type='checkbox' className={cn('transition03 border-0', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
             <img src='/icon/accept.svg'
@@ -138,7 +134,7 @@ interface SearchProps {
 
 export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
     return (
-        <div className={cn('relative w-[100%]', className)}>
+        <div className={cn('relative w-full', className)}>
             <input type="search" placeholder='поиск..' />
             <img src="/icon/search.svg" alt="" className='absolute top-4 right-4' />
         </div>
@@ -146,19 +142,33 @@ export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
 }
 
 
-interface Props {
+interface FileProps {
     className?: string
 }
 
 
-export const FileInput: React.FC<Props> = ({ className }: Props) => {
+export const FileInput: React.FC<FileProps> = ({ className }: FileProps) => {
     const id = generateId().toString()
     return (
-        <div className={cn('fit-content', className)}>
+        <div className={cn('w-fit', className)}>
             <input type="file" name="" id={id} hidden />
             <label htmlFor={id}>
                 <img src='/icon/upload.svg' className='icon-md cursor-pointer' />
             </label>
+        </div>
+    )
+}
+
+
+interface FakeTextProps {
+    className?: string
+    title: string
+}
+
+export const FakeTextInput: React.FC<FakeTextProps> = ({ title, className }: FakeTextProps) => {
+    return (
+        <div className={cn("", className)}>
+            <input type="text" className='fake-input text-3xl w-fit' defaultValue={title} />
         </div>
     )
 }
