@@ -23,7 +23,7 @@ export const Token: React.FC<Props> = ({ entity = {
                 <div
                     draggable
                     ref={ref}
-                    className="fixed bg-color-dark z-30 transition03 bg-img rounded-2xl w-[65px]"
+                    className="fixed bg-color-dark z-30 transition03 bg-img rounded-lg w-[60px]"
                     style={{ backgroundImage: `url(${entity.path})`, ...entity.position, aspectRatio: '1/1' }}
                     onDragEnd={dragEndHandler}
                 >

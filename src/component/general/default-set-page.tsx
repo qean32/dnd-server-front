@@ -10,8 +10,8 @@ interface Props {
 
 export const DefaultSetPage: React.FC<Props> = ({ children, className, size = 'w-[50%]' }: Props) => {
     return (
-        <main className={cn("w-[100%] py-4 flex justify-center items-center", className)}>
-            <div className={cn("", size)}>
+        <main className={cn("w-full h-full py-4 flex justify-center items-start", className)}>
+            <div className={cn("h-full", size)}>
                 {children}
             </div>
         </main >

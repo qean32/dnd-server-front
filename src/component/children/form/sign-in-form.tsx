@@ -5,9 +5,9 @@ interface Props {
 }
 
 
-export const SignIn: React.FC<Props> = ({ }: Props) => {
+export const SignInForm: React.FC<Props> = ({ }: Props) => {
     return (
-        <div className="w-1/2 h-full py-20 flex justify-center rounded-md">
+        <div className="w-1/2 h-full flex justify-center rounded-md">
             <div className="fit-content flex flex-col gap-3">
                 <p className="text-3xl">РЕГИСТРАЦИЯ</p>
                 <div className="flex-1 w-[300px]">

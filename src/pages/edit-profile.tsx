@@ -1,23 +1,13 @@
+import { EditProfileForm } from "../component/children/form"
 import { DefaultSetPage } from "../component/general"
-import { Button, ImgInput, TextInput } from "../component/ui"
+import { AuthBG } from "../component/shared"
 
 export const EditProfilePage = () => {
     return (
-        <DefaultSetPage className="pt-6">
-            <div className="w-1/2 h-[700px] bg-color-dark rounded-md flex translate-x-1/2">
-                <div className="w-[100%] h-[100%] py-15 flex justify-center rounded-md">
-                    <div className="fit-content flex flex-col gap-3">
-                        <p className="f-30">РЕДАКТИРОВАНИЕ</p>
-                        <div className="flex-1 w-[300px]">
-                            <TextInput placeHolder="никнейм" />
-                            <TextInput placeHolder="пароль" />
-                            <br />
-                            <TextInput placeHolder="предыдущий пароль" />
-                            <ImgInput title="аватар профиля" />
-                        </div>
-                        <Button children={<p>Сохранить</p>} className="bg-color" />
-                    </div>
-                </div>
+        <DefaultSetPage className="pt-10">
+            <div className="bg-color-dark h-3/4 rounded-md flex relative py-15">
+                <AuthBG text="ИЗМЕНИТЬ ПРОФИЛЬ" />
+                <EditProfileForm />
             </div>
         </DefaultSetPage>
     )

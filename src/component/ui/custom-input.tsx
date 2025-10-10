@@ -97,9 +97,9 @@ export const ImgInput: React.FC<InputFileProps> = ({ className, title }: InputFi
         <div className={cn('fit-content', className)}>
             <label htmlFor={id} className='cursor-pointer'>
                 {urls[0] ?
-                    <Ava path={urls[0]} size='ava-lg' />
+                    <Ava path={urls[0]} size='ava-lg' className='ml-1' />
                     :
-                    <img src="/icon/upload.svg" alt="" className='icon-lg' />
+                    <img src="/icon/upload.svg" alt="" className='ava-lg' style={{ width: '60px' }} />
                 }
                 <p className='pt-2'>
                     {title}

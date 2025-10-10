@@ -13,7 +13,6 @@ export const Toast: React.FC<Props> = ({ className, children, view }: Props) => 
     const { boolean: display, off } = useBoolean(true)
 
     React.useEffect(() => {
-        console.log(view)
         if (!view) {
             setTimeout(() => off(), 1000)
         }
