@@ -1,7 +1,7 @@
 import React from 'react'
 import { cn, generateId } from '../../lib/function'
 import { useBoolean } from '../../lib/castom-hook'
-import { Ava } from './'
+import { Ava } from '.'
 
 interface SelectProps {
     className?: string
