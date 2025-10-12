@@ -7,7 +7,7 @@ import { ProfileContent } from "../component/shared/profile-content"
 export const ProfilePage = () => {
     return (
         <DefaultSetPage className="h-full">
-            <div className="flex-col flex h-full pb-3">
+            <div className="flex-col flex h-full pb-3 overflow-hidden">
                 <UserInfo />
                 <ProfileContentSwith />
                 <ProfileContent />

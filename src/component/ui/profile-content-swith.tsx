@@ -1,15 +1,34 @@
 import React from 'react'
+import { useAppSelector } from '../../lib/castom-hook/redux'
+import { useAppDispatch } from '../../store'
+import { changeProfileContent } from '../../store/profile-content-store'
+import { cn } from '../../lib/function'
 
 interface Props {
 }
 
+const map = new Map([
+    ['Посты', 'post'],
+    ['Персонажи', 'character'],
+    ['Игры', 'game']
+])
+
 
 export const ProfileContentSwith: React.FC<Props> = ({ }: Props) => {
+    const { type } = useAppSelector(state => state.profileContent)
+    const dispath = useAppDispatch()
+
+    const swap = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        // @ts-ignore
+        dispath(changeProfileContent(map.get(e.target.innerHTML)))
+    }
+
+
     return (
-        <div className="mt-5 flex gap-2 pt-3 pb-2 w-[100%]">
-            <p className="cursor-pointer text-xl font-bold" >Персонажи</p>
-            <p className="cursor-pointer text-xl" >Посты</p>
-            <p className="cursor-pointer text-xl" >Игры</p>
+        <div className="mt-5 flex gap-2 pt-3 pb-2 w-[100%]" onClick={swap} >
+            <p className={cn("cursor-pointer text-xl transition03", (type == 'post' && 'font-bold'))} >Посты</p>
+            <p className={cn("cursor-pointer text-xl transition03", (type == 'character' && 'font-bold'))} >Персонажи</p>
+            <p className={cn("cursor-pointer text-xl transition03", (type == 'game' && 'font-bold'))} >Игры</p>
         </div>
     )
 }

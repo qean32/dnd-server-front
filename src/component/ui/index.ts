@@ -2,7 +2,6 @@ export { Select, TextInput, PasswordInput, ImgInput, Checkbox, Search, FileInput
 export { Button } from './button'
 export { IconAndText } from './icon-and-text'
 export { Ava } from './ava'
-export { Shadow } from './shadow'
 export { Logo } from './logo'
 export { GroupButton } from './group-button'
 export { ButtonInGroup } from './btn-in-group'

@@ -7,14 +7,14 @@ const initialState: stateDto = {
     toasts: []
 }
 
-const ToastSlice = createSlice({
+const toastSlice = createSlice({
     name: 'toast-stote',
     initialState,
     reducers: {
-        add: (state: stateDto, { payload }: PayloadAction<toastDto>) => {
+        addToast: (state: stateDto, { payload }: PayloadAction<toastDto>) => {
             state.toasts = [...state.toasts, { ...payload, view: true }]
         },
-        remove: (state: stateDto, { payload }: PayloadAction<idDto>) => {
+        removeToast: (state: stateDto, { payload }: PayloadAction<idDto>) => {
             state.toasts = [
                 // @ts-ignore
                 ...state.toasts.filter(item => item.id != payload.id),
@@ -25,5 +25,5 @@ const ToastSlice = createSlice({
     },
 })
 
-export const toastReducer = ToastSlice.reducer
-export const { add, remove } = ToastSlice.actions
+export const toastReducer = toastSlice.reducer
+export const { addToast, removeToast } = toastSlice.actions
