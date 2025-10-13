@@ -1,4 +1,4 @@
-import { Button, Carousel, Checkbox, FileInput, IconAndText, ImgInput, PasswordInput, Select, TextInput } from "../component/ui";
+import { AddTag, Button, Carousel, Checkbox, FileInput, IconAndText, ImgInput, PasswordInput, Select, TextInput } from "../component/ui";
 import { useBoolean } from "../lib/castom-hook";
 
 export const TestPage = () => {
@@ -22,6 +22,7 @@ export const TestPage = () => {
                     <FileInput />
                     <Checkbox fn={swap} title="соглашение" value={boolean} />
                 </div>
+                <AddTag />
             </div>
         </main>
     );

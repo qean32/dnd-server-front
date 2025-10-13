@@ -1,5 +1,6 @@
 import { DefaultSetPage, GroupContainer } from "../component/general"
-import { Search, TextInfo, User } from "../component/ui"
+import { Search, TextInfo, UserItem } from "../component/ui"
+import { fakeUser } from "../export"
 
 export const CommunityPage = () => {
     return (
@@ -8,8 +9,9 @@ export const CommunityPage = () => {
                 <TextInfo title="Сообщество" />
                 <Search />
                 <GroupContainer
+                    array={fakeUser}
                     className="pt-10"
-                    Component={User}
+                    Component={UserItem}
                     propsName="user"
                 />
             </div>

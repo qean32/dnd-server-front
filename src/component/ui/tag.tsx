@@ -1,17 +1,14 @@
 import React from 'react'
 
 interface Props {
-    tag: {
-        color: string,
-        text: string
-    }
+    title: string
 }
 
 
-export const Tag: React.FC<Props> = ({ tag: { color, text } }: Props) => {
+export const Tag: React.FC<Props> = ({ title }: Props) => {
     return (
-        <div className='tag' style={{ backgroundColor: `${color}` }}>
-            <p>{text}</p>
+        <div className='tag w-fit rounded-sm p-1 px-2'>
+            <p>{title}</p>
         </div>
     )
 }

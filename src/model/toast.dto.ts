@@ -1,11 +1,14 @@
-import { toastKeyDto } from "./toast.key.dto";
-
 export type toastDto = {
     key: toastKeyDto,
     id: number,
-    payload: {
-        name?: string
-        // other ?
-    },
+    payload: toastPayloadDto,
     view: boolean
 }
+
+export type toastPayloadDto = {
+    name?: string
+    path?: string
+    // other ?
+}
+
+export type toastKeyDto = 'create-entity' | 'event'

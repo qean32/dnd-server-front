@@ -6,6 +6,7 @@ interface Props {
     className?: string
     propsName: string
     Component: React.ReactNode | React.FC | React.ElementType | any
+    array: any[]
     //     RQKey: string
     //     take: number
     //     fetch_: Function
@@ -13,10 +14,10 @@ interface Props {
 
 
 export const GroupContainer: React.FC<Props> = ({
-    className, Component,
+    className, Component, array
     // RQKey, fetch_, take
 }: Props) => {
-    const { finaldata, loading, refHandler } = useDinamickPaginationFake(0, '')
+    const { finaldata, loading, refHandler } = useDinamickPaginationFake(0, '', array)
 
     return (
         <div className={cn('', className)}>

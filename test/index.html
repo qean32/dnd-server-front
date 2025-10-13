@@ -1,0 +1,62 @@
+<head>
+    <style>
+        .range {
+            --range-progress-w: calc((var(--value-2) - var(--value-1)) * 1%);
+            --range-progress-left: min(calc(var(--value-1) * 1%),
+                    calc(var(--value-2) * 1%));
+        }
+
+        .range-output {
+            --range-output-left: calc(var(--value) * 1%);
+            --range-output-offset-xy: calc(var(--value) * -0.95%), 0;
+            --range-output-margin: calc(6 / (var(--value) + 1) * 1px);
+        }
+    </style>
+</head>
+
+<div class="range" style="--value-1: 20; --value-2: 40;">
+    <label class="range-label" for="tailmetr">Хвост-о-метр (cм)</label>
+    <div class="track"></div>
+    <div class="progress"></div>
+    <div class="thumbs">
+        <input class="range-input" id="tailmetr1" type="range" min="0" max="100" value="20" step="1" aria-valuemin="0"
+            aria-valuemax="100" aria-orientation="horizontal" list="tickmarks">
+        <output class="range-output" id="output" for="tailmetr1" style="--value: var(--value-1);">
+            20
+        </output>
+        <!-- Второй ползунок -->
+        <input class="range-input" id="tailmetr2" type="range" min="0" max="100" value="40" step="1" aria-valuemin="0"
+            aria-valuemax="100" aria-orientation="horizontal" list="tickmarks">
+        <!-- Вывод текущего значения для второго ползунка -->
+        <output class="range-output" id="output" for="tailmetr2" style="--value: var(--value-2);">
+            40
+        </output>
+    </div>
+    <datalist id="tickmarks">
+        <option value="0 to 20">0</option>
+        <option>20</option>
+        <option>40</option>
+        <option>60</option>
+        <option>80</option>
+        <option>100</option>
+    </datalist>
+</div>
+
+<script>
+    function handleInputRange1() {
+        event.target.parentNode.parentNode.style.setProperty(
+            '--value-1',
+            event.target.value
+        );
+        event.target.nextElementSibling.value = event.target.value
+    }
+
+    function handleInputRange2() {
+        event.target.parentNode.parentNode.style.setProperty(
+            '--value-2',
+            event.target.value
+        );
+        event.target.nextElementSibling.value = event.target.value
+    }
+
+</script>
