@@ -21,9 +21,9 @@ export const GroupContainer: React.FC<Props> = ({
 
     return (
         <div className={cn('', className)}>
-            {finaldata.map((item: any) => {
+            {finaldata.map((item, _) => {
                 return (
-                    <Component {...item} />
+                    <Component {...item} key={_} />
                 )
             })}
             <div className='w-100 min-h-[50px]' ref={refHandler} ></div>
