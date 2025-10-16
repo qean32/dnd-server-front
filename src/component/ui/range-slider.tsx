@@ -1,6 +1,5 @@
 import React from "react";
 import { rangeSliderValueDto } from "../../model";
-import { cn, MapToArray, NumberToArray } from "../../lib/function";
 
 
 interface Props {
@@ -9,10 +8,9 @@ interface Props {
     value: rangeSliderValueDto,
     step: number
     onChange: Function
-    map?: Map<string, string>
 }
 
-export const RangeSlider: React.FC<Props> = ({ min, max, value, step, onChange, map }: Props) => {
+export const RangeSlider: React.FC<Props> = ({ min, max, value, step, onChange }: Props) => {
     const [minValue, setMinValue] = React.useState(value ? value.min : min);
     const [maxValue, setMaxValue] = React.useState(value ? value.max : max);
 
@@ -42,8 +40,6 @@ export const RangeSlider: React.FC<Props> = ({ min, max, value, step, onChange, 
 
     return (
         <div className="">
-            {map && <div className="">{map.get(value.min.toString())} - {map.get(value.max.toString())}</div>}
-            {!map && <div className="">{value.min} - {value.max}</div>}
             <div className="wrapper">
                 <div className="input-wrapper">
                     <input
@@ -76,14 +72,6 @@ export const RangeSlider: React.FC<Props> = ({ min, max, value, step, onChange, 
                     </div>
                     <div className="control" style={{ left: `${maxPos}%` }} />
                 </div>
-            </div>
-            <div className="flex justify-between w-full -translate-x-2">
-                {map && MapToArray(map).map(item => {
-                    return <p key={item.key} className="-rotate-45 translate-y-2/3" style={{ width: 1 / (map.size) + '%', fontSize: '10px' }}>{item.value}</p>
-                })}
-                {!map && NumberToArray(min, max + step, step).map(item => {
-                    return <p key={item} className={cn("-rotate-45 text-sm text-center", `w-1/${max - min}`)}>{item}</p>
-                })}
             </div>
         </div>
     );

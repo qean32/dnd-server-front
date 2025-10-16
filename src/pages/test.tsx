@@ -1,5 +1,5 @@
 import React from "react";
-import { AddTag, Button, Carousel, Checkbox, FileInput, IconAndText, ImgInput, PasswordInput, Select, TextInput } from "../component/ui";
+import { Button, Carousel, Checkbox, FileInput, IconAndText, ImgInput, PasswordInput, Select, TextInput } from "../component/ui";
 import { useBoolean } from "../lib/castom-hook";
 import { RangeSlider } from "../component/ui/range-slider";
 
@@ -28,7 +28,6 @@ export const TestPage = () => {
                     <FileInput />
                     <Checkbox fn={swap} title="соглашение" value={boolean} />
                 </div>
-                <AddTag />
 
             </div>
         </main>

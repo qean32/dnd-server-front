@@ -29,11 +29,10 @@ input[type="search"] {
 }
 
 button {
-    outline: 1px solid $bg-color-light;
     transition: .7s;
 
     &:hover {
-        background-color: $bg-color-light;
+        background-color: $bg-color-dark;
     }
 }
 
@@ -49,7 +48,8 @@ button {
     background-color: #00000000;
     padding: 0;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         outline: none !important;
     }
 }
