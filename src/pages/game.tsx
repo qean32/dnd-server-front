@@ -15,6 +15,7 @@ export const GamePage = () => {
                 >
                     <Token />
                     <Token />
+                    <Token />
                 </GameArea>
             </main >
         </>

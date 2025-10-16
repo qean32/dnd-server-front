@@ -1,12 +1,12 @@
 import React from "react"
 import { DefaultSetPage, GroupContainer } from "../component/general"
 import { LeftSideForum } from "../component/shared"
-import { Direction, ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
+import { ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
 import { fakePost } from "../export"
 export const ForumPage = () => {
     return (
-        <DefaultSetPage size="w-[70%]">
-            <div className="flex gap-15">
+        <DefaultSetPage size="w-[75%]">
+            <div className="flex gap-10">
                 <LeftSideForum />
                 <CentlarSideForum />
             </div>
@@ -16,9 +16,8 @@ export const ForumPage = () => {
 
 const CentlarSideForum: React.FC<{}> = ({ }: {}) => {
     return (
-        <div className="relative w-4/5">
+        <div className="relative w-full">
             <TextInfo title="Форум" />
-            <Direction />
             <Search />
             <ForumColumn />
             <GroupContainer

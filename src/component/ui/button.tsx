@@ -9,7 +9,7 @@ interface Props {
 
 export const Button: React.FC<Props> = ({ className = 'px-3 w-fit', children }: Props) => {
     return (
-        <button className={cn('flex gap-2 bg-color-darkness p-2 rounded-sm cursor-pointer justify-center items-center transition03', className)}>
+        <button className={cn('flex gap-2 bg-color-darkness p-3 rounded-sm cursor-pointer justify-center items-center transition03', className)}>
             {children}
         </button>
     )

@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, Button } from '../../ui'
+import { TextInput, Button, PasswordInput } from '../../ui'
 
 interface Props {
 }
@@ -12,7 +12,7 @@ export const LogInForm: React.FC<Props> = ({ }: Props) => {
                 <p className="text-3xl pl-0.5">ВХОД</p>
                 <div className="flex-1 w-[300px] pt-2">
                     <TextInput placeHolder="никнейм или почта" />
-                    <TextInput placeHolder="пароль" />
+                    <PasswordInput placeHolder="пароль" />
                 </div>
                 <Button children={<p>Вход</p>} className="bg-color px-4" />
             </div>

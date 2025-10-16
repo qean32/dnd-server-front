@@ -43,13 +43,14 @@ interface TextInputProps {
     className?: string,
     placeHolder: string
     validate?: boolean
+    autoFocus?: boolean
 }
 
 
-export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true }: TextInputProps) => {
+export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true, autoFocus }: TextInputProps) => {
     return (
         <div className={cn('', className)}>
-            <input type="text" name={placeHolder} placeholder={placeHolder} />
+            <input type="text" name={placeHolder} placeholder={placeHolder} autoFocus={autoFocus} />
             {validate && <div><p className='text-warning'>{/* Используйте латиницу! */}</p></div>}
         </div>
     )
@@ -69,7 +70,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHo
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
                 <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4.5 right-3' />
             </div>
-            <div><p className='text-warning'>Минимальная длина - 8, Используйте латиницу и цифры!</p></div>
+            <div><p className='text-warning'>{false && 'Минимальная длина - 8, Используйте латиницу и цифры!'}</p></div>
         </div>
     )
 }

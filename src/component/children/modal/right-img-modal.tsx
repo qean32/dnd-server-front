@@ -8,11 +8,13 @@ interface Props {
 
 export const RightImgModal: React.FC<Props> = ({ view }: Props) => {
     return (
-        <DefaultSetModal view={view} className='justify-end h-full' animation={{
-            open: 'right-modal-open',
-            close: 'right-modal-close'
-        }}
-            className_='h-full'>
+        <DefaultSetModal
+            view={view}
+            className='justify-end h-full' animation={{
+                open: 'right-modal-open',
+                close: 'right-modal-close'
+            }}
+        >
             <p className='bg-color-light h-full w-[200px]'>zxc</p>
         </DefaultSetModal>
     )

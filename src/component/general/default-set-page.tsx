@@ -4,7 +4,7 @@ import { cn } from '../../lib/function'
 interface Props {
     children: React.ReactNode
     className?: string
-    size?: 'w-[45%]' | 'w-[50%]' | 'w-[60%]' | 'w-[70%]'
+    size?: 'w-[45%]' | 'w-[50%]' | 'w-[60%]' | 'w-[70%]' | 'w-[75%]'
 }
 
 

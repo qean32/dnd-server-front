@@ -5,33 +5,35 @@ import { createPortal } from 'react-dom'
 
 interface Props {
     className?: string
-    className_: string
     children: React.ReactNode
     view: boolean
+    swap: React.MouseEventHandler<HTMLDivElement>
     animation: {
-        open: string
-        close: string
+        open: 'right-modal-open' | 'modal-open'
+        close: 'right-modal-close' | 'modal-close'
     }
 }
 
 
-export const DefaultSetModal: React.FC<Props> = ({ className, children, view, animation: { close, open }, className_ = '-translate-y-1/2' }: Props) => {
-    const { boolean: display, off } = useBoolean(true)
+export const DefaultSetModal: React.FC<Props> = ({ className, children, view, animation: { close, open }, swap }: Props) => {
+    const { boolean: display, on } = useBoolean(true)
+    const { boolean: display_, off: off_ } = useBoolean()
+
+    React.useEffect(() => { view && on() }, [view])
 
     React.useEffect(() => {
-        if (!view) {
-            setTimeout(() => off(), 700)
+        console.log(display, display_)
+        if (!display) {
+            setTimeout(() => off_(), 700)
         }
-    }, [view])
+    }, [display])
     return (
         <>
-            {display ?
+            {display_ ?
                 createPortal(
-                    <div className={cn("shadow", !view && 'shadow-close')}>
-                        <div className={cn('flex w-full h-full justify-center items-center', (view ? open : close), className)}>
-                            <div className={cn("", className_)}>
-                                {children}
-                            </div>
+                    <div className={cn("shadow", !display && 'shadow-close')} onClick={swap}>
+                        <div className={cn('flex w-full h-full justify-center items-center', (display ? open : close), className)}>
+                            {children}
                         </div>
                     </div>
                     , document.body)
