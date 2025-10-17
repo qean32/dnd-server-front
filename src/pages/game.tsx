@@ -1,6 +1,6 @@
 import { LeftSideGame } from "../component/shared"
 import { GameArea, HeightToolGame } from "../component/shared"
-import { Token } from "../component/ui"
+import { TokenGame } from "../component/ui"
 
 export const GamePage = () => {
 
@@ -13,9 +13,9 @@ export const GamePage = () => {
                     height={600}
                     width={800}
                 >
-                    <Token />
-                    <Token />
-                    <Token />
+                    <TokenGame />
+                    <TokenGame />
+                    <TokenGame />
                 </GameArea>
             </main >
         </>

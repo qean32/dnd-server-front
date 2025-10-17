@@ -18,7 +18,7 @@ export const GameArea: React.FC<Props> = ({ className, children, height, width }
             draggable
             ref={ref}
             style={{ backgroundImage: 'url(/img/bg-f.jpg)', width: `${width}px`, height: `${height}px` }}
-            className={cn(`z-0 transition03 rounded-lg fixed overflow-hidden bg-color-dark top-1/2 left-1/2 -translate-1/2`, className)}
+            className={cn(`z-0 transition03 rounded-lg fixed overflow-hidden bg-color-dark top-1/5 left-1/5`, className)}
             onDragEnd={dragEndHandler}
         >
             <div className="area w-full h-full" style={{ scale: '1.005' }}>
