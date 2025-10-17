@@ -1,7 +1,7 @@
 import React from 'react'
-import { cn } from '../../lib/function'
-import { useMount } from '../../lib/castom-hook'
-import { Portal } from './portal'
+import { cn } from '../../../lib/function'
+import { useMount } from '../../../lib/castom-hook'
+import { Portal } from '../portal'
 
 interface Props {
     className?: string
@@ -15,7 +15,7 @@ interface Props {
 }
 
 
-export const DefaultSetModal: React.FC<Props> = ({ className, children, view, animation: { close, open }, swap }: Props) => {
+export const Modal: React.FC<Props> = ({ className, children, view, animation: { close, open }, swap }: Props) => {
     const dispay = useMount(view)
     if (!dispay) {
         return null
@@ -23,7 +23,7 @@ export const DefaultSetModal: React.FC<Props> = ({ className, children, view, an
 
     return (
         <Portal>
-            <div className={cn("shadow", !view && 'shadow-close')} onClick={swap}>
+            <div className={cn("shadow z-50", !view && 'shadow-close')} onClick={swap}>
                 <div className={cn('flex w-full h-full justify-center items-center', (view ? open : close), className)}>
                     {children}
                 </div>

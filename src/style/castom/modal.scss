@@ -2,7 +2,6 @@
     position: fixed;
     inset: 0 0 0 0;
     background-color: rgba(0, 0, 0, 0.678);
-    z-index: 60;
     animation: shadow-open-anim .7s;
     opacity: 1;
 }
@@ -46,7 +45,7 @@
 
 @keyframes modal-open-anim {
     from {
-        transform: translate(0, -15%);
+        transform: translate(0, -10%);
         opacity: .2;
     }
 
@@ -63,7 +62,7 @@
     }
 
     to {
-        transform: translate(0, 15%);
+        transform: translate(0, 10%);
         opacity: 0;
     }
 }

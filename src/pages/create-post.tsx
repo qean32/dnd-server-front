@@ -1,9 +1,9 @@
-import { DefaultSetPage } from "../component/general"
+import { Page } from "../component/general/hoc"
 import { Button, FakeTextInput, File } from "../component/ui"
 
 export const CreatePostPage = () => {
     return (
-        <DefaultSetPage>
+        <Page>
             <div className="flex justify-between pb-4">
                 <div className="flex">
                     <FakeTextInput title="НАЗВАНИЕ" />
@@ -20,6 +20,6 @@ export const CreatePostPage = () => {
                 <File className="px-3 bg-color-dark" />
                 <File className="px-3 bg-color-dark" />
             </div>
-        </DefaultSetPage>
+        </Page>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react'
-import { DefaultSetModal } from '../../general/default-set-modal'
 import { stopPropagation } from '../../../lib/function'
+import { Modal } from '../../general/hoc'
 
 interface Props {
     view: boolean
@@ -10,7 +10,7 @@ interface Props {
 
 export const NotesModal: React.FC<Props> = ({ view, swap }: Props) => {
     return (
-        <DefaultSetModal
+        <Modal
             swap={swap}
             view={view}
             animation={{
@@ -22,6 +22,6 @@ export const NotesModal: React.FC<Props> = ({ view, swap }: Props) => {
                 <p className='text-xl pb-10'>Заметки</p>
                 <textarea placeholder="Ваш пост!" className="container p-2 px-3 flex-1"></textarea>
             </div>
-        </DefaultSetModal>
+        </Modal>
     )
 }

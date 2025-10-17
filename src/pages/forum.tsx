@@ -1,16 +1,19 @@
 import React from "react"
-import { DefaultSetPage, GroupContainer } from "../component/general"
+import { GroupContainer } from "../component/general"
 import { LeftSideForum } from "../component/shared"
 import { ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
 import { fakePost } from "../export"
+import { Page } from "../component/general/hoc"
+
+
 export const ForumPage = () => {
     return (
-        <DefaultSetPage size="w-[75%]">
+        <Page size="w-[75%]">
             <div className="flex gap-10">
                 <LeftSideForum />
                 <CentlarSideForum />
             </div>
-        </DefaultSetPage>
+        </Page>
     )
 }
 

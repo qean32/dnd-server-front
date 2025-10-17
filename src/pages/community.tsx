@@ -1,10 +1,11 @@
-import { DefaultSetPage, GroupContainer } from "../component/general"
+import { GroupContainer } from "../component/general"
+import { Page } from "../component/general/hoc"
 import { Search, TextInfo, UserItem } from "../component/ui"
 import { fakeUser } from "../export"
 
 export const CommunityPage = () => {
     return (
-        <DefaultSetPage>
+        <Page>
             <div className="relative">
                 <TextInfo title="Сообщество" />
                 <Search />
@@ -15,6 +16,6 @@ export const CommunityPage = () => {
                     propsName="user"
                 />
             </div>
-        </DefaultSetPage>
+        </Page>
     )
 }

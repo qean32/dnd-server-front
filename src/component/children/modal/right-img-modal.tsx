@@ -1,6 +1,6 @@
 import React from 'react'
-import { DefaultSetModal } from '../../general/default-set-modal'
 import { stopPropagation } from '../../../lib/function'
+import { Modal } from '../../general/hoc'
 
 interface Props {
     view: boolean
@@ -10,7 +10,7 @@ interface Props {
 
 export const RightImgModal: React.FC<Props> = ({ view, swap }: Props) => {
     return (
-        <DefaultSetModal
+        <Modal
             swap={swap}
             view={view}
             className='justify-end h-full' animation={{
@@ -19,6 +19,6 @@ export const RightImgModal: React.FC<Props> = ({ view, swap }: Props) => {
             }}
         >
             <div onClick={stopPropagation} className='bg-color-light h-full w-[200px]'>zxc</div>
-        </DefaultSetModal>
+        </Modal>
     )
 }

@@ -135,3 +135,18 @@ body {
         cursor: grabbing !important;
     }
 }
+
+.mount-opacity {
+    animation: opasity-mount-anim .7s;
+    opacity: 1;
+}
+
+@keyframes opasity-mount-anim {
+    from {
+        opacity: .1;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
