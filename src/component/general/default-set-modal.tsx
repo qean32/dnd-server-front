@@ -1,7 +1,7 @@
 import React from 'react'
 import { cn } from '../../lib/function'
-import { useBoolean } from '../../lib/castom-hook'
-import { createPortal } from 'react-dom'
+import { useMount } from '../../lib/castom-hook'
+import { Portal } from './portal'
 
 interface Props {
     className?: string
@@ -16,30 +16,18 @@ interface Props {
 
 
 export const DefaultSetModal: React.FC<Props> = ({ className, children, view, animation: { close, open }, swap }: Props) => {
-    const { boolean: display, on } = useBoolean(true)
-    const { boolean: display_, off: off_ } = useBoolean()
+    const dispay = useMount(view)
+    if (!dispay) {
+        return null
+    }
 
-    React.useEffect(() => { view && on() }, [view])
-
-    React.useEffect(() => {
-        console.log(display, display_)
-        if (!display) {
-            setTimeout(() => off_(), 700)
-        }
-    }, [display])
     return (
-        <>
-            {display_ ?
-                createPortal(
-                    <div className={cn("shadow", !display && 'shadow-close')} onClick={swap}>
-                        <div className={cn('flex w-full h-full justify-center items-center', (display ? open : close), className)}>
-                            {children}
-                        </div>
-                    </div>
-                    , document.body)
-                :
-                null
-            }
-        </>
+        <Portal>
+            <div className={cn("shadow", !view && 'shadow-close')} onClick={swap}>
+                <div className={cn('flex w-full h-full justify-center items-center', (view ? open : close), className)}>
+                    {children}
+                </div>
+            </div>
+        </Portal>
     )
 }

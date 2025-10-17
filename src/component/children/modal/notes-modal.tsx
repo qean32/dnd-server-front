@@ -1,5 +1,6 @@
 import React from 'react'
 import { DefaultSetModal } from '../../general/default-set-modal'
+import { stopPropagation } from '../../../lib/function'
 
 interface Props {
     view: boolean
@@ -17,7 +18,7 @@ export const NotesModal: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color-light w-9/12 h-10/12 p-5 rounded-md overflow-scroll flex flex-col">
+            <div className="bg-color-light w-9/12 h-10/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
                 <p className='text-xl pb-10'>Заметки</p>
                 <textarea placeholder="Ваш пост!" className="container p-2 px-3 flex-1"></textarea>
             </div>
