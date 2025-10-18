@@ -21,23 +21,25 @@ export const useGame = () => {
     const { getElementAtPosition, getMouseCoordinates } = useGamePack()
 
     React.useLayoutEffect(() => {
-        if (!ref.current) {
-            return
-        }
+        if (!ref.current) return
         const context = ref.current.getContext('2d');
+        if (!context) return
+        // @ts-ignore
+        context.clearRect(selectedElement?.x, selectedElement?.y, selectedElement?.sizeX, selectedElement?.sizeY);
 
-        if (!context) {
-            return
-        }
+        elements.forEach(({ path, sizeX, x, y }) => {
+            // context.beginPath()
+            // context.arc(x, y, sizeX / 2, Math.PI, sizeX / 2)
+            // context.fillStyle = 'red'
+            // context.fill()
+            const img = new Image()
+            img.src = path
 
-        elements.forEach(({ path, sizeX, sizeY, x, y }) => {
-            const image = new Image();
-            image.src = path;
-            image.onload = () => {
-                context.drawImage(image, x, y, sizeX, sizeY);
+            img.onload = () => {
+                context.drawImage(img, x, y, sizeX, sizeX)
             }
+            // context.closePath()
         })
-        context.clearRect(0, 0, ref.current.width, ref.current.height);
     }, [elements])
 
     const mouseUpHandler = () => {
@@ -46,12 +48,11 @@ export const useGame = () => {
     }
 
     const mouseDownHandler = (e: React.MouseEvent<HTMLCanvasElement, MouseEvent>) => {
-        const coord = getMouseCoordinates(e);
-        const element = getElementAtPosition(coord, elements);
 
         // @ts-ignore
-        setSelectedElement(element)
+        setSelectedElement(getElementAtPosition(getMouseCoordinates(e), elements))
         document.body.style.cursor = 'grab'
+        setElements(prevState => prevState);
     }
 
     const updateElement = (node: node, newCoordinate: coordinateDto) => {
@@ -62,6 +63,7 @@ export const useGame = () => {
         const { x, y } = getMouseCoordinates(e);
 
         if (selectedElement) {
+            setSelectedElement({ ...selectedElement, ...{ x: x - selectedElement.offsetX, y: y - selectedElement.offsetY } })
             updateElement(selectedElement, { x: x - selectedElement.offsetX, y: y - selectedElement.offsetY })
         }
     }

@@ -1,26 +1,185 @@
 import React from 'react'
-import { useGame } from '../../lib/castom-hook'
+import { Stage, Layer, Image } from 'react-konva';
+import useImage from 'use-image';
 
 interface Props {
 }
 
 
 export const GameArea: React.FC<Props> = ({ }: Props) => {
-    const { mouseDownHandler, mouseMoveHandler, mouseUpHandler, ref } = useGame()
+    const [yodaImage] = useImage('/icon/dragon.svg');
+    const [vaderImage] = useImage('https://konvajs.org/assets/darth-vader.jpg');
+    const zxc = React.useState(1)
 
     return (
-        <canvas
-            // style={{ backgroundImage: 'url(/img/bg-f.jpg)' }}
-            style={{ position: 'fixed' }}
-            // @ts-ignore
-            ref={ref}
-            width={window.innerWidth}
-            height={window.innerHeight}
-            onMouseDown={mouseDownHandler}
-            onMouseMove={mouseMoveHandler}
-            onMouseUp={mouseUpHandler}
-            className='bz-0 transition03 rounded-lg fixed overflow-hidden'
-        >
-        </canvas>
+        <Stage width={window.innerWidth} height={window.innerHeight}>
+            <Layer>
+                <Image
+                    draggable={true}
+                    x={50}
+                    y={50}
+                    scaleX={zxc[0]}
+                    image={yodaImage}
+                    width={106}
+                    height={118}
+                    onClick={() => {
+                        zxc[1](2)
+                    }}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+                <Image
+                    draggable={true}
+                    x={200}
+                    y={50}
+                    image={vaderImage}
+                    scaleX={0.5}
+                    scaleY={0.5}
+                    cornerRadius={20}
+                />
+            </Layer>
+        </Stage>
     )
 }
