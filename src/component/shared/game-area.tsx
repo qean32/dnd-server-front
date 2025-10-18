@@ -1,29 +1,26 @@
 import React from 'react'
-import { cn } from '../../lib/function'
-import { useDraggable } from '../../lib/castom-hook'
+import { useGame } from '../../lib/castom-hook'
 
 interface Props {
-    className?: string
-    children: React.ReactNode
-    width: number
-    height: number
 }
 
 
-export const GameArea: React.FC<Props> = ({ className, children, height, width }: Props) => {
-    const { dragEndHandler, ref } = useDraggable()
+export const GameArea: React.FC<Props> = ({ }: Props) => {
+    const { mouseDownHandler, mouseMoveHandler, mouseUpHandler, ref } = useGame()
 
     return (
-        <div
-            draggable
+        <canvas
+            // style={{ backgroundImage: 'url(/img/bg-f.jpg)' }}
+            style={{ position: 'fixed' }}
+            // @ts-ignore
             ref={ref}
-            style={{ backgroundImage: 'url(/img/bg-f.jpg)', width: `${width}px`, height: `${height}px` }}
-            className={cn(`z-0 transition03 rounded-lg fixed overflow-hidden bg-color-dark top-1/5 left-1/5`, className)}
-            onDragEnd={dragEndHandler}
+            width={window.innerWidth}
+            height={window.innerHeight}
+            onMouseDown={mouseDownHandler}
+            onMouseMove={mouseMoveHandler}
+            onMouseUp={mouseUpHandler}
+            className='bz-0 transition03 rounded-lg fixed overflow-hidden'
         >
-            <div className="area w-full h-full" style={{ scale: '1.005' }}>
-                {children}
-            </div>
-        </div>
+        </canvas>
     )
 }

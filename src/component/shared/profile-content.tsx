@@ -2,7 +2,7 @@ import React from 'react'
 import { LinkPrime, PostItem } from '../ui'
 import { useAppSelector } from '../../lib/castom-hook/redux'
 import { cn } from '../../lib/function'
-import { fakePost } from '../../export'
+import { fakePost } from '../../fake-data'
 
 interface Props {
 }
