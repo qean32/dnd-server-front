@@ -12,7 +12,7 @@ export const TextInfo: React.FC<Props> = ({ className, title }: Props) => {
         <div className={cn("pt-5 pb-3", className)}>
             <p className="text-4xl">D&D Belive {title}</p>
             <div className="line mt-3"></div>
-            <p className="text-xl mt-3">zxccused</p>
+            <p className="text-xl mt-3 pb-10">zxccused</p>
         </div>
     )
 }

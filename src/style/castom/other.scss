@@ -30,3 +30,11 @@
     height: 2px;
     background-color: whitesmoke;
 }
+
+.link-line {
+    &:hover {
+        & div {
+            width: 90% !important;
+        }
+    }
+}

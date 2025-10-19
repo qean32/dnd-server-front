@@ -10,7 +10,7 @@ interface Props {
 
 export const UnwrapTags: React.FC<Props> = ({ className = 'bg-color-darkness px-2', tags }: Props) => {
     return (
-        <div className={cn('flex gap-2 w-[240px] flex-wrap rounded-sm py-2', className)}>
+        <div className={cn('flex gap-2 w-full flex-wrap rounded-sm py-2 pointer-events-none', className)}>
             {tags.split(',').map(item => item && <Tag title={item} key={item} />)}
         </div>
     )

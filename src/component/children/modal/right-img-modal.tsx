@@ -1,19 +1,24 @@
 import React from 'react'
-import { DefaultSetModal } from '../../general/default-set-modal'
+import { stopPropagation } from '../../../lib/function'
+import { Modal } from '../../general/hoc'
 
 interface Props {
     view: boolean
+    swap: React.MouseEventHandler<HTMLDivElement>
 }
 
 
-export const RightImgModal: React.FC<Props> = ({ view }: Props) => {
+export const RightImgModal: React.FC<Props> = ({ view, swap }: Props) => {
     return (
-        <DefaultSetModal view={view} className='justify-end h-full' animation={{
-            open: 'right-modal-open',
-            close: 'right-modal-close'
-        }}
-            className_='h-full'>
-            <p className='bg-color-light h-full w-[200px]'>zxc</p>
-        </DefaultSetModal>
+        <Modal
+            swap={swap}
+            view={view}
+            className='justify-end h-full' animation={{
+                open: 'right-modal-open',
+                close: 'right-modal-close'
+            }}
+        >
+            <div onClick={stopPropagation} className='bg-color-light h-full w-[200px]'>zxc</div>
+        </Modal>
     )
 }

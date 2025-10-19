@@ -1,4 +1,4 @@
-import { ToastCreateEntity, ToastEvent } from "../../component/ui/toast"
+import { ToastCreateEntity, ToastEvent } from "../../component/children/toast"
 import { toastKeyDto } from "../../model"
 
 

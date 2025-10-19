@@ -1,17 +1,12 @@
-import { DefaultSetPage } from "../component/general"
-import { Button, FakeTextInput, File, GroupTag, Tag } from "../component/ui"
+import { Page } from "../component/general/hoc"
+import { Button, FakeTextInput, File } from "../component/ui"
 
 export const CreatePostPage = () => {
     return (
-        <DefaultSetPage>
+        <Page>
             <div className="flex justify-between pb-4">
                 <div className="flex">
                     <FakeTextInput title="НАЗВАНИЕ" />
-                    <GroupTag>
-                        <Tag tag={{ color: "", text: "zxc" }} />
-                        <Tag tag={{ color: "", text: "zxc1" }} />
-                        <Tag tag={{ color: "", text: "zxc3" }} />
-                    </GroupTag>
                 </div>
                 <div className="flex gap-4 items-end">
                     <p className="underline">предпросмотр</p>
@@ -25,6 +20,6 @@ export const CreatePostPage = () => {
                 <File className="px-3 bg-color-dark" />
                 <File className="px-3 bg-color-dark" />
             </div>
-        </DefaultSetPage>
+        </Page>
     )
 }

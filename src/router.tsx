@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import * as pages from './pages'
-import { RefreshToken, Toast } from "./component/general"
+import { RefreshToken, ToastArea } from "./component/general"
 import { Header, Navigate } from "./component/shared"
 
 export const Router = () => {
@@ -8,7 +8,7 @@ export const Router = () => {
         <BrowserRouter>
             <RefreshToken />
             <Header />
-            <Toast />
+            <ToastArea />
             <Navigate />
             <Routes>
                 <Route element={<pages.CreatePostPage />} path="/create-post" />

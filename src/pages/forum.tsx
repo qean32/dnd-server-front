@@ -1,29 +1,33 @@
-import { DefaultSetPage, GroupContainer } from "../component/general"
-import { Direction, ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
-import { fakePost } from "../export"
+import React from "react"
+import { GroupContainer } from "../component/general"
+import { LeftSideForum } from "../component/shared"
+import { ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
+import { fakePost } from "../fake-data"
+import { Page } from "../component/general/hoc"
+
 
 export const ForumPage = () => {
     return (
-        <DefaultSetPage size="w-[70%]">
+        <Page size="w-[75%]">
             <div className="flex gap-10">
-                <div className="w-1/6 flex-1 mt-6 rounded-lg">
-                    <p className="text-2xl font-bold">ФИЛЬТРЫ</p>
-                    <p>Год</p>
-                    <p>Месяц</p>
-                    <p>Тэги</p>
-                </div>
-                <div className="relative w-4/5">
-                    <TextInfo title="Форум" />
-                    <Direction />
-                    <Search />
-                    <ForumColumn />
-                    <GroupContainer
-                        array={fakePost}
-                        Component={PostItem}
-                        propsName="post"
-                    />
-                </div>
+                <LeftSideForum />
+                <CentlarSideForum />
             </div>
-        </DefaultSetPage>
+        </Page>
+    )
+}
+
+const CentlarSideForum: React.FC<{}> = ({ }: {}) => {
+    return (
+        <div className="relative w-full">
+            <TextInfo title="Форум" />
+            <Search />
+            <ForumColumn />
+            <GroupContainer
+                array={fakePost}
+                Component={PostItem}
+                propsName="post"
+            />
+        </div>
     )
 }

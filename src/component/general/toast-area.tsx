@@ -6,7 +6,7 @@ interface Props {
     className?: string
 }
 
-export const Toast: React.FC<Props> = ({ }: Props) => {
+export const ToastArea: React.FC<Props> = ({ }: Props) => {
     const { toasts } = useAppSelector(state => state.toast)
     return (
         <div className='fixed z-50 pointer-events-none' style={{ inset: '70px 40px' }}>
