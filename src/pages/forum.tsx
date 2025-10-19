@@ -2,7 +2,7 @@ import React from "react"
 import { GroupContainer } from "../component/general"
 import { LeftSideForum } from "../component/shared"
 import { ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
-import { fakePost } from "../export"
+import { fakePost } from "../fake-data"
 import { Page } from "../component/general/hoc"
 
 

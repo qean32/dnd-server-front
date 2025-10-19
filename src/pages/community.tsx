@@ -1,7 +1,7 @@
 import { GroupContainer } from "../component/general"
 import { Page } from "../component/general/hoc"
 import { Search, TextInfo, UserItem } from "../component/ui"
-import { fakeUser } from "../export"
+import { fakeUser } from "../fake-data"
 
 export const CommunityPage = () => {
     return (
