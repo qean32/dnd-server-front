@@ -11,7 +11,7 @@ export const SignInForm: React.FC<Props> = ({ }: Props) => {
             <div className="w-fit flex flex-col gap-3">
                 <p className="text-3xl pl-0.5">РЕГИСТРАЦИЯ</p>
                 <div className="flex-1 w-[300px] pt-2">
-                    <TextInput placeHolder="никнейм" autoFocus />
+                    <TextInput placeHolder="никнейм" />
                     <TextInput placeHolder="почта" />
                     <PasswordInput placeHolder="пароль" />
                     <PasswordInput placeHolder="повторите пароль" />

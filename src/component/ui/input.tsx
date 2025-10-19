@@ -43,14 +43,13 @@ interface TextInputProps {
     className?: string,
     placeHolder: string
     validate?: boolean
-    autoFocus?: boolean
 }
 
 
-export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true, autoFocus }: TextInputProps) => {
+export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true }: TextInputProps) => {
     return (
         <div className={cn('', className)}>
-            <input type="text" name={placeHolder} placeholder={placeHolder} autoFocus={autoFocus} />
+            <input type="text" name={placeHolder} placeholder={placeHolder} />
             {validate && <div><p className='text-warning'>{/* Используйте латиницу! */}</p></div>}
         </div>
     )

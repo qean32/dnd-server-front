@@ -21,6 +21,7 @@ export const Router = () => {
                 <Route element={<pages.CommunityPage />} path="/community" />
                 <Route element={<pages.PostPage />} path="/post/:id" />
                 <Route element={<pages.ForumPage />} path="/forum" />
+                <Route element={<pages.DepartmentPage />} path="/department/:name" />
 
                 <Route element={<pages.TestPage />} path="/test" />
             </Routes>

@@ -29,11 +29,7 @@ input[type="search"] {
 }
 
 button {
-    transition: .7s;
-
-    &:hover {
-        background-color: $bg-color-dark;
-    }
+    outline: 1px transparent solid;
 }
 
 .btn-in-group {

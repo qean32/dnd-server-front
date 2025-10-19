@@ -39,7 +39,7 @@ export const RangeSlider: React.FC<Props> = ({ min, max, value, step, onChange }
     const maxPos = ((maxValue - min) / (max - min)) * 100;
 
     return (
-        <div className="">
+        <div className="px-2">
             <div className="wrapper">
                 <div className="input-wrapper">
                     <input
