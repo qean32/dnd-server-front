@@ -4,7 +4,7 @@ import { DepartmentItem, TextInfo } from "../component/ui"
 
 export const ForumPage = () => {
     return (
-        <Page size="w-[70%]">
+        <Page size="w-[65%]">
             <div className="flex gap-5">
                 <div className="w-full">
                     <TextInfo title="Форум" />

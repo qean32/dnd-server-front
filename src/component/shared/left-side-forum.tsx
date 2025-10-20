@@ -11,7 +11,7 @@ interface Props {
 
 export const LeftSideForum: React.FC<Props> = ({ }: Props) => {
     return (
-        <div className="bg-color-dark w-2/6 min-w-[310px] max-w-2/6 h-fit py-5 px-5 flex-1 mt-6 rounded-lg">
+        <div className="w-2/6 min-w-[310px] max-w-2/6 h-fit py-1 px-5 flex-1 mt-6 rounded-md">
             <p className="text-2xl font-bold">ФИЛЬТРЫ</p>
             <RangeSliderGroup
                 slider={{

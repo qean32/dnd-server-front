@@ -5,7 +5,7 @@ import { fakeUser } from "../fake-data"
 
 export const CommunityPage = () => {
     return (
-        <Page>
+        <Page size="w-[65%]">
             <div className="relative">
                 <TextInfo title="Сообщество" />
                 <Search />
