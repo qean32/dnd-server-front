@@ -14,7 +14,7 @@ export const Navigate: React.FC<Props> = ({ className }: Props) => {
             <NavigateButton link='/' path='/icon/home.svg' />
             <NavigateButton link='/forum' path='/icon/news.svg' />
             <NavigateButton link='/community' path='/icon/community.svg' />
-            <NavigateButton link='/profile/1' path='/icon/human.svg' />
+            <NavigateButton link='/profile/1' path='/icon/user.svg' />
             <NavigateButton link='/game/1' path='/icon/game.svg' />
             <Link to={'/test'}>
                 <Button className='h-fit py-2'><p>test</p></Button>

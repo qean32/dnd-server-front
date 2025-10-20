@@ -7,7 +7,7 @@ interface Props {
 export const Carousel: React.FC<Props> = ({ }: Props) => {
     return (
         <div className="overflow-hidden">
-            <div className="w-[200%] carousel py-4 bg-color-dark">
+            <div className="w-[200%] carousel py-4 bg-color-darkness">
                 <div className="w-full flex justify-around child-pointer">
                     <img src="/icon/dragon.svg" alt="" className="icon-md" />
                     <img src="/icon/human.svg" alt="" className="icon-md" />

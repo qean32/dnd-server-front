@@ -50,6 +50,6 @@
 .btn-hover-outline {
     &:hover {
         background-color: $bg-color !important;
-        outline: 1px white solid !important;
+        outline: 1px $bg-color-light solid !important;
     }
 }

@@ -23,6 +23,7 @@ export const Router = () => {
                 <Route element={<pages.ForumPage />} path="/forum" />
                 <Route element={<pages.DepartmentPage />} path="/department/:name" />
 
+                <Route element={<pages.P404Page />} path="*" />
                 <Route element={<pages.TestPage />} path="/test" />
             </Routes>
         </BrowserRouter>
