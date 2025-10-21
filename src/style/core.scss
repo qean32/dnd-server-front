@@ -96,17 +96,20 @@ body {
 
 .ava-md {
     width: 55px;
-    height: 45px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
 }
 
 .ava-sm {
     width: 40px;
-    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
 }
 
 .ava-lg {
     width: 90px;
-    height: 60px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
 }
 
 .bg-color-hover:hover {
