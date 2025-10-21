@@ -11,7 +11,7 @@ export const CommunityPage = () => {
                 <Search />
                 <GroupContainer
                     array={fakeUser}
-                    className="pt-10"
+                    className="pt-5"
                     Component={UserItem}
                     propsName="user"
                 />

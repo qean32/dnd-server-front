@@ -13,7 +13,7 @@ export const NavigateButton: React.FC<Props> = ({ link, path }: Props) => {
         <Link to={link}>
             <Button className='link-line relative'>
                 <img src={path} />
-                <div className="w-[6px] h-[4px] absolute bottom-0 transition03 left-1/2 -translate-x-1/2 bg-white"></div>
+                <div className="w-[5px] h-[4px] absolute bottom-0 transition03 left-1/2 -translate-x-1/2 bg-white"></div>
             </Button>
         </Link>
     )

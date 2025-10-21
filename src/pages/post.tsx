@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import { Page } from "../component/general/hoc"
-import { Ava, IconAndNumber } from "../component/ui"
+import { Ava, IconAndCount, IconAndNumber } from "../component/ui"
 
 export const PostPage = () => {
     return (
@@ -12,21 +12,21 @@ export const PostPage = () => {
                 <img src="/icon/double-arrow.svg" className="icon-sm- rotate-180 opacity-50" />
                 <p className="cursor-pointer">Как развивается d&d сообщество</p>
             </div>
-            <p className="text-4xl mb-5">НАЗВАНИЕ</p>
+            <p className="text-4xl mb-1.5">НАЗВАНИЕ</p>
             <div className="overflow-hidden rounded-sm">
-                <div className="h-[60px] flex items-end gap-2">
+                <div className="flex items-end gap-2 py-3 pt-4">
                     <Ava size="ava-sm" path="/img/auth-bg.jpg" />
                     <p>zxccursed</p>
                     <p>20.05.2002</p>
                     <p># 764</p>
                 </div>
                 <div className="flex flex-col min-h-[200px]">
-                    <p className="text-xl py-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error fugiat, ducimus perspiciatis numquam architecto reprehenderit in hic aliquam. Ullam, natus!</p>
-                    <div className="flex gap-4">
-                        <IconAndNumber count={29}><img className="icon-sm-" src="/icon/view.svg" alt="" /></IconAndNumber>
-                        <IconAndNumber count={9}><img className="icon-sm-" src="/icon/like-no-fill.svg" alt="" /></IconAndNumber>
-                    </div>
+                    <p className="text-xl pb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Error fugiat, ducimus perspiciatis numquam architecto reprehenderit in hic aliquam. Ullam, natus!</p>
                     <div>статья</div>
+                    <div className="flex gap-2 -translate-x-1">
+                        <IconAndCount count={99} icon="/icon/like-no-fill.svg" iconAction="/icon/user.svg" action={false} />
+                        <IconAndNumber count={29} icon="/icon/view.svg" />
+                    </div>
                 </div>
             </div>
         </Page>

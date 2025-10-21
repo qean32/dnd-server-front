@@ -16,9 +16,9 @@ export const Header: React.FC<Props> = ({ className }: Props) => {
                 <p className='cursor-pointer'>Библиотека</p>
             </div>
             <Logo />
-            <Link className='flex gap-2 items-center' to='/auth'>
-                <Ava path={''} size='ava-sm' />
+            <Link className='flex gap-4 items-center' to='/auth'>
                 <p className='cursor-pointer'>Профиль</p>
+                <Ava path={''} size='ava-sm' />
             </Link>
         </header>
     )
