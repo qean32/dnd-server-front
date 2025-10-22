@@ -24,7 +24,7 @@ export const Select: React.FC<SelectProps> = ({ className = 'w-fit', fn, options
             <input type="text" hidden value={value} />
             <div className='flex gap-2 px-2 py-1 justify-between' >
                 <p>{value ?? 'Выберите опцию'}</p>
-                <img src="/icon/arrow.svg" alt="" className={cn('transition07', !boolean && 'rotate-90')} />
+                <img src="/icon/arrow.svg" alt="" className={cn('transition-07', !boolean && 'rotate-90')} />
             </div>
             {boolean &&
                 <div className='absolute bg-color-dark w-full rounded-b-sm' onClick={fn ?? selectHandler}>
@@ -50,7 +50,7 @@ export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', plac
     return (
         <div className={cn('', className)}>
             <input type="text" name={placeHolder} placeholder={placeHolder} />
-            {validate && <div><p className='text-warning'>{/* Используйте латиницу! */}</p></div>}
+            {validate && <div><p className='text-warning'>Используйте латиницу!</p></div>}
         </div>
     )
 }
@@ -117,10 +117,10 @@ export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className 
     return (
         <div onClick={() => fn()} className={cn('cursor-pointer w-fit flex gap-3.5', className)} >
             <p>{title}</p>
-            <input type='checkbox' className={cn('transition03 border-0', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
+            <input type='checkbox' className={cn('transition-03 border-0', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
             <img src='/icon/accept.svg'
                 alt=''
-                className={cn('transition03 w-[19px]', (!value && 'opacity-0'))}
+                className={cn('transition-03 w-[19px]', (!value && 'opacity-0'))}
                 style={{ transform: 'translateX(-160%)' }}
             />
         </div>

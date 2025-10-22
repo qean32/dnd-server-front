@@ -2,6 +2,7 @@ import React from 'react'
 import { useBoolean } from '../../lib/castom-hook'
 import { cn } from '../../lib/function'
 import { UnwrapTags } from '../ui'
+import { fakeTags } from '../../fake-data'
 
 interface Props {
     className?: string
@@ -40,7 +41,7 @@ export const AddTag: React.FC<Props> = ({ className }: Props) => {
             {
                 view &&
                 <div className="pointer-events-none" onClick={clickHandlerAdd}>
-                    <UnwrapTags className='absolute z-50 bg-color-darkness px-2' tags={["dnd", "фентези", "zxccursed", "разработка", "web"].join(',')} />
+                    <UnwrapTags className='absolute z-50 bg-color-darkness px-2' tags={fakeTags.join(',')} />
                 </div>
             }
         </div>

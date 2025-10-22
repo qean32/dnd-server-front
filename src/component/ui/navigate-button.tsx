@@ -11,9 +11,9 @@ interface Props {
 export const NavigateButton: React.FC<Props> = ({ link, path }: Props) => {
     return (
         <Link to={link}>
-            <Button className='link-line relative'>
+            <Button className='link-line relative p-3'>
                 <img src={path} />
-                <div className="w-[5px] h-[4px] absolute bottom-0 transition03 left-1/2 -translate-x-1/2 bg-white"></div>
+                <div className="w-[5px] h-[4px] absolute bottom-0 transition-03 left-1/2 -translate-x-1/2 bg-white"></div>
             </Button>
         </Link>
     )

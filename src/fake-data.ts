@@ -202,3 +202,5 @@ export const fakeNodes = [
     { id: 16, path: '/icon/unlock.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
     { id: 17, path: '/icon/upload.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
 ]
+
+export const fakeTags = ["dnd", "фентези", "zxccursed", "разработка", "web"]

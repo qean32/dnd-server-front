@@ -17,7 +17,7 @@ export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
                     </div>
                     <p className='pl-1 cursor-pointer'>Изменить пароль</p>
                 </div>
-                <Button children={<p>Редактировать</p>} className="bg-color px-4" />
+                <Button className="" variant='acceess' children={<p>Редактировать</p>} />
             </div>
         </div>
     )

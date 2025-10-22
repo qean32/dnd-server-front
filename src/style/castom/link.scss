@@ -8,7 +8,7 @@ a.prime-hover {
 
 a.prime-hover::after {
     content: "";
-    background: rgb(212, 212, 212);
+    background: whitesmoke;
     mix-blend-mode: exclusion;
     z-index: 1;
     width: calc(100% + 20px);

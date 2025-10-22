@@ -15,7 +15,7 @@ export const MainLoader: React.FC<Props> = ({ }: Props) => {
         setTimeout(off, 1000)
     }, [])
     return (
-        <div className={cn("fixed inset-0 bg-color-darkness flex justify-center items-center transition03", (!boolean && 'pointer-events-none opacity-0'))} style={{ zIndex: '60' }}>
+        <div className={cn("fixed inset-0 bg-color-darkness flex justify-center items-center transition-03", (!boolean && 'pointer-events-none opacity-0'))} style={{ zIndex: '60' }}>
             <Logo size='icon-lg' />
         </div>
     )

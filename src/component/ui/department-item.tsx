@@ -6,10 +6,11 @@ import { fakePost } from '../../fake-data'
 interface Props {
     name: string
     discription: string
+    path: string
 }
 
 
-export const DepartmentItem: React.FC<Props> = ({ discription, name }: Props) => {
+export const DepartmentItem: React.FC<Props> = ({ discription, name, path }: Props) => {
     return (
         <Link to={`/department/${name}`}>
             <div className="flex gap-10 hover-translate-y border-b">
@@ -22,7 +23,9 @@ export const DepartmentItem: React.FC<Props> = ({ discription, name }: Props) =>
                     </div>
                     <PostItem {...fakePost[0]} fixed />
                 </div>
-                <img src="/icon/dragon.svg" alt="" className='rounded-lg w-1/5' />
+                <div className='w-1/4 p-4 pt-0'>
+                    <img src={path} alt="" className='rounded-lg' />
+                </div>
             </div>
         </Link>
     )

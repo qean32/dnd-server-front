@@ -13,7 +13,7 @@ export const PostPage = () => {
                 <p className="cursor-pointer">Как развивается d&d сообщество</p>
             </div>
             <p className="text-4xl mb-1.5">НАЗВАНИЕ</p>
-            <div className="overflow-hidden rounded-sm">
+            <div className="rounded-sm">
                 <div className="flex items-end gap-2 py-3 pt-4">
                     <Ava size="ava-sm" path="/img/auth-bg.jpg" />
                     <p>zxccursed</p>

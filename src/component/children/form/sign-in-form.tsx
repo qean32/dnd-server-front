@@ -16,7 +16,7 @@ export const SignInForm: React.FC<Props> = ({ }: Props) => {
                     <PasswordInput placeHolder="пароль" />
                     <PasswordInput placeHolder="повторите пароль" />
                 </div>
-                <Button children={<p>Регистрация</p>} className="bg-color px-4" />
+                <Button variant='acceess' className="" children={<p>Регистрация</p>} />
             </div>
         </div>
     )
