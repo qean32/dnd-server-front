@@ -1,5 +1,5 @@
 import React from 'react'
-import { LinkPrime, PostItem } from '../ui'
+import { Button, LinkPrime, PostItem } from '../ui'
 import { useAppSelector } from '../../lib/castom-hook/redux'
 import { cn } from '../../lib/function'
 import { fakePost } from '../../fake-data'
@@ -34,9 +34,10 @@ const PostContent: React.FC<{}> = ({ }: {}) => {
 const CharacterContent: React.FC<{}> = ({ }: {}) => {
     return (
         <>
-            {fakePost.slice(0, 6).map(() =>
-                <LinkPrime link='https://aternia.games/i/dnd/character_sheet/show/10399ffb-e071-4c6d-b7f2-3f4fcee3fab0' />
+            {fakePost.slice(0, 6).map((__, _) =>
+                <LinkPrime link='https://aternia.games/i/dnd/character_sheet/show/10399ffb-e071-4c6d-b7f2-3f4fcee3fab0' key={_} number={_ + 1} />
             )}
+            <Button variant='bg-green-800 bg-green:hover'><p>добавить персонажа</p></Button>
         </>
     )
 }
