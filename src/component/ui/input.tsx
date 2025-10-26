@@ -50,7 +50,7 @@ export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', plac
     return (
         <div className={cn('', className)}>
             <input type="text" name={placeHolder} placeholder={placeHolder} />
-            {validate && <div><p className='text-warning'>Используйте латиницу!</p></div>}
+            {validate && <div><p className='text-warning'>{/*Используйте латиницу!*/}</p></div>}
         </div>
     )
 }
@@ -115,8 +115,8 @@ interface CheckboxProps {
 
 export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className }: CheckboxProps) => {
     return (
-        <div onClick={() => fn()} className={cn('cursor-pointer w-fit flex gap-3.5', className)} >
-            <p>{title}</p>
+        <div onClick={() => fn()} className={cn('cursor-pointer flex gap-3.5', className)} >
+            <p className='text-nowrap'>{title}</p>
             <input type='checkbox' className={cn('transition-03 border-0', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
             <img src='/icon/accept.svg'
                 alt=''

@@ -15,9 +15,9 @@ const map = new Map([
 ])
 
 
-export const Button: React.FC<Props> = ({ className, children, variant = 'default', fn }: Props) => {
+export const Button: React.FC<Props> = ({ className, children, variant = 'default', fn = () => { } }: Props) => {
     return (
-        <button onClick={fn ? fn : () => { }} className={cn('flex gap-2 w-fit transition-03 rounded-md cursor-pointer justify-center items-center', className, map.get(variant))}>
+        <button onClick={fn} className={cn('flex gap-2 w-fit transition-03 rounded-md cursor-pointer justify-center items-center', className, map.get(variant))}>
             {children}
         </button>
     )

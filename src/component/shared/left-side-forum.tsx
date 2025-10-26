@@ -32,7 +32,7 @@ export const LeftSideForum: React.FC<Props> = ({ }: Props) => {
             />
             <AddTag className="pt-5 min-h-[100px]" />
             <div className='w-fit'><Link to={'/create-post'}><Button variant='acceess' className='p-2 mt-5'><img src='/icon/edit.svg' /></Button></Link></div>
-            <Button className='mt-4 px-4.5 py-3' variant='reject' ><p>Сбросить</p></Button>
+            <Button className='mt-4 px-4.5 py-3'><p>Сбросить</p></Button>
         </div>
     )
 }

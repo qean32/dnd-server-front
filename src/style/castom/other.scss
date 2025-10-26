@@ -53,3 +53,15 @@
         outline: 1px $bg-color-light solid !important;
     }
 }
+
+.running-line-parent:hover {
+    .running-line {
+        text-overflow: unset;
+        max-width: none;
+        transform: translateX(calc(40% - 100%));
+    }
+}
+
+.bg-shadow {
+    filter: brightness(30%)
+}

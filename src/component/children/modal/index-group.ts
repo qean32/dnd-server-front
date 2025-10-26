@@ -1,0 +1,6 @@
+export { RightImg } from './right-img-modal'
+export { Notes } from './notes-modal'
+export { Entity } from './entity-modal'
+export { Object } from './object-modal'
+export { AddCharacter } from './add-character-modal'
+export { AddGame } from './add-game-modal'

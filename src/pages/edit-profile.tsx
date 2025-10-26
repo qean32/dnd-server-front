@@ -1,6 +1,6 @@
 import { EditProfileForm } from "../component/children/form"
 import { Page } from "../component/general/hoc"
-import { AuthBG } from "../component/shared"
+import { AuthBG } from "../component/ui"
 
 export const EditProfilePage = () => {
     return (

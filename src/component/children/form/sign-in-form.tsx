@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, Button, PasswordInput } from '../../ui'
+import { TextInput, Button, PasswordInput, Checkbox } from '../../ui'
 
 interface Props {
 }
@@ -15,8 +15,9 @@ export const SignInForm: React.FC<Props> = ({ }: Props) => {
                     <TextInput placeHolder="почта" />
                     <PasswordInput placeHolder="пароль" />
                     <PasswordInput placeHolder="повторите пароль" />
+                    <Checkbox fn={() => { }} title='согласие на' value />
                 </div>
-                <Button variant='acceess' className="" children={<p>Регистрация</p>} />
+                <Button variant='acceess' className="px-5 py-3" children={<p>Регистрация</p>} />
             </div>
         </div>
     )

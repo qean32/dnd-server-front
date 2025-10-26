@@ -8,7 +8,7 @@ interface Props {
 }
 
 
-export const ObjectModal: React.FC<Props> = ({ view, swap }: Props) => {
+export const Object: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
