@@ -18,6 +18,7 @@ export const Router = () => {
 
                 <Route element={<pages.MainPage />} path="/" />
                 <Route element={<pages.EditProfilePage />} path="/edit-profile" />
+                <Route element={<pages.ChangePasswordPage />} path="/change-password" />
                 <Route element={<pages.CommunityPage />} path="/community" />
                 <Route element={<pages.PostPage />} path="/post/:id" />
                 <Route element={<pages.ForumPage />} path="/forum" />

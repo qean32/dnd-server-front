@@ -5,10 +5,12 @@ import { AuthBG } from "../component/ui"
 export const AuthPage = () => {
     return (
         <Page className="pt-10" size="w-[50%]">
-            <div className="bg-color-dark h-3/4 rounded-lg flex relative py-15">
-                <AuthBG />
-                <SignInForm />
-                <LogInForm />
+            <div className="w-full flex justify-center h-[800px]">
+                <div className="bg-color-dark h-3/4 rounded-lg w-11/12 flex relative py-15">
+                    <AuthBG />
+                    <SignInForm />
+                    <LogInForm />
+                </div>
             </div>
         </Page>
     )

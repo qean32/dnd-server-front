@@ -1,7 +1,7 @@
 import React from "react"
 import { GroupContainer } from "../component/general"
 import { LeftSideForum } from "../component/shared"
-import { ForumColumn, PostItem, Search, TextInfo } from "../component/ui"
+import { ForumColumn, PostItem, ScrollTop, Search, TextInfo } from "../component/ui"
 import { fakePost } from "../fake-data"
 import { Page } from "../component/general/hoc"
 import { useParams } from "react-router-dom"
@@ -23,6 +23,7 @@ const RightSideForum: React.FC<{}> = ({ }: {}) => {
 
     return (
         <div className="relative w-full">
+            <ScrollTop />
             <TextInfo title={name ? name.toUpperCase() : ''} />
             <Search />
             <ForumColumn />

@@ -1,5 +1,6 @@
 import React from 'react'
 import { TextInput, Button, ImgInput } from '../../ui'
+import { Link } from 'react-router-dom'
 
 interface Props {
 }
@@ -15,7 +16,7 @@ export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
                         <TextInput placeHolder="никнейм" />
                         <ImgInput title='фото профиля' className='pl-1' />
                     </div>
-                    <p className='pl-1 cursor-pointer'>Изменить пароль</p>
+                    <Link to={'/change-password'} className='pl-1 cursor-pointer'>Изменить пароль</Link>
                 </div>
                 <Button className="px-5 py-3" variant='acceess' children={<p>Редактировать</p>} />
             </div>
