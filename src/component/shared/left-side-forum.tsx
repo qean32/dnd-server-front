@@ -3,6 +3,7 @@ import { mapMonthKey } from '../../export'
 import { RangeSliderGroup } from '.'
 import { AddTag } from '.'
 import { Button } from '../ui'
+import { Link } from 'react-router-dom'
 
 interface Props {
 }
@@ -10,7 +11,7 @@ interface Props {
 
 export const LeftSideForum: React.FC<Props> = ({ }: Props) => {
     return (
-        <div className="bg-color-dark w-2/6 min-w-[280px] max-w-2/6 h-fit py-5 px-7 flex-1 mt-6 rounded-lg">
+        <div className="w-2/6 min-w-[310px] max-w-2/6 h-fit flex-1 mt-6 rounded-md bg-color-dark p-5">
             <p className="text-2xl font-bold">ФИЛЬТРЫ</p>
             <RangeSliderGroup
                 slider={{
@@ -29,8 +30,9 @@ export const LeftSideForum: React.FC<Props> = ({ }: Props) => {
                 }}
                 title="Месяца"
             />
-            <AddTag className="pt-5 min-h-[200px]" />
-            <Button className='w-full mt-5 border-0'><p>Сбросить</p></Button>
+            <AddTag className="pt-5 min-h-[100px]" />
+            <div className='w-fit'><Link to={'/create-post'}><Button variant='acceess' className='p-2 mt-5'><img src='/icon/edit.svg' /></Button></Link></div>
+            <Button className='mt-4 px-4.5 py-3'><p>Сбросить</p></Button>
         </div>
     )
 }

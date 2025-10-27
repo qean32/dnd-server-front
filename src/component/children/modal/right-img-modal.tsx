@@ -8,7 +8,7 @@ interface Props {
 }
 
 
-export const RightImgModal: React.FC<Props> = ({ view, swap }: Props) => {
+export const RightImg: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
@@ -18,7 +18,7 @@ export const RightImgModal: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'right-modal-close'
             }}
         >
-            <div onClick={stopPropagation} className='bg-color-light h-full w-[200px]'>zxc</div>
+            <div onClick={stopPropagation} className='bg-color h-full w-[200px]'>zxc</div>
         </Modal>
     )
 }

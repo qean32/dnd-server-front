@@ -6,12 +6,12 @@ import { ProfileContent } from "../component/shared/profile-content"
 
 export const ProfilePage = () => {
     return (
-        <Page className="h-full">
+        <Page className="h-full" size="w-[65%]">
             <div className="flex-col flex h-full pb-3 overflow-hidden">
                 <UserInfo />
                 <ProfileContentSwith />
                 <ProfileContent />
-                <Link to='/edit-profile'><p className="cursor-pointer underline">изменить профиль</p></Link>
+                <Link to='/edit-profile'><p className="cursor-pointer underline mt-3">изменить профиль</p></Link>
             </div>
         </Page >
     )

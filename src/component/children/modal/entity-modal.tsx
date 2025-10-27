@@ -9,7 +9,7 @@ interface Props {
 }
 
 
-export const EntityModal: React.FC<Props> = ({ view, swap }: Props) => {
+export const Entity: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
@@ -19,7 +19,7 @@ export const EntityModal: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color-light w-7/12 h-9/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
+            <div className="bg-color w-7/12 h-9/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
                 <TokenItem />
                 <TokenItem />
                 <TokenItem />

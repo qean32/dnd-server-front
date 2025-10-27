@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonInGroup, GroupButton } from '../ui'
-import { EntityModal, NotesModal, ObjectModal } from '../children/modal'
 import { useBoolean } from '../../lib/castom-hook'
+import { Modal } from '../children/modal'
 
 interface Props {
 }
@@ -15,9 +15,9 @@ export const HeightToolGame: React.FC<Props> = ({ }: Props) => {
 
     return (
         <div className='fixed flex z-10 top-[50px] right-35 gap-3'>
-            <NotesModal swap={swapNotesView} view={notesView} />
-            <EntityModal swap={swapEntityView} view={entityView} />
-            <ObjectModal swap={swapObjestView} view={objectView} />
+            <Modal.Notes swap={swapNotesView} view={notesView} />
+            <Modal.Entity swap={swapEntityView} view={entityView} />
+            <Modal.Object swap={swapObjestView} view={objectView} />
             <div>
                 <GroupButton>
                     <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/game.svg' />} />

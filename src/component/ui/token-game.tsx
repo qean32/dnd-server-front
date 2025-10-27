@@ -24,7 +24,7 @@ export const TokenGame: React.FC<Props> = ({ entity = {
                 <div
                     draggable
                     ref={ref}
-                    className="fixed border-2 border-gray-500 cursor-pointer bg-color-dark z-30 transition03 bg-img rounded-4xl w-[60px] aspect-square"
+                    className="fixed border-2 border-gray-500 cursor-pointer bg-color-dark z-30 transition-03 bg-img rounded-4xl w-[60px] aspect-square"
                     style={{ backgroundImage: `url(${entity.path})`, ...entity.position }}
                     onDragEnd={dragEndHandler}
                 >

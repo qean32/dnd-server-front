@@ -8,7 +8,7 @@ interface Props {
 }
 
 
-export const ObjectModal: React.FC<Props> = ({ view, swap }: Props) => {
+export const Object: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
@@ -18,7 +18,7 @@ export const ObjectModal: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color-light w-9/12 h-10/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
+            <div className="bg-color w-9/12 h-10/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
                 <p className='text-xl pb-10'>Заметки</p>
                 <textarea placeholder="Ваш пост!" className="container p-2 px-3 flex-1"></textarea>
             </div>

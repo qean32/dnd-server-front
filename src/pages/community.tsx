@@ -5,13 +5,13 @@ import { fakeUser } from "../fake-data"
 
 export const CommunityPage = () => {
     return (
-        <Page>
+        <Page size="w-[65%]">
             <div className="relative">
                 <TextInfo title="Сообщество" />
                 <Search />
                 <GroupContainer
                     array={fakeUser}
-                    className="pt-10"
+                    className="pt-5"
                     Component={UserItem}
                     propsName="user"
                 />

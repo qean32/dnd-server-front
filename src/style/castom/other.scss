@@ -34,7 +34,34 @@
 .link-line {
     &:hover {
         & div {
-            width: 90% !important;
+            width: 50% !important;
         }
     }
+}
+
+.hover-translate-y {
+    transition: .3s;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+}
+
+.btn-hover-outline {
+    &:hover {
+        background-color: $bg-color !important;
+        outline: 1px $bg-color-light solid !important;
+    }
+}
+
+.running-line-parent:hover {
+    .running-line {
+        text-overflow: unset;
+        max-width: none;
+        transform: translateX(calc(40% - 100%));
+    }
+}
+
+.bg-shadow {
+    filter: brightness(30%)
 }

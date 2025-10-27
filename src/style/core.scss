@@ -17,11 +17,10 @@
 }
 
 * {
-    // outline: #E74343 1px solid;
     font-family: "WDXL Lubrifont JP N", sans-serif;
-    font-style: normal;
-    letter-spacing: 0.5px;
-    color: white;
+    letter-spacing: 1px;
+    scroll-behavior: smooth;
+    // outline: #E74343 1px solid;
 }
 
 body {
@@ -36,14 +35,6 @@ body {
 .fill {
     position: absolute;
     inset: 0 0 0 0;
-}
-
-.transform-right {
-    transition: $short-transition;
-
-    &:hover {
-        transform: translateX(5px);
-    }
 }
 
 .child-fill-event {
@@ -64,8 +55,8 @@ body {
 }
 
 .icon-sm- {
-    width: 19px;
-    height: 19px;
+    width: 17px;
+    height: 17px;
 }
 
 .icon-md {
@@ -78,12 +69,16 @@ body {
     height: 54px;
 }
 
-.transition07 {
+.transition-07 {
     transition: .7s;
 }
 
-.transition03 {
+.transition-03 {
     transition: .3s;
+}
+
+.transition-20 {
+    transition: 2s;
 }
 
 .d-none {
@@ -97,22 +92,21 @@ body {
 }
 
 .ava-md {
-    width: 55px;
-    height: 45px;
+    width: 52px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
 }
 
 .ava-sm {
     width: 40px;
-    height: 30px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
 }
 
 .ava-lg {
-    width: 90px;
-    height: 60px;
-}
-
-.bg-color-hover:hover {
-    background-color: $bg-color !important;
+    width: 80px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
 }
 
 .container {

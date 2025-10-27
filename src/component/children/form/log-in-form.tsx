@@ -14,7 +14,7 @@ export const LogInForm: React.FC<Props> = ({ }: Props) => {
                     <TextInput placeHolder="никнейм или почта" />
                     <PasswordInput placeHolder="пароль" />
                 </div>
-                <Button children={<p>Вход</p>} className="bg-color px-4" />
+                <Button className="px-5 py-3" variant='acceess' children={<p>Вход</p>} />
             </div>
         </div>
     )

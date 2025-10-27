@@ -2,6 +2,7 @@
 
 input {
     background-color: $bg-color-darkness;
+    // outline: 1px solid $bg-color-light;
     padding: 12px 20px;
     border-radius: 5px;
     width: 100%;
@@ -21,19 +22,15 @@ input[type="search"] {
 }
 
 .text-warning {
-    font-size: 18px;
-    padding: 5px 0 0 2px;
+    font-size: 14px;
+    padding: 0 0 0 2px;
     max-width: 100%;
     color: $red-color;
-    height: 25px;
+    height: 20px;
 }
 
 button {
-    transition: .7s;
-
-    &:hover {
-        background-color: $bg-color-dark;
-    }
+    outline: 1px transparent solid;
 }
 
 .btn-in-group {

@@ -15,7 +15,7 @@ export const TokenItem: React.FC<Props> = ({ entity = {
     view: true
 } }: Props) => {
     return (
-        <div className="w-1/9 aspect-square flex flex-col justify-center items-center gap-2 pt-2 mount-opacity bg-color-hover transition03 cursor-pointer rounded-xl">
+        <div className="w-1/9 aspect-square flex flex-col justify-center items-center gap-2 pt-2 mount-opacity bg-color-hover transition-03 cursor-pointer rounded-xl">
             <div className="w-3/6 aspect-square bg-img rounded-xl" style={{ backgroundImage: `url(${entity.path})` }}></div>
             <p className='text-xl'>{entity.name}</p>
         </div>

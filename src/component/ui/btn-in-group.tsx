@@ -10,7 +10,7 @@ interface Props {
 
 export const ButtonInGroup: React.FC<Props> = ({ className, fn, children }: Props) => {
     return (
-        <button className={cn("p-3 btn-in-group flex justify-center items-center cursor-pointer", className)} onClick={fn}>
+        <button className={cn("p-3 btn-in-group transition-03 flex justify-center items-center cursor-pointer", className)} onClick={fn}>
             {children}
         </button>
     )

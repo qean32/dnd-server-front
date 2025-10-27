@@ -7,4 +7,5 @@ export type postDto = {
         id: number
     }
     views: number
+    fixed?: boolean
 }

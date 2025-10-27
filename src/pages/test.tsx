@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Carousel, Checkbox, FileInput, IconAndText, ImgInput, PasswordInput, Select, TextInput } from "../component/ui";
+import { Button, Carousel, Checkbox, FileInput, ImgInput, PasswordInput, Select, TextInput } from "../component/ui";
 import { useBoolean } from "../lib/castom-hook";
 import { RangeSlider } from "../component/ui/range-slider";
 
@@ -18,12 +18,7 @@ export const TestPage = () => {
                 <div className="w-1/4 flex flex-col gap-5">
                     <TextInput placeHolder="text" />
                     <PasswordInput placeHolder="text" />
-                    <Select options={[
-                        <IconAndText icon={<img src='/icon/human.svg' />} title='персонажи' />,
-                        <IconAndText icon={<img src='/icon/dragon.svg' />} title='бестиарий' />,
-                        <IconAndText icon={<img src='/icon/object.svg' />} title='обьекты' />,
-                        <IconAndText icon={<img src='/icon/queue.svg' />} title='очередь' />
-                    ]} />
+                    <Select options={[]} />
                     <ImgInput title="тайтл" />
                     <FileInput />
                     <Checkbox fn={swap} title="соглашение" value={boolean} />

@@ -11,11 +11,9 @@ interface Props {
 export const NavigateButton: React.FC<Props> = ({ link, path }: Props) => {
     return (
         <Link to={link}>
-            <Button>
-                <div className='flex flex-col relative link-line'>
-                    <img src={path} />
-                    <div className="w-[6px] h-[3px] absolute -bottom-2.5 transition03 left-1/2 -translate-x-1/2 bg-white"></div>
-                </div>
+            <Button className='link-line relative p-3'>
+                <img src={path} />
+                <div className="w-[5px] h-[4px] absolute bottom-0 transition-03 left-1/2 -translate-x-1/2 bg-white"></div>
             </Button>
         </Link>
     )

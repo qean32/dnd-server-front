@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 type stateDto = { type: 'post' | 'game' | 'character' }
 
 const initialState: stateDto = {
-    type: 'post'
+    type: 'character'
 }
 
 const profileContentSlice = createSlice({

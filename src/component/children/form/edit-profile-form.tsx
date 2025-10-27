@@ -1,5 +1,6 @@
 import React from 'react'
 import { TextInput, Button, ImgInput } from '../../ui'
+import { Link } from 'react-router-dom'
 
 interface Props {
 }
@@ -11,13 +12,13 @@ export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
             <div className="w-fit flex flex-col gap-3">
                 <p className="text-3xl pl-0.5">РЕДАКТОР</p>
                 <div className="flex-1 w-[300px] pt-2 flex flex-col justify-between pb-3">
-                    <div className="">
+                    <div className="flex gap-2 flex-col">
                         <TextInput placeHolder="никнейм" />
-                        <p className='pl-1 cursor-pointer'>Изменить пароль</p>
+                        <ImgInput title='фото профиля' className='pl-1' />
                     </div>
-                    <ImgInput title='фото профиля' className='pl-1' />
+                    <Link to={'/change-password'} className='pl-1 cursor-pointer'>Изменить пароль</Link>
                 </div>
-                <Button children={<p>Редактировать</p>} className="bg-color px-4" />
+                <Button className="px-5 py-3" variant='acceess' children={<p>Редактировать</p>} />
             </div>
         </div>
     )
