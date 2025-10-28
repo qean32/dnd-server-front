@@ -1,5 +1,6 @@
 import React from 'react'
 import { useBoolean, useDebounceFunction } from '../../lib/castom-hook'
+import { cn } from '../../lib/function'
 
 interface Props {
 }
@@ -26,14 +27,11 @@ export const ScrollTop: React.FC<Props> = ({ }: Props) => {
     }, [])
 
     return (
-        <>
-            {boolean &&
-                <div
-                    className='bg-color-darkness mount-opacity rounded-sm p-5 fixed top-4 right-4 transition-03 hover:-translate-y-2 cursor-pointer z-50'
-                    onClick={clickHandler}>
-                    <img src="/icon/double-arrow.svg" alt="" className='icon-sm rotate-90' />
-                </div>
-            }
-        </>
+        <div
+            className={cn('bg-color-darkness rounded-full p-3 fixed top-4 right-3 transition-02 hover:-translate-y-2 cursor-pointer z-50 hover:opacity-60',
+                (boolean ? 'opacity-100' : 'opacity-0 pointer-events-none'))}
+            onClick={clickHandler}>
+            <img src="/icon/double-arrow.svg" alt="" className='icon-sm rotate-90' />
+        </div>
     )
 }

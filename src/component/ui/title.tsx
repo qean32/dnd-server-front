@@ -9,7 +9,7 @@ interface Props {
 
 export const Title: React.FC<Props> = ({ className, children }: Props) => {
     return (
-        <p className={cn('text-2xl my-2', className)}>
+        <p className={cn('text-3xl pl-0.5 mt-2', className)}>
             {children}
         </p>
     )

@@ -1,7 +1,7 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
-import { TokenItem } from '../../ui'
+import { AddCharaterForm } from '../form'
 
 interface Props {
     view: boolean
@@ -19,11 +19,8 @@ export const AddCharacter: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color w-7/12 h-9/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
-                <TokenItem />
-                <TokenItem />
-                <TokenItem />
-                <TokenItem />
+            <div className="bg-color p-5 w-2/9 px-7 rounded-md overflow-scroll flex flex-col -translate-y-1/2" onClick={stopPropagation}>
+                <AddCharaterForm />
             </div>
         </Modal>
     )

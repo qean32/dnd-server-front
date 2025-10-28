@@ -1,3 +1,5 @@
 export { LogInForm } from './log-in-form'
 export { SignInForm } from './sign-in-form'
 export { EditProfileForm } from './edit-profile-form'
+export { AddCharaterForm } from './add-character-form'
+export { AddGameForm } from './add-game-form'
