@@ -17,13 +17,13 @@ export const DepartmentItem: React.FC<Props> = ({ discription, name, path }: Pro
                 <div className="overflow-hidden w-full">
                     <p className="text-5xl">{name.toUpperCase()}</p>
                     <p className='text-lg pt-2'>{discription}</p>
-                    <div className='flex items-center gap-2 my-3'>
+                    <div className='flex items-center gap-2 mt-2'>
                         <img src="/icon/news.svg" alt="" className='icon-sm-' />
                         <p>32</p>
                     </div>
                     <PostItem {...fakePost[0]} fixed />
                 </div>
-                <div className='w-1/4 p-4 pt-0'>
+                <div className='w-1/5 p-4 pt-0'>
                     <img src={path} alt="" className='rounded-lg' />
                 </div>
             </div>

@@ -13,9 +13,7 @@ export const Characters: React.FC<{}> = ({ }: {}) => {
                 <CharacterLinkItem link='https://aternia.games/i/dnd/character_sheet/show/10399ffb-e071-4c6d-b7f2-3f4fcee3fab0' key={_} number={_ + 1} name='Клиган Клиган' />
             )}
             <Modal.AddCharacter swap={swap} view={boolean} />
-            <div className="h-full items-center flex">
-                <PlusButton fn={swap} className='h-[85px] px-5' iconSize='icon-sm' />
-            </div>
+            <PlusButton fn={swap} className='w-[80px]' iconSize='icon-sm' />
         </div>
     )
 }

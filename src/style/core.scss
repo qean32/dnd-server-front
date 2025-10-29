@@ -26,6 +26,9 @@
 body {
     background-color: $bg-color;
     display: flex;
+    height: auto !important;
+    // background-image: url('/icon/bg-img.svg');
+    background-size: 3%;
 }
 
 .reverse {

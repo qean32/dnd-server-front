@@ -1,6 +1,6 @@
 export const fakeUser = [
-    { "name": "XenonBlade", "id": 1, "ava": "https://i.pinimg.com/736x/0a/e2/36/0ae2368632a7bb66e25d49db5e700bff.jpg" },
-    { "name": "NeoSparkz", "id": 2, "ava": "https://i.pinimg.com/736x/59/8b/c7/598bc7553799c807d30f61d7c08cd011.jpg" },
+    { "name": "XenonBladeXenonBlade", "id": 1, "ava": "https://i.pinimg.com/736x/0a/e2/36/0ae2368632a7bb66e25d49db5e700bff.jpg" },
+    { "name": "NeoSparkz XenonBlade", "id": 2, "ava": "https://i.pinimg.com/736x/59/8b/c7/598bc7553799c807d30f61d7c08cd011.jpg" },
     { "name": "CypherGhost", "id": 3, "ava": "https://i.pinimg.com/1200x/03/68/17/0368175a962d9d47cc0e03e4ce051c69.jpg" },
     { "name": "ViperPulse", "id": 4, "ava": "https://i.pinimg.com/originals/9a/f9/f1/9af9f10ecfe85c8435f19a085c1f23b6.jpg" },
     { "name": "ApexNova", "id": 5, "ava": "https://i.pinimg.com/1200x/a2/15/81/a2158151d37997ddf9d9b40dbca71d35.jpg" },
@@ -24,13 +24,13 @@ export const fakeUser = [
 export const fakePost = [
     {
         "title": "Как развивается d&d сообщество",
-        "discription": "Анализ роста и изменений в сообществе любителей Dungeons & Dragons.",
+        "discription": "Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons.",
         "author": { name: "DM_Master", id: 1 },
         "views": 3456,
         "tags": "D&D, игры, развитие"
     },
     {
-        "title": "Лучшие советы начинающим игрокам D&D",
+        "title": "Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D",
         "discription": "Советы новичкам, которые хотят окунуться в мир настольных ролевых игр.",
         "author": { name: "RollerGirl", id: 1 },
         "views": 2100,
