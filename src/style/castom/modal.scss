@@ -75,14 +75,14 @@
 
 .right-modal-close {
     animation: right-modal-close-anim .7s;
-    transform: translate(100%, 0);
+    transform: translate(15%, 0);
     opacity: 0;
 }
 
 @keyframes right-modal-open-anim {
     from {
-        transform: translate(100%, 0);
-        opacity: .2;
+        transform: translate(15%, 0);
+        opacity: .7;
     }
 
     to {
@@ -98,7 +98,7 @@
     }
 
     to {
-        transform: translate(100%, 0);
+        transform: translate(15%, 0);
         opacity: 0;
     }
 }

@@ -7,7 +7,7 @@ const initialState: stateDto = {
 }
 
 const profileContentSlice = createSlice({
-    name: 'profile-content-stote',
+    name: 'profile-content-store',
     initialState,
     reducers: {
         changeProfileContent: (state: stateDto, { payload }: PayloadAction<'post' | 'game' | 'character'>) => {

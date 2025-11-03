@@ -15,7 +15,7 @@ export const SelectGameBG: React.FC<Props> = ({ }: Props) => {
     }
     return (
         <>
-            <Title className='pb-4'>Фон</Title>
+            <Title className='pb-4'>Фон плитки</Title>
             <div className="flex flex-wrap gap-5 max-w-[660px] pointer-events-none child-fill-event" onClick={clickHandler}>
                 <input value={value} onChange={() => { }} hidden />
                 <FakeGameItem path='/img/dnd+.jpg' value={value} />

@@ -3,12 +3,16 @@ import { useDispatch } from 'react-redux'
 import { toastReducer } from './toast-store'
 import { searchReducer } from './search-store'
 import { profileContentReducer } from './profile-content-store'
+import { viewGridReducer } from './view-grid-store'
+import { gameReducer } from './game-store'
 
 
 const rootReducer = combineReducers({
     toast: toastReducer,
     search: searchReducer,
-    profileContent: profileContentReducer
+    profileContent: profileContentReducer,
+    game: gameReducer,
+    viewGrid: viewGridReducer,
 })
 
 export const store = configureStore({

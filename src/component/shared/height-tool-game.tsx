@@ -1,38 +1,43 @@
 import React from 'react'
 import { ButtonInGroup, GroupButton } from '../ui'
-import { useBoolean } from '../../lib/castom-hook'
 import { Modal } from '../children/modal'
+import { useAppDispatch } from '../../lib/castom-hook/redux'
+import { toast } from '../../lib/function'
+import { useLocation } from 'react-router-dom'
+import { host } from '../../export'
 
 interface Props {
 }
 
 
 export const HeightToolGame: React.FC<Props> = ({ }: Props) => {
-    // const clickHandler = () => toast(dispath, "create-entity", { name: 'Гоблин' })
-    const { swap: swapNotesView, boolean: notesView } = useBoolean()
-    const { swap: swapObjestView, boolean: objectView } = useBoolean()
-    const { swap: swapEntityView, boolean: entityView } = useBoolean()
+    const dispath = useAppDispatch()
+    const { pathname } = useLocation()
+    const forwardClick = React.useCallback(() => { navigator.clipboard.writeText(`Играйте вместе с друзьями! \n${host}${pathname}`); toast(dispath, "forward-copy", {}) }, [])
 
     return (
-        <div className='fixed flex z-10 top-[50px] right-35 gap-3'>
-            <Modal.Notes swap={swapNotesView} view={notesView} />
-            <Modal.Entity swap={swapEntityView} view={entityView} />
-            <Modal.Object swap={swapObjestView} view={objectView} />
+        <div className='absolute flex z-10 right-35 gap-4'>
             <div>
                 <GroupButton>
-                    <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/game.svg' />} />
-                    <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/map.svg' />} />
+                    <ButtonInGroup children={<img className='icon-sm' src='/icon/game.svg' />} />
+                    <Modal.Set Modal={Modal.Map}>
+                        <ButtonInGroup children={<img className='icon-sm' src='/icon/map.svg' />} /></Modal.Set>
                 </GroupButton>
             </div>
             <div>
                 <GroupButton>
-                    <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/human.svg' />} />
-                    <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/grid.svg' />} />
-                    <ButtonInGroup fn={swapNotesView} children={<img className='icon-sm' src='/icon/edit.svg' />} />
-                    <ButtonInGroup fn={swapObjestView} children={<img className='icon-sm' src='/icon/object.svg' />} />
-                    <ButtonInGroup fn={swapEntityView} children={<img className='icon-sm' src='/icon/dragon.svg' />} />
-                    <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/map.svg' />} />
-                    <ButtonInGroup fn={() => { }} children={<img className='icon-sm' src='/icon/tool.svg' />} />
+                    <Modal.Set Modal={Modal.Users}>
+                        <ButtonInGroup children={<img className='icon-sm' src='/icon/user.svg' />} /></Modal.Set>
+                    <ButtonInGroup children={<img className='icon-sm' src='/icon/grid.svg' />} />
+                    <ButtonInGroup fn={forwardClick} children={<img className='icon-sm' src='/icon/forward.svg' />} />
+                    <Modal.Set Modal={Modal.AddEntity}>
+                        <ButtonInGroup children={<img className='icon-sm' src='/icon/dragon.svg' />} /></Modal.Set>
+                    <Modal.Set
+                        Modal={Modal.AddObject}>
+                        <ButtonInGroup children={<img className='icon-sm' src='/icon/object.svg' />} /></Modal.Set>
+                    <Modal.Set Modal={Modal.Notes}>
+                        <ButtonInGroup children={<img className='icon-sm' src='/icon/edit.svg' />} /></Modal.Set>
+                    {/* <ButtonInGroup children={<img className='icon-sm' src='/icon/map.svg' />} /> */}
                 </GroupButton>
             </div>
         </div>

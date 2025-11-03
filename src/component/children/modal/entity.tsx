@@ -8,12 +8,13 @@ interface Props {
 }
 
 
-export const RightImg: React.FC<Props> = ({ view, swap }: Props) => {
+export const Entity: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
             view={view}
-            className='justify-end h-full' animation={{
+            className='justify-end h-full'
+            animation={{
                 open: 'right-modal-open',
                 close: 'right-modal-close'
             }}

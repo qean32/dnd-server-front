@@ -1,2 +1,5 @@
-export { ToastCreateEntity } from './toast-create-entity'
-export { ToastEvent } from './toast-event'
+export { ToastAddEntity } from './toast-add-entity'
+export { ToastEventMessage } from './toast-event-message'
+export { ToastAddObject } from './toast-add-object'
+export { ToastEmailMessage } from './toast-email-message'
+export { ToastForwardCopy } from './toast-forward-copy'

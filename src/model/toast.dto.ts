@@ -11,4 +11,9 @@ export type toastPayloadDto = {
     // other ?
 }
 
-export type toastKeyDto = 'create-entity' | 'event'
+export type toastKeyDto =
+    'add-entity'
+    | 'event-message'
+    | 'forward-copy'
+    | 'add-object'
+    | 'email-message' 

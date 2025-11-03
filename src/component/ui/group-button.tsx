@@ -9,7 +9,7 @@ interface Props {
 
 export const GroupButton: React.FC<Props> = ({ className, children }: Props) => {
     return (
-        <div className={cn('flex rounded-b-sm bg-color-dark fit-content children-no-outline-hover', className)}>
+        <div className={cn('flex rounded-b-sm bg-color-dark fit-content children-no-outline-hover overflow-hidden', className)}>
             {children}
         </div>
     )
