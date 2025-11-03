@@ -13,7 +13,7 @@ const URLImage = ({ src, ...rest }) => {
 
 
 export const GameArea: React.FC<Props> = ({ }: Props) => {
-    const [image] = useImage("/img/dnd+.jpg");
+    const [image] = useImage("/img/dnd3.jpg");
     const handleMouseOver = (e: any) => {
         e.target.getStage().container().style.cursor = 'pointer';
     };
@@ -26,9 +26,9 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
         <Stage width={window.innerWidth} height={window.innerHeight}>
             <Layer>
                 <Circle
-                    x={200}
+                    x={500}
                     y={200}
-                    radius={image ? image?.height / 2 : 0}
+                    radius={image ? (image?.height > image.width ? image.width : image.height) / 2 : 0}
                     fillPatternImage={image}
                     // fillPatternOffset={{ x: 0, y: 0 }}
                     fillPatternX={image ? -image?.width / 2 : 0}
@@ -37,31 +37,14 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                     onMouseOut={handleMouseOut}
                     fillPatternRepeat='no-repeat'
                     draggable
+                    onClick={(e) => { console.log(e) }}
                     strokeWidth={1} // border width
                     stroke="white" // border color
+                    scale={{
+                        y: image ? (40 / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
+                        x: image ? (40 / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
+                    }}
                 />
-                <Group
-                    onMouseOver={handleMouseOver}
-                    onMouseOut={handleMouseOut}
-                    draggable
-                >
-                    <Image
-                        opacity={0.1}
-                        image={image}
-                        width={500}
-                        height={image ? (image.height / image.width) * 500 : 0}
-
-                        offsetX={500 / 2}
-                        offsetY={image ? ((image.height / image.width) * 500) / 2 : 0}
-                    />
-                    <Circle
-                        opacity={0.2}
-                        stroke="white"
-                        strokeWidth={1}
-                        width={500}
-                        height={image ? (image.height / image.width) * 500 : 0}
-                    />
-                </Group>
             </Layer>
         </Stage>
     )
