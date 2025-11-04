@@ -5,8 +5,10 @@ export interface gameDto {
     name: string
     currentMap: mapDto
     maps: mapDto[]
-    mapsData: Map<string, {
-        objects: objectDto[]
-        entities: entityDto[]
-    }>
+    mapsData: {
+        [key: string]: {
+            entities: entityDto[]
+            objects: objectDto[]
+        }
+    }
 }

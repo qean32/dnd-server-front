@@ -1,50 +1,37 @@
 import React from 'react'
+import { Stage, Layer, Group, Rect } from "react-konva"
+import { TokenEntity } from '../ui';
+import { entityDto, gameDto } from '../../model';
+import { gameStorage } from '../../export';
 import useImage from 'use-image';
-import { Stage, Layer, Group, Rect, Image, Circle } from "react-konva"
 
 interface Props {
 }
 
-// @ts-ignore
-const URLImage = ({ src, ...rest }) => {
-    const [image] = useImage(src, 'anonymous');
-    return <Image image={image} {...rest} />;
-};
-
 
 export const GameArea: React.FC<Props> = ({ }: Props) => {
-    const [image] = useImage("/img/dnd3.jpg");
-    const handleMouseOver = (e: any) => {
-        e.target.getStage().container().style.cursor = 'pointer';
-    };
-
-    const handleMouseOut = (e: any) => {
-        e.target.getStage().container().style.cursor = 'default';
-    };
+    const [game] = React.useState<gameDto>(JSON.parse(localStorage.getItem(gameStorage) as string))
+    const [image] = useImage(game.currentMap.path);
 
     return (
         <Stage width={window.innerWidth} height={window.innerHeight}>
             <Layer>
-                <Circle
-                    x={500}
-                    y={200}
-                    radius={image ? (image?.height > image.width ? image.width : image.height) / 2 : 0}
-                    fillPatternImage={image}
-                    // fillPatternOffset={{ x: 0, y: 0 }}
-                    fillPatternX={image ? -image?.width / 2 : 0}
-                    fillPatternY={image ? -image?.height / 2 : 0}
-                    onMouseOver={handleMouseOver}
-                    onMouseOut={handleMouseOut}
-                    fillPatternRepeat='no-repeat'
+                <Group
                     draggable
-                    onClick={(e) => { console.log(e) }}
-                    strokeWidth={1} // border width
-                    stroke="white" // border color
-                    scale={{
-                        y: image ? (40 / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
-                        x: image ? (40 / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
-                    }}
-                />
+                >
+                    <Rect
+                        y={((window.innerHeight / 2) - game.currentMap.size.y / 2) - 64 /* header height */}
+                        x={(window.innerWidth / 2) - game.currentMap.size.x / 2}
+                        fillPatternRepeat='no-repeat'
+                        fillPatternImage={image}
+                        width={game.currentMap.size.x}
+                        height={game.currentMap.size.y}
+                    />
+
+                    {game.mapsData[game.currentMap.name].entities.map((item: entityDto, _: number) => {
+                        return <TokenEntity {...item} key={_} />
+                    })}
+                </Group>
             </Layer>
         </Stage>
     )

@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Posts: React.FC<Props> = ({ view }: Props) => {
-    const { boolean, on, off } = useBoolean(view)
+    const { on, off } = useBoolean(view)
 
     React.useEffect(() => {
         if (view) {
@@ -22,8 +22,6 @@ export const Posts: React.FC<Props> = ({ view }: Props) => {
     if (!view) {
         return null
     }
-
-    boolean && console.log('zxc')
 
     return (
         <div className='px-5 pt-2 pb-5'>
