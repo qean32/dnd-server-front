@@ -5,6 +5,7 @@ import { searchReducer } from './search-store'
 import { profileContentReducer } from './profile-content-store'
 import { viewGridReducer } from './view-grid-store'
 import { gameReducer } from './game-store'
+import { addReducer } from './add'
 
 
 const rootReducer = combineReducers({
@@ -13,6 +14,7 @@ const rootReducer = combineReducers({
     profileContent: profileContentReducer,
     game: gameReducer,
     viewGrid: viewGridReducer,
+    add: addReducer,
 })
 
 export const store = configureStore({

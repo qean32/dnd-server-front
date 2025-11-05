@@ -1,23 +1,20 @@
 import React from "react";
 import useImage from "use-image";
 import { useBoolean } from "./use-boolean";
-import { useAppDispatch } from "./redux";
 import { changeSomethingEntity } from "../../store/game-store";
+import { useAppDispatch } from "./redux";
 
-export const useToken = (path: string) => {
+export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
     const [image] = useImage(path);
-    const dispath = useAppDispatch()
     const rectRef = React.useRef<null | HTMLCanvasElement | any>();
     const trRef = React.useRef<null | HTMLCanvasElement | any>();
     const transform = useBoolean()
 
-    const mouseOverHandler = (e: React.MouseEvent<HTMLCanvasElement> | any) => {
-        // @ts-ignore
-        e.target.getStage().container().style.cursor = 'pointer';
+    const mouseOverHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
+        e.target.getStage().container().style.cursor = 'grab';
     };
 
-    const mouseOutHandler = (e: React.MouseEvent<HTMLCanvasElement> | any) => {
-        // @ts-ignore
+    const mouseOutHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
         e.target.getStage().container().style.cursor = 'default';
     };
 
@@ -28,7 +25,7 @@ export const useToken = (path: string) => {
     const dragStartHandler = () => {
     };
 
-    const dragEndHandler = (e: any) => {
+    const dragEndHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
         dispath(changeSomethingEntity({ type: 'entities', payload: { id: e.currentTarget.attrs.id, position: { ...e.currentTarget._lastPos } } }))
     };
 

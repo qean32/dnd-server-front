@@ -1,6 +1,8 @@
 import React, { memo } from 'react'
 import { Circle, Transformer } from "react-konva"
 import { useToken } from '../../../lib/castom-hook';
+import { entityDto } from '../../../model';
+import { useAppDispatch } from '../../../lib/castom-hook/redux';
 
 const restObject = {
     fillPatternRepeat: 'no-repeat',
@@ -19,7 +21,12 @@ const restObjectTransform = {
 }
 
 
-export const TokenEntity: React.FC<any> = memo(({ id, path, position, view, size }: any) => {
+export const TokenEntity: React.FC<entityDto> = memo((props: entityDto) => {
+    const [
+        { id, path, position, size, view },
+        setState] = React.useState<entityDto>(props)
+
+    const dispath = useAppDispatch()
     const {
         clickHandler,
         dragEndHandler,
@@ -31,7 +38,7 @@ export const TokenEntity: React.FC<any> = memo(({ id, path, position, view, size
         rectRef,
         trRef,
         viewTransform
-    } = useToken(path)
+    } = useToken(dispath, path)
 
     return (
         <>
@@ -51,7 +58,6 @@ export const TokenEntity: React.FC<any> = memo(({ id, path, position, view, size
                     x: image ? ((size / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
                 }}
 
-                
                 onClick={clickHandler}
                 onDragEnd={dragEndHandler}
                 onDragStart={dragStartHandler}
@@ -70,19 +76,10 @@ export const TokenEntity: React.FC<any> = memo(({ id, path, position, view, size
                     if (newBox.width < 70) {
                         return oldBox;
                     }
+                    setState(prev => { return { ...prev, size: newBox.width } })
                     return newBox;
                 }}
-                anchorDragBoundFunc={(_, newPos) => {
-                    const dist = Math.sqrt(Math.pow(newPos.x - window.innerWidth / 2, 2));
-                    if (dist < 10) {
-                        return {
-                            ...newPos,
-                            x: window.innerWidth / 2,
-                        };
-                    }
-                    return newPos;
-                }}
-                onTransformEnd={() => { console.log('transEnd') }}
+                onTransformEnd={(e) => { console.log(e) }}
                 {...restObjectTransform}
             />
         </>
