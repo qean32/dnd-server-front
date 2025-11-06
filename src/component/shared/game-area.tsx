@@ -4,7 +4,6 @@ import { TokenEntity } from '../ui';
 import { entityDto, gameDto } from '../../model';
 import { gameStorage } from '../../export';
 import useImage from 'use-image';
-import { useAppSelector } from '../../lib/castom-hook/redux';
 
 interface Props {
 }
@@ -14,14 +13,9 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
     const [game] = React.useState<gameDto>(JSON.parse(localStorage.getItem(gameStorage) as string))
     const [bgGameArea] = useImage(game.currentMap.path);
     const [bgGrid] = useImage('/icon/grid.svg');
-    const { entiries } = useAppSelector(state => state.add)
-    React.useEffect(() => {
-        console.log(entiries);
-        
-    }, [entiries])
 
     return (
-        <Stage width={window.innerWidth} height={window.innerHeight}>
+        <Stage width={window.innerWidth} height={window.innerHeight - 64}>
             <Layer>
                 <Group draggable>
                     <Group>
@@ -46,9 +40,6 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                     </Group>
 
                     {game.mapsData[game.currentMap.name].entities.map((item: entityDto, _: number) => {
-                        return <TokenEntity {...item} key={_} />
-                    })}
-                    {entiries.map((item: entityDto, _: number) => {
                         return <TokenEntity {...item} key={_} />
                     })}
                 </Group>

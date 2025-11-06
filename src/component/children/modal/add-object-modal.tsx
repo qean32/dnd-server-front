@@ -1,10 +1,12 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
+import { AddEntityFilter, AddEntityRight, Button, ModalCross } from '../../ui'
+import { GroupToken } from '../../shared'
 
 interface Props {
     view: boolean
-    swap: React.MouseEventHandler<HTMLDivElement>
+    swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
 }
 
 
@@ -18,9 +20,23 @@ export const AddObject: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color w-9/12 h-10/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
-                <p className='text-xl pb-10'>Заметки</p>
-                <textarea placeholder="Ваш пост!" className="container p-2 px-3 flex-1"></textarea>
+            <div className="bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden relative" onClick={stopPropagation}>
+                <ModalCross fn={swap} />
+                <img src="/icon/cross.svg" className='icon-sm- absolute right-2.5 top-3 cursor-pointer' alt="" />
+                <div className="pt-2 w-9/12 h-full overflow-scroll relative">
+                    <AddEntityFilter />
+                    <GroupToken title='Базовый набор' />
+                    <GroupToken title='Набор Хелойвин' />
+                </div>
+                <div className="w-3/12 h-full flex flex-col px-5">
+                    <AddEntityRight />
+                    <div className="flex-1 flex justify-end flex-col pb-5 items-end">
+                        <div className="flex gap-2">
+                            <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                            <Button variant='acceess'><p>Добавить</p></Button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </Modal>
     )

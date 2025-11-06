@@ -4,7 +4,7 @@ interface Props {
 }
 
 
-export const Component: React.FC<Props> = ({ }: Props) => {
+export const Object: React.FC<Props> = ({ }: Props) => {
     return (
         <div>
         </div>

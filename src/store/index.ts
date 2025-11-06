@@ -5,7 +5,7 @@ import { searchReducer } from './search-store'
 import { profileContentReducer } from './profile-content-store'
 import { viewGridReducer } from './view-grid-store'
 import { gameReducer } from './game-store'
-import { addReducer } from './add'
+import { entityObjectReducer } from './entiries-objects'
 
 
 const rootReducer = combineReducers({
@@ -14,7 +14,7 @@ const rootReducer = combineReducers({
     profileContent: profileContentReducer,
     game: gameReducer,
     viewGrid: viewGridReducer,
-    add: addReducer,
+    entityObject: entityObjectReducer,
 })
 
 export const store = configureStore({

@@ -5,37 +5,18 @@ import { Ava } from '.'
 
 interface SelectProps {
     className?: string
-    fn?: () => {}
-    options: React.ReactElement<any, any>[]
+    options: { value: string, title: string }[]
 }
 
 
-export const Select: React.FC<SelectProps> = ({ className = 'w-fit', fn, options }: SelectProps) => {
-    const [value, setValue] = React.useState()
-    const { boolean, swap } = useBoolean(false)
-
-    const selectHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        // @ts-ignore
-        setValue(e.target.children[0].children[1].innerHTML)
-    }
+export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options }: SelectProps) => {
 
     return (
-        <div className={cn('cursor-pointer relative w-full', className)} onClick={swap} >
-            <input type="text" hidden value={value} />
-            <div className='flex gap-2 px-2 py-1 justify-between' >
-                <p>{value ?? 'Выберите опцию'}</p>
-                <img src="/icon/arrow.svg" alt="" className={cn('transition-07', !boolean && 'rotate-90')} />
-            </div>
-            {boolean &&
-                <div className='absolute bg-color-dark w-full rounded-b-sm' onClick={fn ?? selectHandler}>
-                    {options.map((item, _) => {
-                        return (
-                            <div key={_} className='px-2 py-1 flex gap-2 child-no-event'>{item}</div>
-                        )
-                    })}
-                </div>
-            }
-        </div>
+        <select className={cn('min-w-[300px]', className)}>
+            {options.map(item => {
+                return <option value={item.value}>{item.title}</option>
+            })}
+        </select>
     )
 }
 
@@ -67,7 +48,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHo
         <div className={cn('w-full', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
-                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4.5 right-3' />
+                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4 right-4' />
             </div>
             <div><p className='text-warning'>{false && 'Минимальная длина - 8, Используйте латиницу и цифры!'}</p></div>
         </div>
@@ -132,11 +113,11 @@ interface SearchProps {
 }
 
 
-export const Search: React.FC<SearchProps> = ({ className }: SearchProps) => {
+export const Search: React.FC<SearchProps> = ({ className = 'w-full' }: SearchProps) => {
     return (
-        <div className={cn('relative w-full', className)}>
+        <div className={cn('relative', className)}>
             <input type="search" placeholder='поиск..' />
-            <img src="/icon/search.svg" alt="" className='absolute top-4 right-4' />
+            <img src="/icon/search.svg" alt="" className='absolute icon-sm top-1/2 -translate-y-1/2 right-4' style={{ width: '21px' }} />
         </div>
     )
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
 import { AddGameForm } from '../form'
-import { Button } from '../../ui'
+import { Button, ModalCross } from '../../ui'
 
 interface Props {
     view: boolean
@@ -20,7 +20,8 @@ export const AddGame: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color p-5 px-7 rounded-md overflow-scroll flex flex-col -translate-y-1/7" onClick={stopPropagation}>
+            <div className="relative bg-color p-5 px-7 rounded-md overflow-scroll flex flex-col -translate-y-1/7" onClick={stopPropagation}>
+                <ModalCross fn={swap} />
                 <AddGameForm>
                     <>
                         <Button variant='ghost'><p>Отмена</p></Button>

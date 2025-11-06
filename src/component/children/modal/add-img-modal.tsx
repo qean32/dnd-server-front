@@ -5,11 +5,11 @@ import { ModalCross } from '../../ui'
 
 interface Props {
     view: boolean
-    swap: React.MouseEventHandler<HTMLDivElement>
+    swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
 }
 
 
-export const Notes: React.FC<Props> = ({ view, swap }: Props) => {
+export const AddObject: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
@@ -19,10 +19,8 @@ export const Notes: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="relative bg-color w-9/12 h-10/12 px-5 pt-4 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
+            <div className="bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden relative" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <p className='text-xl pb-2 pl-0.5'>Заметки</p>
-                <textarea placeholder="Ваши заметки" className="container p-2 px-3 flex-1"></textarea>
             </div>
         </Modal>
     )

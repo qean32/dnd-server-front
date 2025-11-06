@@ -6,18 +6,22 @@ interface Props {
 }
 
 export const TokenItem: React.FC<Props> = ({ entity = {
-    discription: 'no',
+    discription: 'no no no no no no no no no no no no',
     id: 1,
     path: '/img/goblin.jpg',
     name: "Гоблин",
-    position: { left: 0, top: 0 },
+    position: { x: 0, y: 0 },
+    size: 50,
     status: 'live',
     view: true
 } }: Props) => {
     return (
-        <div className="w-1/9 aspect-square flex flex-col justify-center items-center gap-2 pt-2 mount-opacity bg-color-hover transition-03 cursor-pointer rounded-xl">
-            <div className="w-3/6 aspect-square bg-img rounded-xl" style={{ backgroundImage: `url(${entity.path})` }}></div>
-            <p className='text-xl'>{entity.name}</p>
+        <div className="px-5 flex py-5 gap-5 bg-color bg-color-dark-hover transition-03 rounded-md cursor-pointer">
+            <div className="w-[62px] aspect-square bg-img rounded-full" style={{ backgroundImage: `url(${entity.path})` }}></div>
+            <div className='mt-1'>
+                <p className='text-2xl'>{entity.name}</p>
+                <p className='text-sm max-w-[90px] overflow-hidden text-ellipsis text-nowrap'>{entity.discription}</p>
+            </div>
         </div>
     )
 }

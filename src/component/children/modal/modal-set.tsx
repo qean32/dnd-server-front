@@ -12,7 +12,9 @@ export const Set: React.FC<Props> = ({ children, Modal }: Props) => {
 
     return (
         <>
-            <div onClick={(e) => { e.stopPropagation(); swap() }}>{children}</div>
+            <div onClick={(e) => { e.stopPropagation(); swap() }}>
+                {children}
+            </div>
             <Modal view={boolean} swap={swap} />
         </>
     )
