@@ -3,8 +3,7 @@ import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
 import { PlusButton } from '../../ui'
 import { ViewImgItem } from '../../ui/view-img-item'
-import { Set } from '../modal/modal-set'
-import { Notes } from './notes-modal'
+import * as Modal_ from '../modal/index-group'
 
 interface Props {
     view: boolean
@@ -35,9 +34,9 @@ export const Img: React.FC<Props> = ({ view, swap }: Props) => {
                 <ViewImgItem path='/img/dnd2.jpg' value={value} />
                 <ViewImgItem path='/img/dnd3.jpg' value={value} />
                 <ViewImgItem path='/img/dnd4.jpg' value={value} />
-                <Set Modal={Notes}>
+                <Modal_.Set Modal={Modal_.AddImg}>
                     <PlusButton className='w-[120px] h-full' />
-                </Set>
+                </Modal_.Set>
             </div>
         </Modal>
     )
