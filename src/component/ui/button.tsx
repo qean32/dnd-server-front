@@ -4,20 +4,21 @@ import { cn } from '../../lib/function'
 interface Props {
     className?: string
     children: React.ReactNode
-    variant?: 'default' | 'acceess' | 'reject'
+    variant?: 'default' | 'acceess' | 'reject' | 'ghost' | 'plus'
     fn?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const map = new Map([
     ["default", 'bg-color-dark bg-color-darkness-hover'],
     ["acceess", 'bg-green-800 hover:bg-green-900'],
-    ["reject", 'bg-red-800 hover:bg-red-900']
+    ["reject", 'bg-red-800 hover:bg-red-900'],
+    ["ghost", 'hover:underline'],
 ])
 
 
-export const Button: React.FC<Props> = ({ className, children, variant = 'default', fn = () => { } }: Props) => {
+export const Button: React.FC<Props> = ({ className = 'w-fit', children, variant = 'default', fn = () => { } }: Props) => {
     return (
-        <button onClick={fn} className={cn('flex gap-2 w-fit transition-03 rounded-md cursor-pointer justify-center items-center', className, map.get(variant))}>
+        <button onClick={fn} className={cn('transition-03 rounded-md cursor-pointer px-3 py-2', className, map.get(variant))}>
             {children}
         </button>
     )

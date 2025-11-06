@@ -7,7 +7,7 @@ const initialState: stateDto = {
 }
 
 const searchSlice = createSlice({
-    name: 'search-stote',
+    name: 'search-store',
     initialState,
     reducers: {
         changeSearch: (state: stateDto, { payload }: PayloadAction<stateDto>) => {

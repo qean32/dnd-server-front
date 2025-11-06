@@ -10,7 +10,7 @@ interface Props {
 }
 
 
-export const ToastEvent: React.FC<Props> = ({ className, view, name, path }: Props) => {
+export const ToastEventMessage: React.FC<Props> = ({ className, view, name, path }: Props) => {
     return (
         <Toast view={view}>
             <div className={cn("py-5 px-25 bg-color-dark flex gap-2 items-center bg-img", className)} style={{ backgroundImage: `url(${path})` }}>

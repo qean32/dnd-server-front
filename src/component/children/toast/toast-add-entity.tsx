@@ -9,7 +9,7 @@ interface Props {
 }
 
 
-export const ToastCreateEntity: React.FC<Props> = ({ className, view, name }: Props) => {
+export const ToastAddEntity: React.FC<Props> = ({ className, view, name }: Props) => {
     return (
         <Toast view={view}>
             <div className={cn("py-2 px-3 bg-color-dark flex gap-2 items-center", className)}>

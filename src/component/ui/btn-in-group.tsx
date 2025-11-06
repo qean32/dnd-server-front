@@ -3,12 +3,12 @@ import { cn } from '../../lib/function'
 
 interface Props {
     className?: string
-    fn: React.MouseEventHandler<HTMLButtonElement>
+    fn?: React.MouseEventHandler<HTMLButtonElement>
     children: React.ReactNode
 }
 
 
-export const ButtonInGroup: React.FC<Props> = ({ className, fn, children }: Props) => {
+export const ButtonInGroup: React.FC<Props> = ({ className, fn = () => { }, children }: Props) => {
     return (
         <button className={cn("p-3 btn-in-group transition-03 flex justify-center items-center cursor-pointer", className)} onClick={fn}>
             {children}

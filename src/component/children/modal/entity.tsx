@@ -1,7 +1,6 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
-import { TokenItem } from '../../ui'
 
 interface Props {
     view: boolean
@@ -14,17 +13,13 @@ export const Entity: React.FC<Props> = ({ view, swap }: Props) => {
         <Modal
             swap={swap}
             view={view}
+            className='justify-end h-full'
             animation={{
-                open: 'modal-open',
-                close: 'modal-close'
+                open: 'right-modal-open',
+                close: 'right-modal-close'
             }}
         >
-            <div className="bg-color w-7/12 h-9/12 p-5 rounded-md overflow-scroll flex flex-col" onClick={stopPropagation}>
-                <TokenItem />
-                <TokenItem />
-                <TokenItem />
-                <TokenItem />
-            </div>
+            <div onClick={stopPropagation} className='bg-color h-full w-[200px]'>zxc</div>
         </Modal>
     )
 }

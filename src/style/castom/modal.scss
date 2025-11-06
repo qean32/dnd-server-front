@@ -1,7 +1,7 @@
 .shadow {
     position: fixed;
     inset: 0 0 0 0;
-    background-color: rgba(0, 0, 0, 0.678);
+    background-color: rgba(0, 0, 0, 0.45);
     animation: shadow-open-anim .7s;
     opacity: 1;
 }
@@ -20,12 +20,24 @@
 .modal-close {
     animation: modal-close-anim .7s;
     transform: translate(0, 50%);
-    opacity: 0;
+    opacity: .7;
+}
+
+.modal-open-bottom {
+    animation: modal-open-bottom-anim .7s;
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.modal-close-bottom {
+    animation: modal-close-bottom-anim .7s;
+    transform: translate(0, 50%);
+    opacity: .7;
 }
 
 @keyframes shadow-open-anim {
     from {
-        opacity: .4;
+        opacity: .7;
     }
 
     to {
@@ -46,7 +58,7 @@
 @keyframes modal-open-anim {
     from {
         transform: translate(0, -10%);
-        opacity: .2;
+        opacity: .7;
     }
 
     to {
@@ -67,6 +79,30 @@
     }
 }
 
+@keyframes modal-open-bottom-anim {
+    from {
+        transform: translate(0, 20%);
+        opacity: .7;
+    }
+
+    to {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@keyframes modal-close-bottom-anim {
+    from {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate(0, 20%);
+        opacity: 0;
+    }
+}
+
 .right-modal-open {
     animation: right-modal-open-anim .7s;
     transform: translate(0, 0);
@@ -75,14 +111,14 @@
 
 .right-modal-close {
     animation: right-modal-close-anim .7s;
-    transform: translate(100%, 0);
+    transform: translate(15%, 0);
     opacity: 0;
 }
 
 @keyframes right-modal-open-anim {
     from {
-        transform: translate(100%, 0);
-        opacity: .2;
+        transform: translate(15%, 0);
+        opacity: .7;
     }
 
     to {
@@ -98,7 +134,7 @@
     }
 
     to {
-        transform: translate(100%, 0);
+        transform: translate(15%, 0);
         opacity: 0;
     }
 }

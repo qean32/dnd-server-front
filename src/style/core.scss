@@ -6,7 +6,8 @@
 @use './castom/toast.scss';
 @use './castom/range-slider.scss';
 @use './castom/link.scss';
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=WDXL+Lubrifont+JP+N&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=WDXL+Lubrifont+JP+N&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=WDXL+Lubrifont+JP+N&display=swap');
 
 *::-webkit-scrollbar {
     width: 0;
@@ -26,6 +27,9 @@
 body {
     background-color: $bg-color;
     display: flex;
+    height: auto !important;
+    // background-image: url('/icon/bg-img.svg');
+    background-size: 3%;
 }
 
 .reverse {
@@ -143,4 +147,8 @@ body {
     to {
         opacity: 1;
     }
+}
+
+.transition-02 {
+    transition: .2s;
 }

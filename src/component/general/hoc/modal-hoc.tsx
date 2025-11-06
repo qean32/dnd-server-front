@@ -9,8 +9,8 @@ interface Props {
     view: boolean
     swap: React.MouseEventHandler<HTMLDivElement>
     animation: {
-        open: 'right-modal-open' | 'modal-open'
-        close: 'right-modal-close' | 'modal-close'
+        open: 'right-modal-open' | 'modal-open' | 'modal-open-bottom'
+        close: 'right-modal-close' | 'modal-close' | 'modal-close-bottom'
     }
 }
 

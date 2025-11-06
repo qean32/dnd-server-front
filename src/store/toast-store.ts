@@ -8,7 +8,7 @@ const initialState: stateDto = {
 }
 
 const toastSlice = createSlice({
-    name: 'toast-stote',
+    name: 'toast-store',
     initialState,
     reducers: {
         addToast: (state: stateDto, { payload }: PayloadAction<toastDto>) => {

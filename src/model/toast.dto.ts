@@ -8,7 +8,11 @@ export type toastDto = {
 export type toastPayloadDto = {
     name?: string
     path?: string
+    text?: string
     // other ?
 }
 
-export type toastKeyDto = 'create-entity' | 'event'
+export type toastKeyDto =
+    'add-entity'
+    | 'event-message'
+    | 'message'

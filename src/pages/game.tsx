@@ -6,8 +6,8 @@ export const GamePage = () => {
     return (
         <>
             <LeftSideGame />
-            <HeightToolGame />
-            <main className="h-full fixed z-0">
+            <main className="h-full z-0 relative">
+                <HeightToolGame />
                 <GameArea />
             </main >
         </>

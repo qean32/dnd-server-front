@@ -11,7 +11,7 @@ export const ProfilePage = () => {
                 <UserInfo />
                 <ProfileContentSwith />
                 <ProfileContent />
-                <Link to='/edit-profile'><p className="cursor-pointer underline mt-3">изменить профиль</p></Link>
+                <Link to='/edit-profile'><p className="cursor-pointer underline mt-3 pl-1">изменить профиль</p></Link>
             </div>
         </Page >
     )

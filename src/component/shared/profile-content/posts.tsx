@@ -1,8 +1,27 @@
 import { Link } from "react-router-dom"
 import { fakePost } from "../../../fake-data"
 import { ForumColumn, PostItem, PlusButton } from "../../ui"
+import { useBoolean } from "../../../lib/castom-hook"
+import React from "react"
 
-export const Posts: React.FC<{}> = ({ }: {}) => {
+interface Props {
+    view: boolean
+}
+
+export const Posts: React.FC<Props> = ({ view }: Props) => {
+    const { on, off } = useBoolean(view)
+
+    React.useEffect(() => {
+        if (view) {
+            on()
+        } else {
+            off()
+        }
+    }, [view])
+
+    if (!view) {
+        return null
+    }
 
     return (
         <div className='px-5 pt-2 pb-5'>
