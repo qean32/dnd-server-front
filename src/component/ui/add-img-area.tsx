@@ -1,16 +1,13 @@
 import React from 'react'
-import { generateId, stopPropagation } from '../../../lib/function'
-import { Modal } from '../../general/hoc'
-import { Button, ModalCross } from '../../ui'
-import { useBoolean } from '../../../lib/castom-hook'
+import { cn, generateId } from '../../lib/function'
+import { useBoolean } from '../../lib/castom-hook';
 
 interface Props {
-    view: boolean
-    swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
+    className?: string
 }
 
 
-export const AddImg: React.FC<Props> = ({ view, swap }: Props) => {
+export const AddImgArea: React.FC<Props> = ({ className }: Props) => {
     const [src, setSrc] = React.useState<any>([]);
     const { boolean, off, on } = useBoolean(false)
     const id = generateId().toString()
@@ -39,20 +36,14 @@ export const AddImg: React.FC<Props> = ({ view, swap }: Props) => {
         e.dataTransfer.files && setSrc([e.dataTransfer.files[0]])
     }
 
+
     return (
-        <Modal
-            swap={swap}
-            view={view}
-            animation={{
-                open: 'modal-open',
-                close: 'modal-close'
-            }}
-        >
-            <div className="bg-color w-5/12 h-8/12 rounded-md flex flex-col overflow-hidden relative" onClick={stopPropagation}>
-                <ModalCross fn={swap} />
-                <input accept='image/png, image/jpeg, image/svg, image/jpg, image/webp' type='file' hidden id={id} onChange={changeHandler} />
+        <>
+            <input accept='image/png, image/jpeg, image/svg, image/jpg, image/webp' type='file' hidden id={id} onChange={changeHandler} />
+            <div className={cn("w-full h-10/12 p-5", className)}>
                 <label
-                    className="flex p-5 cursor-pointer justify-center items-center w-full h-10/12 bg-img"
+                    className="flex p-0 h-full rounded-lg cursor-pointer justify-center items-center bg-img bg-color-dark"
+                    style={{ borderImageSource: 'https://i.sstatic.net/wLdVc.png', borderImageWidth: '2px' }}
                     htmlFor={id}
                     onDragLeave={e => dragLeaveHandler(e)}
                     onDragStart={e => dragStartHandler(e)}
@@ -62,11 +53,7 @@ export const AddImg: React.FC<Props> = ({ view, swap }: Props) => {
                     {urls[0] && <img src={urls[0]} alt="" className='h-full rounded-md' />}
                     {!urls[0] && (boolean ? <img src={urls[0]} alt="" width={50} /> : <img src={'/icon/community.svg'} alt="" width={50} />)}
                 </label>
-                <div className="flex gap-5 justify-end p-5 pt-8">
-                    <Button variant='ghost'><p>Отмена</p></Button>
-                    <Button variant='acceess'><p>Добавить</p></Button>
-                </div>
             </div>
-        </Modal>
+        </>
     )
 }

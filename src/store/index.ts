@@ -6,10 +6,14 @@ import { profileContentReducer } from './profile-content-store'
 import { viewGridReducer } from './view-grid-store'
 import { gameReducer } from './game-store'
 import { entityObjectReducer } from './entiries-objects'
+import { viewImgReducer } from './view-img'
+import { addCharacterInGameReducer } from './add-character-in-game-path'
 
 
 const rootReducer = combineReducers({
     toast: toastReducer,
+    viewImg: viewImgReducer,
+    addCharacterInGame: addCharacterInGameReducer,
     search: searchReducer,
     profileContent: profileContentReducer,
     game: gameReducer,

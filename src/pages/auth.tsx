@@ -1,4 +1,4 @@
-import { LogInForm, SignInForm } from "../component/children/form"
+import { LogInForm, SignInForm } from "../component/case/form"
 import { Page } from "../component/general/hoc"
 import { AuthBG } from "../component/ui"
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import { cn } from '../../lib/function'
-import { Link } from 'react-router-dom'
-import { Button, NavigateButton } from '../ui'
+import { NavigateButton } from '../ui'
 
 interface Props {
     className?: string
@@ -15,10 +14,8 @@ export const Navigate: React.FC<Props> = ({ className }: Props) => {
             <NavigateButton link='/forum' path='/icon/news.svg' />
             <NavigateButton link='/community' path='/icon/community.svg' />
             <NavigateButton link='/profile/1' path='/icon/user.svg' />
+            <NavigateButton link='/game/1' path='/icon/dice-6.svg' />
             <NavigateButton link='/game/1' path='/icon/game.svg' />
-            <Link to={'/test'}>
-                <Button className='h-fit py-2'><p>test</p></Button>
-            </Link>
         </div>
     )
 }

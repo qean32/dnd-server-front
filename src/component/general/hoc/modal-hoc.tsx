@@ -28,6 +28,6 @@ export const Modal: React.FC<Props> = ({ className, children, view, animation: {
                     {children}
                 </div>
             </div>
-        </Portal>
+        </Portal >
     )
 }

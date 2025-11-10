@@ -10,7 +10,7 @@ interface Props {
 }
 
 
-export const AddCharacter: React.FC<Props> = ({ view, swap }: Props) => {
+export const AddCharacterInProfile: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}

@@ -10,6 +10,7 @@ export const Router = () => {
             <Header />
             <ToastArea />
             <Navigate />
+
             <Routes>
                 <Route element={<pages.CreatePostPage />} path="/create-post" />
                 <Route element={<pages.GamePage />} path="/game/:id" />
@@ -25,7 +26,7 @@ export const Router = () => {
                 <Route element={<pages.DepartmentPage />} path="/department/:name" />
 
                 <Route element={<pages.P404Page />} path="*" />
-                <Route element={<pages.TestPage />} path="/test" />
+                {/* <Route element={<pages.TestPage />} path="/test" /> */}
             </Routes>
         </BrowserRouter>
     )

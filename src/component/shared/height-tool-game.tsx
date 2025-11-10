@@ -1,6 +1,6 @@
 import React from 'react'
 import { ButtonInGroup, GroupButton } from '../ui'
-import { Modal } from '../children/modal'
+import { Modal } from '../case/modal'
 import { useAppDispatch, useAppSelector } from '../../lib/castom-hook/redux'
 import { toast } from '../../lib/function'
 import { useLocation } from 'react-router-dom'
@@ -22,7 +22,7 @@ export const HeightToolGame: React.FC<Props> = ({ }: Props) => {
             <div>
                 <GroupButton>
                     <ButtonInGroup children={<img className='icon-sm' src='/icon/game.svg' />} />
-                    <Modal.Set Modal={Modal.Map}>
+                    <Modal.Set Modal={Modal.MapsGame}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/map.svg' />} /></Modal.Set>
                 </GroupButton>
             </div>
@@ -33,15 +33,14 @@ export const HeightToolGame: React.FC<Props> = ({ }: Props) => {
                     <ButtonInGroup children={<img className='icon-sm' src='/icon/grid.svg' />} />
                     <ButtonInGroup fn={forwardClick} children={<img className='icon-sm' src='/icon/forward.svg' />} />
                     <ButtonInGroup fn={saveGame} children={<img className='icon-sm' src='/icon/save.svg' />} />
-                    <Modal.Set Modal={Modal.AddEntity}>
+                    <Modal.Set Modal={Modal.AddSomething}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/dragon.svg' />} /></Modal.Set>
-                    <Modal.Set Modal={Modal.AddObject}>
+                    <Modal.Set Modal={Modal.AddSomething}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/object.svg' />} /></Modal.Set>
                     <Modal.Set Modal={Modal.Notes}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/edit.svg' />} /></Modal.Set>
-                    <Modal.Set Modal={Modal.Img}>
+                    <Modal.Set Modal={Modal.ImgCarousel}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/img.svg' />} /></Modal.Set>
-                    {/* <ButtonInGroup children={<img className='icon-sm' src='/icon/map.svg' />} /> */}
                 </GroupButton>
             </div>
         </div>

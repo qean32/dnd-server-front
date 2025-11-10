@@ -1,4 +1,4 @@
-import { EditProfileForm } from "../component/children/form"
+import { EditProfileForm } from "../component/case/form"
 import { Page } from "../component/general/hoc"
 import { AuthBG } from "../component/ui"
 

@@ -10,7 +10,7 @@ interface Props {
 }
 
 
-export const AddObject: React.FC<Props> = ({ view, swap }: Props) => {
+export const AddSomething: React.FC<Props> = ({ view, swap }: Props) => {
     return (
         <Modal
             swap={swap}
@@ -20,9 +20,8 @@ export const AddObject: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden relative" onClick={stopPropagation}>
+            <div className="relative bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <img src="/icon/cross.svg" className='icon-sm- absolute right-2.5 top-3 cursor-pointer' alt="" />
                 <div className="pt-2 w-9/12 h-full overflow-scroll relative">
                     <AddEntityFilter />
                     <GroupToken title='Базовый набор' />

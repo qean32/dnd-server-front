@@ -1,4 +1,4 @@
-import { ChangePasswordForm } from "../component/children/form"
+import { ChangePasswordForm } from "../component/case/form"
 import { Page } from "../component/general/hoc"
 
 export const ChangePasswordPage = () => {
