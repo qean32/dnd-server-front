@@ -1,7 +1,8 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
-import { AddImgArea, Button, ModalCross } from '../../ui'
+import { AddEntityFilter, AddImgArea, Button, ModalCross, TextInput } from '../../ui'
+import { GroupToken } from '../../shared'
 
 interface Props {
     view: boolean
@@ -10,8 +11,6 @@ interface Props {
 
 
 export const AddMapInGame: React.FC<Props> = ({ view, swap }: Props) => {
-   
-
     return (
         <Modal
             swap={swap}
@@ -21,12 +20,22 @@ export const AddMapInGame: React.FC<Props> = ({ view, swap }: Props) => {
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color w-5/12 h-8/12 rounded-md flex flex-col overflow-hidden relative" onClick={stopPropagation}>
+            <div className="relative bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <AddImgArea />       
-                <div className="flex gap-5 justify-end p-5 pt-8">
-                    <Button variant='ghost'><p>Отмена</p></Button>
-                    <Button variant='acceess'><p>Добавить</p></Button>
+                <div className="pt-2 w-9/12 h-full overflow-scroll relative">
+                    <AddEntityFilter />
+                    <GroupToken title='Базовый набор' />
+                    <GroupToken title='Набор Хелойвин' />
+                </div>
+                <div className="w-3/12 h-full flex flex-col">
+                    <AddImgArea className='h-1/3 w-full mt-10' />
+                    <TextInput className='mx-5' placeHolder='Название' />
+                    <div className="flex-1 flex justify-end flex-col pb-5 items-end px-5">
+                        <div className="flex gap-2">
+                            <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                            <Button variant='acceess'><p>Добавить</p></Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </Modal>

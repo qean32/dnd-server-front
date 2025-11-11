@@ -1,11 +1,12 @@
 import { GroupContainer } from "../component/general"
 import { Page } from "../component/general/hoc"
-import { Search, TextInfo, UserItem } from "../component/ui"
+import { ScrollTop, Search, TextInfo, UserItem } from "../component/ui"
 import { fakeUser } from "../fake-data"
 
 export const CommunityPage = () => {
     return (
         <Page size="w-[65%]">
+            <ScrollTop />
             <div className="relative">
                 <TextInfo title="Сообщество" />
                 <Search />

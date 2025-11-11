@@ -40,7 +40,7 @@ export const AddImgArea: React.FC<Props> = ({ className }: Props) => {
     return (
         <>
             <input accept='image/png, image/jpeg, image/svg, image/jpg, image/webp' type='file' hidden id={id} onChange={changeHandler} />
-            <div className={cn("w-full h-10/12 p-5", className)}>
+            <div className={cn("p-5", className)}>
                 <label
                     className="flex p-0 h-full rounded-lg cursor-pointer justify-center items-center bg-img bg-color-dark"
                     style={{ borderImageSource: 'https://i.sstatic.net/wLdVc.png', borderImageWidth: '2px' }}

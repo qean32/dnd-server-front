@@ -13,7 +13,7 @@ export const ProfileContent: React.FC<Props> = ({ }: Props) => {
     const { type } = useAppSelector(state => state.profileContent)
 
     return (
-        <div className={cn("flex-1 flex w-[300%] pl-1 gap-1 transition-07", (type == 'character' && '-translate-x-1/3'), type == 'game' && '-translate-x-2/3')}>
+        <div className={cn("flex-1 flex w-[300%] pl-1 gap-1 transition-07 min-h-[500px]", (type == 'character' && '-translate-x-1/3'), type == 'game' && '-translate-x-2/3')}>
             <div className={classParent}><Posts view={type == 'post'} /></div>
             <div className={classParent}>
                 {type == 'character' && <Characters />}</div>

@@ -1,12 +1,15 @@
 import { AddCharacterInGame } from "../component/case/modal/add-character-in-game-modal"
+import { ViewImg } from "../component/case/modal/img-view-modal"
 import { LeftSideGame } from "../component/shared"
 import { GameArea, HeightToolGame } from "../component/shared"
 import { useAppDispatch, useAppSelector } from "../lib/castom-hook/redux"
 import { swapAddCharacterInGamePath } from "../store/add-character-in-game-path"
+import { swapViewImg } from "../store/view-img"
 
 export const GamePage = () => {
     const dispath = useAppDispatch()
     const { href } = useAppSelector(state => state.addCharacterInGame)
+    const { href: hrefImg } = useAppSelector(state => state.viewImg)
 
     return (
         <>
@@ -16,6 +19,7 @@ export const GamePage = () => {
                 <GameArea />
             </main >
             <AddCharacterInGame swap={() => dispath(swapAddCharacterInGamePath({ href: '' }))} view={!!href} />
+            <ViewImg swap={() => dispath(swapViewImg({ href: '' }))} view={!!hrefImg} />
         </>
     )
 }
