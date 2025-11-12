@@ -2,12 +2,11 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 import { toastReducer } from './toast-store'
 import { searchReducer } from './search-store'
-import { profileContentReducer } from './profile-content-store'
+import { viewContentReducer } from './view-content-store'
 import { viewGridReducer } from './view-grid-store'
 import { gameReducer } from './game-store'
-import { entityObjectReducer } from './entiries-objects'
-import { viewImgReducer } from './view-img'
-import { addCharacterInGameReducer } from './add-character-in-game-path'
+import { viewImgReducer } from './view-img-store'
+import { addCharacterInGameReducer } from './add-character-in-game-path-store'
 
 
 const rootReducer = combineReducers({
@@ -15,10 +14,9 @@ const rootReducer = combineReducers({
     viewImg: viewImgReducer,
     addCharacterInGame: addCharacterInGameReducer,
     search: searchReducer,
-    profileContent: profileContentReducer,
+    viewContent: viewContentReducer,
     game: gameReducer,
     viewGrid: viewGridReducer,
-    entityObject: entityObjectReducer,
 })
 
 export const store = configureStore({

@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
+import { ButtonInGroup } from '../../ui'
 
 interface Props {
+    swap: MouseEventHandler<HTMLButtonElement>
 }
 
 
-export const Arrow: React.FC<Props> = ({ }: Props) => {
+export const Arrow: React.FC<Props> = ({ swap }: Props) => {
     return (
-        <div>
+        <div className='relative'>
+            <ButtonInGroup className='absolute right-0 translate-x-full bg-color-dark rounded-r-sm bg-color-dark-hover top-2' fn={swap}>
+                <img src='/icon/double-arrow.svg' className='bg-color-dark rounded-r-sm icon-sm' />
+            </ButtonInGroup>
         </div>
     )
 }

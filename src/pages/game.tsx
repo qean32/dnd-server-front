@@ -3,8 +3,8 @@ import { ViewImg } from "../component/case/modal/img-view-modal"
 import { LeftSideGame } from "../component/shared"
 import { GameArea, HeightToolGame } from "../component/shared"
 import { useAppDispatch, useAppSelector } from "../lib/castom-hook/redux"
-import { swapAddCharacterInGamePath } from "../store/add-character-in-game-path"
-import { swapViewImg } from "../store/view-img"
+import { swapAddCharacterInGamePath } from "../store/add-character-in-game-path-store"
+import { swapViewImg } from "../store/view-img-store"
 
 export const GamePage = () => {
     const dispath = useAppDispatch()

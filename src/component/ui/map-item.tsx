@@ -1,7 +1,7 @@
 import React from 'react'
 import { ContextMenu } from '../shared'
 import { useAppDispatch } from '../../lib/castom-hook/redux'
-import { swapViewImg } from '../../store/view-img'
+import { swapViewImg } from '../../store/view-img-store'
 
 interface Props {
 }

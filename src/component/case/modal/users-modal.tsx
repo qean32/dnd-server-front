@@ -3,7 +3,7 @@ import { stopPropagation } from '../../../lib/function'
 import { Modal } from '../../general/hoc'
 import { Ava, ModalCross } from '../../ui'
 import { useAppDispatch } from '../../../lib/castom-hook/redux'
-import { swapAddCharacterInGamePath } from '../../../store/add-character-in-game-path'
+import { swapAddCharacterInGamePath } from '../../../store/add-character-in-game-path-store'
 
 interface Props {
     view: boolean
