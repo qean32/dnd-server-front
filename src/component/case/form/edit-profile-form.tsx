@@ -11,7 +11,7 @@ export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
         <div className="w-1/2 h-full flex justify-center">
             <div className="w-fit flex flex-col gap-3">
                 <Title>РЕДАКТОР</Title>
-                <div className="flex-1 w-[300px] pt-2 flex flex-col justify-between pb-3">
+                <div className="flex-1 w-[35vh] pt-2 flex flex-col justify-between pb-3">
                     <div className="flex gap-2 flex-col">
                         <TextInput placeHolder="никнейм" />
                         <ImgInput title='фото профиля' className='pl-1' />

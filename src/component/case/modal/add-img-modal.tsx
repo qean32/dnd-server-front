@@ -24,7 +24,7 @@ export const AddImg: React.FC<Props> = ({ view, swap }: Props) => {
             <div className="bg-color w-5/12 h-8/12 rounded-md flex flex-col overflow-hidden relative" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
                 <AddImgArea className='w-full h-10/12' />       
-                <div className="flex gap-5 justify-end p-5 pt-8">
+                <div className="flex gap-5 justify-end p-5 flex-1 items-end">
                     <Button variant='ghost'><p>Отмена</p></Button>
                     <Button variant='acceess'><p>Добавить</p></Button>
                 </div>

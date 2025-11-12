@@ -14,7 +14,7 @@ export const MapItem: React.FC<Props> = ({ }: Props) => {
         dispath(swapViewImg({ href: '/img/dnd+.jpg' }))
     }
     return (
-        <div className="mount-opacity relative h-[85px] cursor-pointer" onClick={clickHAndler}>
+        <div className="mount-opacity relative h-[9vh] cursor-pointer" onClick={clickHAndler}>
             <div className="h-full w-full absolute top-0 bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/dnd+.jpg'})` }}></div>
 
             <div className="absolute top-0.5 right-0.5">

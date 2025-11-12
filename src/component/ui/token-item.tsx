@@ -16,11 +16,11 @@ export const TokenItem: React.FC<Props> = ({ entity = {
     view: true
 } }: Props) => {
     return (
-        <div className="px-5 flex py-5 gap-5 bg-color bg-color-dark-hover transition-03 rounded-md cursor-pointer">
-            <div className="w-[62px] aspect-square bg-img rounded-full" style={{ backgroundImage: `url(${entity.path})` }}></div>
-            <div className='mt-1'>
+        <div className="px-4 flex py-5 gap-5 bg-color bg-color-dark-hover transition-03 rounded-md cursor-pointer">
+            <div className="w-[58px] aspect-square bg-img rounded-full" style={{ backgroundImage: `url(${entity.path})` }}></div>
+            <div>
                 <p className='text-2xl'>{entity.name}</p>
-                <p className='text-sm max-w-[90px] overflow-hidden text-ellipsis text-nowrap'>{entity.discription}</p>
+                <p className='text-sm max-w-[9vh] overflow-hidden text-ellipsis text-nowrap'>{entity.discription}</p>
             </div>
         </div>
     )

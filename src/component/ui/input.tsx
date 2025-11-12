@@ -12,7 +12,7 @@ interface SelectProps {
 export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options }: SelectProps) => {
 
     return (
-        <select className={cn('min-w-[200px]', className)}>
+        <select className={cn('flex-1', className)}>
             {options.map(item => {
                 return <option value={item.value}>{item.title}</option>
             })}

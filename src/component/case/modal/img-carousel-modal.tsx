@@ -60,7 +60,7 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
                     <ViewImgItem path='/img/dnd4.jpg' value={value} />
                     <ViewImgItem path='/img/dnd4.jpg' value={value} />
                     <ModalGroup.Set Modal={ModalGroup.AddImg}>
-                        <PlusButton className='w-[120px] h-full' />
+                        <PlusButton className='min-w-[120px] h-full' />
                     </ModalGroup.Set>
                 </div>
             </div>

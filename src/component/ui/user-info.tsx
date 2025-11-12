@@ -12,7 +12,7 @@ export const UserInfo: React.FC<Props> = ({ className }: Props) => {
         <div className={cn('flex gap-6 mt-4', className)}>
             <Ava size="ava-lg" path="" className="bg-color-dark" />
             <BanPlate />
-            <p className="text-4xl">NICKNAME</p>
+            <p className="text-3xl">NICKNAME</p>
         </div>
     )
 }
