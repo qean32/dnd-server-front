@@ -9,10 +9,10 @@ export type toastPayloadDto = {
     name?: string
     path?: string
     text?: string
-    // other ?
 }
 
 export type toastKeyDto =
-    'add-entity'
+    ''
+    | 'add-entity'
     | 'event-message'
     | 'message'

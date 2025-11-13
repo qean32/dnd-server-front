@@ -1,5 +1,5 @@
-import { ToastAddEntity, ToastEventMessage, ToastMessage } from "../../component/children/toast"
-import { toastKeyDto, toastPayloadDto } from "../../model"
+import { ToastAddEntity, ToastEventMessage, ToastMessage } from "@/component/case/toast"
+import { toastKeyDto, toastPayloadDto } from "@/model"
 
 
 

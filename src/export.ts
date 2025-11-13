@@ -12,6 +12,21 @@ export const customAttribute = {
     dataId: 'data-id'
 }
 
+export const title = {
+    authorization: 'авторизация',
+    p404: 'страница 404',
+    changePassword: 'изменение пароля',
+    communty: 'сообщество',
+    createPost: 'конструктор статьи',
+    department: 'раздел',
+    editProfile: 'редактор профиля',
+    session: 'сессия',
+    forum: 'форум',
+    main: 'главная',
+    post: 'статья',
+    profile: 'профиль',
+}
+
 export const mapMonthKey = new Map([
     ['1', 'Январь'],
     ['2', 'Февраль'],

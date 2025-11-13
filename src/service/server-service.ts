@@ -1,4 +1,4 @@
-import { requestGet } from "../lib/function/request"
+import { requestGet } from "@lib/function/request"
 const instance = 'http-message';
 
 export const serverService = {

@@ -1,4 +1,4 @@
-import { accessTokenWord, tokenStorage } from "../../export"
+import { accessTokenWord, tokenStorage } from "@/export"
 import { getToken } from "./get-token"
 
 export const getAuthHeaders = (file: boolean = false) => {

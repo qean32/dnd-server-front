@@ -1,6 +1,6 @@
 import React from 'react'
-import { cn, generateId } from '../../lib/function'
-import { useBoolean } from '../../lib/castom-hook'
+import { cn, generateId } from '@lib/function'
+import { useBoolean } from '@lib/castom-hook'
 import { Ava } from '.'
 
 interface SelectProps {
@@ -12,7 +12,7 @@ interface SelectProps {
 export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options }: SelectProps) => {
 
     return (
-        <select className={cn('min-w-[300px]', className)}>
+        <select className={cn('flex-1', className)}>
             {options.map(item => {
                 return <option value={item.value}>{item.title}</option>
             })}
@@ -149,7 +149,7 @@ interface FakeTextProps {
 export const FakeTextInput: React.FC<FakeTextProps> = ({ title, className }: FakeTextProps) => {
     return (
         <div className={cn("", className)}>
-            <input type="text" className='fake-input text-3xl w-fit' defaultValue={title} />
+            <input type="text" className='fake-input text-3xl w-fit' defaultValue={title} style={{ outline: 0 }} />
         </div>
     )
 }

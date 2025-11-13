@@ -1,6 +1,6 @@
 import React from 'react'
-import { useBoolean, useDebounceFunction } from '../../lib/castom-hook'
-import { cn } from '../../lib/function'
+import { useBoolean, useDebounceFunction } from '@lib/castom-hook'
+import { cn } from '@lib/function'
 
 interface Props {
 }

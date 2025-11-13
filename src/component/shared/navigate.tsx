@@ -1,7 +1,6 @@
 import React from 'react'
-import { cn } from '../../lib/function'
-import { Link } from 'react-router-dom'
-import { Button, NavigateButton } from '../ui'
+import { cn } from '@lib/function'
+import { NavigateButton } from '@component/ui'
 
 interface Props {
     className?: string
@@ -10,15 +9,13 @@ interface Props {
 
 export const Navigate: React.FC<Props> = ({ className }: Props) => {
     return (
-        <div className={cn('fixed z-50 flex gap-2 left-1/2 bottom-2 -translate-x-1/2 bg-color-darkness p-2 rounded-md transition-03 hover:py-3', className)}>
+        <div className={cn('fixed z-50 flex hover:-translate-y-1 gap-2 left-1/2 bottom-3 -translate-x-1/2 bg-color-darkness p-3 rounded-md transition-03 hover:py-4', className)}>
             <NavigateButton link='/' path='/icon/home.svg' />
             <NavigateButton link='/forum' path='/icon/news.svg' />
             <NavigateButton link='/community' path='/icon/community.svg' />
-            <NavigateButton link='/profile/1' path='/icon/user.svg' />
-            <NavigateButton link='/game/1' path='/icon/game.svg' />
-            <Link to={'/test'}>
-                <Button className='h-fit py-2'><p>test</p></Button>
-            </Link>
+            <NavigateButton link='/profile/777/zxccursed' path='/icon/user.svg' />
+            <NavigateButton link='/session/777/zxccursed' path='/icon/dice-6.svg' />
+            <NavigateButton link='/session/777/zxccursed' path='/icon/game.svg' />
         </div>
     )
 }

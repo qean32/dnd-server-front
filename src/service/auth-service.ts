@@ -1,5 +1,5 @@
-import { requestPost } from "../lib/function/request"
-import { AuthFormDto, RegistrationFormDto } from "../model/schema"
+import { requestPost } from "@lib/function/request"
+import { AuthFormDto, RegistrationFormDto } from "@/model/schema"
 const instance = 'auth'
 
 export const authService = {

@@ -1,8 +1,8 @@
 import React, { memo } from 'react'
 import { Circle, Transformer } from "react-konva"
-import { useToken } from '../../../lib/castom-hook';
-import { entityDto } from '../../../model';
-import { useAppDispatch } from '../../../lib/castom-hook/redux';
+import { useToken } from '@lib/castom-hook';
+import { entityDto } from '@/model';
+import { useAppDispatch } from '@lib/castom-hook/redux';
 
 const restObject = {
     fillPatternRepeat: 'no-repeat',

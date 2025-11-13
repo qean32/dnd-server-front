@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { idDto, toastDto } from '../model'
+import { idDto, toastDto } from '@/model'
 
 type stateDto = { toasts: toastDto[] }
 

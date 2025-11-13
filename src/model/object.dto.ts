@@ -1,9 +1,9 @@
-import { positionDto } from "./position.dto"
+import { coordinateDto } from "./position.dto"
 
 export interface objectDto {
     id: number
     name: string
-    position: positionDto
+    position: coordinateDto
     path: string
     view: boolean
 }

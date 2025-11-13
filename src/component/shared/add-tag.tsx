@@ -1,8 +1,8 @@
 import React from 'react'
-import { useBoolean } from '../../lib/castom-hook'
-import { cn } from '../../lib/function'
-import { UnwrapTags } from '../ui'
-import { fakeTags } from '../../fake-data'
+import { useBoolean } from '@/lib/castom-hook'
+import { cn } from '@/lib/function'
+import { UnwrapTags } from '@component/ui'
+import { fakeTags } from '@/fake-data'
 
 interface Props {
     className?: string

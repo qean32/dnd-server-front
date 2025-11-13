@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn } from '../../lib/function'
+import { cn } from '@lib/function'
 
 interface Props {
     className?: string
@@ -10,9 +10,9 @@ interface Props {
 
 const map = new Map([
     ["default", 'bg-color-dark bg-color-darkness-hover'],
+    ["ghost", 'hover:underline'],
     ["acceess", 'bg-green-800 hover:bg-green-900'],
     ["reject", 'bg-red-800 hover:bg-red-900'],
-    ["ghost", 'hover:underline'],
 ])
 
 

@@ -1,0 +1,21 @@
+@media screen and (min-width: 1999px) {
+    .adaptive2k-grid-column-7 {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    .adaptive2k-grid-column-15 {
+        grid-template-columns: repeat(15, 1fr);
+    }
+
+    .adaptive2k-grid-column-9 {
+        grid-template-columns: repeat(9, 1fr);
+    }
+
+    .adaptive2k-grid-column-8 {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .adaptive2k-grid-column-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}

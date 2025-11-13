@@ -1,6 +1,6 @@
 import React from 'react'
-import { useBoolean } from '../../lib/castom-hook'
-import { cn } from '../../lib/function'
+import { useBoolean } from '@lib/castom-hook'
+import { cn } from '@lib/function'
 
 interface Props {
     text?: string

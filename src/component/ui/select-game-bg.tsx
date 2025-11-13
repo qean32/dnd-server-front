@@ -1,6 +1,6 @@
 import React from 'react'
-import { FakeGameItem } from './fake-game-item'
 import { Title } from './title'
+import { PlateGameItem } from './item'
 
 interface Props {
 }
@@ -18,11 +18,11 @@ export const SelectGameBG: React.FC<Props> = ({ }: Props) => {
             <Title className='pb-4'>Фон плитки</Title>
             <div className="flex flex-wrap gap-5 max-w-[660px] pointer-events-none child-fill-event" onClick={clickHandler}>
                 <input value={value} onChange={() => { }} hidden />
-                <FakeGameItem path='/img/dnd+.jpg' value={value} />
-                <FakeGameItem path='/img/dnd1.jpg' value={value} />
-                <FakeGameItem path='/img/dnd2.jpg' value={value} />
-                <FakeGameItem path='/img/dnd3.jpg' value={value} />
-                <FakeGameItem path='/img/dnd4.jpg' value={value} />
+                <PlateGameItem path='/img/dnd+.jpg' value={value} />
+                <PlateGameItem path='/img/dnd1.jpg' value={value} />
+                <PlateGameItem path='/img/dnd2.jpg' value={value} />
+                <PlateGameItem path='/img/dnd3.jpg' value={value} />
+                <PlateGameItem path='/img/dnd4.jpg' value={value} />
             </div>
         </>
     )
