@@ -1,5 +1,5 @@
 import React from 'react'
-import { propsComponent } from '../../../model'
+import { propsComponent } from '@/model'
 
 interface Props {
     array: any[]

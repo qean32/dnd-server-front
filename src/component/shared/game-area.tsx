@@ -1,8 +1,8 @@
 import React from 'react'
 import { Stage, Layer, Group } from "react-konva"
-import { TokenEntity } from '../ui';
-import { entityDto } from '../../model';
-import { useAppSelector } from '../../lib/castom-hook/redux';
+import { TokenEntity } from '@component/ui';
+import { entityDto } from '@/model';
+import { useAppSelector } from '@lib/castom-hook/redux';
 import { GamePlateArea } from './game-plate-area';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 
 
 export const GameArea: React.FC<Props> = ({ }: Props) => {
-    const { game: { currentMap, mapsData } } = useAppSelector(state => state.game)
+    const { session: { currentMap, mapsData } } = useAppSelector(state => state.session)
 
     return (
         <Stage width={window.innerWidth} height={window.innerHeight - 64}>

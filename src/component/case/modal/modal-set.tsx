@@ -1,6 +1,6 @@
 import React from 'react'
-import { useBoolean } from '../../../lib/castom-hook'
-import { propsComponent } from '../../../model'
+import { useBoolean } from '@/lib/castom-hook'
+import { propsComponent } from '@/model'
 
 interface Props {
     children: React.ReactNode

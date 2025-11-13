@@ -1,5 +1,5 @@
 import React from 'react'
-import { PostInfo, IconAndCount, IconAndNumber } from '../ui'
+import { PostInfo, IconAndCount, IconAndNumber } from '@component/ui'
 
 interface Props {
     className?: string

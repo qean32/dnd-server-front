@@ -1,6 +1,6 @@
 import React from 'react'
-import { Title } from '../ui'
-import { entityDto, propsComponent } from '../../model'
+import { Title } from '@component/ui'
+import { entityDto, propsComponent } from '@/model'
 
 interface Props {
     title: string

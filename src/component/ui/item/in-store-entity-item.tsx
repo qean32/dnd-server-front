@@ -1,5 +1,5 @@
 import React from 'react'
-import { entityDto } from '../../../../model'
+import { entityDto } from '@/model'
 
 interface Props {
     entity?: entityDto

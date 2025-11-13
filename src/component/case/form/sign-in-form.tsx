@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, Button, PasswordInput, Checkbox, Title } from '../../ui'
+import { TextInput, Button, PasswordInput, Checkbox, Title } from '@component/ui'
 
 interface Props {
 }

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Ava } from '../ava'
-import { entityDto } from '../../../model'
-import { EntityItemMenu } from '../../case/context-menu'
+import { Ava } from '@component/ui'
+import { entityDto } from '@/model'
+import { EntityItemMenu } from '@component/case/context-menu'
 
 
 export const InToolEntityItem: React.FC<entityDto> = ({ name, path }: entityDto) => {

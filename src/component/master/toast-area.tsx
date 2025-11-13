@@ -1,6 +1,6 @@
 import React from 'react'
-import { useAppSelector } from '../../lib/castom-hook/redux'
-import { toastHook } from '../../lib/function'
+import { useAppSelector } from '@/lib/castom-hook/redux'
+import { toastHook } from '@/lib/function'
 
 interface Props {
     className?: string

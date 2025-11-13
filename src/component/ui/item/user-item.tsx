@@ -1,7 +1,7 @@
 import React from 'react'
-import { Ava } from '../'
+import { Ava } from '@component/ui'
 import { Link } from 'react-router-dom'
-import { userDto } from '../../../model'
+import { userDto } from '@/model'
 
 
 export const UserItem: React.FC<userDto> = ({ ava, id, name }: userDto) => {

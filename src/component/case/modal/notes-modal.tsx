@@ -1,7 +1,7 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { ModalCross } from '../../ui'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { ModalCross } from '@component/ui'
 
 interface Props {
     view: boolean

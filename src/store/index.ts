@@ -4,7 +4,7 @@ import { toastReducer } from './toast-store'
 import { searchReducer } from './search-store'
 import { viewContentReducer } from './view-content-store'
 import { viewGridReducer } from './view-grid-store'
-import { gameReducer } from './game-store'
+import { sessionReducer } from './session-store'
 import { viewImgReducer } from './view-img-store'
 import { addCharacterInGameReducer } from './add-character-in-game-path-store'
 
@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
     addCharacterInGame: addCharacterInGameReducer,
     search: searchReducer,
     viewContent: viewContentReducer,
-    game: gameReducer,
+    session: sessionReducer,
     viewGrid: viewGridReducer,
 })
 

@@ -1,8 +1,8 @@
-import { LogInForm, SignInForm } from "../component/case/form"
-import { Page } from "../component/master/h-order-component"
-import { AuthBG } from "../component/ui"
-import { title } from "../export"
-import { usePage } from "../lib/castom-hook"
+import { LogInForm, SignInForm } from "@component/case/form"
+import { Page } from "@component/master/h-order-component"
+import { AuthBG } from "@component/ui"
+import { title } from "@/export"
+import { usePage } from "@lib/castom-hook"
 
 export const AuthPage = () => {
     const { } = usePage(title.authorization)

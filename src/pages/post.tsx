@@ -1,8 +1,8 @@
-import { Page } from "../component/master/h-order-component"
-import { PostBody } from "../component/shared"
-import { Crumb } from "../component/ui"
-import { usePage } from "../lib/castom-hook"
-import { getParamName } from "../lib/function"
+import { Page } from "@component/master/h-order-component"
+import { PostBody } from "@component/shared"
+import { Crumb } from "@component/ui"
+import { usePage } from "@lib/castom-hook"
+import { getParamName } from "@lib/function"
 
 export const PostPage = () => {
     const { } = usePage(getParamName())

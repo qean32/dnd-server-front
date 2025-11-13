@@ -1,5 +1,5 @@
 import React from 'react'
-import { ContextMenu } from '../../master/h-order-component'
+import { ContextMenu } from '@component/master/h-order-component'
 
 interface Props {
 }

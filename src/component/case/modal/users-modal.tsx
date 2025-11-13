@@ -1,9 +1,9 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { Ava, ModalCross } from '../../ui'
-import { useAppDispatch } from '../../../lib/castom-hook/redux'
-import { swapAddCharacterInGamePath } from '../../../store/add-character-in-game-path-store'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { Ava, ModalCross } from '@component/ui'
+import { useAppDispatch } from '@/lib/castom-hook/redux'
+import { swapAddCharacterInGamePath } from '@/store/add-character-in-game-path-store'
 
 interface Props {
     view: boolean

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button } from '.'
-import { cn } from '../../lib/function'
+import { cn } from '@lib/function'
 
 interface Props {
     className?: string

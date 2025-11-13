@@ -1,8 +1,8 @@
 import React from 'react'
-import { useAppSelector } from '../../../lib/castom-hook/redux'
-import { useAppDispatch } from '../../../store'
-import { cn } from '../../../lib/function'
-import { swapProfileContent } from '../../../store/view-content-store'
+import { useAppSelector } from '@lib/castom-hook/redux'
+import { useAppDispatch } from '@/store'
+import { cn } from '@lib/function'
+import { swapProfileContent } from '@/store/view-content-store'
 
 interface Props {
 }

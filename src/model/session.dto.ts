@@ -1,6 +1,6 @@
 import { entityDto, mapDto, objectDto, userDto } from "."
 
-export interface gameDto {
+export interface sessionDto {
     id: string
     name: string
     currentMap: mapDto

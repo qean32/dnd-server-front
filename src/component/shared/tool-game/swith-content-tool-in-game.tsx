@@ -1,7 +1,7 @@
 import React from 'react'
-import { ButtonInGroup } from '../../ui'
-import { useAppDispatch } from '../../../store'
-import { swapGameToolContent } from '../../../store/view-content-store'
+import { ButtonInGroup } from '@component/ui'
+import { useAppDispatch } from '@/store'
+import { swapGameToolContent } from '@/store/view-content-store'
 
 interface Props {
 }

@@ -1,7 +1,7 @@
-import { fakePost } from "../../../fake-data"
-import { Modal } from "../../case/modal"
-import { PlusButton } from "../../ui"
-import { SessionItem } from "../../ui/item"
+import { fakePost } from "@/fake-data"
+import { Modal } from "@component/case/modal"
+import { PlusButton } from "@component/ui"
+import { SessionItem } from "@component/ui/item"
 
 
 export const Session: React.FC<{}> = ({ }: {}) => {

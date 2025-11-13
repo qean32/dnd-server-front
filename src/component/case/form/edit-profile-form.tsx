@@ -1,5 +1,5 @@
 import React from 'react'
-import { TextInput, Button, ImgInput, Title } from '../../ui'
+import { TextInput, Button, ImgInput, Title } from '@component/ui'
 import { Link } from 'react-router-dom'
 
 interface Props {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { postDto } from '../../../model/post.dto'
-import { UnwrapTags } from '.././unwrap-tags'
+import { postDto } from '@/model/post.dto'
+import { UnwrapTags } from '@component/ui/unwrap-tags'
 
 
 export const PostItem: React.FC<postDto> = ({ discription, tags, title, author, views, fixed }: postDto) => {

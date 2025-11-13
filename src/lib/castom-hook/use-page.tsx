@@ -1,4 +1,4 @@
-import { changeTitle } from "../function"
+import { changeTitle } from "@lib/function"
 
 export const usePage = (title: string) => {
     changeTitle(title)

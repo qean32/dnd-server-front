@@ -1,8 +1,8 @@
-import { Page } from "../component/master/h-order-component"
-import { TextInfo } from "../component/ui"
-import { DepartmentItem } from "../component/ui/item"
-import { title } from "../export"
-import { usePage } from "../lib/castom-hook"
+import { Page } from "@component/master/h-order-component"
+import { TextInfo } from "@component/ui"
+import { DepartmentItem } from "@component/ui/item"
+import { title } from "@/export"
+import { usePage } from "@lib/castom-hook"
 
 
 export const ForumPage = () => {

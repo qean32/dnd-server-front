@@ -1,9 +1,9 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { Button, ModalCross } from '../../ui'
-import { fakePost } from '../../../fake-data'
-import { LinkCharacterItem } from '../../ui/item'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { Button, ModalCross } from '@component/ui'
+import { fakePost } from '@/fake-data'
+import { LinkCharacterItem } from '@component/ui/item'
 
 interface Props {
     view: boolean

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-import { fakePost } from "../../../fake-data"
-import { PostColumn, PlusButton } from "../../ui"
-import { useBoolean } from "../../../lib/castom-hook"
+import { fakePost } from "@/fake-data"
+import { PostColumn, PlusButton } from "@component/ui"
+import { useBoolean } from "@lib/castom-hook"
 import React from "react"
-import { PostItem } from "../../ui/item"
+import { PostItem } from "@component/ui/item"
 
 interface Props {
     view: boolean

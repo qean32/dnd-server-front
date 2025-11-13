@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title, TextInput } from '../../ui'
+import { Title, TextInput } from '@component/ui'
 
 interface Props {
     children: React.ReactNode

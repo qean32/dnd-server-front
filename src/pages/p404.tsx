@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom"
-import { title } from "../export";
-import { usePage } from "../lib/castom-hook";
+import { title } from "@/export";
+import { usePage } from "@lib/castom-hook";
 
 export const P404Page = () => {
     const { } = usePage(title.p404)

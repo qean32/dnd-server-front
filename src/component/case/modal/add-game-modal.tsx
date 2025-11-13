@@ -1,8 +1,8 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { AddGameForm } from '../form'
-import { Button, ModalCross } from '../../ui'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { AddGameForm } from '@component/case/form'
+import { Button, ModalCross } from '@component/ui'
 
 interface Props {
     view: boolean

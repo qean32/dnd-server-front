@@ -1,6 +1,6 @@
 import React from 'react'
-import { useAppDispatch } from '../../../../lib/castom-hook/redux'
-import { swapViewImg } from '../../../../store/view-img-store'
+import { useAppDispatch } from '@lib/castom-hook/redux'
+import { swapViewImg } from '@/store/view-img-store'
 
 interface Props {
 }

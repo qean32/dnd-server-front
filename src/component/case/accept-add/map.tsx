@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddImgArea, TextInput } from '../../ui'
+import { AddImgArea, TextInput } from '@component/ui'
 
 interface Props {
     children: React.ReactNode

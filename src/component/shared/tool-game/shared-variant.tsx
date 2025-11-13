@@ -1,11 +1,11 @@
 import React from 'react'
-import { cn } from '../../../lib/function'
-import { Button } from '../../ui'
+import { cn } from '@lib/function'
+import { Button } from '@component/ui'
 import { SwithContentLiftSideGame } from './swith-content-tool-in-game'
 import { UnwrapArray } from './unwrap-array'
-import { useAppSelector } from '../../../lib/castom-hook/redux'
-import { entityDto, objectDto } from '../../../model'
-import { InToolEntityItem, InToolObjectItem, InToolCharacterItem } from '../../ui/item'
+import { useAppSelector } from '@lib/castom-hook/redux'
+import { entityDto, objectDto } from '@/model'
+import { InToolEntityItem, InToolObjectItem, InToolCharacterItem } from '@component/ui/item'
 
 interface Props {
     mapsData: { [key: string]: { entities: entityDto[]; objects: objectDto[]; } }

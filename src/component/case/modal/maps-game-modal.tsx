@@ -1,10 +1,11 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { fakePost } from '../../../fake-data'
-import { ModalCross, PlusButton } from '../../ui'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { fakePost } from '@/fake-data'
+import { ModalCross, PlusButton } from '@component/ui'
 import * as ModalGroup from './index-group'
-import { MapItem } from '../../ui/item'
+import { InStoreMapItem, MapItem } from '@component/ui/item'
+import { AddMap } from '@component/case/accept-add'
 
 interface Props {
     view: boolean
@@ -29,9 +30,9 @@ export const MapsGame: React.FC<Props> = ({ view, swap }: Props) => {
                     {fakePost.slice(0, 9).map((__, _) =>
                         <MapItem key={_} />
                     )}
-                    <ModalGroup.Set modal={ModalGroup.AddMapInGame}>
-                        <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' />
-                    </ModalGroup.Set>
+                    {/* @ts-ignore */}
+                    <ModalGroup.Set modal={ModalGroup.AddSomething} component={InStoreMapItem} accept={AddMap}>
+                        <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' /></ModalGroup.Set>
                 </div>
             </div>
         </Modal>

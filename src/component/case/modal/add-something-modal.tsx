@@ -1,9 +1,9 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { Button, ModalCross } from '../../ui'
-import { FilterAddSomething, GroupTokenInModal } from '../../shared'
-import { propsComponent } from '../../../model'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { Button, ModalCross } from '@component/ui'
+import { FilterAddSomething, GroupTokenInModal } from '@component/shared'
+import { propsComponent } from '@/model'
 
 interface Props {
     view: boolean

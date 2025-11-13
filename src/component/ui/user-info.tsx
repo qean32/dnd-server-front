@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn } from '../../lib/function'
+import { cn } from '@lib/function'
 import { Ava, BanPlate } from '.'
 
 interface Props {

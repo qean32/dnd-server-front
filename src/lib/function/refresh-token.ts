@@ -1,5 +1,5 @@
-import { invalidTokenMessage, tokenStorage } from "../../export"
-import { authService } from "../../service"
+import { invalidTokenMessage, tokenStorage } from "@/export"
+import { authService } from "@service"
 import { getToken } from "./get-token"
 import { setToken } from "./set-token"
 

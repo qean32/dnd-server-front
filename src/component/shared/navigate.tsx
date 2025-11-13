@@ -1,6 +1,6 @@
 import React from 'react'
-import { cn } from '../../lib/function'
-import { NavigateButton } from '../ui'
+import { cn } from '@lib/function'
+import { NavigateButton } from '@component/ui'
 
 interface Props {
     className?: string

@@ -1,7 +1,7 @@
 import React from "react";
 import useImage from "use-image";
 import { useBoolean } from "./use-boolean";
-import { changeSomethingEntity } from "../../store/game-store";
+import { changeSomethingEntity } from "@/store/session-store";
 import { useAppDispatch } from "./redux";
 
 export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {

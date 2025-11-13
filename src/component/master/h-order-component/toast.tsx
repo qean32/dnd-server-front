@@ -1,6 +1,6 @@
 import React from 'react'
-import { cn } from '../../../lib/function'
-import { useMount } from '../../../lib/castom-hook'
+import { cn } from '@/lib/function'
+import { useMount } from '@/lib/castom-hook'
 
 interface Props {
     className?: string

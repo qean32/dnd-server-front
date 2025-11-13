@@ -1,14 +1,14 @@
 import React from 'react'
 import { Group, Rect } from 'react-konva'
 import useImage from 'use-image';
-import { useAppSelector } from '../../lib/castom-hook/redux';
+import { useAppSelector } from '@lib/castom-hook/redux';
 
 interface Props {
 }
 
 
 export const GamePlateArea: React.FC<Props> = ({ }: Props) => {
-    const { game: { currentMap } } = useAppSelector(state => state.game)
+    const { session: { currentMap } } = useAppSelector(state => state.session)
     const [bgGameArea] = useImage(currentMap.path);
     const [bgGrid] = useImage('/icon/grid.svg');
 

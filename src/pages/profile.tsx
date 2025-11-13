@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom"
-import { Page } from "../component/master/h-order-component"
-import { BanReason, UserInfo } from "../component/ui"
-import { ProfileContentSwith } from "../component/shared/profile-content/"
-import { ProfileContent } from "../component/shared/profile-content"
-import { usePage } from "../lib/castom-hook"
-import { getParamName } from "../lib/function"
+import { Page } from "@component/master/h-order-component"
+import { BanReason, UserInfo } from "@component/ui"
+import { ProfileContent, ProfileContentSwith } from "@component/shared/profile-content"
+import { usePage } from "@lib/castom-hook"
+import { getParamName } from "@lib/function"
 
 export const ProfilePage = () => {
     const { } = usePage(getParamName())

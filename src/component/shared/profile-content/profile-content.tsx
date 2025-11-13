@@ -1,6 +1,6 @@
 import React from 'react'
-import { useAppSelector } from '../../../lib/castom-hook/redux'
-import { cn } from '../../../lib/function'
+import { useAppSelector } from '@lib/castom-hook/redux'
+import { cn } from '@lib/function'
 import { Character, Post, Session } from '.'
 
 interface Props {

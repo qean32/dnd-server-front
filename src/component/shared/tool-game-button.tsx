@@ -1,12 +1,12 @@
 import React from 'react'
-import { ButtonInGroup, GroupButton } from '../ui'
-import { Modal } from '../case/modal'
-import { useAppDispatch, useAppSelector } from '../../lib/castom-hook/redux'
-import { toast } from '../../lib/function'
+import { ButtonInGroup, GroupButton } from '@component/ui'
+import { Modal } from '@component/case/modal'
+import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
+import { toast } from '@lib/function'
 import { useLocation } from 'react-router-dom'
-import { gameStorage, host } from '../../export'
-import { AddObject, AddEntity, AddMap } from '../case/accept-add/index.ts'
-import { InStoreEntityItem, InStoreMapItem, InStoreObjectItem } from '../ui/item/'
+import { gameStorage, host } from '@/export'
+import { AddObject, AddEntity, AddMap } from '@component/case/accept-add/index.ts'
+import { InStoreEntityItem, InStoreMapItem, InStoreObjectItem } from '@component/ui/item/'
 
 interface Props {
 }
@@ -15,10 +15,10 @@ interface Props {
 export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
     const dispath = useAppDispatch()
     const { pathname } = useLocation()
-    const state = useAppSelector(state => state.game)
+    const { session } = useAppSelector(state => state.session)
     const saveGame = () => {
-        localStorage.setItem(gameStorage, JSON.stringify(state.game));
-        toast(dispath, "message", { text: 'Сохранено' }); console.log(state.game)
+        localStorage.setItem(gameStorage, JSON.stringify(session));
+        toast(dispath, "message", { text: 'Сохранено' }); console.log(session)
     }
     const forwardClick = React.useCallback(() => {
         navigator.clipboard.writeText(`Играйте вместе с друзьями! \n${host}${pathname}`);

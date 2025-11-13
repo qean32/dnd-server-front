@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PostItem } from './post-item'
-import { fakePost } from '../../../fake-data'
+import { fakePost } from '@/fake-data'
 
 interface Props {
     name: string

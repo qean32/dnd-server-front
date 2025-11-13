@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from 'react'
-import { ButtonInGroup } from '../../ui'
+import { ButtonInGroup } from '@component/ui'
 
 interface Props {
     swap: MouseEventHandler<HTMLButtonElement>

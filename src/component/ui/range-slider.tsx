@@ -1,5 +1,5 @@
 import React from "react";
-import { rangeSliderValueDto } from "../../model";
+import { rangeSliderValueDto } from "@/model";
 
 
 interface Props {

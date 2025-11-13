@@ -1,6 +1,6 @@
 import React from 'react'
-import { entityDto } from '../../../model'
-import { ObjectItemMenu } from '../../case/context-menu'
+import { entityDto } from '@/model'
+import { ObjectItemMenu } from '@component/case/context-menu'
 
 
 export const InToolObjectItem: React.FC<entityDto> = ({ path = '/img/dnd.jpg' }: entityDto) => {

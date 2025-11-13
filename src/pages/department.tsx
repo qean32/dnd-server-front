@@ -1,13 +1,13 @@
 import React from "react"
-import { GroupContainer } from "../component/master"
-import { PostColumn, ScrollTop, Search, TextInfo } from "../component/ui"
-import { fakePost } from "../fake-data"
-import { Page } from "../component/master/h-order-component"
+import { GroupContainer } from "@component/master"
+import { PostColumn, ScrollTop, Search, TextInfo } from "@component/ui"
+import { fakePost } from "@/fake-data"
+import { Page } from "@component/master/h-order-component"
 import { useParams } from "react-router-dom"
-import { PostItem } from "../component/ui/item"
-import { FilterForum } from "../component/shared"
-import { usePage } from "../lib/castom-hook"
-import { getParamName } from "../lib/function"
+import { PostItem } from "@component/ui/item"
+import { FilterForum } from "@component/shared"
+import { usePage } from "@lib/castom-hook"
+import { getParamName } from "@lib/function"
 
 
 export const DepartmentPage = () => {

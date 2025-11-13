@@ -24,7 +24,7 @@ input:focus {
 input[type="search"] {
     padding: 11px 18px;
     letter-spacing: 1.5px;
-    outline: 0px solid $bg-color-light;
+    // outline: 0px solid $bg-color-light;
 }
 
 .text-warning {
@@ -59,6 +59,7 @@ input[type="search"] {
 
 select {
     appearance: none;
+    outline: 1px solid $bg-color-light;
 
     @supports (appearance: base-select) {
 

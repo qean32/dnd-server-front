@@ -1,7 +1,7 @@
 import React from 'react'
-import { cn, MapToArray, NumberToArray } from '../../lib/function'
+import { cn, MapToArray, NumberToArray } from '@lib/function'
 import { RangeSlider } from '.'
-import { rangeSliderValueDto } from '../../model'
+import { rangeSliderValueDto } from '@/model'
 
 interface Props {
     className?: string

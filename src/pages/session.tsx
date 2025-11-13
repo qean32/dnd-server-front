@@ -1,11 +1,11 @@
-import { AddCharacterInGame } from "../component/case/modal/add-character-in-game-modal"
-import { ViewImg } from "../component/case/modal/img-view-modal"
-import { GameArea, ToolGameButton, ToolGame } from "../component/shared"
-import { usePage } from "../lib/castom-hook"
-import { useAppDispatch, useAppSelector } from "../lib/castom-hook/redux"
-import { getParamName } from "../lib/function"
-import { swapAddCharacterInGamePath } from "../store/add-character-in-game-path-store"
-import { swapViewImg } from "../store/view-img-store"
+import { AddCharacterInGame } from "@component/case/modal/add-character-in-game-modal"
+import { ViewImg } from "@component/case/modal/img-view-modal"
+import { GameArea, ToolGameButton, ToolGame } from "@component/shared"
+import { usePage } from "@lib/castom-hook"
+import { useAppDispatch, useAppSelector } from "@lib/castom-hook/redux"
+import { getParamName } from "@lib/function"
+import { swapAddCharacterInGamePath } from "@/store/add-character-in-game-path-store"
+import { swapViewImg } from "@/store/view-img-store"
 
 export const SessionPage = () => {
     const dispath = useAppDispatch()

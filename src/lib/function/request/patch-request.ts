@@ -1,5 +1,5 @@
 import { getAuthHeaders } from ".."
-import { axiosInstance } from "../../../export"
+import { axiosInstance } from "@/export"
 
 export const requestPatch = async <T>(path: string, body: T, file: boolean = false) => {
     try {

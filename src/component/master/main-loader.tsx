@@ -1,7 +1,7 @@
 import React from 'react'
-import { Logo } from '../ui'
-import { useBoolean } from '../../lib/castom-hook'
-import { cn } from '../../lib/function'
+import { Logo } from '@component/ui'
+import { useBoolean } from '@/lib/castom-hook'
+import { cn } from '@/lib/function'
 
 interface Props {
 }

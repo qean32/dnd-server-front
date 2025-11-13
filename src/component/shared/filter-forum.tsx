@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '../ui'
+import { Button } from '@component/ui'
 import { Link } from 'react-router-dom'
 import { AddTag } from '.'
 

@@ -1,7 +1,7 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { useAppSelector } from '../../../lib/castom-hook/redux'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { useAppSelector } from '@/lib/castom-hook/redux'
 
 interface Props {
     view: boolean

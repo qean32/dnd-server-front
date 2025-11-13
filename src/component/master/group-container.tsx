@@ -1,7 +1,7 @@
 import React from 'react'
-import { cn } from '../../lib/function'
-import { useDinamickPaginationFake } from '../../lib/castom-hook/use-dinamick-pagination-fake'
-import { propsComponent } from '../../model'
+import { cn } from '@/lib/function'
+import { useDinamickPaginationFake } from '@/lib/castom-hook/use-dinamick-pagination-fake'
+import { propsComponent } from '@/model'
 
 interface Props {
     className?: string

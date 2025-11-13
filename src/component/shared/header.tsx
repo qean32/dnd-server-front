@@ -1,6 +1,6 @@
 import React from 'react'
-import { cn } from '../../lib/function'
-import { Ava, Logo } from '../ui'
+import { cn } from '@lib/function'
+import { Ava, Logo } from '@component/ui'
 import { Link } from 'react-router-dom'
 
 interface Props {

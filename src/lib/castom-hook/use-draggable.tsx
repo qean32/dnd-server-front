@@ -1,5 +1,5 @@
 import React from "react";
-import { positionDto } from "../../model";
+import { positionDto } from "@/model";
 
 export const useDraggable = () => {
     const ref = React.useRef<HTMLDivElement>(null);

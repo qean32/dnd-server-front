@@ -1,8 +1,8 @@
 import React from 'react'
-import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../master/h-order-component'
-import { PlusButton, ScrollXArrow } from '../../ui'
-import { ViewImgCarouselItem } from '../../ui/item/view-img-corousel-item'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { PlusButton, ScrollXArrow } from '@component/ui'
+import { ViewImgCarouselItem } from '@component/ui/item'
 import * as ModalGroup from './index-group'
 
 interface Props {
