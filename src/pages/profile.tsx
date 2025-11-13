@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom"
-import { Page } from "../component/general/hoc"
+import { Page } from "../component/master/h-order-component"
 import { BanReason, UserInfo } from "../component/ui"
-import { ProfileContentSwith } from "../component/shared/profile-content/profile-content-swith"
+import { ProfileContentSwith } from "../component/shared/profile-content/"
 import { ProfileContent } from "../component/shared/profile-content"
+import { usePage } from "../lib/castom-hook"
+import { getParamName } from "../lib/function"
 
 export const ProfilePage = () => {
+    const { } = usePage(getParamName())
+
     return (
         <>
             <Page size="w-[65%]">
@@ -15,9 +19,7 @@ export const ProfilePage = () => {
                     <Link to='/edit-profile'><p className="cursor-pointer underline mt-3 pl-2">изменить профиль</p></Link>
                 </div>
             </Page >
-            <Page size="w-[65%]">
-                <BanReason />
-            </Page>
+            <BanReason />
         </>
     )
 }

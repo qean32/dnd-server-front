@@ -16,11 +16,11 @@ const viewContentSlice = createSlice({
         swapProfileContent: (state: stateDto, { payload }: PayloadAction<profileType>) => {
             state.profile = payload
         },
-        swapGameContent: (state: stateDto, { payload }: PayloadAction<gameType>) => {
+        swapGameToolContent: (state: stateDto, { payload }: PayloadAction<gameType>) => {
             state.game = payload
         },
     },
 })
 
 export const viewContentReducer = viewContentSlice.reducer
-export const { swapProfileContent, swapGameContent } = viewContentSlice.actions
+export const { swapProfileContent, swapGameToolContent } = viewContentSlice.actions

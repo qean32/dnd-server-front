@@ -2,6 +2,7 @@ import React from 'react'
 import { useAppSelector } from '../../../lib/castom-hook/redux'
 import { useAppDispatch } from '../../../store'
 import { cn } from '../../../lib/function'
+import { swapProfileContent } from '../../../store/view-content-store'
 
 interface Props {
 }
@@ -21,7 +22,7 @@ export const ProfileContentSwith: React.FC<Props> = ({ }: Props) => {
         // @ts-ignore
         if (map.get(e.target.innerHTML))
             // @ts-ignore
-            dispath(changeProfileContent(map.get(e.target.innerHTML)))
+            dispath(swapProfileContent(map.get(e.target.innerHTML)))
     }
 
 

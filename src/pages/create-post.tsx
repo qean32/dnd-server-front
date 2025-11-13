@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom"
-import { Page } from "../component/general/hoc"
+import { Page } from "../component/master/h-order-component"
 import { Button, FakeTextInput, File } from "../component/ui"
+import { title } from "../export"
+import { usePage } from "../lib/castom-hook"
 
 export const CreatePostPage = () => {
+    const { } = usePage(title.createPost)
 
     return (
         <Page>

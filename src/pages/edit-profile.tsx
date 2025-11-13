@@ -1,8 +1,12 @@
 import { EditProfileForm } from "../component/case/form"
-import { Page } from "../component/general/hoc"
+import { Page } from "../component/master/h-order-component"
 import { AuthBG } from "../component/ui"
+import { title } from "../export"
+import { usePage } from "../lib/castom-hook"
 
 export const EditProfilePage = () => {
+    const { } = usePage(title.editProfile)
+
     return (
         <Page className="pt-10" size="w-[50%]">
             <div className="w-full flex justify-center h-[70vh]">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../general/hoc'
+import { Modal } from '../../master/h-order-component'
 import { Ava, ModalCross } from '../../ui'
 import { useAppDispatch } from '../../../lib/castom-hook/redux'
 import { swapAddCharacterInGamePath } from '../../../store/add-character-in-game-path-store'

@@ -1,13 +1,15 @@
 import React from 'react'
 import { useBoolean } from '../../../lib/castom-hook'
+import { propsComponent } from '../../../model'
 
 interface Props {
     children: React.ReactNode
-    Modal: React.ReactNode | React.FC | React.ElementType | any
+    modal: propsComponent
+    props?: any
 }
 
 
-export const Set: React.FC<Props> = ({ children, Modal }: Props) => {
+export const Set: React.FC<Props> = ({ children, modal: Modal, ...props }: Props) => {
     const { boolean, swap } = useBoolean()
 
     return (
@@ -15,7 +17,11 @@ export const Set: React.FC<Props> = ({ children, Modal }: Props) => {
             <div onClick={(e) => { e.stopPropagation(); swap() }}>
                 {children}
             </div>
-            <Modal view={boolean} swap={swap} />
+            <Modal
+                swap={swap}
+                {...props}
+                view={boolean}
+            />
         </>
     )
 }

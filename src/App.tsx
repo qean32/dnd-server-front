@@ -5,7 +5,7 @@ import { Router } from './router'
 import { Provider } from 'react-redux'
 import { store } from './store'
 import { QueryClientProvider, QueryClient } from 'react-query'
-import { MainLoader } from './component/general'
+import { MainLoader } from './component/master'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
@@ -17,3 +17,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
   </QueryClientProvider>
   // </React.StrictMode>,
 )
+
+
+/**
+ * add this in React -> declare namespace React
+ * interface HTMLAttributes<T> extends DOMAttributes<T> {
+ *   data?: string;
+ *   value?: string;
+ * }
+*/

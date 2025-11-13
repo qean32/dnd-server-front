@@ -1,6 +1,6 @@
 export { AuthPage } from './auth'
 export { CommunityPage } from './community'
-export { GamePage } from './game'
+export { SessionPage } from './session'
 export { MainPage } from './main'
 export { PostPage } from './post'
 export { ForumPage } from './forum'

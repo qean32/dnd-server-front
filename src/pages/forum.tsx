@@ -1,8 +1,13 @@
-import { Page } from "../component/general/hoc"
-import { DepartmentItem, TextInfo } from "../component/ui"
+import { Page } from "../component/master/h-order-component"
+import { TextInfo } from "../component/ui"
+import { DepartmentItem } from "../component/ui/item"
+import { title } from "../export"
+import { usePage } from "../lib/castom-hook"
 
 
 export const ForumPage = () => {
+    const { } = usePage(title.forum)
+
     return (
         <Page size="w-[70%]">
             <div className="flex gap-5">

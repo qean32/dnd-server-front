@@ -1,8 +1,9 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../general/hoc'
-import { Button, CharacterLinkItem, ModalCross } from '../../ui'
+import { Modal } from '../../master/h-order-component'
+import { Button, ModalCross } from '../../ui'
 import { fakePost } from '../../../fake-data'
+import { LinkCharacterItem } from '../../ui/item'
 
 interface Props {
     view: boolean
@@ -25,7 +26,7 @@ export const AddCharacterInGame: React.FC<Props> = ({ view, swap }: Props) => {
                 <p className='pl-5 py-4 text-2xl'>Персонажи игрока</p>
                 <div className='grid gap-5 py-5 grid-cols-8 min-h-[33vh] max-h-[33vh] overflow-scroll'>
                     {fakePost.slice(0, 14).map((__, _) =>
-                        <CharacterLinkItem link='https://aternia.games/i/dnd/character_sheet/show/10399ffb-e071-4c6d-b7f2-3f4fcee3fab0' key={_} number={_ + 1} name='Клиган Клиган' />
+                        <LinkCharacterItem link='https://aternia.games/i/dnd/character_sheet/show/10399ffb-e071-4c6d-b7f2-3f4fcee3fab0' key={_} number={_ + 1} name='Клиган Клиган' />
                     )}
                 </div>
                 <div className="flex justify-end gap-2">

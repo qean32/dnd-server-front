@@ -1,17 +1,22 @@
 import React from "react"
-import { GroupContainer } from "../component/general"
-import { LeftSideForum } from "../component/shared"
-import { ForumColumn, PostItem, ScrollTop, Search, TextInfo } from "../component/ui"
+import { GroupContainer } from "../component/master"
+import { PostColumn, ScrollTop, Search, TextInfo } from "../component/ui"
 import { fakePost } from "../fake-data"
-import { Page } from "../component/general/hoc"
+import { Page } from "../component/master/h-order-component"
 import { useParams } from "react-router-dom"
+import { PostItem } from "../component/ui/item"
+import { FilterForum } from "../component/shared"
+import { usePage } from "../lib/castom-hook"
+import { getParamName } from "../lib/function"
 
 
 export const DepartmentPage = () => {
+    const { } = usePage(getParamName())
+
     return (
         <Page size="w-[75%]">
             <div className="flex gap-10">
-                <LeftSideForum />
+                <FilterForum />
                 <RightSideForum />
             </div>
         </Page>
@@ -26,13 +31,13 @@ const RightSideForum: React.FC<{}> = ({ }: {}) => {
             <ScrollTop />
             <TextInfo title={name ? name.toUpperCase() : ''} />
             <Search />
-            <ForumColumn />
+            <PostColumn />
             <div className="pb-5">
-                <PostItem {...fakePost[10]} fixed={true} />
+                <PostItem likes={0} {...fakePost[10]} fixed={true} />
             </div>
             <GroupContainer
                 array={fakePost}
-                Component={PostItem}
+                component={PostItem}
                 propsName="post"
             />
         </div>

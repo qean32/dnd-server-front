@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn } from '../../../lib/function'
-import { Toast } from '../../general/hoc'
+import { Toast } from '../../master/h-order-component'
 
 interface Props {
     className?: string

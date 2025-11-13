@@ -1,8 +1,8 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../general/hoc'
-import { AddEntityFilter, AddImgArea, Button, ModalCross, TextInput } from '../../ui'
-import { GroupToken } from '../../shared'
+import { Modal } from '../../master/h-order-component'
+import { AddImgArea, Button, ModalCross, TextInput } from '../../ui'
+import { FilterAddSomething, GroupTokenInModal } from '../../shared'
 
 interface Props {
     view: boolean
@@ -23,9 +23,9 @@ export const AddMapInGame: React.FC<Props> = ({ view, swap }: Props) => {
             <div className="relative bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
                 <div className="pt-2 w-9/12 h-full overflow-scroll relative">
-                    <AddEntityFilter />
-                    <GroupToken title='Базовый набор' />
-                    <GroupToken title='Набор Хелойвин' />
+                    <FilterAddSomething />
+                    <GroupTokenInModal title='Базовый набор' />
+                    <GroupTokenInModal title='Набор Хелойвин' />
                 </div>
                 <div className="w-3/12 h-full flex flex-col">
                     <AddImgArea className='h-1/3 w-full mt-10' />

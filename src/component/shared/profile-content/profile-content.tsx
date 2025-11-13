@@ -1,9 +1,7 @@
 import React from 'react'
 import { useAppSelector } from '../../../lib/castom-hook/redux'
 import { cn } from '../../../lib/function'
-import { Posts } from './posts'
-import { Characters } from './characters'
-import { Games } from './games'
+import { Character, Post, Session } from '.'
 
 interface Props {
 }
@@ -14,11 +12,11 @@ export const ProfileContent: React.FC<Props> = ({ }: Props) => {
 
     return (
         <div className={cn("flex w-[300%] pl-1 gap-1 transition-07 min-h-[520px] h-fit", (profile == 'character' && '-translate-x-1/3'), profile == 'game' && '-translate-x-2/3')}>
-            <div className={classParent}><Posts view={profile == 'post'} /></div>
+            <div className={classParent}><Post view={profile == 'post'} /></div>
             <div className={classParent}>
-                {profile == 'character' && <Characters />}</div>
+                {profile == 'character' && <Character />}</div>
             <div className={classParent}>
-                {profile == 'game' && <Games />}</div>
+                {profile == 'game' && <Session />}</div>
         </div >
     )
 }

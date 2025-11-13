@@ -7,5 +7,6 @@ export type postDto = {
         id: number
     }
     views: number
+    likes: number
     fixed?: boolean
 }

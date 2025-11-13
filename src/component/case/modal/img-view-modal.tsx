@@ -1,6 +1,6 @@
 import React from 'react'
 import { stopPropagation } from '../../../lib/function'
-import { Modal } from '../../general/hoc'
+import { Modal } from '../../master/h-order-component'
 import { useAppSelector } from '../../../lib/castom-hook/redux'
 
 interface Props {

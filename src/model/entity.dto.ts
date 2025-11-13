@@ -2,11 +2,11 @@ import { coordinateDto } from "./position.dto"
 
 export interface entityDto {
     id: number
-    name: string
     position: coordinateDto
+    name: string
     path: string
     discription: string
     status: 'live' | 'dead' | 'stan'
-    view: boolean
     size: number
+    view: boolean
 }
