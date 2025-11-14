@@ -14,7 +14,7 @@ interface Props {
 
 
 export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
-    const { game: gameView } = useAppSelector(state => state.viewContent)
+    const { session: sessionView } = useAppSelector(state => state.viewContent)
 
     return (<>
         <SwithContentLiftSideGame />
@@ -22,10 +22,10 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
             <div
                 className={
                     cn("flex h-full w-[400%] gap-1 transition-07",
-                        (gameView == 'bestiary' && ''),
-                        (gameView == 'objects' && '-translate-x-1/4'),
-                        (gameView == 'characters' && '-translate-x-2/4'),
-                        (gameView == 'queue' && '-translate-x-3/4'),
+                        (sessionView == 'bestiary' && ''),
+                        (sessionView == 'objects' && '-translate-x-1/4'),
+                        (sessionView == 'characters' && '-translate-x-2/4'),
+                        (sessionView == 'queue' && '-translate-x-3/4'),
                     )
                 }>
                 <UnwrapArray
@@ -50,7 +50,7 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
                 />
             </div >
         </div>
-        {gameView == 'queue' &&
+        {sessionView == 'queue' &&
             <div className='flex justify-center px-4 bg-color-dark pt-5'>
                 <Button variant='acceess' className='w-full py-3'><p>следующий</p></Button>
             </div>}

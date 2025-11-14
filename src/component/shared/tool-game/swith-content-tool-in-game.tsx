@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonInGroup } from '@component/ui'
 import { useAppDispatch } from '@/store'
-import { swapGameToolContent } from '@/store/view-content-store'
+import { swapSessionToolContent } from '@/store/view-content-store'
 
 interface Props {
 }
@@ -12,7 +12,7 @@ export const SwithContentLiftSideGame: React.FC<Props> = ({ }: Props) => {
 
     const swapGameView = (e: React.MouseEvent<HTMLButtonElement>) => {
         // @ts-ignore
-        dispath(swapGameToolContent(e.target.children[0].getAttribute('data')))
+        dispath(swapSessionToolContent(e.target.children[0].getAttribute('data')))
     }
 
     return (

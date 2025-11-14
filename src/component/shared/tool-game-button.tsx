@@ -5,8 +5,8 @@ import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
 import { toast } from '@lib/function'
 import { useLocation } from 'react-router-dom'
 import { gameStorage, host } from '@/export'
-import { AddObject, AddEntity, AddMap } from '@component/case/accept-add/index.ts'
-import { InStoreEntityItem, InStoreMapItem, InStoreObjectItem } from '@component/ui/item/'
+import { AddObject, AddEntity } from '@component/case/accept-add/index.ts'
+import { InStoreEntityItem, InStoreObjectItem } from '@component/ui/item/'
 
 interface Props {
 }
@@ -42,18 +42,15 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
                     <ButtonInGroup fn={forwardClick} children={<img className='icon-sm' src='/icon/forward.svg' />} />
                     <ButtonInGroup fn={saveGame} children={<img className='icon-sm' src='/icon/save.svg' />} />
                     {/* @ts-ignore */}
-                    <Modal.Set modal={Modal.AddSomething} component={InStoreEntityItem} accept={AddEntity}>
+                    <Modal.Set modal={Modal.AddSomething} component={InStoreEntityItem} accept={AddEntity} column={5}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/dragon.svg' />} /></Modal.Set>
                     {/* @ts-ignore */}
-                    <Modal.Set modal={Modal.AddSomething} component={InStoreObjectItem} accept={AddObject}>
+                    <Modal.Set modal={Modal.AddSomething} component={InStoreObjectItem} accept={AddObject} column={5}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/object.svg' />} /></Modal.Set>
-                    {/* @ts-ignore */}
-                    <Modal.Set modal={Modal.AddSomething} component={InStoreMapItem} accept={AddMap}>
-                        <ButtonInGroup children={<img className='icon-sm' src='/icon/map+.svg' />} /></Modal.Set>
+                    <Modal.Set modal={Modal.ImgCarousel}>
+                        <ButtonInGroup children={<img className='icon-sm' src='/icon/img-carousel.svg' />} /></Modal.Set>
                     <Modal.Set modal={Modal.Notes}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/edit.svg' />} /></Modal.Set>
-                    <Modal.Set modal={Modal.ImgCarousel}>
-                        <ButtonInGroup children={<img className='icon-sm' src='/icon/img.svg' />} /></Modal.Set>
                 </GroupButton>
             </div>
         </div>

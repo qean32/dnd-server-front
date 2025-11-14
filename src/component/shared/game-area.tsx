@@ -1,9 +1,8 @@
 import React from 'react'
 import { Stage, Layer, Group } from "react-konva"
-import { TokenEntity } from '@component/ui';
+import { TokenEntity, GameBGArea } from '@component/ui';
 import { entityDto } from '@/model';
 import { useAppSelector } from '@lib/castom-hook/redux';
-import { GamePlateArea } from './game-plate-area';
 
 interface Props {
 }
@@ -16,7 +15,7 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
         <Stage width={window.innerWidth} height={window.innerHeight - 64}>
             <Layer>
                 <Group draggable>
-                    <GamePlateArea />
+                    <GameBGArea />
 
                     {[...mapsData[currentMap.name].entities].map((item: entityDto, _: number) => {
                         return <TokenEntity {...item} key={_} />

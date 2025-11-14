@@ -1,3 +1,4 @@
+import { useAppSelector } from '@/lib/castom-hook/redux'
 import React from 'react'
 
 interface Props {
@@ -6,13 +7,17 @@ interface Props {
 
 
 export const AddObject: React.FC<Props> = ({ children }: Props) => {
+    const { object } = useAppSelector(state => state.addedObject)
+    console.log(object);
+    
+
     return (
         <div className="w-3/12 h-full flex flex-col px-5">
             <div className="h-1/3 flex justify-center items-center pt-5">
                 <div className="w-1/2 aspect-square bg-img rounded-full border-3" style={{ backgroundImage: `url(/img/goblin.jpg)` }}></div>
             </div>
             <div className='pr-2'>
-                <p className='text-2xl'>Гоблин</p>
+                <p className='text-2xl'>{object?.name}</p>
                 <div className="flex justify-between text-sm">
                     <p>Инициатива</p>
                     <p className='bg-yellow-800 pr-8 pl-1'>30</p>

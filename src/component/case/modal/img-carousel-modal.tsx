@@ -1,5 +1,5 @@
 import React from 'react'
-import { stopPropagation } from '@/lib/function'
+import { getHTMLData, stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { PlusButton, ScrollXArrow } from '@component/ui'
 import { ViewImgCarouselItem } from '@component/ui/item'
@@ -17,7 +17,7 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         // @ts-ignore
-        setValue(e.target.getAttribute('value'))
+        setValue(getHTMLData(e, 'value'))
     }
 
     const scroll = (value: number) => {

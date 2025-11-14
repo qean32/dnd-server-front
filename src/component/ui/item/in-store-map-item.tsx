@@ -1,24 +1,25 @@
 import React from 'react'
 import { useAppDispatch } from '@lib/castom-hook/redux'
 import { swapViewImg } from '@/store/view-img-store'
-
-interface Props {
-}
+import { mapDto } from '@/model'
 
 
-export const InStoreMapItem: React.FC<Props> = ({ }: Props) => {
+export const InStoreMapItem: React.FC<mapDto> = ({
+    path = '/img/dnd1.jpg',
+    name = 'Таверна у Хагрида Таверна у Хагрида'
+}: mapDto) => {
     const dispath = useAppDispatch()
 
     const clickHAndler = () => {
-        dispath(swapViewImg({ href: '/img/dnd+.jpg' }))
+        dispath(swapViewImg({ href: path }))
     }
     return (
-        <div className="mount-opacity relative h-[9vh] cursor-pointer" onClick={clickHAndler}>
-            <div className="h-full w-full absolute top-0 bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/dnd+.jpg'})` }}></div>
-
-            <div className="absolute top-0.5 right-0.5">
-
-            </div>
+        <div
+            className="flex gap-4 mount-opacity h-[12vh] m-1 p-2 cursor-pointer bg-color-dark-hover transition-03 rounded-sm hover-hide-img"
+            data={JSON.stringify({ name, path, isMap: true })}
+        >
+            <div className="h-full w-1/2 bg-img bg-shadow transition-03 rounded-sm" style={{ backgroundImage: `url(${path})` }} onClick={clickHAndler}></div>
+            <p className='pointer-events-none unwrap-text w-1/2 h-full text-nowrap overflow-hidden text-ellipsis rounded-sm'>{name}</p>
         </div>
     )
 }

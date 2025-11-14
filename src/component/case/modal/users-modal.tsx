@@ -1,5 +1,5 @@
 import React from 'react'
-import { stopPropagation } from '@/lib/function'
+import { getHTMLData, stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { Ava, ModalCross } from '@component/ui'
 import { useAppDispatch } from '@/lib/castom-hook/redux'
@@ -16,7 +16,7 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
-        dispath(swapAddCharacterInGamePath({ href: JSON.parse(e.target.getAttribute('data')).id }))
+        dispath(swapAddCharacterInGamePath({ href: getHTMLData(e, 'data', true).id }))
     }
     return (
         <Modal
@@ -35,7 +35,7 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
                     {[1, 2, 2, 2, 2].map(() => {
                         return (
                             <div
-                                className="flex px-4 py-2 gap-5 bg-color-dark-hover transition-03 bg-color cursor-pointer child-no-event"
+                                className="flex px-4 py-2 gap-5 bg-color-dark-hover transition-03 bg-color cursor-pointer child-no-fill-event"
                                 // @ts-ignore
                                 data={JSON.stringify({ id: 1 })}>
                                 <Ava path='' className='bg-color-darkness' size='ava-md' />

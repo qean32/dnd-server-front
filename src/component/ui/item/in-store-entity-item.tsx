@@ -1,26 +1,20 @@
 import React from 'react'
 import { entityDto } from '@/model'
 
-interface Props {
-    entity?: entityDto
-}
-
-export const InStoreEntityItem: React.FC<Props> = ({ entity = {
-    discription: 'Описание',
-    id: 1,
-    path: '/img/goblin.jpg',
-    name: "Гоблин",
-    position: { x: 0, y: 0 },
-    size: 50,
-    status: 'live',
-    view: true
-} }: Props) => {
+export const InStoreEntityItem: React.FC<entityDto> = ({
+    discription = 'Описание ОписаниеОписаниеОписание Описание',
+    path = '/img/goblin.jpg',
+    name = "Гоблин Гоблин",
+}: entityDto) => {
     return (
-        <div className="px-4 flex py-5 gap-5 bg-color bg-color-dark-hover transition-03 rounded-md cursor-pointer">
-            <div className="w-[58px] aspect-square bg-img rounded-full" style={{ backgroundImage: `url(${entity.path})` }}></div>
-            <div>
-                <p className='text-2xl'>{entity.name}</p>
-                <p className='text-sm max-w-[9vh] overflow-hidden text-ellipsis text-nowrap'>{entity.discription}</p>
+        <div
+            className="px-4 py-3 flex gap-5 bg-color bg-color-dark-hover transition-03 rounded-md cursor-pointer hover-hide-img child-no-fill-event"
+            data={JSON.stringify({ name, path, discription, isEntity: true })}
+        >
+            <div className="w-[65px] aspect-square h-fit bg-img transition-03 rounded-full" style={{ backgroundImage: `url(${path})` }}></div>
+            <div className='w-1/2 hover-w-full h-fit'>
+                <p className='text-2xl unwrap-text w-full overflow-hidden text-ellipsis text-nowrap'>{name}</p>
+                <p className='text-sm unwrap-text-no-wrap w-full overflow-hidden text-ellipsis text-nowrap'>{discription}</p>
             </div>
         </div>
     )

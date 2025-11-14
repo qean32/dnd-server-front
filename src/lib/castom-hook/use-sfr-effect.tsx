@@ -1,6 +1,6 @@
 import React from "react"
 
-export const useSkipFirstRenderEffect = (effect: Function, deps: any[]) => {
+export const useSFREffect = (effect: Function, deps: any[]) => {
     const isMount = React.useRef(true)
 
     React.useEffect(() => {

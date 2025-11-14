@@ -31,7 +31,7 @@ export const MapsGame: React.FC<Props> = ({ view, swap }: Props) => {
                         <MapItem key={_} />
                     )}
                     {/* @ts-ignore */}
-                    <ModalGroup.Set modal={ModalGroup.AddSomething} component={InStoreMapItem} accept={AddMap}>
+                    <ModalGroup.Set modal={ModalGroup.AddSomething} component={InStoreMapItem} column={3} accept={AddMap}>
                         <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' /></ModalGroup.Set>
                 </div>
             </div>

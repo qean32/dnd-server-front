@@ -10,7 +10,7 @@ export const Session: React.FC<{}> = ({ }: {}) => {
             {fakePost.slice(0, 9).map((__, _) =>
                 <SessionItem key={_} id={_ + 1} name={'Первая'} />
             )}
-            <Modal.Set modal={Modal.AddGame}>
+            <Modal.Set modal={Modal.AddSession}>
                 <PlusButton className='h-[85px] w-1/9 px-5' iconSize='icon-sm' />
             </Modal.Set>
         </div>

@@ -4,18 +4,27 @@ import { useBoolean } from '@lib/castom-hook';
 
 interface Props {
     className?: string
+    dftBG_?: string
 }
 
 
-export const AddImgArea: React.FC<Props> = ({ className }: Props) => {
-    const [src, setSrc] = React.useState<any>([]);
+export const UploadImgArea: React.FC<Props> = ({ className, dftBG_ }: Props) => {
+    const [src, setSrc] = React.useState<File[]>([]);
+    const [dftBG, setDftBG] = React.useState(dftBG_)
     const { boolean, off, on } = useBoolean(false)
+
+    React.useEffect(() => {
+        if (dftBG_)
+            setDftBG(dftBG_)
+    }, [dftBG_])
+
     const id = generateId().toString()
-    const urls = src.map((file: any) => URL.createObjectURL(file));
+    const urls = src.map((file: File) => URL.createObjectURL(file));
 
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         if (!e.target.files) return
         if (!e.target.files[0]) return
+        setDftBG('')
 
         setSrc([e.target.files[0]])
     }
@@ -50,8 +59,9 @@ export const AddImgArea: React.FC<Props> = ({ className }: Props) => {
                     onDragOver={e => dragStartHandler(e)}
                     onDrop={e => dropHandler(e)}
                 >
+                    {dftBG && <img src={dftBG} alt="" className='h-full rounded-md' />}
                     {urls[0] && <img src={urls[0]} alt="" className='h-full rounded-md' />}
-                    {!urls[0] && (boolean ? <img src={urls[0]} alt="" width={50} /> : <img src={'/icon/community.svg'} alt="" width={50} />)}
+                    {!urls[0] && !dftBG && (boolean ? <img src='/icon/upload-aim.svg' alt="" className='icon-2xl' /> : <img src='/icon/upload.svg' alt="" className='icon-2xl' />)}
                 </label>
             </div>
         </>

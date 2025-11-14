@@ -25,7 +25,7 @@ export const AddSomething: React.FC<Props> = ({ view, swap, component, accept: A
         >
             <div className="relative bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <div className="pt-2 w-9/12 h-full overflow-scroll relative">
+                <div className="w-9/12 h-full overflow-scroll relative">
                     <FilterAddSomething />
                     <GroupTokenInModal title='Базовый набор' component={component} />
                     <GroupTokenInModal title='Набор Хелойвин' component={component} />

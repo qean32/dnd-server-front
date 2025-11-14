@@ -7,7 +7,7 @@ interface Props {
 }
 
 
-export const PlateGameItem: React.FC<Props> = ({ path, value }: Props) => {
+export const BGSessionItem: React.FC<Props> = ({ path, value }: Props) => {
     return (
         <div
             value={path}

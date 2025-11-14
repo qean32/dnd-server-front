@@ -7,6 +7,7 @@ import { viewGridReducer } from './view-grid-store'
 import { sessionReducer } from './session-store'
 import { viewImgReducer } from './view-img-store'
 import { addCharacterInGameReducer } from './add-character-in-game-path-store'
+import { objectBeingAddedToGameReducer } from './object-being-added-to-game-store'
 
 
 const rootReducer = combineReducers({
@@ -17,6 +18,7 @@ const rootReducer = combineReducers({
     viewContent: viewContentReducer,
     session: sessionReducer,
     viewGrid: viewGridReducer,
+    addedObject: objectBeingAddedToGameReducer,
 })
 
 export const store = configureStore({

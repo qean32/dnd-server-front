@@ -1,3 +1,4 @@
+import { useAppSelector } from '@/lib/castom-hook/redux'
 import React from 'react'
 
 interface Props {
@@ -6,6 +7,8 @@ interface Props {
 
 
 export const AddEntity: React.FC<Props> = ({ children }: Props) => {
+    const { object } = useAppSelector(state => state.addedObject)
+
     return (
         <div className="w-3/12 h-full flex flex-col px-5">
             <div className="h-1/3 flex justify-center items-center pt-5">

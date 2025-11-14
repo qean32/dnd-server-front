@@ -7,7 +7,7 @@ interface Props {
 }
 
 
-export const GamePlateArea: React.FC<Props> = ({ }: Props) => {
+export const GameBGArea: React.FC<Props> = ({ }: Props) => {
     const { session: { currentMap } } = useAppSelector(state => state.session)
     const [bgGameArea] = useImage(currentMap.path);
     const [bgGrid] = useImage('/icon/grid.svg');
