@@ -1,5 +1,6 @@
 import React from 'react'
-import { PostInfo, IconAndCount, IconAndNumber } from '@component/ui'
+import { PostInfo, IconAndCount, IconAndNumber, CommentInput } from '@component/ui'
+import { CommentItem } from '../ui/item'
 
 interface Props {
     className?: string
@@ -20,6 +21,10 @@ export const PostBody: React.FC<Props> = ({ }: Props) => {
                         <IconAndNumber count={29} icon="/icon/view.svg" />
                     </div>
                 </div>
+            </div>
+            <div className="bg-color-dark">
+                <CommentInput />
+                <CommentItem />
             </div>
         </>
     )

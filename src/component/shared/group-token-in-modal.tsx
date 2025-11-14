@@ -21,7 +21,7 @@ export const GroupTokenInModal: React.FC<Props> = ({ title, component: Component
     return (
         <div className="ml-5 rounded-sm pb-2 pt-2">
             <Title className='pb-2 pl-3'>{title}</Title>
-            <div className={cn('grid grid-cols-5 adaptive2k-grid-column-6')} onClick={clickHandler}>
+            <div className={cn('grid gap-y-2 grid-cols-4 adaptive2k-grid-column-7')} onClick={clickHandler}>
                 <Component />
                 <Component />
                 <Component />

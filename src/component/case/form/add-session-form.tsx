@@ -9,8 +9,8 @@ interface Props {
 export const AddSessionForm: React.FC<Props> = ({ children }: Props) => {
     return (
         <form action="">
-            <Title className='mb-5'>ДОБАВЛЕНИЕ ИГРЫ</Title>
-            <TextInput placeHolder='Название игры' className='w-[360px]' />
+            <Title className='mb-5'>ДОБАВЛЕНИЕ СЕССИИ</Title>
+            <TextInput placeHolder='Название сессии' className='w-[360px]' />
             <SelectSessionBG />
             <div className="pt-8 flex gap-4 justify-end">
                 {children}
