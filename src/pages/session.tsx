@@ -8,7 +8,7 @@ import { swapAddCharacterInGamePath } from "@/store/add-character-in-game-path-s
 import { swapViewImg } from "@/store/view-img-store"
 import React from "react"
 
-export const SessionPage = () => {
+export const Session = () => {
     const { } = usePage(getParamName())
 
     return (

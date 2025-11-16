@@ -3,7 +3,7 @@ import { entityDto } from '@/model'
 
 export const InStoreEntityItem: React.FC<entityDto> = ({
     discription = 'Описание ОписаниеОписаниеОписание Описание',
-    path = '/img/goblin.jpg',
+    path = '/img/entity.jpg',
     name = "Гоблин Гоблин",
 }: entityDto) => {
     return (

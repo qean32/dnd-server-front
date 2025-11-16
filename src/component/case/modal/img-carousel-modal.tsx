@@ -12,7 +12,7 @@ interface Props {
 
 
 export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
-    const [value, setValue] = React.useState('/img/dnd1.jpg')
+    const [value, setValue] = React.useState('/img/carousel-item-1.jpg')
     const ref = React.useRef<null | HTMLDivElement>(null)
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
@@ -43,22 +43,22 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
                     <ScrollXArrow fn={scroll} plus={false} />
                 </div>
                 <div ref={ref} className="flex w-full gap-5 overflow-x-scroll px-[40px]">
-                    <ViewImgCarouselItem path='/img/dnd+.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd1.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd2.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd3.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd3.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd3.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
-                    <ViewImgCarouselItem path='/img/dnd4.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-1.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-2.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-3.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-4.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-5.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-6.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-1.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-2.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-3.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-4.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-5.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-6.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-1.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-2.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-3.jpg' value={value} />
+                    <ViewImgCarouselItem path='/img/carousel-item-4.jpg' value={value} />
                     <ModalGroup.Set modal={ModalGroup.AddImg}>
                         <PlusButton className='min-w-[120px] h-full' />
                     </ModalGroup.Set>

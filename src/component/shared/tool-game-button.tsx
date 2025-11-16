@@ -41,11 +41,9 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
                     <ButtonInGroup children={<img className='icon-sm' src='/icon/grid.svg' />} />
                     <ButtonInGroup fn={forwardClick} children={<img className='icon-sm' src='/icon/forward.svg' />} />
                     <ButtonInGroup fn={saveGame} children={<img className='icon-sm' src='/icon/save.svg' />} />
-                    {/* @ts-ignore */}
-                    <Modal.Set modal={Modal.AddSomething} component={InStoreEntityItem} accept={AddEntity} column={5}>
+                    <Modal.Set modal={Modal.AddSomething} props={{ component: InStoreEntityItem, accept: AddEntity }}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/dragon.svg' />} /></Modal.Set>
-                    {/* @ts-ignore */}
-                    <Modal.Set modal={Modal.AddSomething} component={InStoreObjectItem} accept={AddObject} column={5}>
+                    <Modal.Set modal={Modal.AddSomething} props={{ component: InStoreObjectItem, accept: AddObject }}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/object.svg' />} /></Modal.Set>
                     <Modal.Set modal={Modal.ImgCarousel}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/img-carousel.svg' />} /></Modal.Set>

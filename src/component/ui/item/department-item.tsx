@@ -13,7 +13,7 @@ interface Props {
 export const DepartmentItem: React.FC<Props> = ({ discription, name, path }: Props) => {
     return (
         <Link to={`/department/${name}`}>
-            <div className="flex gap-10 hover-translate-y border-b">
+            <div className="flex gap-10 border-b">
                 <div className="overflow-hidden w-full">
                     <p className="text-4xl">{name.toUpperCase()}</p>
                     <p className='text-md pt-2'>{discription}</p>
@@ -24,7 +24,7 @@ export const DepartmentItem: React.FC<Props> = ({ discription, name, path }: Pro
                     <PostItem likes={0} {...fakePost[0]} fixed />
                 </div>
                 <div className='w-1/5 p-4 pt-0'>
-                    <img src={path} alt="" className='rounded-lg max-w-[180px]' />
+                    <img src={path} alt="" className='rounded-lg max-w-[180px] bg-shadow' />
                 </div>
             </div>
         </Link>

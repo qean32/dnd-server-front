@@ -38,10 +38,11 @@
 
 body {
     background-color: $bg-color;
-    display: flex;
-    height: auto !important;
-    // background-image: url('/icon/bg-img.svg');
-    background-size: 3%;
+    // display: flex;
+    height: fit-content !important;
+    // background-image: url('/img/carousel-item-1.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 .reverse {

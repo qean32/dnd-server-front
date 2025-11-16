@@ -192,36 +192,4 @@ export const fakePost = [
     }
 ]
 
-export const fakeNodes = [
-    { id: 1, path: '/img/goblin.jpg', y: 500, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 2, path: '/icon/dragon.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 3, path: '/icon/human.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 4, path: '/icon/home.svg', y: 670, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 5, path: '/icon/game.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 6, path: '/icon/tool.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 7, path: '/icon/object.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 8, path: '/icon/dice-6.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 9, path: '/icon/arrow.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 10, path: '/icon/edit.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 11, path: '/icon/grid.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 12, path: '/icon/news.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 13, path: '/icon/community.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 14, path: '/icon/chat.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 15, path: '/icon/download.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 16, path: '/icon/unlock.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 17, path: '/icon/upload.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 6, path: '/icon/tool.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 7, path: '/icon/object.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 8, path: '/icon/dice-6.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 9, path: '/icon/arrow.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 10, path: '/icon/edit.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 11, path: '/icon/grid.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 12, path: '/icon/news.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 13, path: '/icon/community.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 14, path: '/icon/chat.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 15, path: '/icon/download.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 16, path: '/icon/unlock.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-    { id: 17, path: '/icon/upload.svg', y: 570, x: 500, sizeX: 100, sizeY: 100 },
-]
-
 export const fakeTags = ["dnd", "фентези", "zxccursed", "разработка", "web"]

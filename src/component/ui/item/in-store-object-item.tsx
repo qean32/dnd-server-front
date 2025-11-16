@@ -2,7 +2,7 @@ import React from 'react'
 import { objectDto } from '@/model'
 
 export const InStoreObjectItem: React.FC<objectDto> = ({
-    path = '/img/dnd1.jpg',
+    path = '/img/carousel-item-1.jpg',
     name = 'Таверна у Хагрида'
 }: objectDto) => {
     return (

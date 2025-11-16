@@ -4,7 +4,7 @@ import { Crumb } from "@component/ui"
 import { usePage } from "@lib/castom-hook"
 import { getParamName } from "@lib/function"
 
-export const PostPage = () => {
+export const Post = () => {
     const { } = usePage(getParamName())
 
     return (

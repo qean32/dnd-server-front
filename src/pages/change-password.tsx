@@ -3,7 +3,7 @@ import { Page } from "@component/master/h-order-component"
 import { title } from "@/export"
 import { usePage } from "@lib/castom-hook"
 
-export const ChangePasswordPage = () => {
+export const ChangePassword = () => {
     const { } = usePage(title.changePassword)
 
     return (

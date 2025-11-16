@@ -5,7 +5,7 @@ import { ProfileContent, ProfileContentSwith } from "@component/shared/profile-c
 import { usePage } from "@lib/castom-hook"
 import { getParamName } from "@lib/function"
 
-export const ProfilePage = () => {
+export const Profile = () => {
     const { } = usePage(getParamName())
 
     return (

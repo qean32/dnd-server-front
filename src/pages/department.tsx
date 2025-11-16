@@ -10,7 +10,7 @@ import { usePage } from "@lib/castom-hook"
 import { getParamName } from "@lib/function"
 
 
-export const DepartmentPage = () => {
+export const Department = () => {
     const { } = usePage(getParamName())
 
     return (

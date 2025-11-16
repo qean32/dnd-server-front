@@ -5,7 +5,7 @@ import { mapDto } from '@/model'
 
 
 export const InStoreMapItem: React.FC<mapDto> = ({
-    path = '/img/dnd1.jpg',
+    path = '/img/carousel-item-1.jpg',
     name = 'Таверна у Хагрида Таверна у Хагрида'
 }: mapDto) => {
     const dispath = useAppDispatch()

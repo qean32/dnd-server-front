@@ -4,14 +4,13 @@
     flex-wrap: nowrap;
     align-items: center;
 
-
     &:hover>div {
-        animation: animate 27s linear infinite paused !important;
+        animation: animate 60s linear infinite paused !important;
     }
 }
 
 .carousel>div {
-    animation: animate 50s linear infinite;
+    animation: animate 60s linear infinite;
 }
 
 @keyframes animate {

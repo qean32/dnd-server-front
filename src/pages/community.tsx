@@ -6,7 +6,7 @@ import { title } from "@/export"
 import { fakeUser } from "@/fake-data"
 import { usePage } from "@lib/castom-hook"
 
-export const CommunityPage = () => {
+export const Community = () => {
     const { } = usePage(title.communty)
 
     return (

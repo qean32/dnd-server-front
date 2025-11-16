@@ -4,7 +4,7 @@ import { AuthBG } from "@component/ui"
 import { title } from "@/export"
 import { usePage } from "@lib/castom-hook"
 
-export const AuthPage = () => {
+export const Auth = () => {
     const { } = usePage(title.authorization)
 
     return (

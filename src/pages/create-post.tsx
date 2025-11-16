@@ -4,7 +4,7 @@ import { Button, FakeTextInput, File } from "@component/ui"
 import { title } from "@/export"
 import { usePage } from "@lib/castom-hook"
 
-export const CreatePostPage = () => {
+export const CreatePost = () => {
     const { } = usePage(title.createPost)
 
     return (
