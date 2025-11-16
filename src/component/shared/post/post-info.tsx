@@ -1,5 +1,5 @@
 import React from 'react'
-import { Ava } from './'
+import { Ava } from '@component/ui'
 
 interface Props {
 }

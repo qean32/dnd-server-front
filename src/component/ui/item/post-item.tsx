@@ -4,9 +4,9 @@ import { postDto } from '@/model/post.dto'
 import { UnwrapTags } from '@component/ui/unwrap-tags'
 
 
-export const PostItem: React.FC<postDto> = ({ discription, tags, title, author, views, fixed }: postDto) => {
+export const PostItem: React.FC<postDto> = ({ discription, tags, title, author, views, fixed, department }: postDto) => {
     return (
-        <Link to={`/post/1/${title}`} className='prime-hover'>
+        <Link to={`/post/${department}/1/${title}`} className='prime-hover'>
             <div className='py-2 grid cursor-pointer transition-03 mount-opacity' style={{ gridTemplateColumns: '5fr 1fr 1fr 1fr' }}>
                 {fixed && <img src="/icon/fixed.svg" alt="" className='absolute right-2' />}
                 <div className='flex flex-col justify-between'>

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type profileType = 'post' | 'Session' | 'character'
+type profileType = 'post' | 'session' | 'character'
 type sessionType = 'bestiary' | 'characters' | 'queue' | 'objects'
 type stateDto = { profile: profileType, session: sessionType }
 

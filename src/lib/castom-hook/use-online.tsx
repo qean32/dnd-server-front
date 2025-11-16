@@ -5,7 +5,7 @@ export const useOnline = () => {
     const { boolean, on, off } = useBoolean()
     const controller = new AbortController
 
-    React.useEffect(() => {
+    React.useLayoutEffect(() => {
         window.addEventListener('online', () => on(), { signal: controller.signal })
         window.addEventListener('offline', () => off(), { signal: controller.signal })
 

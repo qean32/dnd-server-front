@@ -4,6 +4,7 @@ import { PostColumn, PlusButton } from "@component/ui"
 import { useBoolean } from "@lib/castom-hook"
 import React from "react"
 import { PostItem } from "@component/ui/item"
+import { ViewAuthor } from "@/component/master/h-order-component"
 
 interface Props {
     view: boolean
@@ -30,7 +31,9 @@ export const Post: React.FC<Props> = ({ view }: Props) => {
             {fakePost.slice(0, 6).map(item => {
                 return <PostItem likes={0} {...item} key={item.title} />
             })}
-            <Link to={'/create-post'}><PlusButton className='h-[100px] w-full mt-2 px-5' iconSize='icon-sm' /></Link>
+            <ViewAuthor>
+                <Link to={'/create-post'}><PlusButton className='h-[100px] w-full my-2 px-5' iconSize='icon-md' /></Link>
+            </ViewAuthor>
         </div>
     )
 }

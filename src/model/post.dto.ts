@@ -5,7 +5,8 @@ export type postDto = {
     author: {
         name: string
         id: number
-    }
+    },
+    department: string
     views: number
     likes: number
     fixed?: boolean

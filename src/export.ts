@@ -27,6 +27,13 @@ export const title = {
     profile: 'профиль',
 }
 
+export const tip = [
+    'играйте вместе с нами!',
+    'zxccursed???',
+    '2',
+    '3',
+]
+
 export const mapMonthKey = new Map([
     ['1', 'Январь'],
     ['2', 'Февраль'],

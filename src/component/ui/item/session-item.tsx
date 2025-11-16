@@ -1,5 +1,6 @@
+import { SessionItemMenu } from '@/component/case/context-menu'
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 interface Props {
     id: number
@@ -8,10 +9,13 @@ interface Props {
 
 
 export const SessionItem: React.FC<Props> = ({ id, name }: Props) => {
+    const navigate = useNavigate()
+
     return (
-        <Link to={`/session/${id}/${name}`} className='mount-opacity overflow-hidden relative h-[85px] transition-03 hover:pt-10' style={{ transformOrigin: 'bottom' }}>
-            <div className="h-full w-full absolute top-0 bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/dnd+.jpg'})` }}></div>
-            <p className='overflow-hidden max-h-full text-ellipsis absolute p-2 px-3'>{name}</p>
-        </Link>
+        <div onClick={() => navigate(`/session/${id}/${name}`)} className='cursor-pointer mount-opacity h-[100px] flex gap-4 p-4 py-3 bg-color-darkness-hover transition-03'>
+            <div className="h-full w-[130px] bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/dnd+.jpg'})` }}></div>
+            <p className='text-2xl'>{name}</p>
+            <SessionItemMenu />
+        </div>
     )
 }

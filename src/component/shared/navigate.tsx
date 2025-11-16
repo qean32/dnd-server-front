@@ -9,7 +9,7 @@ interface Props {
 
 export const Navigate: React.FC<Props> = ({ className }: Props) => {
     return (
-        <div className={cn('fixed z-50 flex hover:-translate-y-0.5 gap-2 left-1/2 bottom-3 -translate-x-1/2 bg-color-darkness p-3 rounded-md transition-03 hover:py-4', className)}>
+        <div className={cn('fixed z-50 flex hover:-translate-y-0.5 gap-2 left-1/2 bottom-3 -translate-x-1/2 bg-color-darkness p-2 rounded-md transition-03 hover:py-3', className)}>
             <NavigateButton link='/' path='/icon/home.svg' />
             <NavigateButton link='/forum' path='/icon/news.svg' />
             <NavigateButton link='/community' path='/icon/community.svg' />
