@@ -13,7 +13,7 @@ export const MainLoader: React.FC<Props> = ({ }: Props) => {
     const ref = React.useRef(tip[getBetweenNumber(1, tip.length)])
 
     React.useEffect(() => {
-        setTimeout(off, 1000)
+        setTimeout(off, 2000)
     }, [])
     return (
         <div className={cn("fixed flex-col gap-5 inset-0 bg-color-darkness flex justify-center items-center transition-03", (!boolean && 'pointer-events-none opacity-0'))} style={{ zIndex: '60' }}>

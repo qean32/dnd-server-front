@@ -6,7 +6,7 @@ interface Props {
 
 export const Carousel: React.FC<Props> = ({ }: Props) => {
     return (
-        <div className="overflow-hidden">
+        <div className="overflow-hidden mount-opacity">
             <div className="w-[200%] carousel py-4 bg-color-darkness h-[120px]">
                 <div className="w-full flex justify-around child-pointer h-full">
                     <img src="/img/carousel-item-1.jpg" className='h-full bg-hover-shadow rounded-sm' alt="" />
