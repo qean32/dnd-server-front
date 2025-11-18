@@ -1,7 +1,7 @@
 import { entityDto, mapDto, objectDto } from "@/model";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type stateDto = { object: entityDto | objectDto | mapDto | null }
+type stateDto = { object: entityDto | mapDto | objectDto | null }
 
 const initialState: stateDto = { object: null }
 
@@ -9,7 +9,7 @@ const objectBeingAddedToGameSlice = createSlice({
     name: 'object-being-added-to-game',
     initialState,
     reducers: {
-        swapObjectBeingAddedToGame(state: stateDto, { payload: { object } }: PayloadAction<{ object: entityDto | objectDto | mapDto }>) {
+        swapObjectBeingAddedToGame(state: stateDto, { payload: { object } }: PayloadAction<{ object: entityDto | mapDto | objectDto }>) {
             state.object = object
         },
     },

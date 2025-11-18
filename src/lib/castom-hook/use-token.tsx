@@ -11,7 +11,7 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     const transform = useBoolean()
 
     const mouseOverHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        e.target.getStage().container().style.cursor = 'grab';
+        e.target.getStage().container().style.cursor = 'move';
     };
 
     const mouseOutHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {

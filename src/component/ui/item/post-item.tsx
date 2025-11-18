@@ -14,9 +14,9 @@ export const PostItem: React.FC<postDto> = ({ discription, tags, title, author, 
                     <p className='text-sm'>{discription}</p>
                     <UnwrapTags tags={tags} className='' />
                 </div>
-                <p>{author.name}</p>
-                <p>Раздел</p>
-                <p className='translate-x-0.5'>{views}</p>
+                <p className='translate-y-1'>{author.name}</p>
+                <p className='translate-y-1'>Раздел</p>
+                <p className='translate-x-0.5 translate-y-1'>{views}</p>
             </div>
         </Link>
     )

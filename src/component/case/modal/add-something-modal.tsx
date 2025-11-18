@@ -1,9 +1,10 @@
 import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
-import { Button, ModalCross } from '@component/ui'
+import { ModalCross } from '@component/ui'
 import { FilterAddSomething, GroupTokenInModal } from '@component/shared'
 import { propsComponent } from '@/model'
+import { useBoolean } from '@/lib/castom-hook'
 
 interface Props {
     view: boolean
@@ -14,10 +15,7 @@ interface Props {
 
 
 export const AddSomething: React.FC<Props> = ({ view, swap, component, accept: Accept }: Props) => {
-    const clickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-        // @ts-ignore
-        JSON.parse(e.target.parentElement.parentElement.getAttribute('data'))
-    }
+    const part = useBoolean()
 
     return (
         <Modal
@@ -35,13 +33,9 @@ export const AddSomething: React.FC<Props> = ({ view, swap, component, accept: A
                     <GroupTokenInModal title='Базовый набор' component={component} />
                     <GroupTokenInModal title='Набор Хелойвин' component={component} />
                 </div>
-                <Accept children={
-                    <div className="flex-1 flex justify-end flex-col pb-6 pr-4 items-end">
-                        <div className="flex gap-2">
-                            <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
-                            <Button fn={clickHandler} variant='acceess'><p className='pointer-events-none'>Добавить</p></Button></div>
-                    </div>
-                } />
+                <Accept part={part}
+                    swapModal={swap}
+                />
             </div>
         </Modal>
     )

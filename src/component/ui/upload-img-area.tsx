@@ -44,7 +44,6 @@ export const UploadImgArea: React.FC<Props> = ({ className }: Props) => {
             <div className={cn("p-5", className)}>
                 <label
                     className="flex p-0 h-full rounded-lg cursor-pointer justify-center items-center bg-img bg-color-dark"
-                    style={{ borderImageSource: 'https://i.sstatic.net/wLdVc.png', borderImageWidth: '2px' }}
                     htmlFor={id}
                     onDragLeave={e => dragLeaveHandler(e)}
                     onDragStart={e => dragStartHandler(e)}

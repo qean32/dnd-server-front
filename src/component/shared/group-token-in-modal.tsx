@@ -15,7 +15,10 @@ interface Props {
 export const GroupTokenInModal: React.FC<Props> = ({ title, component: Component }: Props) => {
     const dispath = useAppDispatch()
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        dispath(swapObjectBeingAddedToGame({ object: getHTMLData(e, 'data', true) }))
+        const object = getHTMLData(e, 'data', true)
+        if (object) {
+            dispath(swapObjectBeingAddedToGame({ object }))
+        }
     }
 
     return (

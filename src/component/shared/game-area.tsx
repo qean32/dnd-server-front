@@ -14,7 +14,7 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
     return (
         <Stage width={window.innerWidth} height={window.innerHeight - 64}>
             <Layer>
-                <Group draggable>
+                <Group>
                     <GameBGArea />
 
                     {[...mapsData[currentMap.name].entities].map((item: entityDto, _: number) => {
