@@ -13,27 +13,19 @@ export const Main = () => {
             <Carousel />
             <MainBanner />
             <div className="w-full flex justify-center" ref={refHandler}>
-                <div className={cn("w-8/12 py-10 transition-07", (boolean && 'translate-x-10'))}>
+                <div className={cn("w-8/12 py-10 transition-20", (boolean && 'translate-x-5'))}>
                     <p className="text-7xl">ПОЧЕМУ МЫ?</p>
                     <ul>
                         <li>Лучшие сервера</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li>Отличный интерфейс</li>
+                        <li>Лучшая атмосфера</li>
+                        <li></li>
                     </ul>
                 </div>
             </div>
             <div className="w-full flex justify-center" ref={refHandler_}>
-                <div className={cn("w-8/12 py-10 transition-07 flex items-end flex-col", (boolean_ && '-translate-x-10'))}>
-                    <p className="text-7xl">ПОЧЕМУ МЫ?</p>
-                    <ul className="text-end">
-                        <li>Лучшие сервера</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ul>
+                <div className={cn("w-8/12 py-10 transition-20 flex items-end flex-col", (boolean_ && '-translate-x-5'))}>
+                    <p className="text-7xl">ИГРАЙ С НАМИ!</p>
                 </div>
             </div>
         </main>

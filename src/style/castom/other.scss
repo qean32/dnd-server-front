@@ -115,3 +115,9 @@
     opacity: .6;
     display: block;
 }
+
+.text-area {
+    &>div {
+        width: fit-content;
+    }
+}

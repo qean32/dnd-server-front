@@ -2,7 +2,7 @@ import React from 'react'
 import { entityDto } from '@/model'
 
 export const InStoreEntityItem: React.FC<entityDto> = ({
-    discription = 'Описание ОписаниеОписаниеОписание Описание',
+    discription = 'Тайвин Ланнистер — вымышленный персонаж фэнтезийного сериала «Песнь льда и пламени» американского писателя Джорджа Р. Р. Мартина и его телевизионной адаптации «Игра престолов».',
     path = '/img/entity.jpg',
     name = "Гоблин Гоблин",
 }: entityDto) => {

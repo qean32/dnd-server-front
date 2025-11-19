@@ -18,13 +18,24 @@ export const AddFromJSON: React.FC<Props> = ({ part, children }: Props) => {
         }
     }, [object])
     // @ts-ignore
-    const map = object?.isEntity ? object : { path: '', name: '', id: 0, size: { x: 0, y: 0 } }
-    console.log(object);
-
+    const entity = object?.isEntity ? object : { path: '', name: '', id: 0, discription: '', initiative: 0 }
 
     return (
         <div className="w-1/2 flex-1 flex flex-col">
             <div className="flex-1">
+                <div className="h-6/12 flex justify-center items-center pt-5">
+                    <div className="w-1/2 aspect-square bg-img rounded-full outline-bg-light" style={{ backgroundImage: `url(${entity.path})` }}></div>
+                </div>
+                <div className='px-5'>
+                    <DisabledInput value={entity.name} className='mb-5' />
+                    <div className="flex justify-between text-sm">
+                        <p>Инициатива</p>
+                        {/* @ts-ignore */}
+                        <DisabledInput value={entity.initiative} className='w-[60px]' />
+                    </div>
+                    {/* @ts-ignore */}
+                    <p className='pt-4 text-sm text-justify'>{entity?.discription}</p>
+                </div>
             </div>
             <div className="flex justify-end flex-col pb-6 pr-4 items-end">
                 <Button variant='acceess' fn={part.off} className='my-2'><p>Добавить свою карту</p></Button>

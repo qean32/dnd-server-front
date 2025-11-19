@@ -17,6 +17,7 @@ export interface entityDto extends abstractEntity {
     discription: string
     status: 'live' | 'dead' | 'stan'
     size: number
+    initiative: number
 }
 
 export interface mapDto extends abstractEntity {
