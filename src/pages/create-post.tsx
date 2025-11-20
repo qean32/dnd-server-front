@@ -7,6 +7,6 @@ export const CreatePost = () => {
     const { } = usePage(title.createPost)
 
     return (
-        <Page><CreatePostForm /></Page>
+        <Page className="pb-8"><CreatePostForm /></Page>
     )
 }

@@ -6,7 +6,7 @@ type stateDto = { profile: profileType, session: sessionType }
 
 const initialState: stateDto = {
     profile: 'post',
-    session: 'bestiary'
+    session: 'queue'
 }
 
 const viewContentSlice = createSlice({

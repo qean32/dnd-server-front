@@ -21,13 +21,18 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
         <div className="h-full w-full overflow-hidden">
             <div
                 className={
-                    cn("flex h-full w-[400%] gap-1 transition-07",
-                        (sessionView == 'bestiary' && ''),
-                        (sessionView == 'objects' && '-translate-x-1/4'),
+                    cn("flex h-full w-[400%] transition-07",
+                        (sessionView == 'queue' && ''),
+                        (sessionView == 'objects' && '-translate-x-3/4'),
                         (sessionView == 'characters' && '-translate-x-2/4'),
-                        (sessionView == 'queue' && '-translate-x-3/4'),
+                        (sessionView == 'bestiary' && '-translate-x-1/4'),
                     )
                 }>
+                <UnwrapArray
+                    component={InToolEntityItem}
+                    array={mapsData[name].entities}
+                    title='ОЧЕРЕДЬ'
+                />
                 <UnwrapArray
                     component={InToolEntityItem}
                     array={mapsData[name].entities}
@@ -42,11 +47,6 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
                     component={InToolCharacterItem}
                     array={mapsData[name].entities}
                     title='ПЕРСОНАЖИ'
-                />
-                <UnwrapArray
-                    component={InToolEntityItem}
-                    array={mapsData[name].entities}
-                    title='ОЧЕРЕДЬ'
                 />
             </div >
         </div>

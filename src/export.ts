@@ -47,6 +47,8 @@ export const mapMonthKey = new Map([
     ['12', 'Декабрь']
 ]);
 
+export const separator = '&&&&&&&'
+
 export const serverWork = 'serverWork!'
 
 export const customMarkup = {
@@ -54,7 +56,7 @@ export const customMarkup = {
     h2: "**",
     h3: "***",
     p: "",
-    img: 'img:<src>',
+    img: 'img:{src}',
     small: ".",
 }
 

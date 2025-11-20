@@ -1,6 +1,13 @@
 import { customMarkup } from "@/export"
 
-export const convertToHTML = (text: string) => {
+export const convertToHTML = (text: string, link?: string) => {
+    function* generatorFn() {
+        // @ts-ignore
+        for (const item of link?.replaceAll('{', '').replaceAll('}', '').split(',')) yield item;
+    }
+    const generator = generatorFn()
+
+
     return text.split(',').map(item => {
         const arr = item.split(' ')
 
@@ -10,12 +17,20 @@ export const convertToHTML = (text: string) => {
         if (arr[0] == customMarkup.small) {
             return `<p class="text-sm">${arr.slice(1)}<p>`
         }
+        if (arr[0] == customMarkup.h2) {
+            return `<p class="text-3xl">${arr.slice(1)}<p>`
+        }
+        if (arr[0] == customMarkup.h3) {
+            return `<p class="text-2xl">${arr.slice(1)}<p>`
+        }
+        if (arr[0] == customMarkup.small) {
+            return `<p class="text-sm">${arr.slice(1)}<p>`
+        }
         if (arr[0].slice(0, 4) == 'img:') {
-            // @ts-ignore
-            return `<img src="${arr[0].slice(4).replaceAll('>', '/')}" />`
+
+            return `<img class="rounded-sm" src="${generator.next().value.replaceAll(';', '/')}" />`
         }
 
-
-        return item
+        return `<p class="text-xl">${item}<p>`
     }).join('')
 }

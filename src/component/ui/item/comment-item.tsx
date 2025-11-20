@@ -18,7 +18,7 @@ export const CommentItem: React.FC<Props> = ({ }: Props) => {
                     <p className='text-justify'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eius aperiam dignissimos obcaecati sint blanditiis maiores at quibusdam in consequuntur ducimus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eius aperiam dignissimos obcaecati sint blanditiis maiores at quibusdam in consequuntur ducimus.</p>
                 </div>
             </div>
-            <p className='text-sm w-[100px] pl-2'>20.05.20</p>
+            <p className='text-sm w-[100px] pl-5'>20.05.20</p>
         </div>
     )
 }
