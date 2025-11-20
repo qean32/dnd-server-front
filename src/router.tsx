@@ -24,6 +24,7 @@ export const Router = () => {
                 <Route element={<pages.Forum />} path="/forum" />
                 <Route element={<pages.Department />} path="/department/:name" />
                 <Route element={<pages.Faq />} path="/faq" />
+                <Route element={<pages.PreviewPost />} path="/preview/:text" />
 
                 <Route element={<pages.P404 />} path="*" />
                 {/* <Route element={<pages.TestPage />} path="/test" /> */}

@@ -12,10 +12,6 @@ export const CommentBlock: React.FC<Props> = ({ }: Props) => {
             <CommentInput />
             <p className='pl-6 py-2 text-2xl'>Коментарии</p>
             <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
-            <CommentItem />
         </div>
     )
 }

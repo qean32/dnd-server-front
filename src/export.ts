@@ -49,6 +49,15 @@ export const mapMonthKey = new Map([
 
 export const serverWork = 'serverWork!'
 
+export const customMarkup = {
+    h1: "*",
+    h2: "**",
+    h3: "***",
+    p: "",
+    img: 'img:<src>',
+    small: ".",
+}
+
 export const DADJIOEWQEQWEJPOI = {
     "currentMap": {
         "id": 1,

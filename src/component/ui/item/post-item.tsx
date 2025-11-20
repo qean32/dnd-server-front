@@ -9,7 +9,7 @@ export const PostItem: React.FC<postDto> = ({ discription, tags, title, author, 
         <Link to={`/post/${department}/1/${title}`} className='prime-hover'>
             <div className='py-2 grid cursor-pointer transition-03 mount-opacity' style={{ gridTemplateColumns: '5fr 1fr 1fr 1fr' }}>
                 {fixed && <img src="/icon/fixed.svg" alt="" className='absolute right-2' />}
-                <div className='flex flex-col justify-between'>
+                <div className='flex flex-col justify-between pl-2'>
                     <p className='text-2xl'>{title}</p>
                     <p className='text-sm'>{discription}</p>
                     <UnwrapTags tags={tags} className='' />
