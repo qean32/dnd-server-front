@@ -1,5 +1,6 @@
 import { idDto } from "./id.dto"
 import { coordinateDto } from "./position.dto"
+import { userDto } from "./user.dto"
 
 interface abstractEntity extends idDto {
     source: sourceDto
@@ -18,6 +19,10 @@ export interface entityDto extends abstractEntity {
     status: 'live' | 'dead' | 'stan'
     size: number
     initiative: number
+}
+
+export interface characterDto extends entityDto {
+    user: userDto
 }
 
 export interface mapDto extends abstractEntity {

@@ -15,7 +15,7 @@ export const SignInForm: React.FC<Props> = ({ }: Props) => {
                     <TextInput placeHolder="почта" />
                     <PasswordInput placeHolder="пароль" />
                     <PasswordInput placeHolder="повторите пароль" />
-                    <Checkbox fn={() => { }} title='согласие на' value />
+                    <Checkbox fn={() => { }} title='мне больше 18 лет и я согласен с условиями конфиденциальности' value />
                 </div>
                 <Button variant='acceess' className="px-5 py-3" children={<p>Регистрация</p>} />
             </div>

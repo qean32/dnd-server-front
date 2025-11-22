@@ -94,16 +94,17 @@ interface CheckboxProps {
     className?: string
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({ title, fn, value, className }: CheckboxProps) => {
+export const Checkbox: React.FC<CheckboxProps> = ({ title, className }: CheckboxProps) => {
+    const { boolean, swap } = useBoolean()
     return (
-        <div onClick={() => fn()} className={cn('cursor-pointer flex gap-3.5', className)} >
-            <p className='text-nowrap'>{title}</p>
-            <input type='checkbox' className={cn('transition-03 border-0', (value && 'opacity-0'))} style={{ transform: 'translateY(1px)' }} />
-            <img src='/icon/accept.svg'
-                alt=''
-                className={cn('transition-03 w-[19px]', (!value && 'opacity-0'))}
-                style={{ transform: 'translateX(-160%)' }}
-            />
+        <div onClick={swap} className={cn('cursor-pointer flex gap-3.5', className)} >
+            <p className='text-sm'>{title}</p>
+            <div className="flex justify-center flex-col relative icon-sm">
+                <input type='checkbox' className={cn('transition-03 absolute top-1.5 border-0 scale-95', (boolean && 'opacity-0'))} style={{ width: 'fit-content' }} />
+                <img src='/icon/accept.svg' alt=''
+                    className={cn('transition-03 icon-sm absolute top-1', (!boolean && 'opacity-0'))}
+                />
+            </div>
         </div>
     );
 }

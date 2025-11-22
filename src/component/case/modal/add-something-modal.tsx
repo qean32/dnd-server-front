@@ -9,12 +9,12 @@ import { useBoolean } from '@/lib/castom-hook'
 interface Props {
     view: boolean
     swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
-    component: propsComponent
+    renderItem(item: any): React.ReactNode
     accept: propsComponent
 }
 
 
-export const AddSomething: React.FC<Props> = ({ view, swap, component, accept: Accept }: Props) => {
+export const AddSomething: React.FC<Props> = ({ view, swap, renderItem, accept: Accept }: Props) => {
     const part = useBoolean()
 
     return (
@@ -30,8 +30,8 @@ export const AddSomething: React.FC<Props> = ({ view, swap, component, accept: A
                 <ModalCross fn={swap} />
                 <div className="w-9/12 h-full overflow-scroll relative">
                     <FilterAddSomething />
-                    <GroupTokenInModal title='Базовый набор' component={component} />
-                    <GroupTokenInModal title='Набор Хелойвин' component={component} />
+                    <GroupTokenInModal title='Базовый набор' renderItem={renderItem} />
+                    <GroupTokenInModal title='Набор Хелойвин' renderItem={renderItem} />
                 </div>
                 <Accept part={part}
                     swapModal={swap}

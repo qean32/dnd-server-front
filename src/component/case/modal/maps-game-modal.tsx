@@ -5,7 +5,7 @@ import { fakePost } from '@/fake-data'
 import { ModalCross, PlusButton } from '@component/ui'
 import * as ModalGroup from './index-group'
 import { InStoreMapItem, MapItem } from '@component/ui/item'
-import { AddMap } from '@component/case/accept-add'
+import { AddMap } from '@/component/case/add-to-session'
 
 interface Props {
     view: boolean
@@ -30,8 +30,8 @@ export const MapsGame: React.FC<Props> = ({ view, swap }: Props) => {
                     {fakePost.slice(0, 9).map((__, _) =>
                         <MapItem key={_} />
                     )}
-                    <ModalGroup.Set modal={ModalGroup.AddSomething} props={{ component: InStoreMapItem, accept: AddMap }}>
-                        <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' /></ModalGroup.Set>
+                    <ModalGroup.Root modal={ModalGroup.AddSomething} props={{ renderItem: InStoreMapItem, accept: AddMap }}>
+                        <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' /></ModalGroup.Root>
                 </div>
             </div>
         </Modal>

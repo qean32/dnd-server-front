@@ -59,9 +59,9 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
                     <ViewImgCarouselItem path='/img/carousel-item-2.jpg' value={value} />
                     <ViewImgCarouselItem path='/img/carousel-item-3.jpg' value={value} />
                     <ViewImgCarouselItem path='/img/carousel-item-4.jpg' value={value} />
-                    <ModalGroup.Set modal={ModalGroup.AddImg}>
+                    <ModalGroup.Root modal={ModalGroup.AddImg}>
                         <PlusButton className='min-w-[120px] h-full' />
-                    </ModalGroup.Set>
+                    </ModalGroup.Root>
                 </div>
             </div>
         </Modal>

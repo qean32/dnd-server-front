@@ -17,6 +17,7 @@ export const Router = () => {
                 <Route element={<pages.Main />} path="/" />
                 <Route element={<pages.CreatePost />} path="/create-post" />
                 <Route element={<pages.ChangePassword />} path="/change-password" />
+                <Route element={<pages.ResetPassword />} path="/reset-password" />
                 <Route element={<pages.EditProfile />} path="/edit-profile" />
                 <Route element={<pages.Auth />} path="/auth" />
                 <Route element={<pages.Community />} path="/community" />
@@ -27,7 +28,6 @@ export const Router = () => {
                 <Route element={<pages.PreviewPost />} path="/preview/:text" />
 
                 <Route element={<pages.P404 />} path="*" />
-                {/* <Route element={<pages.TestPage />} path="/test" /> */}
             </Routes>
         </BrowserRouter>
     )

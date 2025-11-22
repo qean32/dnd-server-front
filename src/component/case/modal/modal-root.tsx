@@ -9,7 +9,7 @@ interface Props {
 }
 
 
-export const Set: React.FC<Props> = ({ children, modal: Modal, props }: Props) => {
+export const Root: React.FC<Props> = ({ children, modal: Modal, props }: Props) => {
     const { boolean, swap } = useBoolean()
 
     return (

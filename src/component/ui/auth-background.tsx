@@ -7,13 +7,14 @@ interface Props {
 }
 
 
-export const AuthBG: React.FC<Props> = ({ text }: Props) => {
+export const AuthBackground: React.FC<Props> = ({ text }: Props) => {
     const { boolean, swap } = useBoolean(false)
 
     return (
         <div className={cn("h-full z-40 w-1/2 top-0 absolute transition-07", (!boolean && 'translate-x-full'))} onClick={() => !text && swap()}>
-            <div className="h-full items-center cursor-pointer flex justify-center">
+            <div className="h-full items-center cursor-pointer flex justify-center arrow-auth-relative">
                 <img src="/img/auth.jpg" alt="" className="rounded-md h-full w-full bg-shadow" />
+                <p className="absolute text-md rotate-270 translate-y-full arrow-auth transition-03">{!boolean ? text ? text : '>' : '>'}</p>
                 <p className="absolute text-3xl">{!boolean ? text ? text : 'ВХОД' : 'РЕГИСТРАЦИЯ'}</p>
             </div>
         </div>

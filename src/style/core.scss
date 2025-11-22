@@ -56,13 +56,13 @@ body {
 
 .child-fill-event {
     & * {
-        pointer-events: auto !important;
+        pointer-events: auto;
     }
 }
 
 .child-no-fill-event {
     & * {
-        pointer-events: none !important;
+        pointer-events: none;
     }
 }
 

@@ -36,9 +36,8 @@ const RightSideForum: React.FC<{}> = ({ }: {}) => {
                 <PostItem likes={0} {...fakePost[10]} fixed={true} />
             </div>
             <GroupContainer
-                array={fakePost}
-                component={PostItem}
-                propsName="post"
+                items={fakePost}
+                renderItem={(item) => <PostItem {...item} />}
             />
         </div>
     )

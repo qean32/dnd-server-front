@@ -12,11 +12,11 @@ export const Session: React.FC<{}> = ({ }: {}) => {
                 <SessionItem key={_} id={_ + 1} name={'ПерваяПерваяПервая'} />
             )}
             <ViewAuthor>
-                <Modal.Set modal={Modal.AddSession}>
+                <Modal.Root modal={Modal.AddSession}>
                     <div className="px-4">
                         <PlusButton className='h-[85px] my-5 mb-2' iconSize='icon-sm' />
                     </div>
-                </Modal.Set>
+                </Modal.Root>
             </ViewAuthor>
         </div>
     )

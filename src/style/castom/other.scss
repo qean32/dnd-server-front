@@ -121,3 +121,13 @@
         width: fit-content;
     }
 }
+
+.pointer-events-auto- {
+    pointer-events: auto !important;
+}
+
+.arrow-auth-relative:hover {
+    .arrow-auth {
+        transform: translateX(-50%);
+    }
+}

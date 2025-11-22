@@ -29,23 +29,23 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
                     )
                 }>
                 <UnwrapArray
-                    component={InToolEntityItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolEntityItem}
+                    items={mapsData[name].entities}
                     title='ОЧЕРЕДЬ'
                 />
                 <UnwrapArray
-                    component={InToolEntityItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolEntityItem}
+                    items={mapsData[name].entities}
                     title='БЕСТИАРИЙ'
                 />
                 <UnwrapArray
-                    component={InToolObjectItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolObjectItem}
+                    items={mapsData[name].entities}
                     title='ОБЬЕКТЫ'
                 />
                 <UnwrapArray
-                    component={InToolCharacterItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolCharacterItem}
+                    items={mapsData[name].entities}
                     title='ПЕРСОНАЖИ'
                 />
             </div >

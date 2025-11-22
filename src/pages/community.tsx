@@ -16,10 +16,9 @@ export const Community = () => {
                 <TextInfo title="Сообщество" />
                 <Search />
                 <GroupContainer
-                    array={fakeUser}
+                    items={fakeUser}
                     className="pt-5"
-                    component={UserItem}
-                    propsName="user"
+                    renderItem={(item) => <UserItem {...item} />}
                 />
             </div>
         </Page>

@@ -22,6 +22,7 @@ export const title = {
     forum: 'Форум',
     main: 'Главная',
     profile: 'Профиль',
+    reserPassword: 'Востановление аккаунта',
     faq: 'Часто задаваемые вопросы',
 }
 

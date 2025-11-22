@@ -1,6 +1,6 @@
 import React from 'react'
 import { Stage, Layer, Group } from "react-konva"
-import { TokenEntity, GameBGArea } from '@component/ui';
+import { Entity, GameBackground } from '@component/ui/area';
 import { entityDto } from '@/model';
 import { useAppSelector } from '@lib/castom-hook/redux';
 import { useStage } from '@/lib/castom-hook';
@@ -23,14 +23,13 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
             y={stage.y}
             width={window.innerWidth}
             height={window.innerHeight - 64}
-            draggable
         >
             <Layer>
                 <Group>
-                    <GameBGArea />
+                    <GameBackground />
 
                     {[...mapsData[currentMap.name].entities].map((item: entityDto, _: number) => {
-                        return <TokenEntity {...item} key={_} />
+                        return <Entity {...item} key={_} />
                     })}
                 </Group>
             </Layer>
