@@ -23,6 +23,7 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
             y={stage.y}
             width={window.innerWidth}
             height={window.innerHeight - 64}
+            draggable
         >
             <Layer>
                 <Group>
