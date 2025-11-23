@@ -2,18 +2,20 @@ import React from 'react'
 import { cn } from '@lib/function'
 import { Button } from '@component/ui'
 import { SwithContentLiftSideGame } from './swith-content-tool-in-game'
-import { UnwrapArray } from './unwrap-array'
+import { SortableItem, DragHandle, UnwrapArray, UnwrapSortableArray } from './utils'
 import { useAppSelector } from '@lib/castom-hook/redux'
-import { entityDto, objectDto } from '@/model'
+import { mapsDataDto } from '@/model'
 import { InToolEntityItem, InToolObjectItem, InToolCharacterItem } from '@component/ui/item'
+import { characterDto } from '@/model/entities.dto'
 
 interface Props {
-    mapsData: { [key: string]: { entities: entityDto[]; objects: objectDto[]; } }
+    mapsData: mapsDataDto
     name: string
+    characters: characterDto[]
 }
 
 
-export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
+export const SharedVariant: React.FC<Props> = ({ mapsData, name, characters }: Props) => {
     const { session: sessionView } = useAppSelector(state => state.viewContent)
 
     return (<>
@@ -23,14 +25,19 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
                 className={
                     cn("flex h-full w-[400%] transition-07",
                         (sessionView == 'queue' && ''),
-                        (sessionView == 'objects' && '-translate-x-3/4'),
-                        (sessionView == 'characters' && '-translate-x-2/4'),
                         (sessionView == 'bestiary' && '-translate-x-1/4'),
+                        (sessionView == 'objects' && '-translate-x-2/4'),
+                        (sessionView == 'characters' && '-translate-x-3/4'),
                     )
                 }>
-                <UnwrapArray
-                    renderItem={InToolEntityItem}
-                    items={mapsData[name].entities}
+                <UnwrapSortableArray
+                    renderItem={(item) => (
+                        <SortableItem item={item} id={item.id}>
+                            <DragHandle />
+                        </SortableItem>
+                    )}
+                    name={name}
+                    items={mapsData[name].queue}
                     title='ОЧЕРЕДЬ'
                 />
                 <UnwrapArray
@@ -45,7 +52,7 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
                 />
                 <UnwrapArray
                     renderItem={InToolCharacterItem}
-                    items={mapsData[name].entities}
+                    items={characters}
                     title='ПЕРСОНАЖИ'
                 />
             </div >

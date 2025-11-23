@@ -23,7 +23,7 @@ export const AddFromJSON: React.FC<Props> = ({ part, children }: Props) => {
     return (
         <div className="w-1/2 flex-1 flex flex-col">
             <div className="flex-1">
-                <div className="p-5 h-1/3 w-full mt-8">
+                <div className="p-5 h-[220px] w-full mt-8">
                     <div className="h-full rounded-lg cursor-pointer bg-img bg-color-dark"
                         style={{ backgroundImage: `url(${map.path})` }}></div>
                 </div>
@@ -39,15 +39,14 @@ export const AddFromJSON: React.FC<Props> = ({ part, children }: Props) => {
                         <DisabledInput value={map.size?.y} className='ml-4' />
                     </div>
                 </div>
-
             </div>
             <div className="flex justify-end flex-col pb-6 pr-4 items-end">
-                <Button variant='acceess' fn={part.off} className='my-2'><p>Добавить свою карту</p></Button>
                 <div className="flex gap-2" data={JSON.stringify({ ...object })}>
                     {children}
                     <Button fn={addSomethingFromJSON} variant='acceess'>
                         <p className='pointer-events-none'>Добавить</p></Button>
                 </div>
+                <Button variant='acceess' fn={part.off} className='mt-3 w-11/12'><p>Добавить свою карту</p></Button>
             </div>
         </div>
     )

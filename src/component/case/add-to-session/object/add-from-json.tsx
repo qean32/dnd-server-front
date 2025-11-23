@@ -23,7 +23,7 @@ export const AddFromJSON: React.FC<Props> = ({ part, children }: Props) => {
     return (
         <div className="w-1/2 flex-1 flex flex-col">
             <div className="flex-1 px-5">
-                <div className="h-1/2 flex justify-center items-center pt-15">
+                <div className="h-[300px] flex justify-center items-center pt-15">
                     <img src={object.path} alt="" className='max-h-full' />
                 </div>
                 <div className='pt-5'>
@@ -31,12 +31,12 @@ export const AddFromJSON: React.FC<Props> = ({ part, children }: Props) => {
                 </div>
             </div>
             <div className="flex justify-end flex-col pb-6 pr-4 items-end">
-                <Button variant='acceess' fn={part.off} className='my-2'><p>Добавить свой обьект</p></Button>
                 <div className="flex gap-2" data={JSON.stringify({ ...data })}>
                     {children}
                     <Button fn={addSomethingFromJSON} variant='acceess'>
                         <p className='pointer-events-none'>Добавить</p></Button>
                 </div>
+                <Button variant='acceess' fn={part.off} className='mt-3 w-11/12'><p>Добавить свою обьект</p></Button>
             </div>
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react'
+import React from 'react'
 import { Circle, Transformer } from "react-konva"
 import { useToken } from '@lib/castom-hook';
 import { entityDto } from '@/model';
@@ -21,7 +21,7 @@ const restObjectTransform = {
 }
 
 
-export const Entity: React.FC<entityDto> = memo((props: entityDto) => {
+export const Entity: React.FC<entityDto> = React.memo((props: entityDto) => {
     const [
         { id, path, position, size, view },
         setState] = React.useState<entityDto>(props)

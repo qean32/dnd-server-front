@@ -10,7 +10,7 @@ export const SignInForm: React.FC<Props> = ({ }: Props) => {
         <div className="w-1/2 h-full flex justify-center rounded-md">
             <div className="w-fit flex flex-col gap-3">
                 <Title>РЕГИСТРАЦИЯ</Title>
-                <div className="flex-1 w-[35vh] pt-2">
+                <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">
                     <TextInput placeHolder="никнейм" />
                     <TextInput placeHolder="почта" />
                     <PasswordInput placeHolder="пароль" />

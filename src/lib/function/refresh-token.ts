@@ -1,7 +1,7 @@
 import { invalidTokenMessage, tokenStorage } from "@/export"
-import { authService } from "@service"
 import { getToken } from "./get-token"
 import { setToken } from "./set-token"
+import { authService } from "@/service"
 
 export const refreshToken = () => {
     // @ts-ignore

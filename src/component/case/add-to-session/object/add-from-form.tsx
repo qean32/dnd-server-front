@@ -1,16 +1,18 @@
 import { Button, TextInput } from '@/component/ui'
+import { TypeUseBoolen } from '@/lib/castom-hook'
 import React from 'react'
 
 interface Props {
+    part: TypeUseBoolen
     children: React.ReactNode
 }
 
 
-export const AddFromForm: React.FC<Props> = ({ children }: Props) => {
+export const AddFromForm: React.FC<Props> = ({ children, part }: Props) => {
     return (
         <div className="w-1/2 flex-1 flex flex-col">
             <div className="flex-1 px-5">
-                <div className="h-1/2 flex justify-center items-center pt-15">
+                <div className="h-[300px] flex justify-center items-center pt-15">
                     <img src={''} alt="" className='max-h-full' />
                 </div>
                 <div className='pt-5'>
@@ -23,6 +25,7 @@ export const AddFromForm: React.FC<Props> = ({ children }: Props) => {
                     <Button fn={() => { }} variant='acceess'>
                         <p className='pointer-events-none'>Добавить</p></Button>
                 </div>
+                <Button variant='acceess' fn={part.on} className='mt-3 w-11/12'><p>Назад</p></Button>
             </div>
         </div>
     )

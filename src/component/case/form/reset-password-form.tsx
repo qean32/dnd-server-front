@@ -7,11 +7,13 @@ interface Props {
 
 export const ResetPasswordForm: React.FC<Props> = ({ }: Props) => {
     return (
-        <div className="bg-color-dark h-3/4 rounded-lg py-5 pb-8 px-12">
-            <Title className="pb-4">Востановление пароля</Title>
-            <div className="w-[35vh]">
-                <TextInput placeHolder="Введите почту" />
-                <Button variant="acceess" className="p-2 px-3" >Отправить</Button>
+        <div className="w-1/2 h-full flex justify-center">
+            <div className="w-fit flex flex-col gap-3">
+                <Title className="pb-4">Востановление пароля</Title>
+                <div className="w-[35vh]">
+                    <TextInput placeHolder="Введите почту" />
+                    <Button variant="acceess" className="w-full py-3">Отправить</Button>
+                </div>
             </div>
         </div>
     )

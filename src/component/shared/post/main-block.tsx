@@ -10,7 +10,6 @@ interface Props {
 
 export const MainBlock: React.FC<Props> = ({ text = 'статья' }: Props) => {
     const data = text.replace('script', '').split(separator)
-    console.log(data);
 
     return (
         <div className="rounded-sm py-2">

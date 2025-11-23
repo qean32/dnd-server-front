@@ -131,3 +131,34 @@
         transform: translateX(-50%);
     }
 }
+
+.json-add {
+    &::after {
+        content: '';
+        z-index: 10;
+        width: 15px;
+        background-color: $bg-color;
+        position: absolute;
+        right: 0;
+        height: 100%;
+    }
+
+    &::before {
+        content: '';
+        z-index: 10;
+        width: 15px;
+        background-color: $bg-color;
+        position: absolute;
+        left: 0;
+        height: 100%;
+    }
+}
+
+.hover-hint {
+    &:hover {
+        & .warning-hint {
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}

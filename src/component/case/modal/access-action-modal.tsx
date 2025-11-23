@@ -23,11 +23,11 @@ export const AccessAction: React.FC<Props> = ({ view, swap, fn, warning, warning
                 close: 'modal-close'
             }}
         >
-            <div className="bg-color w-4/12 h-5/12 pt-2 rounded-md flex flex-col overflow-hidden relative" onClick={stopPropagation}>
+            <div className="bg-color w-4/12 h-6/12 pt-2 rounded-md flex flex-col overflow-hidden relative" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <Title className='p-2 pl-5 text-center'>Подтвердите действие</Title>
+                <Title className='p-2 pl-5 text-center uppercase'><p style={{ letterSpacing: '2px' }}>Подтвердите действие</p></Title>
                 <div className="flex justify-center items-center flex-col flex-1 gap-2">
-                    <img src="/icon/critical-role-svgrepo-com.svg" className='icon-4xl' alt="" />
+                    <img src="/icon/icon.svg" className='icon-4xl' alt="" />
                     <p className='text-2xl'>{warning}</p>
                 </div>
                 <div className="flex gap-5 justify-end p-5 items-end h-fit">

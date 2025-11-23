@@ -8,7 +8,6 @@ export const InToolCharacterItem: React.FC<entityDto> = ({ name, path }: entityD
     return (
         <div
             className='flex items-center justify-between px-3 pr-3 py-4 bg-color-hover transition-03'
-            style={{ cursor: 'move' }}
         >
             <div className="flex gap-2 flex-1 justify-between">
                 <div className="flex gap-2">

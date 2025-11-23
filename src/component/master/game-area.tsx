@@ -21,6 +21,9 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
             scaleY={stage.scale}
             x={stage.x}
             y={stage.y}
+            onDragMove={() => { }}
+            onDragEnd={() => { }}
+            onDragStart={() => { }}
             width={window.innerWidth}
             height={window.innerHeight - 64}
             draggable

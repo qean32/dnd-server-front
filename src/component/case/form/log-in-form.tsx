@@ -11,7 +11,7 @@ export const LogInForm: React.FC<Props> = ({ }: Props) => {
         <div className="w-1/2 h-full flex justify-center">
             <div className="w-fit flex flex-col gap-3">
                 <Title>ВХОД</Title>
-                <div className="flex-1 w-[35vh] pt-2">
+                <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">
                     <TextInput placeHolder="никнейм или почта" />
                     <PasswordInput placeHolder="пароль" />
                     <Link className='text-sm' to={'/reset-password'}>востановить пароль</Link>

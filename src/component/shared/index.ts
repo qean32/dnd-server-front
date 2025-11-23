@@ -1,6 +1,5 @@
 export { Header } from './header'
 export { ToolGameButton } from './tool-game-button'
-export { GameArea } from './game-area'
 export { FilterForum } from './filter-forum'
 export { Navigate } from './navigate'
 export { GroupTokenInModal } from './group-token-in-modal'

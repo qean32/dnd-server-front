@@ -32,12 +32,12 @@ const RightSideForum: React.FC<{}> = ({ }: {}) => {
             <TextInfo title={name ? name.toUpperCase() : ''} />
             <Search />
             <PostColumn />
-            <div className="pb-5">
-                <PostItem likes={0} {...fakePost[10]} fixed={true} />
+            <div className="pb-4">
+                <PostItem likes={0} {...fakePost[10]} fixed={true} className="pl-2" />
             </div>
             <GroupContainer
                 items={fakePost}
-                renderItem={(item) => <PostItem {...item} />}
+                renderItem={(item) => <PostItem {...item}  className="pl-2" />}
             />
         </div>
     )

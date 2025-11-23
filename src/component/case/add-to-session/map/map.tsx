@@ -13,10 +13,10 @@ interface Props {
 
 export const AddMap: React.FC<Props> = ({ part, swapModal }: Props) => {
     return (
-        <div className="w-3/12 h-full flex flex-col">
+        <div className="w-3/12 h-full flex flex-col json-add relative">
             <div className="w-full overflow-hidden h-full">
                 <div className={cn("w-[200%] flex h-full transition-03", (part.boolean && "-translate-x-1/2"))}>
-                    <AddFromForm>
+                    <AddFromForm part={part}>
                         <Button fn={swapModal} variant='ghost'><p>Отмена</p></Button>
                     </AddFromForm>
                     <AddFromJSON part={part}>

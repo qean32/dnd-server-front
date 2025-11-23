@@ -2,6 +2,7 @@ import React from 'react'
 import { cn, generateId } from '@lib/function'
 import { useBoolean } from '@lib/castom-hook'
 import { Ava } from '.'
+import { HoverHint } from '../master/h-order-component'
 
 interface SelectProps {
     className?: string
@@ -29,9 +30,13 @@ interface TextInputProps {
 
 export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true }: TextInputProps) => {
     return (
-        <div className={cn('', className)}>
+        <div className={cn('relative', className)}>
+            {validate && false &&
+                <HoverHint className='top-1/2 absolute -translate-y-1/2 right-2' text='Используйте латиницу!' >
+                    <img src="/icon/danger-info.svg" className='icon-sm cursor-pointer' alt="" />
+                </HoverHint>
+            }
             <input type="text" name={placeHolder} placeholder={placeHolder} />
-            {validate && <div><p className='text-warning'>{/*Используйте латиницу!*/}</p></div>}
         </div>
     )
 }
@@ -45,12 +50,16 @@ interface PasswordInputProps {
 export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder }: PasswordInputProps) => {
     const view = useBoolean(false)
     return (
-        <div className={cn('w-full', className)}>
+        <div className={cn('w-full relative', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
-                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4 right-4' />
+                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4 right-3' />
             </div>
-            <div><p className='text-warning'>{false && 'Минимальная длина - 8, Используйте латиницу и цифры!'}</p></div>
+            {false &&
+                <HoverHint className='top-1/2 absolute -translate-y-1/2 -left-10' text='Используйте латиницу!' >
+                    <img src="/icon/danger-info.svg" className='icon-sm cursor-pointer' alt="" />
+                </HoverHint>
+            }
         </div>
     )
 }
@@ -118,7 +127,7 @@ export const Search: React.FC<SearchProps> = ({ className = 'w-full' }: SearchPr
     return (
         <div className={cn('relative', className)}>
             <input type="search" placeholder='поиск..' />
-            <img src="/icon/search.svg" alt="" className='absolute icon-sm top-1/2 -translate-y-1/2 right-4' style={{ width: '21px' }} />
+            <img src="/icon/search.svg" alt="" className='absolute icon-sm top-1/2 -translate-y-1/2 right-3' style={{ width: '21px' }} />
         </div>
     )
 }

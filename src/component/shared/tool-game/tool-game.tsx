@@ -2,7 +2,8 @@ import React from 'react'
 import { cn } from '@lib/function'
 import { useBoolean } from '@lib/castom-hook'
 import { useAppSelector } from '@lib/castom-hook/redux'
-import { Arrow, SharedVariant, ShortVariant } from '.'
+import { SharedVariant, ShortVariant } from '.'
+import { Arrow } from './utils'
 
 interface Props {
     className?: string
@@ -11,12 +12,13 @@ interface Props {
 
 export const ToolGame: React.FC<Props> = ({ className }: Props) => {
     const { boolean, swap } = useBoolean(false)
-    const { session: { currentMap: { name }, mapsData } } = useAppSelector(state => state.session)
+    const { session: { currentMap: { name }, mapsData, characters } } = useAppSelector(state => state.session)
 
     return (
         <div className={cn('fixed z-10 w-[16%] h-[100%] bg-color-dark transition-07 pt-14 pb-3 flex flex-col', (!boolean && 'w-[55px]'), className)}>
             {boolean && <Arrow swap={swap} />}
             {boolean && <SharedVariant
+                characters={characters}
                 mapsData={mapsData} name={name} />}
             {!boolean && <ShortVariant swap={swap} />}
         </div>

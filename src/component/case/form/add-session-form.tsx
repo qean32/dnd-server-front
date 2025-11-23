@@ -10,7 +10,7 @@ export const AddSessionForm: React.FC<Props> = ({ children }: Props) => {
     return (
         <form action="">
             <Title className='mb-5'>ДОБАВЛЕНИЕ СЕССИИ</Title>
-            <TextInput placeHolder='Название сессии' className='w-[360px]' />
+            <TextInput placeHolder='Название сессии' className='w-[360px] mb-5' />
             <SelectSessionBG />
             <div className="pt-8 flex gap-4 justify-end">
                 {children}

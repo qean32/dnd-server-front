@@ -21,13 +21,32 @@
             }
         }
     ],
+    "characters": [
+        {
+            "id": 11123123423431,
+            "discription": "",
+            "name": "zxccursed1",
+            "user": {
+                "id": 1,
+                "name": "zxccursed-prime"
+            },
+            "path": "/img/carousel-item-1.jpg",
+            "position": {
+                "x": 1110,
+                "y": 495
+            },
+            "status": "dead",
+            "view": true,
+            "size": 70
+        }
+    ],
     "mapsData": {
         "main": {
             "entities": [
                 {
                     "id": 111,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed1",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -40,7 +59,7 @@
                 {
                     "id": 11,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed2",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -53,7 +72,7 @@
                 {
                     "id": 112,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed3",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -66,7 +85,7 @@
                 {
                     "id": 1112,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed4",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -79,7 +98,7 @@
                 {
                     "id": 2111,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed5",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -92,7 +111,7 @@
                 {
                     "id": 1311,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed6",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -105,7 +124,7 @@
                 {
                     "id": 1141,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed7",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -118,7 +137,7 @@
                 {
                     "id": 1132311,
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed8",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
@@ -131,7 +150,7 @@
                 {
                     "id": "14354234233451",
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed9",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 963,
@@ -144,7 +163,7 @@
                 {
                     "id": "1312342341",
                     "discription": "",
-                    "name": "zxccursed",
+                    "name": "zxccursed20",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1028,
@@ -387,6 +406,61 @@
                     "status": "dead",
                     "view": true,
                     "size": 70
+                }
+            ],
+            "objects": [],
+            "queue": [
+                {
+                    "id": 111,
+                    "name": "zxccursed1",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 11,
+                    "name": "zxccursed2",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 112,
+                    "name": "zxccursed3",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 1112,
+                    "name": "zxccursed4",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 2111,
+                    "name": "zxccursed5",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 1311,
+                    "name": "zxccursed6",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 1141,
+                    "name": "zxccursed7",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 11123123423431,
+                    "name": "zxccursed1",
+                    "user": {
+                        "id": 1,
+                        "name": "zxccursed-prime"
+                    },
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
                 }
             ]
         }

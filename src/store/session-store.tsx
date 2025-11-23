@@ -5,7 +5,9 @@ import { gameStorage } from "@/export";
 type stateDto = { session: sessionDto }
 
 const initialState: stateDto = {
-    session: JSON.parse((localStorage.getItem(gameStorage) as string))
+    session: {
+        ...JSON.parse((localStorage.getItem(gameStorage) as string)),
+    }
 }
 
 const sessionSlice = createSlice({
@@ -21,9 +23,11 @@ const sessionSlice = createSlice({
         swapCurrentMap: (state: stateDto, { payload: { map } }: PayloadAction<{ map: mapDto }>) => {
             state.session.currentMap = map
         },
-
+        changeQueue: (state: stateDto, { payload: { queue, name } }: PayloadAction<{ queue: any[], name: string }>) => {
+            state.session.mapsData[name].queue = queue
+        }
     },
 })
 
 export const sessionReducer = sessionSlice.reducer
-export const { changeSomethingEntity, swapCurrentMap } = sessionSlice.actions
+export const { changeSomethingEntity, swapCurrentMap, changeQueue } = sessionSlice.actions
