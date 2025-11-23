@@ -1,17 +1,20 @@
 import z from "zod";
-import { AuthFormDto, authSchema } from './index'
+import {
+    confirmPassword,
+    email, name, password
+} from "./types-zod";
 
-export const registrationSchema = authSchema.merge(z.object({
-    name: z
-        .string()
-        .max(27, { message: 'максимальная длина длина - 27' })
-        .min(3, { message: 'минимальная длина - 3' })
-        .regex(
-            /^[A-Za-z]+$/,
-            'никнейм должен состоять из латиницы'
-        ),
-}));
+export const registrationSchema = z.object({
+    password: password,
+    confirmPassword: password,
+    name: name,
+    email: email,
+})
+    .superRefine(confirmPassword);
 
-export type RegistrationFormDto = AuthFormDto & {
+export type registrationFormDto = {
+    password: string
+    confirmPassword: string
     name: string
+    email: string
 }

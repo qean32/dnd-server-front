@@ -9,12 +9,14 @@ import { MainLoader } from './component/master'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
+  // <HookFormProvider>
   <QueryClientProvider client={new QueryClient()}>
     <Provider store={store} >
       <MainLoader />
       <Router />
     </Provider>
-  </QueryClientProvider>
+  </QueryClientProvider >
+  // </HookFormProvider>
   // </React.StrictMode>,
 )
 

@@ -17,17 +17,35 @@ export const CountBlock: React.FC<Props> = ({ }: Props) => {
 
     function clickHandler() {
         if (count % 2 == 0) {
-            setActions(prev => [...prev, (action ? actionsName.like : actionsName.unlike)])
+            setActions(prev => [...prev, (actionsName.like)])
             setCount(prev => ++prev)
         } else {
-            setActions(prev => prev.filter(item => item != (action ? actionsName.like : actionsName.unlike)))
+            setActions(prev => prev.filter(item => item != (actionsName.like)))
             setCount(prev => ++prev)
         }
     }
 
     React.useEffect(() => {
+        console.log(actions);
+
+    }, [actions])
+
+    React.useEffect(() => {
         const interval = setInterval(() => {
-        }, 5000)
+            if (actions[0] == actionsName.like) {
+                console.log(actions);
+                console.log("like");
+                setActions([])
+            }
+            else if (actions[0] == actionsName.unlike) {
+                console.log('dis');
+                setActions([])
+            }
+        }, 1000)
+
+        return () => {
+            clearInterval(interval)
+        }
     }, [])
 
     return (

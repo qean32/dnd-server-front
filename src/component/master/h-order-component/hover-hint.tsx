@@ -14,8 +14,10 @@ export const HoverHint: React.FC<Props> = ({ className, children, text, position
         <div className={cn('w-fit h-fit hover-hint', className)}>
             {children}
             <div
-                className={cn("warning-hint p-2 px-4 rounded-sm bg-color-dark absolute outline-bg-light opacity-0 pointer-events-none transition-03 text-nowrap", position)}>
-                {text}
+                className={cn("warning-hint p-2 px-4 rounded-sm bg-color-dark absolute outline-bg-light opacity-0 pointer-events-none transition-03 w-fit max-w-[600px]", position)}>
+                <p>
+                    {text}
+                </p>
             </div>
         </div>
     )

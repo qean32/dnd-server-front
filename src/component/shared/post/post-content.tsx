@@ -15,7 +15,7 @@ export const PostContent: React.FC<Props> = ({ }: Props) => {
             <p className="text-4xl mb-1.5">НАЗВАНИЕ</p>
             <ViewAuthor>
                 {/* @ts-ignore */}
-                <Modal.Root modal={Modal.AccessAction} fn={() => console.log('zxc')} warning={"Вы собираетесь удалить проект?"} warningButtonText={'Удалить пост'}>
+                <Modal.Root modal={Modal.AccessAction} fn={() => console.log('zxc')} props={{ warning: "Вы собираетесь удалить пост?", warningButtonText: 'Удалить пост' }}>
                     <Button variant="reject" className="my-2">Удалить пост</Button></Modal.Root></ViewAuthor>
             <PostInfo />
             <MainBlock />

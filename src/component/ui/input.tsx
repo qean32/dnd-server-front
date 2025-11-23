@@ -3,6 +3,7 @@ import { cn, generateId } from '@lib/function'
 import { useBoolean } from '@lib/castom-hook'
 import { Ava } from '.'
 import { HoverHint } from '../master/h-order-component'
+import { useFormContext } from 'react-hook-form'
 
 interface SelectProps {
     className?: string
@@ -24,19 +25,23 @@ export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options }: 
 interface TextInputProps {
     className?: string,
     placeHolder: string
+    name: string
     validate?: boolean
 }
 
 
-export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true }: TextInputProps) => {
+export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true, name }: TextInputProps) => {
+    const { register, formState: { errors } } = useFormContext()
+    const textError = errors[name]?.message as string;
+
     return (
         <div className={cn('relative', className)}>
-            {validate && false &&
-                <HoverHint className='top-1/2 absolute -translate-y-1/2 right-2' text='Используйте латиницу!' >
+            {validate && textError &&
+                <HoverHint className='top-1/2 absolute -translate-y-1/2 right-2' text={textError} >
                     <img src="/icon/danger-info.svg" className='icon-sm cursor-pointer' alt="" />
                 </HoverHint>
             }
-            <input type="text" name={placeHolder} placeholder={placeHolder} />
+            <input type="text" placeholder={placeHolder} {...register(name)} />
         </div>
     )
 }
@@ -44,19 +49,23 @@ export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', plac
 interface PasswordInputProps {
     className?: string,
     placeHolder: string
+    name: string
 }
 
 
-export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder }: PasswordInputProps) => {
+export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder, name }: PasswordInputProps) => {
     const view = useBoolean(false)
+    const { register, formState: { errors } } = useFormContext()
+    const textError = errors[name]?.message as string;
+
     return (
         <div className={cn('w-full relative', className)}>
             <div className='relative'>
-                <input type={view.boolean ? 'text' : 'password'} name={placeHolder} placeholder={placeHolder} />
+                <input type={view.boolean ? 'text' : 'password'} placeholder={placeHolder} {...register(name)} />
                 <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4 right-3' />
             </div>
-            {false &&
-                <HoverHint className='top-1/2 absolute -translate-y-1/2 -left-10' text='Используйте латиницу!' >
+            {textError &&
+                <HoverHint className='top-1/2 absolute -translate-y-1/2 -left-7' text={textError} >
                     <img src="/icon/danger-info.svg" className='icon-sm cursor-pointer' alt="" />
                 </HoverHint>
             }

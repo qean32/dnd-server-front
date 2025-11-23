@@ -1,8 +1,12 @@
 import React from 'react'
 import { FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
-import { preventDefault } from '@/lib/function'
+import { toast } from '@/lib/function'
 import { fileDto } from '@/model'
 import { separator } from '@/export'
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
+import { authFormDto, authSchema } from '@/model/schema'
+import { useAppDispatch } from '@/store'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 interface Props {
 }
@@ -20,22 +24,36 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
             window.open(`preview/${text}${separator}${links?.join(', ').replaceAll('/', ';')}`, '_blank').focus();
         }
     }
+    const form = useForm<authFormDto>({
+        mode: 'onChange',
+        resolver: zodResolver(authSchema)
+    })
+    const [error] = React.useState<string>()
+
+    const onSubmit: SubmitHandler<authFormDto> = (data) => {
+        console.log(data);
+        toast(dispatch, 'message', { text: error })
+    }
+    const dispatch = useAppDispatch()
 
     return (
-        <form onSubmit={preventDefault}>
-            <div className='w-[200px] pb-2 pl-0.5'>
-                <Select options={[
-                    { title: "D&D", value: "1" },
-                    { title: "WEB", value: "1" },
-                    { title: "ПРОЧЕЕ", value: "1" },
-                ]} />
-            </div>
-            <UpperPart preview={preview} setFiles={setFiles} />
-            <TextArea title="Описание вашей статьи" className='min-h-[160px] p-2 px-3 mb-5' />
-            <TextArea ref={ref} title='Текст вашей статьи' className='p-2 px-3 min-h-[600px]' />
-            <Hints />
-            <UnwrapFiles className='pt-5 gap-3' files={files} />
-        </form>
+        <FormProvider {...form}>
+
+            <form onSubmit={form.handleSubmit(onSubmit)}>
+                <div className='w-[200px] pb-2 pl-0.5'>
+                    <Select options={[
+                        { title: "D&D", value: "1" },
+                        { title: "WEB", value: "1" },
+                        { title: "ПРОЧЕЕ", value: "1" },
+                    ]} />
+                </div>
+                <UpperPart preview={preview} setFiles={setFiles} />
+                <TextArea title="Описание вашей статьи" className='min-h-[160px] p-2 px-3 mb-5' />
+                <TextArea ref={ref} title='Текст вашей статьи' className='p-2 px-3 min-h-[600px]' />
+                <Hints />
+                <UnwrapFiles className='pt-5 gap-3' files={files} />
+            </form>
+        </FormProvider>
     )
 }
 

@@ -1,4 +1,4 @@
-import { LogInForm, SignInForm } from "@component/case/form"
+import { AuthForm, RegistrationForm } from "@component/case/form"
 import { Page } from "@component/master/h-order-component"
 import { AuthBackground } from "@component/ui"
 import { title } from "@/export"
@@ -12,8 +12,8 @@ export const Auth = () => {
             <div className="w-full flex justify-center h-[70vh]">
                 <div className="bg-color-dark rounded-lg w-full flex relative py-15">
                     <AuthBackground />
-                    <SignInForm />
-                    <LogInForm />
+                    <RegistrationForm />
+                    <AuthForm />
                 </div>
             </div>
         </Page>

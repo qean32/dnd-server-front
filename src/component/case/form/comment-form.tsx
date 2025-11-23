@@ -1,5 +1,5 @@
 import React from 'react'
-import { Title, TextInput, SelectSessionBG } from '@component/ui'
+import { CommentInput } from '@component/ui'
 import { toast } from '@/lib/function'
 import { authFormDto, authSchema } from '@/model/schema'
 import { useAppDispatch } from '@/store'
@@ -7,11 +7,10 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
 
 interface Props {
-    children: React.ReactNode
 }
 
 
-export const AddSessionForm: React.FC<Props> = ({ children }: Props) => {
+export const CommentForm: React.FC<Props> = ({ }: Props) => {
     const form = useForm<authFormDto>({
         mode: 'onChange',
         resolver: zodResolver(authSchema)
@@ -27,13 +26,8 @@ export const AddSessionForm: React.FC<Props> = ({ children }: Props) => {
     return (
         <FormProvider {...form}>
 
-            <form action="" onSubmit={form.handleSubmit(onSubmit)}>
-                <Title className='mb-5'>ДОБАВЛЕНИЕ СЕССИИ</Title>
-                <TextInput placeHolder='Название сессии' className='w-[360px] mb-5' name='name' />
-                <SelectSessionBG />
-                <div className="pt-8 flex gap-4 justify-end">
-                    {children}
-                </div>
+            <form className="" onSubmit={form.handleSubmit(onSubmit)}>
+                <CommentInput />
             </form>
         </FormProvider>
     )

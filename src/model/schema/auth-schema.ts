@@ -1,20 +1,13 @@
 import z from "zod";
+import { password } from "./types-zod";
 
 export const authSchema = z.object({
-    email: z
-        .string()
-        .email({ message: 'не валидная почта' }),
-    password: z
-        .string()
-        .regex(
-            /^[A-Za-z0-9]+$/,
-            'пароль должен состоять из латиница и цифр'
-        )
-        .max(20, { message: 'максимальная длина - 20' })
-        .min(8, { message: 'минимальная длина - 8' }),
+    nameOrEmail: z
+        .string(),
+    password: password
 });
 
-export type AuthFormDto = {
-    email: string,
+export type authFormDto = {
+    nameOrEmail: string
     password: string
 }
