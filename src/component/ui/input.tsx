@@ -10,14 +10,15 @@ interface SelectProps {
     className?: string
     options: { value: string, title: string, id: number }[]
     name: string
+    inForm?: boolean
 }
 
 
-export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options, name }: SelectProps) => {
-    const { register, setValue } = useFormContext()
+export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options, name, inForm }: SelectProps) => {
+    const { setValue } = inForm ? useFormContext() : { setValue: (_name: string) => { } }
 
     return (
-        <select className={cn('flex-1', className)} {...register(name)} onChange={e => setValue(name, e.target.value)} >
+        <select className={cn('flex-1', className)} onChange={e => setValue(name, e.target.value)} >
             {options.map(({ title, value, id }) => {
                 return <option key={id} value={value}>{title}</option>
             })}

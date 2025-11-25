@@ -3,6 +3,7 @@ import { Button } from '@component/ui'
 import { ViewAuthor } from '@component/master/h-order-component'
 import { Modal } from '@component/case/modal'
 import { MainBlock, CommentBlock, PostInfo } from '.'
+import { fakeUser } from '@/fake-data'
 
 interface Props {
     className?: string
@@ -17,7 +18,7 @@ export const PostContent: React.FC<Props> = ({ }: Props) => {
                 {/* @ts-ignore */}
                 <Modal.Root modal={Modal.AccessAction} fn={() => console.log('zxc')} props={{ warning: "Вы собираетесь удалить пост?", warningButtonText: 'Удалить пост' }}>
                     <Button variant="reject" className="my-2">Удалить пост</Button></Modal.Root></ViewAuthor>
-            <PostInfo />
+            <PostInfo {...fakeUser[0]} email='' />
             <MainBlock />
             <CommentBlock />
         </>

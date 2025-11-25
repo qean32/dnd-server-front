@@ -1,8 +1,7 @@
 import React from 'react'
 import { FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
-import { toast } from '@/lib/function'
+import { previewPost, toast } from '@/lib/function'
 import { fileDto } from '@/model'
-import { separator } from '@/export'
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { createPostFormDto, createPostSchema } from '@/model/schema'
 import { useAppDispatch } from '@/store'
@@ -16,15 +15,6 @@ interface Props {
 export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
     const [files, setFiles] = React.useState<fileDto[]>([])
     const ref = React.useRef<HTMLDivElement | null>(null);
-    const preview = () => {
-        if (ref.current) {
-            const links = ref.current.innerHTML.match(/\{(.*?)\}/g)
-            // @ts-ignore
-            const text = ref.current.innerHTML.replaceAll('/', '').replaceAll('&nbsp;', '').split('<div>')
-            // @ts-ignore
-            window.open(`preview/${text}${separator}${links?.join(', ').replaceAll('/', ';')}`, '_blank').focus();
-        }
-    }
     const form = useForm<createPostFormDto>({
         mode: 'onChange',
         resolver: zodResolver(createPostSchema)
@@ -49,14 +39,14 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
                             { title: "ПРОЧЕЕ", value: "OTHER", id: 3 },
                         ]} />
                 </div>
-                <UpperPart preview={preview} setFiles={setFiles} />
+                <UpperPart preview={() => previewPost(ref)} setFiles={setFiles} />
                 <TextArea title="Описание вашей статьи" className='min-h-[160px] p-2 px-3 mb-5' name='discription' />
                 <TextArea ref={ref} title='Текст вашей статьи' className='p-2 px-3 min-h-[600px]' name='text' />
-                <div className="w-1/2 pl-1 py-3">
+                <div className="py-5">
                     <AddTag className='' name='tags' inForm />
                 </div>
-                <Hints />
                 <UnwrapFiles className='pt-5 gap-3' files={files} />
+                <Hints />
             </form>
         </FormProvider>
     )
@@ -68,6 +58,7 @@ type Props_ = {
 }
 
 const UpperPart: React.FC<Props_> = ({ preview, setFiles }: Props_) => {
+
     return (
         <div className="flex justify-between pb-4">
             <FakeTextInput className="items-end flex pl-1" title="НАЗВАНИЕ ПОСТА" name='title' />

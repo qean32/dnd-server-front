@@ -1,19 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import { ru } from 'date-fns/locale/ru';
 
 import "react-datepicker/dist/react-datepicker.css";
+import { useQueryPush } from "@/lib/castom-hook";
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const DatePickerUI = () => {
     const [startDate, setStartDate] = useState(new Date());
+    const push = useQueryPush()
+
+    useEffect(() => {
+        push([{ date: startDate.toString(), zxc: 'zx123c' }])
+    }, [startDate])
+
     return <>
         <p className="pt-5">Дата публикации</p>
         <DatePicker
             selected={startDate}
-            wrapperClassName="date-picker"
+            wrapperClassName="date-picker -translate-x-2"
             showIcon
             icon={
                 <svg
@@ -38,7 +45,6 @@ export const DatePickerUI = () => {
                     ></path>
                 </svg>
             }
-            className=""
             // @ts-ignore
             onChange={(date) => setStartDate(date)}
             dateFormat="dd MMMM yyyy"

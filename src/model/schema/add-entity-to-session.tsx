@@ -6,16 +6,16 @@ export const addEntityToSessionSchema = z.object({
         .max(20, { message: 'Максимальная длина - 20' })
         .min(4, { message: 'Минимальная длина - 8' })
     ,
-    source: z.string(),
-    path: z.string(),
+    path: z
+        .any()
+    ,
     discription: z.string().max(255, { message: 'Максимальная длина 255 символа' }),
     initiative: z.string()
 });
 
 export type addEntityToSessionFormDto = {
     name: string
-    path: string
-    source: string
+    path: any
     discription: string
     initiative: string
 }

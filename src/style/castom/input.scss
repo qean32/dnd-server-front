@@ -2,7 +2,7 @@
 
 input {
     background-color: $bg-color-dark;
-    outline: 1px solid $bg-color-light;
+    // outline: 1px solid $bg-color-light;
     padding: 11px 18px;
     border-radius: 5px;
     width: 100%;
@@ -151,63 +151,4 @@ select {
             }
         }
     }
-}
-
-.date-picker {
-    margin-top: 5px;
-    outline: none;
-}
-
-.react-datepicker,
-.react-datepicker__header {
-    border: $bg-color-light 1px solid !important;
-    background-color: $bg-color-dark !important;
-    font-size: 17px !important;
-    padding-inline: 5px;
-    color: white !important;
-}
-
-.react-datepicker__header {
-    border: none !important;
-    padding-top: 10px !important;
-}
-
-.react-datepicker__current-month {
-    color: white !important;
-    font-size: 20px !important;
-    font-weight: 100;
-}
-
-.react-datepicker__day-name {
-    color: white !important;
-}
-
-.react-datepicker__day {
-    padding: 5px;
-    transition: .2s;
-    color: white !important;
-
-    &:hover {
-        color: black !important;
-    }
-}
-
-.react-datepicker__day--keyboard-selected,
-.react-datepicker__day--selected {
-    background-color: $bg-color-light !important;
-}
-
-.react-datepicker__navigation-icon {
-    transform: translateY(10px);
-}
-
-.react-datepicker__input-container {
-    display: flex !important;
-    align-items: center;
-}
-
-.react-datepicker__view-calendar-icon input {
-    padding-left: 35px !important;
-    font-size: 20px;
-    outline: none !important;
 }

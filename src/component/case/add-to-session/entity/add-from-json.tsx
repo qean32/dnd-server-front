@@ -1,4 +1,4 @@
-import { Button, DisabledInput, NoFindData, TextArea } from '@/component/ui'
+import { Button, DisabledInput, NoFindData } from '@/component/ui'
 import { TypeUseBoolen } from '@/lib/castom-hook'
 import { useAppSelector } from '@/lib/castom-hook/redux'
 import { addSomethingFromJSON } from '@/lib/function'
@@ -34,9 +34,9 @@ export const AddFromJSON: React.FC<Props> = ({ part, children }: Props) => {
                                 <p>Инициатива</p>
                                 <DisabledInput value={entity.initiative} className='w-[60px]' />
                             </div>
-                            <TextArea title='Описание' className='h-[160px] overflow-scroll bg-color-dark p-4 py-2 my-2 mb-4' name='name'>
+                            <div className="h-[160px] overflow-scroll rounded-sm bg-color-dark p-4 py-2 my-2 mb-4">
                                 {entity?.discription}
-                            </TextArea>
+                            </div>
                         </div>
                     </>
                 }

@@ -4,13 +4,14 @@ import { cn } from '@lib/function'
 interface Props {
     className?: string
     children: React.ReactNode
-    variant?: 'default' | 'acceess' | 'reject' | 'ghost' | 'plus'
+    variant?: 'default' | 'acceess' | 'reject' | 'ghost' | 'plus' | 'default-no-hover'
     fn?: React.MouseEventHandler<HTMLButtonElement>
-    type?: 'button' | 'submit'
+    type?: 'button' | 'submit' | 'reset'
 }
 
 const map = new Map([
     ["default", 'bg-color-dark bg-color-darkness-hover'],
+    ["default-no-hover", 'bg-color-darkness'],
     ["ghost", 'hover:underline'],
     ["acceess", 'bg-green-800 hover:bg-green-900'],
     ["reject", 'bg-red-800 hover:bg-red-900'],

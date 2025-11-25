@@ -23,7 +23,7 @@ export const AddImg: React.FC<Props> = ({ view, swap }: Props) => {
         >
             <div className="bg-color w-5/12 h-8/12 rounded-md flex flex-col overflow-hidden relative" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <UploadImgArea className='w-full h-10/12' />
+                <UploadImgArea className='w-full h-10/12' name='' />
                 <div className="flex gap-5 justify-end p-5 flex-1 items-end">
                     <Button variant='ghost'><p>Отмена</p></Button>
                     <Button variant='acceess'><p>Добавить</p></Button>

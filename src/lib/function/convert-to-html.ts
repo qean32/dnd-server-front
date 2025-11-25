@@ -1,14 +1,11 @@
 import { customMarkup } from "@/export"
 
-function* generatorFn(link: string) {
-    // @ts-ignore
-    for (const item of link?.replaceAll('{', '').replaceAll('}', '').split(',')) yield item;
-}
 export const convertToHTML = (text: string, link?: string) => {
-    let generator: any;
-    if (link) {
-        generator = generatorFn(link)
+    function* generatorFn() {
+        // @ts-ignore
+        for (const item of link?.replaceAll('{', '').replaceAll('}', '').split(',')) yield item;
     }
+    const generator = generatorFn()
 
 
     return text.split(',').map(item => {
@@ -29,7 +26,7 @@ export const convertToHTML = (text: string, link?: string) => {
         if (arr[0] == customMarkup.small) {
             return `<p class="text-sm">${arr.slice(1)}<p>`
         }
-        if (arr[0].slice(0, 4) == 'img:' && generator) {
+        if (arr[0].slice(0, 4) == 'img:') {
 
             return `<img class="rounded-sm" src="${generator.next().value.replaceAll(';', '/')}" />`
         }

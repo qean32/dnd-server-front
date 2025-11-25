@@ -13,7 +13,7 @@ const actionsName = {
 export const CountBlock: React.FC<Props> = ({ }: Props) => {
     const [actions, setActions] = React.useState<string[]>([])
     const [count, setCount] = React.useState<number>(0)
-    const { boolean: action, on, off } = useBoolean()
+    const { boolean: action } = useBoolean()
 
     function clickHandler() {
         if (count % 2 == 0) {

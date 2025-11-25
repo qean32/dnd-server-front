@@ -30,7 +30,7 @@ export const AddFromForm: React.FC<Props> = ({ children, part }: Props) => {
 
             <form className="w-1/2 flex-1 flex flex-col" onSubmit={form.handleSubmit(onSubmit)}>
                 <div className="flex-1">
-                    <UploadImgArea className='h-[220px] w-full mt-8' />
+                    <UploadImgArea className='h-[220px] w-full mt-8' name='' />
 
                     <div className="px-5">
                         <TextInput placeHolder='Название' name='name' />

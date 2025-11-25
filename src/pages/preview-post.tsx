@@ -1,4 +1,5 @@
 import { PostInfo, MainBlock, CommentBlock } from "@/component/shared/post"
+import { fakeUser } from "@/fake-data"
 import { Page } from "@component/master/h-order-component"
 import { Crumb } from "@component/ui"
 import { usePage } from "@lib/castom-hook"
@@ -12,7 +13,7 @@ export const PreviewPost = () => {
     return (
         <Page size="w-[65%]">
             <Crumb />
-            <PostInfo />
+            <PostInfo {...fakeUser[0]} email="" />
             <MainBlock text={text} />
             <CommentBlock />
         </Page>
