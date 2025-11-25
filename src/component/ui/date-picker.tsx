@@ -13,7 +13,7 @@ export const DatePickerUI = () => {
     const push = useQueryPush()
 
     useEffect(() => {
-        push([{ date: startDate.toString(), zxc: 'zx123c' }])
+        push([{}])
     }, [startDate])
 
     return <>

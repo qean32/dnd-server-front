@@ -3,11 +3,14 @@ import { useNavigate, useLocation } from 'react-router';
 export const useQueryPush = () => {
     const navigate = useNavigate();
     const { pathname, search } = useLocation();
-    console.log(search.slice(1)
+    let prevq = {}
+    search
+        .slice(1)
         .split('&')
         .map(item => item.split('='))
-        .reduce((prev, curr) => { return { ...prev, ...curr } }, {})
-    );
+        .forEach(item => {
+            prevq = { ...prevq, [item[0]]: item[1] }
+        })
 
 
     const push = (
@@ -18,7 +21,7 @@ export const useQueryPush = () => {
             q = { ...q, ...element }
         });
 
-        const params = new URLSearchParams(q);
+        const params = new URLSearchParams({ ...prevq, ...q });
         navigate({ pathname: pathname, search: params.toString() });
     }
 

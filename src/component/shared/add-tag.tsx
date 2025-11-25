@@ -29,7 +29,8 @@ export const AddTag: React.FC<Props> = ({ className, inForm = false, name = '', 
                 const tags = `${prev.split(',').filter(item => item != tag).join(',')},${tag}`
                 setValue(name, tags)
                 if (push) {
-                    push([{ tags }])
+
+                    push([{ tags: tags.slice(1) }])
                 }
                 return tags
             }
@@ -42,7 +43,15 @@ export const AddTag: React.FC<Props> = ({ className, inForm = false, name = '', 
         // @ts-ignore
         const tag = e.target.innerHTML
         setTags(prev => {
-            return prev.split(',').filter(item => item != tag).join(',')
+            {
+                const tags = `${prev.split(',').filter(item => item != tag).join(',')}`
+                setValue(name, tags)
+                if (push) {
+
+                    push([{ tags: tags.slice(1) }])
+                }
+                return tags
+            }
         })
     }
 

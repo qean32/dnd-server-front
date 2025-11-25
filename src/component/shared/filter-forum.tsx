@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, DatePickerUI } from '@component/ui'
 import { AddTag } from '.'
 import { useQueryPush } from '@/lib/castom-hook'
+import { clearQuery } from '@/lib/function'
 
 interface Props {
 }
@@ -15,9 +16,9 @@ export const FilterForum: React.FC<Props> = ({ }: Props) => {
             <p className="text-2xl font-bold">ФИЛЬТРЫ</p>
             <DatePickerUI />
 
-            <AddTag className="pt-5 min-h-[100px]" push={push} />
+            <AddTag className="pt-5" push={push} />
             <div className='flex justify-between'>
-                <Button className='mt-4' variant='default-no-hover' type='reset'><p>Сбросить</p></Button>
+                <Button fn={clearQuery} className='mt-4' variant='default-no-hover' type='reset'><p>Сбросить</p></Button>
                 {/* <div className='w-fit'><Link to={'/create-post'}>
                     <Button variant='acceess' className='mt-5 py-3'><img src='/icon/edit.svg' /></Button></Link></div> */}
             </div>
