@@ -25,7 +25,7 @@ export const AddSession: React.FC<Props> = ({ view, swap }: Props) => {
                 <AddSessionForm>
                     <>
                         <Button variant='ghost'><p>Отмена</p></Button>
-                        <Button variant='acceess'><p>Добавить</p></Button></>
+                        <Button variant='acceess' type='submit' ><p>Добавить</p></Button></>
                 </AddSessionForm>
             </div>
         </Modal>

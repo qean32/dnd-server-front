@@ -4,9 +4,10 @@ import { toast } from '@/lib/function'
 import { fileDto } from '@/model'
 import { separator } from '@/export'
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
-import { authFormDto, authSchema } from '@/model/schema'
+import { createPostFormDto, createPostSchema } from '@/model/schema'
 import { useAppDispatch } from '@/store'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { AddTag } from '@/component/shared'
 
 interface Props {
 }
@@ -24,32 +25,36 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
             window.open(`preview/${text}${separator}${links?.join(', ').replaceAll('/', ';')}`, '_blank').focus();
         }
     }
-    const form = useForm<authFormDto>({
+    const form = useForm<createPostFormDto>({
         mode: 'onChange',
-        resolver: zodResolver(authSchema)
+        resolver: zodResolver(createPostSchema)
     })
-    const [error] = React.useState<string>()
-
-    const onSubmit: SubmitHandler<authFormDto> = (data) => {
+    const onError = (errors: any) =>
+        console.log(errors)
+    const onSubmit: SubmitHandler<createPostFormDto> = (data) => {
         console.log(data);
-        toast(dispatch, 'message', { text: error })
+        toast(dispatch, 'message', { text: '' })
     }
     const dispatch = useAppDispatch()
 
     return (
         <FormProvider {...form}>
-
-            <form onSubmit={form.handleSubmit(onSubmit)}>
+            <form onSubmit={form.handleSubmit(onSubmit, onError)}>
                 <div className='w-[200px] pb-2 pl-0.5'>
-                    <Select options={[
-                        { title: "D&D", value: "1" },
-                        { title: "WEB", value: "1" },
-                        { title: "ПРОЧЕЕ", value: "1" },
-                    ]} />
+                    <Select
+                        name='department'
+                        options={[
+                            { title: "D&D", value: "D&D", id: 1 },
+                            { title: "WEB", value: "WEB", id: 2 },
+                            { title: "ПРОЧЕЕ", value: "OTHER", id: 3 },
+                        ]} />
                 </div>
                 <UpperPart preview={preview} setFiles={setFiles} />
-                <TextArea title="Описание вашей статьи" className='min-h-[160px] p-2 px-3 mb-5' />
-                <TextArea ref={ref} title='Текст вашей статьи' className='p-2 px-3 min-h-[600px]' />
+                <TextArea title="Описание вашей статьи" className='min-h-[160px] p-2 px-3 mb-5' name='discription' />
+                <TextArea ref={ref} title='Текст вашей статьи' className='p-2 px-3 min-h-[600px]' name='text' />
+                <div className="w-1/2 pl-1 py-3">
+                    <AddTag className='' name='tags' inForm />
+                </div>
                 <Hints />
                 <UnwrapFiles className='pt-5 gap-3' files={files} />
             </form>
@@ -65,16 +70,16 @@ type Props_ = {
 const UpperPart: React.FC<Props_> = ({ preview, setFiles }: Props_) => {
     return (
         <div className="flex justify-between pb-4">
-            <FakeTextInput className="items-end flex pl-1" title="НАЗВАНИЕ ПОСТА" />
+            <FakeTextInput className="items-end flex pl-1" title="НАЗВАНИЕ ПОСТА" name='title' />
             <div className="flex gap-4 items-end">
-                <UploadFilesInCreatePost setFiles={setFiles}>
+                <UploadFilesInCreatePost setFiles={setFiles} name='files'>
                     <div className="flex h-full items-center cursor-pointer">
                         <img src="/icon/upload.svg" className='icon-md' />
                     </div>
                 </UploadFilesInCreatePost>
                 {/* @ts-ignore */}
                 <Button fn={preview} variant='default'><p>Предпросмотр</p></Button>
-                <Button variant="acceess"><p>Готово</p></Button>
+                <Button variant="acceess" type='submit'><p>Готово</p></Button>
             </div>
         </div>
     )

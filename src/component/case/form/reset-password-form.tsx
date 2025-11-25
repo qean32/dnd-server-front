@@ -1,7 +1,7 @@
 import React from 'react'
 import { Title, Button, TextInput } from '@component/ui'
 import { toast } from '@/lib/function'
-import { authFormDto, authSchema } from '@/model/schema'
+import { resetPasswordFormDto, resetPasswordSchema } from '@/model/schema'
 import { useAppDispatch } from '@/store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
@@ -11,15 +11,14 @@ interface Props {
 
 
 export const ResetPasswordForm: React.FC<Props> = ({ }: Props) => {
-    const form = useForm<authFormDto>({
+    const form = useForm<resetPasswordFormDto>({
         mode: 'onChange',
-        resolver: zodResolver(authSchema)
+        resolver: zodResolver(resetPasswordSchema)
     })
-    const [error] = React.useState<string>()
 
-    const onSubmit: SubmitHandler<authFormDto> = (data) => {
+    const onSubmit: SubmitHandler<resetPasswordFormDto> = (data) => {
         console.log(data);
-        toast(dispatch, 'message', { text: error })
+        toast(dispatch, 'message', { text: '' })
     }
     const dispatch = useAppDispatch()
 

@@ -1,7 +1,7 @@
 import { ViewAuthor } from "@/component/master/h-order-component"
 import { fakePost } from "@/fake-data"
 import { Modal } from "@component/case/modal"
-import { PlusButton } from "@component/ui"
+import { NoFindData, PlusButton } from "@component/ui"
 import { SessionItem } from "@component/ui/item"
 
 
@@ -11,6 +11,7 @@ export const Session: React.FC<{}> = ({ }: {}) => {
             {fakePost.slice(0, 9).map((__, _) =>
                 <SessionItem key={_} id={_ + 1} name={'ПерваяПерваяПервая'} />
             )}
+            <NoFindData title="Пользователь не выкладывал статьи" className="min-h-[500px]" view={false} />
             <ViewAuthor>
                 <Modal.Root modal={Modal.AddSession}>
                     <div className="px-4">

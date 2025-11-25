@@ -2,7 +2,7 @@ export type postDto = {
     title: string,
     discription: string,
     tags: string
-    author: {
+    user: {
         name: string
         id: number
     },

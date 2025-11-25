@@ -17,13 +17,13 @@ export const Department = () => {
         <Page size="w-[75%]">
             <div className="flex gap-10">
                 <FilterForum />
-                <RightSideForum />
+                <MainSideForum />
             </div>
         </Page>
     )
 }
 
-const RightSideForum: React.FC<{}> = ({ }: {}) => {
+const MainSideForum: React.FC<{}> = ({ }: {}) => {
     const { name } = useParams()
 
     return (
@@ -37,7 +37,7 @@ const RightSideForum: React.FC<{}> = ({ }: {}) => {
             </div>
             <GroupContainer
                 items={fakePost}
-                renderItem={(item) => <PostItem {...item}  className="pl-2" />}
+                renderItem={(item) => <PostItem {...item} className="pl-2" />}
             />
         </div>
     )

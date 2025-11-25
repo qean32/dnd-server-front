@@ -25,7 +25,7 @@ export const fakePost = [
     {
         "title": "Как развивается d&d сообщество",
         "discription": "Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons.",
-        "author": { name: "DM_Master", id: 1 },
+        "user": { name: "DM_Master", id: 1 },
         "views": 3456,
         "tags": "D&D, игры, развитие",
         "department": 'D&D',
@@ -33,7 +33,7 @@ export const fakePost = [
     {
         "title": "Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D",
         "discription": "Советы новичкам, которые хотят окунуться в мир настольных ролевых игр.",
-        "author": { name: "RollerGirl", id: 1 },
+        "user": { name: "RollerGirl", id: 1 },
         "views": 2100,
         "tags": "D&D, советы, начало",
         "department": 'D&D',
@@ -41,7 +41,7 @@ export const fakePost = [
     {
         "title": "Создание незабываемого персонажа",
         "discription": "Полезные рекомендации по созданию уникальных героев для вашей кампании.",
-        "author": { name: "CharacterCreator", id: 1 },
+        "user": { name: "CharacterCreator", id: 1 },
         "views": 4500,
         "tags": "D&D, персонажи, креатив",
         "department": 'D&D',
@@ -49,7 +49,7 @@ export const fakePost = [
     {
         "title": "Что нового в мире Dungeons & Dragons?",
         "discription": "Обзор последних обновлений и дополнений к любимой игре.",
-        "author": { name: "RulesExpert", id: 1 },
+        "user": { name: "RulesExpert", id: 1 },
         "views": 6789,
         "tags": "D&D, обновления, новинки",
         "department": 'D&D',
@@ -57,7 +57,7 @@ export const fakePost = [
     {
         "title": "Где проходят лучшие игровые сессии?",
         "discription": "Рассказываем о местах, где можно поиграть в D&D офлайн и онлайн.",
-        "author": { name: "SessionGuide", id: 1 },
+        "user": { name: "SessionGuide", id: 1 },
         "views": 1500,
         "tags": "D&D, сообщества, мероприятия",
         "department": 'D&D',
@@ -65,7 +65,7 @@ export const fakePost = [
     {
         "title": "Топ-5 самых интересных приключений в D&D",
         "discription": "Подборка захватывающих сюжетов для вашего следующего приключения.",
-        "author": { name: "AdventureSeeker", id: 1 },
+        "user": { name: "AdventureSeeker", id: 1 },
         "views": 8900,
         "tags": "D&D, приключения, топ",
         "department": 'D&D',
@@ -73,7 +73,7 @@ export const fakePost = [
     {
         "title": "Особенности русской школы мастера подземелий",
         "discription": "Особенности российского подхода к проведению кампаний в D&D.",
-        "author": { name: "RussianDM", id: 1 },
+        "user": { name: "RussianDM", id: 1 },
         "views": 2345,
         "tags": "D&D, Россия, мастера",
         "department": 'D&D',
@@ -81,7 +81,7 @@ export const fakePost = [
     {
         "title": "Самые необычные расы и классы в D&D",
         "discription": "Узнайте больше о нестандартных расах и классах в популярной ролевой игре.",
-        "author": { name: "RaceExplorer", id: 1 },
+        "user": { name: "RaceExplorer", id: 1 },
         "views": 3400,
         "tags": "D&D, расы, классы",
         "department": 'D&D',
@@ -89,7 +89,7 @@ export const fakePost = [
     {
         "title": "Какие бонусы получают игроки за взаимодействие?",
         "discription": "Преимущества активного участия игроков в игровом процессе.",
-        "author": { name: "InteractionPro", id: 1 },
+        "user": { name: "InteractionPro", id: 1 },
         "views": 1234,
         "tags": "D&D, участие, бонус",
         "department": 'D&D',
@@ -97,7 +97,7 @@ export const fakePost = [
     {
         "title": "История развития Dungeons & Dragons",
         "discription": "Краткий экскурс в историю самой известной ролевой игры мира.",
-        "author": { name: "HistoryBuff", id: 1 },
+        "user": { name: "HistoryBuff", id: 1 },
         "views": 5678,
         "tags": "D&D, история, эволюция",
         "department": 'D&D',
@@ -105,7 +105,7 @@ export const fakePost = [
     {
         "title": "Стратегии победы над драконами",
         "discription": "Как победить грозных драконов в ваших приключениях.",
-        "author": { name: "DragonSlayer", id: 1 },
+        "user": { name: "DragonSlayer", id: 1 },
         "views": 7890,
         "tags": "D&D, стратегии, драконы",
         "department": 'D&D',
@@ -113,7 +113,7 @@ export const fakePost = [
     {
         "title": "Как провести незабываемое сражение?",
         "discription": "Практические советы для мастеров игры по организации захватывающих боев.",
-        "author": { name: "BattleMaster", id: 1 },
+        "user": { name: "BattleMaster", id: 1 },
         "views": 3456,
         "tags": "D&D, сражения, организация",
         "department": 'D&D',
@@ -121,7 +121,7 @@ export const fakePost = [
     {
         "title": "Совместимы ли разные издания D&D?",
         "discription": "Можно ли совмещать правила разных изданий в одной игровой сессии?",
-        "author": { name: "EditionMixologist", id: 1 },
+        "user": { name: "EditionMixologist", id: 1 },
         "views": 4567,
         "tags": "D&D, совместимость, правила",
         "department": 'D&D',
@@ -129,7 +129,7 @@ export const fakePost = [
     {
         "title": "Адаптация классики для современной аудитории",
         "discription": "Как адаптируются старые сценарии под современное поколение игроков.",
-        "author": { name: "ClassicAdaptor", id: 1 },
+        "user": { name: "ClassicAdaptor", id: 1 },
         "views": 6789,
         "tags": "D&D, классика, адаптация",
         "department": 'D&D',
@@ -137,7 +137,7 @@ export const fakePost = [
     {
         "title": "Основные механики взаимодействия персонажей",
         "discription": "Разбираем основные способы взаимодействия персонажей друг с другом.",
-        "author": { name: "Interacter", id: 1 },
+        "user": { name: "Interacter", id: 1 },
         "views": 2345,
         "tags": "D&D, механика, взаимодействие",
         "department": 'D&D',
@@ -145,7 +145,7 @@ export const fakePost = [
     {
         "title": "Реальные истории из сессий D&D",
         "discription": "Игроки рассказывают забавные случаи из реальных игр.",
-        "author": { name: "Storyteller", id: 1 },
+        "user": { name: "Storyteller", id: 1 },
         "views": 9012,
         "tags": "D&D, реальные, орииопыт",
         "department": 'D&D',
@@ -153,7 +153,7 @@ export const fakePost = [
     {
         "title": "За кулисами создания собственных миров",
         "discription": "Процесс разработки новых фэнтезийных вселенных для D&D.",
-        "author": { name: "WorldBuilder", id: 1 },
+        "user": { name: "WorldBuilder", id: 1 },
         "views": 3456,
         "tags": "D&D, создание, овфантазия",
         "department": 'D&D',
@@ -161,7 +161,7 @@ export const fakePost = [
     {
         "title": "Учимся рисовать карты для кампаний",
         "discription": "Простые шаги для рисования увлекательных карт в стиле D&D.",
-        "author": { name: "MapMaker", id: 1 },
+        "user": { name: "MapMaker", id: 1 },
         "views": 5678,
         "tags": "D&D, карты, рисование",
         "department": 'D&D',
@@ -169,7 +169,7 @@ export const fakePost = [
     {
         "title": "Лучшие аксессуары для D&D-игроков",
         "discription": "Полезные вещи, которые сделают ваши игровые вечера комфортнее.",
-        "author": { name: "GearCollector", id: 1 },
+        "user": { name: "GearCollector", id: 1 },
         "views": 4567,
         "tags": "D&D, аксессуары, полезности",
         "department": 'D&D',
@@ -177,7 +177,7 @@ export const fakePost = [
     {
         "title": "Зачем нужны побочные квесты?",
         "discription": "Как дополнительные задания обогащают игру и развивают персонажей.",
-        "author": { name: "QuestDesigner", id: 1 },
+        "user": { name: "QuestDesigner", id: 1 },
         "views": 6789,
         "tags": "D&D, квесты, развитие",
         "department": 'D&D',
@@ -185,7 +185,7 @@ export const fakePost = [
     {
         "title": "Правильное использование заклинаний",
         "discription": "Основы магии и грамотное применение магических способностей.",
-        "author": { name: "SpellCaster", id: 1 },
+        "user": { name: "SpellCaster", id: 1 },
         "views": 7890,
         "tags": "D&D, магия, заклинания",
         "department": 'D&D',

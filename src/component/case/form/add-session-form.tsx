@@ -1,7 +1,7 @@
 import React from 'react'
 import { Title, TextInput, SelectSessionBG } from '@component/ui'
 import { toast } from '@/lib/function'
-import { authFormDto, authSchema } from '@/model/schema'
+import { addSessionFormDto, addSessionSchema } from '@/model/schema'
 import { useAppDispatch } from '@/store'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
@@ -12,15 +12,14 @@ interface Props {
 
 
 export const AddSessionForm: React.FC<Props> = ({ children }: Props) => {
-    const form = useForm<authFormDto>({
+    const form = useForm<addSessionFormDto>({
         mode: 'onChange',
-        resolver: zodResolver(authSchema)
+        resolver: zodResolver(addSessionSchema)
     })
-    const [error] = React.useState<string>()
 
-    const onSubmit: SubmitHandler<authFormDto> = (data) => {
+    const onSubmit: SubmitHandler<addSessionFormDto> = (data) => {
         console.log(data);
-        toast(dispatch, 'message', { text: error })
+        toast(dispatch, 'message', { text: '' })
     }
     const dispatch = useAppDispatch()
 

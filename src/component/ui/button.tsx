@@ -6,6 +6,7 @@ interface Props {
     children: React.ReactNode
     variant?: 'default' | 'acceess' | 'reject' | 'ghost' | 'plus'
     fn?: React.MouseEventHandler<HTMLButtonElement>
+    type?: 'button' | 'submit'
 }
 
 const map = new Map([
@@ -16,9 +17,9 @@ const map = new Map([
 ])
 
 
-export const Button: React.FC<Props> = ({ className = 'w-fit', children, variant = 'default', fn = () => { } }: Props) => {
+export const Button: React.FC<Props> = ({ className = 'w-fit', children, variant = 'default', fn = () => { }, type = 'button' }: Props) => {
     return (
-        <button onClick={fn} className={cn('transition-03 rounded-md cursor-pointer px-3 py-2', className, map.get(variant))}>
+        <button onClick={fn} type={type} className={cn('transition-03 rounded-md cursor-pointer px-3 py-2', className, map.get(variant))}>
             {children}
         </button>
     )

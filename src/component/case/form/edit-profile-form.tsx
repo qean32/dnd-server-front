@@ -3,7 +3,7 @@ import { TextInput, Button, ImgInput, Title } from '@component/ui'
 import { Link } from 'react-router-dom'
 import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
 import { toast } from '@/lib/function'
-import { authFormDto, authSchema } from '@/model/schema'
+import { editProfileFormDto, editProfileSchema } from '@/model/schema'
 import { useAppDispatch } from '@/store'
 import { zodResolver } from '@hookform/resolvers/zod'
 
@@ -12,15 +12,14 @@ interface Props {
 
 
 export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
-    const form = useForm<authFormDto>({
+    const form = useForm<editProfileFormDto>({
         mode: 'onChange',
-        resolver: zodResolver(authSchema)
+        resolver: zodResolver(editProfileSchema)
     })
-    const [error] = React.useState<string>()
 
-    const onSubmit: SubmitHandler<authFormDto> = (data) => {
+    const onSubmit: SubmitHandler<editProfileFormDto> = (data) => {
         console.log(data);
-        toast(dispatch, 'message', { text: error })
+        toast(dispatch, 'message', { text: '' })
     }
     const dispatch = useAppDispatch()
 

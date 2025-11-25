@@ -1,7 +1,7 @@
 import React from 'react'
 import { cn } from '@/lib/function'
 import { useDinamickPaginationFake } from '@/lib/castom-hook/use-dinamick-pagination-fake'
-import { Loader } from '../ui'
+import { Loader, NoFindData } from '../ui'
 
 interface Props {
     className?: string
@@ -25,6 +25,7 @@ export const GroupContainer: React.FC<Props> = ({
                         {renderItem(item)}</React.Fragment>
                 )
             })}
+            <NoFindData title='По вашему запросу ничего не найдено' view={!!finaldata.length} />
             {loading &&
                 <div className="flex-1 flex justify-center items-center">
                     <Loader />

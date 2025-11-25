@@ -3,22 +3,33 @@ import { useBoolean } from '@/lib/castom-hook'
 import { cn } from '@/lib/function'
 import { UnwrapTags } from '@component/ui'
 import { fakeTags } from '@/fake-data'
+import { useFormContext } from 'react-hook-form'
 
 interface Props {
     className?: string
+    inForm?: boolean
+    name?: string
 }
 
 
-export const AddTag: React.FC<Props> = ({ className }: Props) => {
+export const AddTag: React.FC<Props> = ({ className, inForm = false, name = '' }: Props) => {
     const [tags, setTags] = React.useState<string>('')
     const { boolean: view, swap } = useBoolean()
+    const { setValue } = inForm ? useFormContext() : { setValue: (_name: string) => { } }
+    React.useEffect(() => {
+        setValue(name, '')
+    }, [])
 
     const clickHandlerAdd = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
         const tag = e.target.innerHTML
         setTags(prev => {
-            return `${prev.split(',').filter(item => item != tag).join(',')},${tag}`
+            {
+                setValue(name, `${prev.split(',').filter(item => item != tag).join(',')},${tag}`)
+                return `${prev.split(',').filter(item => item != tag).join(',')},${tag}`
+            }
         })
+
         swap()
     }
 
@@ -36,7 +47,7 @@ export const AddTag: React.FC<Props> = ({ className }: Props) => {
 
             {!!tags.length && <div className="pointer-events-none" onClick={clickHandlerRemove}><UnwrapTags tags={tags} /></div>}
 
-            <input type="text" value={tags} hidden onChange={() => { }} />
+            <input type="text" onChange={() => { }} value={tags} hidden />
 
             {
                 view &&

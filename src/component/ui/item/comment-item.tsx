@@ -14,7 +14,7 @@ export const CommentItem: React.FC<Props> = ({ }: Props) => {
                     <Ava size="ava-sm" path="" />
                 </Link >
                 <div className='flex flex-col gap-2 pl-2 pb-2'>
-                    <Link to={'/profile/2/zxcc'}>NICKNAMENICKNAMENICKNAMENICKNAME</Link>
+                    <Link to={'/profile/2/zxcc'}>NICKNAME</Link>
                     <p className='text-justify'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eius aperiam dignissimos obcaecati sint blanditiis maiores at quibusdam in consequuntur ducimus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt eius aperiam dignissimos obcaecati sint blanditiis maiores at quibusdam in consequuntur ducimus.</p>
                 </div>
             </div>

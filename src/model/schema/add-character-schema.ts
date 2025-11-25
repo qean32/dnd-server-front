@@ -2,9 +2,10 @@ import z from "zod";
 
 export const addCharacterSchema = z.object({
     link: z
+        .string()
         .regex(
             /^[A-Za-z0-9]+$/,
-            'Пароль должен состоять из латиница и цифр'
+            'Используйте персонажей с сайта aternia.games!'
         )
 });
 

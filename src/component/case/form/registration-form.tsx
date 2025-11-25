@@ -15,11 +15,10 @@ export const RegistrationForm: React.FC<Props> = ({ }: Props) => {
         mode: 'onChange',
         resolver: zodResolver(registrationSchema)
     })
-    const [error] = React.useState<string>()
 
     const onSubmit: SubmitHandler<registrationFormDto> = (data) => {
         console.log(data);
-        toast(dispatch, 'message', { text: error })
+        toast(dispatch, 'message', { text: '' })
     }
     const dispatch = useAppDispatch()
 

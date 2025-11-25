@@ -8,7 +8,7 @@ interface Props extends postDto {
     className?: string
 }
 
-export const PostItem: React.FC<Props> = ({ discription, tags, title, author, fixed, department, likes, className }: Props) => {
+export const PostItem: React.FC<Props> = ({ discription, tags, title, user, fixed, department, likes, className }: Props) => {
     return (
         <Link to={`/post/${department}/1/${title}`} className='prime-hover'>
             <div className={cn('py-2 grid cursor-pointer transition-03 mount-opacity', className)} style={{ gridTemplateColumns: '5fr 1fr 1fr' }}>
@@ -18,7 +18,7 @@ export const PostItem: React.FC<Props> = ({ discription, tags, title, author, fi
                     <p className='text-sm'>{discription}</p>
                     <UnwrapTags tags={tags} className='' />
                 </div>
-                <p className='translate-y-1'>{author.name}</p>
+                <p className='translate-y-1'>{user.name}</p>
                 {/* <p className='translate-y-1'>{department}</p> */}
                 <p className='translate-x-0.5 translate-y-1'>{likes ?? 0}</p>
             </div>

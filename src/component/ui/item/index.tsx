@@ -12,6 +12,8 @@ export { BGSessionItem } from './bg-game-item'
 export { MapItem } from './map-item'
 export { ViewImgCarouselItem } from './view-img-corousel-item'
 export { CommentItem } from './comment-item'
+export { UserInModal } from './user-in-modal'
+export { CharacterItemInAdd } from './character-item-in-add'
 
 export { InStoreObjectItem } from './in-store-object-item'
 export { InStoreEntityItem } from './in-store-entity-item'

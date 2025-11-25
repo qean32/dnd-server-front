@@ -15,7 +15,7 @@ interface Props {
 
 
 export const AddSomething: React.FC<Props> = ({ view, swap, renderItem, accept: Accept }: Props) => {
-    const part = useBoolean()
+    const part = useBoolean(true)
 
     return (
         <Modal

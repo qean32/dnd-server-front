@@ -16,11 +16,10 @@ export const AuthForm: React.FC<Props> = ({ }: Props) => {
         mode: 'onChange',
         resolver: zodResolver(authSchema)
     })
-    const [error] = React.useState<string>()
 
     const onSubmit: SubmitHandler<authFormDto> = (data) => {
         console.log(data);
-        toast(dispatch, 'message', { text: error })
+        toast(dispatch, 'message', { text: '' })
         // authService.registration(data)
         //     // @ts-ignore
         //     .then(data => setToken(data))
@@ -37,7 +36,7 @@ export const AuthForm: React.FC<Props> = ({ }: Props) => {
                     <Title>ВХОД</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">
                         <TextInput placeHolder="никнейм или почта" name='nameOrEmail' />
-                        <PasswordInput placeHolder="пароль" name='password' />
+                        <PasswordInput placeHolder="пароль" name='password' xHint='right' />
                         <Link className='text-sm' to={'/reset-password'}>востановить пароль</Link>
                     </div>
                     <Button className="px-5 py-3" variant='acceess' children={<p>Вход</p>} />

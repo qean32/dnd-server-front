@@ -15,6 +15,8 @@ export const name = z
         /^[A-Za-z0-9]+$/,
         'Никнейм должен состоять из латиница и цифр'
     )
+    .max(20, { message: 'Максимальная длина - 20' })
+    .min(8, { message: 'Минимальная длина - 8' })
 
 export const email = z
     .string()

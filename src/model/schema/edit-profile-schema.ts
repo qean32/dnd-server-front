@@ -7,5 +7,4 @@ export const editProfileSchema = z.object({
 
 export type editProfileFormDto = {
     name: string
-    ava: string
 }

@@ -6,7 +6,7 @@ import { Button, ModalCross } from '@component/ui'
 
 interface Props {
     view: boolean
-    swap: React.MouseEventHandler<HTMLDivElement>
+    swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
 }
 
 
@@ -20,11 +20,11 @@ export const AddCharacterInProfile: React.FC<Props> = ({ view, swap }: Props) =>
                 close: 'modal-close'
             }}
         >
-            <div className="relative bg-color p-5 w-2/7 px-7 rounded-md overflow-scroll flex flex-col -translate-y-1/4" onClick={stopPropagation}>
+            <div className="relative bg-color p-5 w-3/12 px-7 h-4/12 rounded-md flex flex-col -translate-y-1/4" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
                 <AddCharaterForm>
-                    <><Button variant='ghost'><p>Отмена</p></Button>
-                        <Button variant='acceess'><p>Добавить</p></Button></>
+                    <><Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                        <Button variant='acceess' type='submit' ><p>Добавить</p></Button></>
                 </AddCharaterForm>
             </div>
         </Modal>
