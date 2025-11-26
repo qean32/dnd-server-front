@@ -8,7 +8,7 @@ export const EditProfile = () => {
     const { } = usePage(title.editProfile)
 
     return (
-        <Page className="pt-10" size="w-[50%]">
+        <Page className="pt-10 bg-icons min-h-[92vh]" size="w-[50%]">
             <div className="w-full flex justify-center h-[70vh]">
                 <div className="bg-color-dark rounded-lg w-full flex relative py-15">
                     <AuthBackground text=" " />

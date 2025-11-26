@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Page } from "@component/master/h-order-component"
+import { Page, ViewAuthor } from "@component/master/h-order-component"
 import { BanReason, UserInfo } from "@component/ui"
 import { ProfileContent, ProfileContentSwith } from "@component/shared/profile-content"
 import { usePage } from "@lib/castom-hook"
@@ -15,7 +15,9 @@ export const Profile = () => {
                     <UserInfo />
                     <ProfileContentSwith />
                     <ProfileContent />
-                    <Link to='/edit-profile'><p className="cursor-pointer underline mt-3 pl-2">изменить профиль</p></Link>
+                    <ViewAuthor>
+                        <Link to='/edit-profile'><p className="cursor-pointer underline mt-3 pl-2">изменить профиль</p></Link>
+                    </ViewAuthor>
                 </div>
             </Page >
             <BanReason />

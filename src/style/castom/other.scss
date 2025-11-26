@@ -154,9 +154,15 @@
     }
 }
 
+.warning-hint {
+    transform-origin: left;
+    transform: scaleX(.8);
+}
+
 .hover-hint {
     &:hover {
         & .warning-hint {
+            transform: scaleX(1);
             opacity: 1;
             pointer-events: all;
         }

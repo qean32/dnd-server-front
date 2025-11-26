@@ -19,7 +19,8 @@ export const FilterAddSomething: React.FC<Props> = ({ className }: Props) => {
                         { value: '1', title: 'Базовый набор', id: 1 },
                         { value: '1', title: 'Набор Хелойвин', id: 2 },
                         { value: '1', title: 'Кастомный набор', id: 3 }
-                    ]} />
+                    ]}
+                />
             </div>
         </div>
     )

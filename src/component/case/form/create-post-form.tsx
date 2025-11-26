@@ -27,7 +27,6 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
             <form onSubmit={submitHandler}>
                 <div className='w-[200px] pb-2 pl-0.5'>
                     <Select
-                        inForm
                         name='department'
                         options={[
                             { title: "D&D", value: "D&D", id: 1 },

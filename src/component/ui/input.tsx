@@ -10,15 +10,13 @@ interface SelectProps {
     className?: string
     options: { value: string, title: string, id: number }[]
     name: string
-    inForm?: boolean
 }
 
 
-export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options, name, inForm }: SelectProps) => {
-    const { setValue } = inForm ? useFormContext() : { setValue: (_name: string) => { } }
+export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options, name }: SelectProps) => {
+    const { setValue } = useFormContext()
     React.useEffect(() => {
-        if (inForm)
-            setValue(name, options[0].value)
+        setValue(name, options[0].value)
     }, [])
 
     return (
@@ -128,16 +126,15 @@ interface CheckboxProps {
 }
 
 export const Checkbox: React.FC<CheckboxProps> = ({ title, className }: CheckboxProps) => {
-    const { boolean, swap } = useBoolean()
+    const id = generateId().toString()
+
     return (
-        <div onClick={swap} className={cn('cursor-pointer flex gap-2', className)} >
-            <p className='text-md'>{title}</p>
-            <div className="flex justify-center flex-col relative icon-sm">
-                <input type='checkbox' className={cn('transition-300 absolute top-1.5 border-0 scale-95', (boolean && 'opacity-0'))} style={{ width: 'fit-content' }} />
-                <img src='/icon/accept.svg' alt=''
-                    className={cn('transition-300 icon-sm absolute top-1', (!boolean && 'opacity-0'))}
-                />
-            </div>
+        <div className={cn('cursor-pointer flex gap-2', className)}>
+            <input hidden className="checkbox-pop" type="checkbox" id={id} />
+            <label htmlFor={id} className='text-sm flex gap-5 text-justify'>
+                {title}
+                <span className='checkbox-pop-label-span pt-0.5'></span>
+            </label>
         </div>
     );
 }
