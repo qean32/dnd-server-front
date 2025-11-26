@@ -1,7 +1,7 @@
 import React from 'react'
 import { CountBlock } from './'
 import { convertToHTML } from '@/lib/function'
-import { separator } from '@/export'
+import { separatorLink } from '@/export'
 
 interface Props {
     text?: string
@@ -9,7 +9,7 @@ interface Props {
 
 
 export const MainBlock: React.FC<Props> = ({ text = 'статья' }: Props) => {
-    const data = text.replace('script', '').split(separator)
+    const data = text.replace('script', '').split(separatorLink)
 
     return (
         <div className="rounded-sm py-2">

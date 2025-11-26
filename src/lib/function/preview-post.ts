@@ -5,6 +5,6 @@ export const previewPost = (ref: any) => {
         const links = ref.current.innerHTML.match(/\{(.*?)\}/g)
         const text = ref.current.innerHTML.replaceAll('/', '').replaceAll('&nbsp;', '').split('<div>')
         // @ts-ignore
-        window.open(`preview/${text}${separator}${links?.join(', ').replaceAll('/', ';')}`, '_blank').focus();
+        window.open(`preview/${text}${separator}${links?.join(separator).replaceAll('/', ';')}`, '_blank').focus();
     }
 }

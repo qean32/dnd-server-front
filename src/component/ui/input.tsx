@@ -16,9 +16,16 @@ interface SelectProps {
 
 export const Select: React.FC<SelectProps> = ({ className = 'w-fit', options, name, inForm }: SelectProps) => {
     const { setValue } = inForm ? useFormContext() : { setValue: (_name: string) => { } }
+    React.useEffect(() => {
+        if (inForm)
+            setValue(name, options[0].value)
+    }, [])
 
     return (
-        <select className={cn('flex-1', className)} onChange={e => setValue(name, e.target.value)} >
+        <select
+            className={cn('flex-1', className)}
+            onChange={e => setValue(name, e.target.value)}
+        >
             {options.map(({ title, value, id }) => {
                 return <option key={id} value={value}>{title}</option>
             })}
@@ -135,31 +142,27 @@ export const Checkbox: React.FC<CheckboxProps> = ({ title, className }: Checkbox
     );
 }
 
-interface SearchProps {
-    className?: string
-}
-
-
-export const Search: React.FC<SearchProps> = ({ className = 'w-full' }: SearchProps) => {
-    return (
-        <div className={cn('relative', className)}>
-            <input type="search" placeholder='поиск..' />
-            <img src="/icon/search.svg" alt="" className='absolute icon-sm top-1/2 -translate-y-1/2 right-3' style={{ width: '21px' }} />
-        </div>
-    )
-}
-
 
 interface FileProps {
     className?: string
+    name: string
 }
 
 
-export const FileInput: React.FC<FileProps> = ({ className }: FileProps) => {
+export const FileInput: React.FC<FileProps> = ({ className, name }: FileProps) => {
     const id = generateId().toString()
+    const { setValue } = useFormContext()
+
+    const changeHandlerFile = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.files) {
+
+            setValue(name, e.target.files)
+        }
+    }
+
     return (
         <div className={cn('w-fit', className)}>
-            <input type="file" name="" id={id} hidden />
+            <input type="file" name="" id={id} hidden onChange={changeHandlerFile} />
             <label htmlFor={id}>
                 <img src='/icon/upload.svg' className='icon-md cursor-pointer' />
             </label>

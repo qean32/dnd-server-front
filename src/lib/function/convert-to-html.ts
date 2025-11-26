@@ -1,4 +1,4 @@
-import { customMarkup } from "@/export"
+import { customMarkup, separator } from "@/export"
 
 export const convertToHTML = (text: string, link?: string) => {
     function* generatorFn() {
@@ -8,7 +8,7 @@ export const convertToHTML = (text: string, link?: string) => {
     const generator = generatorFn()
 
 
-    return text.split(',').map(item => {
+    return text.split(separator).map(item => {
         const arr = item.split(' ')
 
         if (arr[0] == customMarkup.h1) {

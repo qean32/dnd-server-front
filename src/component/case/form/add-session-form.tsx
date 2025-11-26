@@ -1,10 +1,8 @@
 import React from 'react'
 import { Title, TextInput, SelectSessionBG } from '@component/ui'
-import { toast } from '@/lib/function'
 import { addSessionFormDto, addSessionSchema } from '@/model/schema'
-import { useAppDispatch } from '@/store'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
     children: React.ReactNode
@@ -12,21 +10,17 @@ interface Props {
 
 
 export const AddSessionForm: React.FC<Props> = ({ children }: Props) => {
-    const form = useForm<addSessionFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(addSessionSchema)
-    })
-
-    const onSubmit: SubmitHandler<addSessionFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-    }
-    const dispatch = useAppDispatch()
+    const { form, submitHandler } =
+        useMyForm<addSessionFormDto>(
+            addSessionSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
 
-            <form action="" onSubmit={form.handleSubmit(onSubmit)}>
+            <form action="" onSubmit={submitHandler}>
                 <Title className='mb-5'>ДОБАВЛЕНИЕ СЕССИИ</Title>
                 <TextInput placeHolder='Название сессии' className='w-[360px] mb-5' name='name' />
                 <SelectSessionBG />

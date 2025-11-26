@@ -1,32 +1,39 @@
 import React from 'react'
-import { CommentInput } from '@component/ui'
-import { toast } from '@/lib/function'
 import { commentFormDto, commentSchema } from '@/model/schema'
-import { useAppDispatch } from '@/store'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
+import { Button, FileInput, TextArea } from '@/component/ui'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
 }
 
 
 export const CommentForm: React.FC<Props> = ({ }: Props) => {
-    const form = useForm<commentFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(commentSchema)
-    })
-
-    const onSubmit: SubmitHandler<commentFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-    }
-    const dispatch = useAppDispatch()
+    const { form, submitHandler } =
+        useMyForm<commentFormDto>(
+            commentSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
 
-            <form className="" onSubmit={form.handleSubmit(onSubmit)}>
-                <CommentInput />
+            <form className="" onSubmit={submitHandler}>
+
+                <div className="p-5">
+                    <div className='flex outline-bg-light outline-1 rounded-sm items-end py-2 pb-1'>
+                        <Button><FileInput
+                            name='files' /></Button>
+                        <TextArea
+                            name='text'
+                            title='Ваш коментарий'
+                            parentDivclassName='w-full max-h-[300px] overflow-scroll translate-y-1.5 text-xl'
+                        />
+                        <Button type='submit'>
+                            <img src="/icon/send.svg" alt="" className="icon-md" /></Button>
+                    </div>
+                </div>
             </form>
         </FormProvider>
     )

@@ -26,19 +26,14 @@ export const CountBlock: React.FC<Props> = ({ }: Props) => {
     }
 
     React.useEffect(() => {
-        console.log(actions);
-
     }, [actions])
 
     React.useEffect(() => {
         const interval = setInterval(() => {
             if (actions[0] == actionsName.like) {
-                console.log(actions);
-                console.log("like");
                 setActions([])
             }
             else if (actions[0] == actionsName.unlike) {
-                console.log('dis');
                 setActions([])
             }
         }, 1000)

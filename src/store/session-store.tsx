@@ -1,13 +1,18 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { sessionDto, mapDto } from "@/model";
-import { gameStorage } from "@/export";
 
-type stateDto = { session: sessionDto }
+const gameStorage = 'game-storage'
+const bestiaryStorage = 'bestiary-storage'
+
+type stateDto = { session: sessionDto, bestiary: any[] }
 
 const initialState: stateDto = {
     session: {
         ...JSON.parse((localStorage.getItem(gameStorage) as string)),
-    }
+    },
+    bestiary: [
+        ...JSON.parse((localStorage.getItem(bestiaryStorage) as string)) ?? [],
+    ]
 }
 
 const sessionSlice = createSlice({
@@ -25,9 +30,12 @@ const sessionSlice = createSlice({
         },
         changeQueue: (state: stateDto, { payload: { queue, name } }: PayloadAction<{ queue: any[], name: string }>) => {
             state.session.mapsData[name].queue = queue
+        },
+        addToBestiary: (state: stateDto, { payload: { newEntity } }: PayloadAction<any>) => {
+            state.bestiary = [...state.bestiary, newEntity]
         }
     },
 })
 
 export const sessionReducer = sessionSlice.reducer
-export const { changeSomethingEntity, swapCurrentMap, changeQueue } = sessionSlice.actions
+export const { changeSomethingEntity, swapCurrentMap, changeQueue, addToBestiary } = sessionSlice.actions

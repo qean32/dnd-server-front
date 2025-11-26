@@ -1,31 +1,25 @@
 import React from 'react'
 import { TextInput, Button, PasswordInput, Checkbox, Title } from '@component/ui'
 import { registrationFormDto, registrationSchema } from '@/model/schema'
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useAppDispatch } from '@/lib/castom-hook/redux'
-import { toast } from '@/lib/function'
+import { FormProvider } from 'react-hook-form'
+import { useMyForm } from '@/lib/castom-hook';
 
 interface Props {
 }
 
 
 export const RegistrationForm: React.FC<Props> = ({ }: Props) => {
-    const form = useForm<registrationFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(registrationSchema)
-    })
-
-    const onSubmit: SubmitHandler<registrationFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-    }
-    const dispatch = useAppDispatch()
+    const { form, submitHandler } =
+        useMyForm<registrationFormDto>(
+            registrationSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
 
-            <form className="w-1/2 h-full flex justify-center rounded-md" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="w-1/2 h-full flex justify-center rounded-md" onSubmit={submitHandler}>
                 <div className="w-fit flex flex-col gap-3">
                     <Title>РЕГИСТРАЦИЯ</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">

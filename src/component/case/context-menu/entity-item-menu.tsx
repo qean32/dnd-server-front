@@ -9,8 +9,10 @@ interface Props {
 export const EntityItemMenu: React.FC<Props> = ({ }: Props) => {
     return (
         <ContextMenu>
-            <p className='bg-yellow-800 mx-3'>30</p>
+            <p className='bg-yellow-800 mx-3 mb-1'>30</p>
             <ContextMenuItem fn={() => { }}>Добавить статус</ContextMenuItem>
+            <ContextMenuItem fn={() => { }}>Удалить</ContextMenuItem>
+            <ContextMenuItem fn={() => { }}>Подробнее</ContextMenuItem>
         </ContextMenu>
     )
 }

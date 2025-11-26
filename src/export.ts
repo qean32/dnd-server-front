@@ -5,7 +5,6 @@ export { axiosInstance } from './service/instance'
 export const accessTokenWord = 'JWT'
 
 export const tokenStorage = 'token-storage'
-export const gameStorage = 'game-storage'
 export const invalidTokenMessage = 'invalid token!'
 
 export const customAttribute = {
@@ -48,7 +47,8 @@ export const mapMonthKey = new Map([
     ['12', 'Декабрь']
 ]);
 
-export const separator = '&&&&&&&'
+export const separator = ':separator:'
+export const separatorLink = ':separator-link:'
 
 export const serverWork = 'serverWork!'
 

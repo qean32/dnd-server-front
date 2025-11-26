@@ -1,32 +1,26 @@
 import React from 'react'
 import { TextInput, Button, ImgInput, Title } from '@component/ui'
 import { Link } from 'react-router-dom'
-import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
-import { toast } from '@/lib/function'
+import { FormProvider } from 'react-hook-form'
 import { editProfileFormDto, editProfileSchema } from '@/model/schema'
-import { useAppDispatch } from '@/store'
-import { zodResolver } from '@hookform/resolvers/zod'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
 }
 
 
 export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
-    const form = useForm<editProfileFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(editProfileSchema)
-    })
-
-    const onSubmit: SubmitHandler<editProfileFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-    }
-    const dispatch = useAppDispatch()
+    const { form, submitHandler } =
+        useMyForm<editProfileFormDto>(
+            editProfileSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
 
-            <form className="w-1/2 h-full flex justify-center" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="w-1/2 h-full flex justify-center" onSubmit={submitHandler}>
                 <div className="w-fit flex flex-col gap-3">
                     <Title>РЕДАКТОР</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col justify-between pb-3">

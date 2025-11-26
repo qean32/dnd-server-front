@@ -4,7 +4,6 @@ import { Modal } from '@component/master/h-order-component'
 import { ModalCross } from '@component/ui'
 import { FilterAddSomething, GroupTokenInModal } from '@component/shared'
 import { propsComponent } from '@/model'
-import { useBoolean } from '@/lib/castom-hook'
 
 interface Props {
     view: boolean
@@ -15,8 +14,6 @@ interface Props {
 
 
 export const AddSomething: React.FC<Props> = ({ view, swap, renderItem, accept: Accept }: Props) => {
-    const part = useBoolean(true)
-
     return (
         <Modal
             swap={swap}
@@ -33,8 +30,7 @@ export const AddSomething: React.FC<Props> = ({ view, swap, renderItem, accept: 
                     <GroupTokenInModal title='Базовый набор' renderItem={renderItem} />
                     <GroupTokenInModal title='Набор Хелойвин' renderItem={renderItem} />
                 </div>
-                <Accept part={part}
-                    swapModal={swap}
+                <Accept swap={swap}
                 />
             </div>
         </Modal>

@@ -1,19 +1,21 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import { ru } from 'date-fns/locale/ru';
 
 import "react-datepicker/dist/react-datepicker.css";
-import { useQueryPush } from "@/lib/castom-hook";
+import { useQueryParam } from "@/lib/castom-hook";
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
 export const DatePickerUI = () => {
-    const [startDate, setStartDate] = useState(new Date());
-    const push = useQueryPush()
+    const ref = useRef(new Date())
+    const [startDate, setStartDate] = useState(ref.current);
+    const [_, setDate] = useQueryParam('data', '')
 
     useEffect(() => {
-        push([{}])
+        if (startDate != ref.current)
+            setDate(startDate.toString())
     }, [startDate])
 
     return <>

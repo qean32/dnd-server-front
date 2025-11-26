@@ -1,0 +1,1 @@
+export { ProtectedRouteTechWork } from './protected-route-tech-work'

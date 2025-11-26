@@ -12,6 +12,6 @@ export const ContextMenuItem: React.FC<Props> = ({ className, children, fn }: Pr
     return (
         <p
             onClick={fn}
-            className={cn('text-nowrap py-2 bg-color-dark-hover px-3', className)}>{children}</p>
+            className={cn('text-nowrap py-2 bg-color-dark-hover px-3 transition-03', className)}>{children}</p>
     )
 }

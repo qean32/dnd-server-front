@@ -1,11 +1,9 @@
 import { Button, TextArea, TextInput, UploadImgArea } from '@/component/ui'
-import { TypeUseBoolen } from '@/lib/castom-hook'
-import { toast } from '@/lib/function'
+import { TypeUseBoolen, useMyForm } from '@/lib/castom-hook'
+import { addSomethingFromJSON } from '@/lib/function'
 import { addEntityToSessionFormDto, addEntityToSessionSchema } from '@/model/schema'
-import { useAppDispatch } from '@/store'
-import { zodResolver } from '@hookform/resolvers/zod'
 import React from 'react'
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
 
 interface Props {
     children: React.ReactNode
@@ -14,28 +12,24 @@ interface Props {
 
 
 export const AddFromForm: React.FC<Props> = ({ children, part }: Props) => {
-    const form = useForm<addEntityToSessionFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(addEntityToSessionSchema)
-    })
-
-    const onSubmit: SubmitHandler<addEntityToSessionFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-    }
-    const dispatch = useAppDispatch()
+    const { form, submitHandler } =
+        useMyForm<addEntityToSessionFormDto>(
+            addEntityToSessionSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
 
-            <form className="w-1/2 flex-1 flex flex-col" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="w-1/2 flex-1 flex flex-col" onSubmit={submitHandler}>
                 <div className="flex-1 pt-15">
                     <div className="h-[180px] flex justify-center items-start">
                         <UploadImgArea
                             name='path'
-                            className='w-5/12 aspect-square p-0'
+                            className='w-full flex justify-center'
                             iconSize='icon-lg'
-                            labelClass='flex p-0 w-full overflow-hidden aspect-square rounded-full outline-bg-light cursor-pointer justify-center items-center bg-img bg-color-dark' />
+                            labelClass='p-0 w-1/2 aspect-square overflow-hidden rounded-full outline-bg-light cursor-pointer bg-color-dark' />
                     </div>
                     <div className='px-5'>
                         <TextInput placeHolder='Название' className='my-5' name='name' xHint='left' yHint='bottom' />
@@ -49,7 +43,11 @@ export const AddFromForm: React.FC<Props> = ({ children, part }: Props) => {
                 <div className="flex justify-end flex-col pb-6 pr-4 items-end">
                     <div className="flex gap-2 pb-1">
                         {children}
-                        <Button fn={() => { }} variant='acceess' type='submit'>
+                        <Button
+                            type='submit'
+                            fn={addSomethingFromJSON}
+                            variant='acceess'
+                        >
                             <p className='pointer-events-none'>Добавить</p></Button>
                     </div>
                     <Button variant='acceess' fn={part.on} className='mt-2 w-11/12'><p>Назад</p></Button>

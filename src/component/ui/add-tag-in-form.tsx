@@ -7,16 +7,17 @@ import { useFormContext } from 'react-hook-form'
 
 interface Props {
     className?: string
-    inForm?: boolean
-    name?: string
-    push?: (query: { [key: string]: string; }[]) => void;
+    name: string
 }
 
 
-export const AddTag: React.FC<Props> = ({ className, inForm = false, name = '', push }: Props) => {
+export const AddTagInForm: React.FC<Props> = ({
+    className,
+    name = '',
+}: Props) => {
     const [tags, setTags] = React.useState<string>('')
     const { boolean: view, swap } = useBoolean()
-    const { setValue } = inForm ? useFormContext() : { setValue: (_name: string) => { } }
+    const { setValue } = useFormContext()
     React.useEffect(() => {
         setValue(name, '')
     }, [])
@@ -28,10 +29,7 @@ export const AddTag: React.FC<Props> = ({ className, inForm = false, name = '', 
             {
                 const tags = `${prev.split(',').filter(item => item != tag).join(',')},${tag}`
                 setValue(name, tags)
-                if (push) {
 
-                    push([{ tags: tags.slice(1) }])
-                }
                 return tags
             }
         })
@@ -46,35 +44,34 @@ export const AddTag: React.FC<Props> = ({ className, inForm = false, name = '', 
             {
                 const tags = `${prev.split(',').filter(item => item != tag).join(',')}`
                 setValue(name, tags)
-                if (push) {
 
-                    push([{ tags: tags.slice(1) }])
-                }
                 return tags
             }
         })
     }
 
     return (
-        <div className={cn('flex w-full flex-col gap-2 cursor-pointer relative', className)}>
+        <div className={cn('flex w-full flex-col gap-2 cursor-pointer relative z-20', className)}>
             <div onClick={swap} className='w-fit'>Теги</div>
 
             {!!tags.length &&
                 <div
                     className="pointer-events-none"
                     onClick={clickHandlerRemove}
-                ><UnwrapTags tags={tags} /></div>}
+                ><UnwrapTags
+                        className='z-50 bg-color-dark px-2'
+                        tags={tags} /></div>}
 
             <input type="text"
-                onChange={() => { }}
                 value={tags}
+                onChange={() => { }}
                 hidden
             />
 
             {
                 view &&
                 <div className="pointer-events-none absolute bottom-0 translate-y-[120%]" onClick={clickHandlerAdd}>
-                    <UnwrapTags className='z-50 bg-color-darkness px-2' tags={fakeTags.join(',')} />
+                    <UnwrapTags className='z-50 bg-color-dark px-2' tags={fakeTags.join(',')} />
                 </div>
             }
         </div>

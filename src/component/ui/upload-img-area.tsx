@@ -14,7 +14,7 @@ interface Props {
 export const UploadImgArea: React.FC<Props> = ({
     className,
     name,
-    labelClass = "flex p-0 h-full rounded-lg cursor-pointer justify-center items-center bg-img bg-color-dark",
+    labelClass = "p-0 h-full rounded-lg",
     iconSize = 'icon-2xl'
 }: Props) => {
     const [src, setSrc] = React.useState<File[]>([]);
@@ -54,14 +54,15 @@ export const UploadImgArea: React.FC<Props> = ({
             <input accept='image/png, image/jpeg, image/svg, image/jpg, image/webp' type='file' hidden id={id} onChange={changeHandler} />
             <div className={cn("", className)}>
                 <label
-                    className={labelClass}
+                    className={cn("flex justify-center items-center bg-img bg-color-dark cursor-pointer", labelClass)}
                     htmlFor={id}
                     onDragLeave={e => dragLeaveHandler(e)}
                     onDragStart={e => dragStartHandler(e)}
                     onDragOver={e => dragStartHandler(e)}
                     onDrop={e => dropHandler(e)}
+                    style={{ backgroundImage: `url(${urls[0]})` }}
                 >
-                    {urls[0] && <img src={urls[0]} alt="" className='w-full rounded-md' />}
+                    {/* {urls[0] && <img src={urls[0]} alt="" className='w-full rounded-md' />} */}
                     {!urls[0] && (boolean ? <img src='/icon/upload-aim.svg' alt="" className={iconSize} /> : <img src='/icon/upload.svg' alt="" className={iconSize} />)}
                 </label>
             </div>

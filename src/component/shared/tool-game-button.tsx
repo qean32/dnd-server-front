@@ -4,7 +4,7 @@ import { Modal } from '@component/case/modal'
 import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
 import { toast } from '@lib/function'
 import { useLocation } from 'react-router-dom'
-import { gameStorage, host } from '@/export'
+import { host } from '@/export'
 import { AddObject, AddEntity } from '@/component/case/add-to-session'
 import { InStoreEntityItem, InStoreObjectItem } from '@component/ui/item/'
 import { entityDto, objectDto } from '@/model'
@@ -18,7 +18,7 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
     const { pathname } = useLocation()
     const { session } = useAppSelector(state => state.session)
     const saveGame = () => {
-        localStorage.setItem(gameStorage, JSON.stringify(session));
+        localStorage.setItem("game-storage", JSON.stringify(session));
         toast(dispath, "message", { text: 'Сохранено' }); console.log(session)
     }
     const forwardClick = React.useCallback(() => {

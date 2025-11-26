@@ -1,37 +1,26 @@
 import React from 'react'
 import { TextInput, Button, PasswordInput, Title } from '@component/ui'
 import { Link } from 'react-router-dom'
-import { toast } from '@/lib/function'
 import { authFormDto, authSchema } from '@/model/schema'
-import { useAppDispatch } from '@/store'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { useForm, SubmitHandler, FormProvider } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
 }
 
 
 export const AuthForm: React.FC<Props> = ({ }: Props) => {
-    const form = useForm<authFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(authSchema)
-    })
-
-    const onSubmit: SubmitHandler<authFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-        // authService.registration(data)
-        //     // @ts-ignore
-        //     .then(data => setToken(data))
-        //     .then(() => navigate('/'))
-        //     .catch((error) => setError(error.response.data.message))
-    }
-    const dispatch = useAppDispatch()
+    const { form, submitHandler } =
+        useMyForm<authFormDto>(
+            authSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
 
-            <form className="w-1/2 h-full flex justify-center" onSubmit={form.handleSubmit(onSubmit)}>
+            <form className="w-1/2 h-full flex justify-center" onSubmit={submitHandler}>
                 <div className="w-fit flex flex-col gap-3">
                     <Title>ВХОД</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">

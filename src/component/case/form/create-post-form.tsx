@@ -1,12 +1,10 @@
 import React from 'react'
-import { FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
-import { previewPost, toast } from '@/lib/function'
+import { AddTagInForm, FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
+import { previewPost } from '@/lib/function'
 import { fileDto } from '@/model'
-import { FormProvider, SubmitHandler, useForm } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
 import { createPostFormDto, createPostSchema } from '@/model/schema'
-import { useAppDispatch } from '@/store'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { AddTag } from '@/component/shared'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
 }
@@ -15,23 +13,21 @@ interface Props {
 export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
     const [files, setFiles] = React.useState<fileDto[]>([])
     const ref = React.useRef<HTMLDivElement | null>(null);
-    const form = useForm<createPostFormDto>({
-        mode: 'onChange',
-        resolver: zodResolver(createPostSchema)
-    })
-    const onError = (errors: any) =>
-        console.log(errors)
-    const onSubmit: SubmitHandler<createPostFormDto> = (data) => {
-        console.log(data);
-        toast(dispatch, 'message', { text: '' })
-    }
-    const dispatch = useAppDispatch()
+
+    const { form, submitHandler } =
+        useMyForm<createPostFormDto>(
+            createPostSchema,
+            () => { },
+            () => { }
+        )
 
     return (
         <FormProvider {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit, onError)}>
+
+            <form onSubmit={submitHandler}>
                 <div className='w-[200px] pb-2 pl-0.5'>
                     <Select
+                        inForm
                         name='department'
                         options={[
                             { title: "D&D", value: "D&D", id: 1 },
@@ -39,12 +35,31 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
                             { title: "ПРОЧЕЕ", value: "OTHER", id: 3 },
                         ]} />
                 </div>
-                <UpperPart preview={() => previewPost(ref)} setFiles={setFiles} />
-                <TextArea title="Описание вашей статьи" className='min-h-[160px] p-2 px-3 mb-5' name='discription' />
-                <TextArea ref={ref} title='Текст вашей статьи' className='p-2 px-3 min-h-[600px]' name='text' />
+
+                <UpperPart
+                    preview={() => previewPost(ref)}
+                    setFiles={setFiles}
+                />
+
                 <div className="py-5">
-                    <AddTag className='' name='tags' inForm />
+                    <AddTagInForm
+                        name='tags'
+                    />
                 </div>
+
+                <TextArea
+                    title="Описание вашей статьи"
+                    className='min-h-[160px] p-2 px-3 mb-5'
+                    name='discription'
+                />
+                <TextArea
+                    convertHTML
+                    ref={ref}
+                    title='Текст вашей статьи'
+                    className='p-2 px-3 min-h-[600px]'
+                    name='text'
+                />
+
                 <UnwrapFiles className='pt-5 gap-3' files={files} />
                 <Hints />
             </form>

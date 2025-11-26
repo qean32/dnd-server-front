@@ -15,7 +15,7 @@ export const NoFindData: React.FC<Props> = ({ className, title, view }: Props) =
 
     return (
         <div className={cn("flex-1 flex justify-center items-center flex-col gap-5", className)}>
-            <img src='/icon/no-search-danger.svg' className='icon-4xl' />
+            <img src='/icon/no-find-data.svg' className='icon-4xl' />
             <p className='text-sm'>{title}</p>
         </div>
     )
