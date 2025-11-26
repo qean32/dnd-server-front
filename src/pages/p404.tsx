@@ -2,7 +2,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { title } from "@/export";
 import { usePage } from "@lib/castom-hook";
 
-export const P404Page = () => {
+export const P404 = () => {
     const { } = usePage(title.p404)
     const navigate = useNavigate();
 

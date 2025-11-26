@@ -6,7 +6,7 @@ import { title } from "@/export"
 import { fakeUser } from "@/fake-data"
 import { usePage } from "@lib/castom-hook"
 
-export const CommunityPage = () => {
+export const Community = () => {
     const { } = usePage(title.communty)
 
     return (
@@ -16,10 +16,9 @@ export const CommunityPage = () => {
                 <TextInfo title="Сообщество" />
                 <Search />
                 <GroupContainer
-                    array={fakeUser}
+                    items={fakeUser}
                     className="pt-5"
-                    component={UserItem}
-                    propsName="user"
+                    renderItem={(item) => <UserItem {...item} />}
                 />
             </div>
         </Page>

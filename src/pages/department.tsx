@@ -10,20 +10,20 @@ import { usePage } from "@lib/castom-hook"
 import { getParamName } from "@lib/function"
 
 
-export const DepartmentPage = () => {
+export const Department = () => {
     const { } = usePage(getParamName())
 
     return (
         <Page size="w-[75%]">
             <div className="flex gap-10">
                 <FilterForum />
-                <RightSideForum />
+                <MainSideForum />
             </div>
         </Page>
     )
 }
 
-const RightSideForum: React.FC<{}> = ({ }: {}) => {
+const MainSideForum: React.FC<{}> = ({ }: {}) => {
     const { name } = useParams()
 
     return (
@@ -32,13 +32,12 @@ const RightSideForum: React.FC<{}> = ({ }: {}) => {
             <TextInfo title={name ? name.toUpperCase() : ''} />
             <Search />
             <PostColumn />
-            <div className="pb-5">
-                <PostItem likes={0} {...fakePost[10]} fixed={true} />
+            <div className="pb-4">
+                <PostItem likes={0} {...fakePost[10]} fixed={true} className="pl-2" />
             </div>
             <GroupContainer
-                array={fakePost}
-                component={PostItem}
-                propsName="post"
+                items={fakePost}
+                renderItem={(item) => <PostItem {...item} className="pl-2" />}
             />
         </div>
     )

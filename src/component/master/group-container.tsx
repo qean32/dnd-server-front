@@ -1,36 +1,38 @@
 import React from 'react'
 import { cn } from '@/lib/function'
 import { useDinamickPaginationFake } from '@/lib/castom-hook/use-dinamick-pagination-fake'
-import { propsComponent } from '@/model'
+import { Loader, NoFindData } from '../ui'
 
 interface Props {
     className?: string
-    propsName: string
-    component: propsComponent
-    array: any[]
-    //     RQKey: string
-    //     take: number
-    //     fetch_: Function
+    renderItem(item: any): React.ReactNode;
+    items: any[]
 }
 
 
 export const GroupContainer: React.FC<Props> = ({
     className,
-    component: Component,
-    array,
-    // RQKey, fetch_, take
+    renderItem,
+    items,
 }: Props) => {
-    const { finaldata, loading, refHandler } = useDinamickPaginationFake(0, '', array)
+    const { finaldata, loading, refHandler, isEnd } = useDinamickPaginationFake(0, '', items)
 
     return (
-        <div className={cn('', className)}>
+        <div className={cn('pb-5 min-h-[400px] flex flex-col', className)}>
             {finaldata.map((item, _) => {
                 return (
-                    <Component {...item} key={_} />
+                    <React.Fragment key={_}>
+                        {renderItem(item)}</React.Fragment>
                 )
             })}
+            <NoFindData title='По вашему запросу ничего не найдено' view={!!finaldata.length} />
+            {loading &&
+                <div className="flex-1 flex justify-center items-center">
+                    <Loader />
+                </div>
+            }
             <div className='w-100 min-h-[50px]' ref={refHandler} ></div>
-            {loading && <p>загрузка</p>}
+            {!isEnd ? <div className="w-full flex justify-center items-center"><Loader /></div> : <p>Конец очереди</p>}
         </div>
     )
 }

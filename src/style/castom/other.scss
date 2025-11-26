@@ -66,6 +66,15 @@
     filter: brightness(40%)
 }
 
+.bg-hover-shadow {
+    filter: brightness(40%);
+    transition: .3s;
+
+    &:hover {
+        filter: brightness(90%);
+    }
+}
+
 .outline-bg-light {
     outline: 1px solid $bg-color-light;
 }
@@ -75,4 +84,105 @@
 
         background-color: rgba(0, 0, 0, 0.5);
     }
+}
+
+// .hover-hide-img {
+// &:hover {
+//     .bg-img {
+//         width: 0;
+//     }
+
+//     .unwrap-text {
+//         transform: translateX(-12px);
+//         width: fit-content;
+//         text-wrap: initial;
+//         overflow: visible !important;
+//     }
+
+//     .unwrap-text-no-wrap {
+//         transform: translateX(-12px);
+//     }
+
+//     .hover-w-full {
+//         width: 100% !important;
+//     }
+// }
+// }
+
+[contenteditable=true]:empty:before {
+    content: attr(placeholder);
+    pointer-events: none;
+    opacity: .6;
+    display: block;
+}
+
+.text-area {
+    &>div {
+        width: fit-content;
+    }
+}
+
+.pointer-events-auto- {
+    pointer-events: auto !important;
+}
+
+.arrow-auth-relative:hover {
+    .arrow-auth {
+        transform: translateX(-50%);
+    }
+}
+
+.json-add {
+    &::after {
+        content: '';
+        z-index: 10;
+        width: 15px;
+        background-color: $bg-color;
+        position: absolute;
+        right: 0;
+        height: 100%;
+    }
+
+    &::before {
+        content: '';
+        z-index: 10;
+        width: 15px;
+        background-color: $bg-color;
+        position: absolute;
+        left: 0;
+        height: 100%;
+    }
+}
+
+.warning-hint {
+    transform-origin: left;
+    transform: scaleX(.8);
+}
+
+.hover-hint {
+    &:hover {
+        & .warning-hint {
+            transform: scaleX(1);
+            opacity: 1;
+            pointer-events: all;
+        }
+    }
+}
+
+.bg-shadow-:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.bg-icons {
+    background-image: url('/icon/bg-icon.svg');
+    background-repeat: space;
 }

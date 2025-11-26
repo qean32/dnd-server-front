@@ -11,7 +11,7 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     const transform = useBoolean()
 
     const mouseOverHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        e.target.getStage().container().style.cursor = 'grab';
+        e.target.getStage().container().style.cursor = 'move';
     };
 
     const mouseOutHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
@@ -27,6 +27,11 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
 
     const dragEndHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
         dispath(changeSomethingEntity({ type: 'entities', payload: { id: e.currentTarget.attrs.id, position: { ...e.currentTarget._lastPos } } }))
+        rectRef.current.to({
+            y: 2000,
+            x: 100,
+            duration: 0.7,
+        })
     };
 
     const dragMoveHandler = () => {

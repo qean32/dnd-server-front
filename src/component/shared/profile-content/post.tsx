@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
 import { fakePost } from "@/fake-data"
-import { PostColumn, PlusButton } from "@component/ui"
+import { PostColumn, PlusButton, NoFindData } from "@component/ui"
 import { useBoolean } from "@lib/castom-hook"
 import React from "react"
 import { PostItem } from "@component/ui/item"
+import { ViewAuthor } from "@/component/master/h-order-component"
 
 interface Props {
     view: boolean
@@ -25,12 +26,19 @@ export const Post: React.FC<Props> = ({ view }: Props) => {
     }
 
     return (
-        <div className='px-5 pt-2 pb-5'>
-            <PostColumn />
-            {fakePost.slice(0, 6).map(item => {
-                return <PostItem likes={0} {...item} key={item.title} />
-            })}
-            <Link to={'/create-post'}><PlusButton className='h-[100px] w-full mt-2 px-5' iconSize='icon-sm' /></Link>
+        <div className='pt-2 pb-5'>
+            <PostColumn className="pl-5" />
+            {!!fakePost.length &&
+                fakePost.slice(0, 6).map(item => {
+                    return <PostItem likes={0} {...item} key={item.title} className="pl-5" />
+                })}
+            <NoFindData title="Пользователь не выкладывал статьи" className="min-h-[500px]" view={false} />
+
+            <ViewAuthor>
+                <div className="px-4">
+                    <Link to={'/create-post'}><PlusButton className='h-[100px] w-full my-2' iconSize='icon-md' /></Link>
+                </div>
+            </ViewAuthor>
         </div>
     )
 }

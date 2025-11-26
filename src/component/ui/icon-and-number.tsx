@@ -10,7 +10,7 @@ interface Props {
 
 export const IconAndNumber: React.FC<Props> = ({ className, icon, count }: Props) => {
     return (
-        <div className={cn('overflow-hidden py-5 flex gap-2 h-[30px] bg-color-light-hover transition-03 p-2 cursor-pointer items-center rounded-2xl', className)}>
+        <div className={cn('overflow-hidden py-5 flex gap-2 h-[30px] bg-color-light-hover transition-300 px-2 cursor-pointer items-center rounded-2xl', className)}>
             <img src={icon} className='icon-sm-' alt="" />
             <div>
                 <p>{count}</p>

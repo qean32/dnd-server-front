@@ -5,7 +5,7 @@ import { title } from "@/export"
 import { usePage } from "@lib/castom-hook"
 
 
-export const ForumPage = () => {
+export const Forum = () => {
     const { } = usePage(title.forum)
 
     return (
@@ -15,13 +15,13 @@ export const ForumPage = () => {
                     <TextInfo title="Форум" />
 
                     <div className="flex flex-col gap-7">
-                        <DepartmentItem path="/img/dnd.jpg"
+                        <DepartmentItem path="/img/carousel-item-3.jpg" count={42}
                             discription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi facere saepe vel quisquam quibusdam, adipisci minima officiis nemo explicabo est." name="web" />
-                        <DepartmentItem path="/img/dnd.jpg"
+                        <DepartmentItem path="/img/carousel-item-3.jpg" count={42}
                             discription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi facere saepe vel quisquam quibusdam, adipisci minima officiis nemo explicabo est." name="d&d" />
-                        <DepartmentItem path="/img/dnd.jpg"
+                        <DepartmentItem path="/img/carousel-item-3.jpg" count={42}
                             discription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi facere saepe vel quisquam quibusdam, adipisci minima officiis nemo explicabo est." name="прочее" />
-                        <DepartmentItem path="/img/dnd.jpg"
+                        <DepartmentItem path="/img/carousel-item-3.jpg" count={42}
                             discription="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi facere saepe vel quisquam quibusdam, adipisci minima officiis nemo explicabo est." name="faq" />
                     </div>
                 </div>

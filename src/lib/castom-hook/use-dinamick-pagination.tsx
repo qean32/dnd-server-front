@@ -7,7 +7,8 @@ export const useDinamickPagination = <T,>(fetch_: Function, RQkey: string[], ski
 
     const [skip, setSkip] = React.useState<number | string>(skip_)
     const [finaldata, setFinalData] = React.useState<T[]>([])
-    const { boolean: loading, on, off } = useBoolean(true)
+    const { boolean: isEnd, on: onIsEnd } = useBoolean()
+    const { boolean: loading, off } = useBoolean(true)
     const RQData = useQuery([...RQkey, skip, search], () => fetch_(skip), { keepPreviousData: false, refetchOnWindowFocus: false })
 
     React.useEffect(() => {
@@ -19,18 +20,18 @@ export const useDinamickPagination = <T,>(fetch_: Function, RQkey: string[], ski
             RQData.data
             && Array.isArray(RQData.data.data)
         ) {
-            off();
-            (search ?
+            if (search) {
                 setFinalData((prev: T[]) => [...prev, ...RQData.data.data])
-                :
+            } else {
                 setFinalData(RQData.data.data)
-            )
+            }
+            RQData.data.isEnd > 40 && onIsEnd()
         }
     }, [RQData.data])
 
     React.useEffect(() => {
-        if (boolean && RQData.data.next) {
-            on()
+        if (boolean && RQData.data.next && !isEnd) {
+            off();
             setTimeout(() =>
                 setSkip((prev) => Number(prev) + 4)
                 , 600)

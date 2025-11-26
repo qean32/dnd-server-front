@@ -1,17 +1,12 @@
 import { ChangePasswordForm } from "@component/case/form"
-import { Page } from "@component/master/h-order-component"
 import { title } from "@/export"
 import { usePage } from "@lib/castom-hook"
+import { PageWindow } from "@/component/master/h-order-component"
 
-export const ChangePasswordPage = () => {
+export const ChangePassword = () => {
     const { } = usePage(title.changePassword)
 
     return (
-        <Page className="pt-10" size="w-[50%]">
-            <div className="flex justify-center w-full pt-10">
-
-                <ChangePasswordForm />
-            </div>
-        </Page>
+        <PageWindow><ChangePasswordForm /></PageWindow>
     )
 }

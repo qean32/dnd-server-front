@@ -6,15 +6,21 @@ import { Provider } from 'react-redux'
 import { store } from './store'
 import { QueryClientProvider, QueryClient } from 'react-query'
 import { MainLoader } from './component/master'
+import { ProtectedRouteTechWork } from './pages/protected-route'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   // <React.StrictMode>
-  <QueryClientProvider client={new QueryClient()}>
-    <Provider store={store} >
-      <MainLoader />
-      <Router />
-    </Provider>
-  </QueryClientProvider>
+  // <HookFormProvider>
+  <ProtectedRouteTechWork>
+
+    <QueryClientProvider client={new QueryClient()}>
+      <Provider store={store} >
+        <MainLoader />
+        <Router />
+      </Provider>
+    </QueryClientProvider >
+  </ProtectedRouteTechWork>
+  // </HookFormProvider>
   // </React.StrictMode>,
 )
 

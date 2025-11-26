@@ -10,11 +10,11 @@ export const MapItem: React.FC<Props> = ({ }: Props) => {
     const dispath = useAppDispatch()
 
     const clickHAndler = () => {
-        dispath(swapViewImg({ href: '/img/dnd+.jpg' }))
+        dispath(swapViewImg({ href: '/img/carousel-item-1.jpg' }))
     }
     return (
         <div className="mount-opacity relative h-[9vh] cursor-pointer" onClick={clickHAndler}>
-            <div className="h-full w-full absolute top-0 bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/dnd+.jpg'})` }}></div>
+            <div className="h-full w-full absolute top-0 bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/carousel-item-1.jpg'})` }}></div>
 
             <div className="absolute top-0.5 right-0.5">
 

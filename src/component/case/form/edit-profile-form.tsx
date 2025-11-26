@@ -1,25 +1,42 @@
 import React from 'react'
 import { TextInput, Button, ImgInput, Title } from '@component/ui'
 import { Link } from 'react-router-dom'
+import { FormProvider } from 'react-hook-form'
+import { editProfileFormDto, editProfileSchema } from '@/model/schema'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
 }
 
 
 export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
+    const { form, submitHandler } =
+        useMyForm<editProfileFormDto>(
+            editProfileSchema,
+            () => { },
+            () => { }
+        )
+
     return (
-        <div className="w-1/2 h-full flex justify-center">
-            <div className="w-fit flex flex-col gap-3">
-                <Title>РЕДАКТОР</Title>
-                <div className="flex-1 w-[35vh] pt-2 flex flex-col justify-between pb-3">
-                    <div className="flex gap-2 flex-col">
-                        <TextInput placeHolder="никнейм" />
-                        <ImgInput title='фото профиля' className='pl-1' />
+        <FormProvider {...form}>
+
+            <form className="w-1/2 h-full flex justify-center" onSubmit={submitHandler}>
+                <div className="w-fit flex flex-col gap-3">
+                    <Title>РЕДАКТОР</Title>
+                    <div className="flex-1 w-[35vh] pt-2 flex flex-col justify-between pb-3">
+                        <div className="flex gap-2 flex-col">
+                            <TextInput
+                                placeHolder="никнейм"
+                                name='name'
+                                className='outline-bg-light'
+                            />
+                            <ImgInput title='фото профиля' className='pl-1 pt-5' />
+                        </div>
+                        <Link to={'/change-password'} className='pl-1 cursor-pointer'>Изменить пароль</Link>
                     </div>
-                    <Link to={'/change-password'} className='pl-1 cursor-pointer'>Изменить пароль</Link>
+                    <Button className="px-5 py-3" variant='acceess' children={<p>Редактировать</p>} />
                 </div>
-                <Button className="px-5 py-3" variant='acceess' children={<p>Редактировать</p>} />
-            </div>
-        </div>
+            </form>
+        </FormProvider>
     )
 }

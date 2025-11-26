@@ -1,19 +1,42 @@
 import React from 'react'
 import { Title, PasswordInput, Button } from '@component/ui'
+import { changePasswordFormDto, changePasswordSchema } from '@/model/schema'
+import { FormProvider } from 'react-hook-form'
+import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
 }
 
 
 export const ChangePasswordForm: React.FC<Props> = ({ }: Props) => {
+    const { form, submitHandler } =
+        useMyForm<changePasswordFormDto>(
+            changePasswordSchema,
+            () => { },
+            () => { }
+        )
+
     return (
-        <div className="bg-color-dark h-3/4 rounded-lg py-5 pb-8 px-12">
-            <Title className="pb-4">Изменение пароля</Title>
-            <div className="w-[35vh]">
-                <PasswordInput placeHolder="Введите пароль" />
-                <PasswordInput placeHolder="Повторите пароль" />
-                <Button variant="acceess" className="p-2 px-3" >Сохранить</Button>
-            </div>
-        </div>
+        <FormProvider {...form}>
+
+            <form className="h-full flex justify-center" onSubmit={submitHandler}>
+                <div className="w-fit flex flex-col gap-3">
+                    <Title className="pb-4">Изменение пароля</Title>
+                    <div className="w-[35vh] flex flex-col gap-5">
+                        <PasswordInput
+                            placeHolder="Введите пароль"
+                            name='password'
+                            xHint='right'
+                        />
+                        <PasswordInput
+                            placeHolder="Повторите пароль"
+                            name='confirmPassword'
+                            xHint='right'
+                        />
+                        <Button variant="acceess" className="w-full py-3" >Сохранить</Button>
+                    </div>
+                </div>
+            </form>
+        </FormProvider>
     )
 }

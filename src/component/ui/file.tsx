@@ -3,13 +3,14 @@ import { cn } from '@lib/function'
 
 interface Props {
     className?: string
+    link: string
 }
 
 
-export const File: React.FC<Props> = ({ className }: Props) => {
+export const File: React.FC<Props> = ({ className, link }: Props) => {
     return (
-        <div className={cn(className, 'py-2 rounded-sm')}>
-            <p className='underline cursor-pointer fit-content'>zxczxc.php</p>
-        </div>
+        <a className={cn(className, 'py-2 rounded-sm')} target='_blank' href={link}>
+            <p className='underline cursor-pointer fit-content'>{link}</p>
+        </a>
     )
 }

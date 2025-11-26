@@ -2,55 +2,62 @@ import React from 'react'
 import { cn } from '@lib/function'
 import { Button } from '@component/ui'
 import { SwithContentLiftSideGame } from './swith-content-tool-in-game'
-import { UnwrapArray } from './unwrap-array'
+import { SortableItem, DragHandle, UnwrapArray, UnwrapSortableArray } from './utils'
 import { useAppSelector } from '@lib/castom-hook/redux'
-import { entityDto, objectDto } from '@/model'
+import { mapsDataDto } from '@/model'
 import { InToolEntityItem, InToolObjectItem, InToolCharacterItem } from '@component/ui/item'
+import { characterDto } from '@/model/entities.dto'
 
 interface Props {
-    mapsData: { [key: string]: { entities: entityDto[]; objects: objectDto[]; } }
+    mapsData: mapsDataDto
     name: string
+    characters: characterDto[]
 }
 
 
-export const SharedVariant: React.FC<Props> = ({ mapsData, name }: Props) => {
-    const { game: gameView } = useAppSelector(state => state.viewContent)
+export const SharedVariant: React.FC<Props> = ({ mapsData, name, characters }: Props) => {
+    const { session: sessionView } = useAppSelector(state => state.viewContent)
 
     return (<>
         <SwithContentLiftSideGame />
         <div className="h-full w-full overflow-hidden">
             <div
                 className={
-                    cn("flex h-full w-[400%] gap-1 transition-07",
-                        (gameView == 'bestiary' && ''),
-                        (gameView == 'objects' && '-translate-x-1/4'),
-                        (gameView == 'characters' && '-translate-x-2/4'),
-                        (gameView == 'queue' && '-translate-x-3/4'),
+                    cn("flex h-full w-[400%] transition-700",
+                        (sessionView == 'queue' && ''),
+                        (sessionView == 'bestiary' && '-translate-x-1/4'),
+                        (sessionView == 'objects' && '-translate-x-2/4'),
+                        (sessionView == 'characters' && '-translate-x-3/4'),
                     )
                 }>
+                <UnwrapSortableArray
+                    renderItem={(item) => (
+                        <SortableItem item={item} id={item.id}>
+                            <DragHandle />
+                        </SortableItem>
+                    )}
+                    name={name}
+                    items={mapsData[name].queue}
+                    title='ОЧЕРЕДЬ'
+                />
                 <UnwrapArray
-                    component={InToolEntityItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolEntityItem}
+                    items={mapsData[name].entities}
                     title='БЕСТИАРИЙ'
                 />
                 <UnwrapArray
-                    component={InToolObjectItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolObjectItem}
+                    items={mapsData[name].entities}
                     title='ОБЬЕКТЫ'
                 />
                 <UnwrapArray
-                    component={InToolCharacterItem}
-                    array={mapsData[name].entities}
+                    renderItem={InToolCharacterItem}
+                    items={characters}
                     title='ПЕРСОНАЖИ'
-                />
-                <UnwrapArray
-                    component={InToolEntityItem}
-                    array={mapsData[name].entities}
-                    title='ОЧЕРЕДЬ'
                 />
             </div >
         </div>
-        {gameView == 'queue' &&
+        {sessionView == 'queue' &&
             <div className='flex justify-center px-4 bg-color-dark pt-5'>
                 <Button variant='acceess' className='w-full py-3'><p>следующий</p></Button>
             </div>}

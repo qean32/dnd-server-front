@@ -1,12 +1,13 @@
 import React from "react"
 import { useBoolean, useHandlerScroll } from "."
 
-export const useDinamickPaginationFake = <T,>(skip_: number = 0, search: string, array: T[]) => {
+export const useDinamickPaginationFake = <T,>(skip_: number = 0, search: string, items: T[]) => {
     const { refHandler, boolean } = useHandlerScroll(10)
 
     const [skip, setSkip] = React.useState<number | string>(skip_)
-    const [finaldata, setFinalData] = React.useState<any[]>(array)
-    const { boolean: loading, on, off } = useBoolean(true)
+    const { boolean: isEnd, on: onIsEnd } = useBoolean()
+    const [finaldata, setFinalData] = React.useState<any[]>(items)
+    const { boolean: loading, off } = useBoolean(true)
     // const RQData = useQuery([...RQkey, skip, search], () => fetch_(skip), { keepPreviousData: false, refetchOnWindowFocus: false })
 
     React.useEffect(() => {
@@ -15,25 +16,27 @@ export const useDinamickPaginationFake = <T,>(skip_: number = 0, search: string,
 
     React.useEffect(() => {
         if (
-            true
+            !isEnd
         ) {
-            off();
-            (search ?
+            if (search) {
                 setFinalData((prev: T[]) => [...prev, ...prev])
-                :
+            } else {
                 setFinalData((prev: T[]) => [...prev, ...prev])
-            )
+                if (finaldata.length > 40) {
+                    onIsEnd()
+                }
+            }
         }
     }, [skip])
 
     React.useEffect(() => {
         if (boolean) {
-            on()
+            off()
             setTimeout(() =>
                 setSkip((prev) => Number(prev) + 4)
                 , 600)
         }
     }, [boolean])
 
-    return { skip, finaldata, refHandler, setFinalData, loading }
+    return { skip, finaldata, refHandler, setFinalData, loading, isEnd }
 }

@@ -1,3 +1,3 @@
 export interface tokenStorageDto {
-    access: string
+    token: string
 }

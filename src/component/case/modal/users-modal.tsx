@@ -1,9 +1,10 @@
 import React from 'react'
-import { stopPropagation } from '@/lib/function'
+import { getHTMLData, stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
-import { Ava, ModalCross } from '@component/ui'
+import { ModalCross, NoFindData } from '@component/ui'
 import { useAppDispatch } from '@/lib/castom-hook/redux'
 import { swapAddCharacterInGamePath } from '@/store/add-character-in-game-path-store'
+import { UserInModal } from '@/component/ui/item'
 
 interface Props {
     view: boolean
@@ -16,7 +17,7 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
-        dispath(swapAddCharacterInGamePath({ href: JSON.parse(e.target.getAttribute('data')).id }))
+        dispath(swapAddCharacterInGamePath({ href: getHTMLData(e, 'data', true).id }))
     }
     return (
         <Modal
@@ -34,15 +35,10 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
                     <p className='pl-5 pb-5'>Добавить персонажа игрока</p>
                     {[1, 2, 2, 2, 2].map(() => {
                         return (
-                            <div
-                                className="flex px-4 py-2 gap-5 bg-color-dark-hover transition-03 bg-color cursor-pointer child-no-event"
-                                // @ts-ignore
-                                data={JSON.stringify({ id: 1 })}>
-                                <Ava path='' className='bg-color-darkness' size='ava-md' />
-                                <p>Zxccursed</p>
-                            </div>
+                            <UserInModal ava='' id={1} email='' name='' />
                         )
                     })}
+                    <NoFindData title='В компании нет игроков!' view={!true} className='pt-10' />
                 </div>
             </div>
         </Modal >

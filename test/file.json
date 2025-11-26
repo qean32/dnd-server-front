@@ -2,10 +2,10 @@
     "currentMap": {
         "id": 1,
         "name": "main",
-        "path": "/img/bg-f.jpg",
+        "path": "/img/map.jpg",
         "size": {
-            "y": 500,
-            "x": 500
+            "y": 1200,
+            "x": 1500
         }
     },
     "id": "1",
@@ -21,14 +21,33 @@
             }
         }
     ],
+    "characters": [
+        {
+            "id": 11123123423431,
+            "discription": "",
+            "name": "zxccursed1",
+            "user": {
+                "id": 1,
+                "name": "zxccursed-prime"
+            },
+            "path": "/img/carousel-item-1.jpg",
+            "position": {
+                "x": 1110,
+                "y": 495
+            },
+            "status": "dead",
+            "view": true,
+            "size": 70
+        }
+    ],
     "mapsData": {
         "main": {
             "entities": [
                 {
                     "id": 111,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed1",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -40,8 +59,8 @@
                 {
                     "id": 11,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed2",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -53,8 +72,8 @@
                 {
                     "id": 112,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed3",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -66,8 +85,8 @@
                 {
                     "id": 1112,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed4",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -79,8 +98,8 @@
                 {
                     "id": 2111,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed5",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -92,8 +111,8 @@
                 {
                     "id": 1311,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed6",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -105,8 +124,8 @@
                 {
                     "id": 1141,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed7",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -118,8 +137,8 @@
                 {
                     "id": 1132311,
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed8",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 495
@@ -131,8 +150,8 @@
                 {
                     "id": "14354234233451",
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed9",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 963,
                         "y": 334
@@ -144,8 +163,8 @@
                 {
                     "id": "1312342341",
                     "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "name": "zxccursed20",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1028,
                         "y": 328
@@ -158,7 +177,7 @@
                     "id": "1234234212",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 905,
                         "y": 318
@@ -171,7 +190,7 @@
                     "id": "1231432111",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 823,
                         "y": 382
@@ -184,7 +203,7 @@
                     "id": "113453311",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 822,
                         "y": 450
@@ -197,7 +216,7 @@
                     "id": "13545123123112",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1111,
                         "y": 371
@@ -210,7 +229,7 @@
                     "id": "1153453441",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 913,
                         "y": 541
@@ -223,7 +242,7 @@
                     "id": "1334534511",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 999,
                         "y": 539
@@ -236,7 +255,7 @@
                     "id": "2111534534",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1059,
                         "y": 523
@@ -249,7 +268,7 @@
                     "id": "13545112",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1110,
                         "y": 440
@@ -262,7 +281,7 @@
                     "id": "11345345",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 964,
                         "y": 540
@@ -275,7 +294,7 @@
                     "id": "14353451",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 917,
                         "y": 426
@@ -288,7 +307,7 @@
                     "id": "11345351",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1004,
                         "y": 427
@@ -301,7 +320,7 @@
                     "id": "142342342141",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1096.380465967665,
                         "y": 329.8641017935148
@@ -314,7 +333,7 @@
                     "id": "11341231235345",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 846.2005039779903,
                         "y": 487.20050397798946
@@ -327,7 +346,7 @@
                     "id": "14234234112",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 877.7230412954086,
                         "y": 530.2769587045912
@@ -340,7 +359,7 @@
                     "id": "1134234232311",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 1078,
                         "y": 282
@@ -353,7 +372,7 @@
                     "id": "42342342311",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 989,
                         "y": 325
@@ -366,7 +385,7 @@
                     "id": "11345423423351",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 856,
                         "y": 334
@@ -379,7 +398,7 @@
                     "id": "24234234111",
                     "discription": "",
                     "name": "zxccursed",
-                    "path": "/img/dnd1.jpg",
+                    "path": "/img/carousel-item-1.jpg",
                     "position": {
                         "x": 857.5015891593548,
                         "y": 276.5015891593543
@@ -387,6 +406,61 @@
                     "status": "dead",
                     "view": true,
                     "size": 70
+                }
+            ],
+            "objects": [],
+            "queue": [
+                {
+                    "id": 111,
+                    "name": "zxccursed1",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 11,
+                    "name": "zxccursed2",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 112,
+                    "name": "zxccursed3",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 1112,
+                    "name": "zxccursed4",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 2111,
+                    "name": "zxccursed5",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 1311,
+                    "name": "zxccursed6",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 1141,
+                    "name": "zxccursed7",
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
+                },
+                {
+                    "id": 11123123423431,
+                    "name": "zxccursed1",
+                    "user": {
+                        "id": 1,
+                        "name": "zxccursed-prime"
+                    },
+                    "path": "/img/carousel-item-1.jpg",
+                    "status": "dead"
                 }
             ]
         }

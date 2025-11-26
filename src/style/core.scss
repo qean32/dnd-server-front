@@ -6,9 +6,17 @@
 @use './castom/toast.scss';
 @use './castom/range-slider.scss';
 @use './castom/link.scss';
+@use './castom/loader.scss';
 @use './castom/adaptive.scss';
+@use './castom/date-picker.scss';
 
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Oswald:wght@200..700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=WDXL+Lubrifont+JP+N&display=swap');
+@font-face {
+    font-family: 'DFTFONT';
+    src: "/font/static/Oswald-Medium.ttf"
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=TikTok+Sans:opsz,wght@12..36,300..900&family=WDXL+Lubrifont+JP+N&display=swap');
+
 
 *::-webkit-scrollbar {
     width: 0;
@@ -23,38 +31,26 @@
 }
 
 * {
-    font-family: "WDXL Lubrifont JP N", sans-serif;
-    letter-spacing: 1px;
+    font-family: "WDXL Lubrifont JP N", sans-serif, "DFTFONT";
+    letter-spacing: 0.7px;
     scroll-behavior: smooth;
     // outline: #E74343 1px solid;
 }
 
 body {
     background-color: $bg-color;
-    display: flex;
-    height: auto !important;
-    // background-image: url('/icon/bg-img.svg');
-    background-size: 3%;
-}
-
-.reverse {
-    transform: scaleX(-1);
-}
-
-.fill {
-    position: absolute;
-    inset: 0 0 0 0;
+    height: fit-content !important;
 }
 
 .child-fill-event {
     & * {
-        pointer-events: auto !important;
+        pointer-events: auto;
     }
 }
 
-.child-no-event {
+.child-no-fill-event {
     & * {
-        pointer-events: none !important;
+        pointer-events: none;
     }
 }
 
@@ -65,28 +61,43 @@ body {
 
 .icon-sm- {
     width: 16px;
-    height: 16px;
+    aspect-ratio: 1/1;
+}
+
+.icon-3xl {
+    width: 91px;
+    aspect-ratio: 1/1;
 }
 
 .icon-md {
     width: 30px;
-    height: 30px;
+    aspect-ratio: 1/1;
 }
 
 .icon-lg {
     width: 50px;
-    height: 50px;
+    aspect-ratio: 1/1;
 }
 
-.transition-07 {
+.icon-2xl {
+    width: 70px;
+    aspect-ratio: 1/1;
+}
+
+.icon-4xl {
+    width: 144px;
+    aspect-ratio: 1/1;
+}
+
+.transition-700 {
     transition: .7s;
 }
 
-.transition-03 {
+.transition-300 {
     transition: .3s;
 }
 
-.transition-20 {
+.transition-2000 {
     transition: 2s;
 }
 
