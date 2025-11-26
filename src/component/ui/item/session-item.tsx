@@ -12,7 +12,7 @@ export const SessionItem: React.FC<Props> = ({ id, name }: Props) => {
     const navigate = useNavigate()
 
     return (
-        <div onClick={() => navigate(`/session/${id}/${name}`)} className='cursor-pointer mount-opacity h-[100px] flex gap-4 p-4 py-3 bg-color-darkness-hover transition-03'>
+        <div onClick={() => navigate(`/session/${id}/${name}`)} className='cursor-pointer mount-opacity h-[100px] flex gap-4 p-4 py-3 bg-color-darkness-hover transition-300'>
             <div className="h-full w-[130px] bg-img bg-shadow rounded-sm" style={{ backgroundImage: `url(${'/img/carousel-item-1.jpg'})` }}></div>
             <p className='text-2xl'>{name}</p>
             <SessionItemMenu />

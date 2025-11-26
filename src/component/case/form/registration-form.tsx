@@ -7,7 +7,6 @@ import { useMyForm } from '@/lib/castom-hook';
 interface Props {
 }
 
-
 export const RegistrationForm: React.FC<Props> = ({ }: Props) => {
     const { form, submitHandler } =
         useMyForm<registrationFormDto>(
@@ -23,10 +22,26 @@ export const RegistrationForm: React.FC<Props> = ({ }: Props) => {
                 <div className="w-fit flex flex-col gap-3">
                     <Title>РЕГИСТРАЦИЯ</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">
-                        <TextInput placeHolder="никнейм" name='name' />
-                        <TextInput placeHolder="почта" name='email' />
-                        <PasswordInput placeHolder="пароль" name='password' />
-                        <PasswordInput placeHolder="повторите пароль" name='confirmPassword' />
+                        <TextInput
+                            className='outline-bg-light'
+                            placeHolder="никнейм"
+                            name='name'
+                        />
+                        <TextInput
+                            className='outline-bg-light'
+                            placeHolder="почта"
+                            name='email'
+                        />
+                        <PasswordInput
+                            className='outline-bg-light'
+                            placeHolder="пароль"
+                            name='password'
+                        />
+                        <PasswordInput
+                            className='outline-bg-light'
+                            placeHolder="повторите пароль"
+                            name='confirmPassword'
+                        />
                         <Checkbox fn={() => { }} title='мне больше 18 лет и я согласен с условиями конфиденциальности' value />
                     </div>
                     <Button variant='acceess' className="px-5 py-3" children={<p>Регистрация</p>} />

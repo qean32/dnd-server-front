@@ -1,14 +1,14 @@
 import React from 'react'
-import { P404 } from '../'
+import { ViewSession } from '../'
 
 interface Props {
     children: React.ReactNode
 }
 
 
-export const ProtectedRouteTechWork: React.FC<Props> = ({ children }: Props) => {
+export const ProtectedRouteSession: React.FC<Props> = ({ children }: Props) => {
     if (false) {
-        return <P404 />
+        return <ViewSession />
     }
 
     return (

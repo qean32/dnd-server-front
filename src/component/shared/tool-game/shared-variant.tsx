@@ -23,7 +23,7 @@ export const SharedVariant: React.FC<Props> = ({ mapsData, name, characters }: P
         <div className="h-full w-full overflow-hidden">
             <div
                 className={
-                    cn("flex h-full w-[400%] transition-07",
+                    cn("flex h-full w-[400%] transition-700",
                         (sessionView == 'queue' && ''),
                         (sessionView == 'bestiary' && '-translate-x-1/4'),
                         (sessionView == 'objects' && '-translate-x-2/4'),

@@ -48,7 +48,7 @@ export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', plac
     const textError = errors[name]?.message as string;
 
     return (
-        <div className={cn('relative', className)}>
+        <div className={cn('relative rounded-sm', className)}>
             {validate && textError &&
                 <HoverHint className='top-1/2 absolute -translate-y-1/2 right-2' text={textError} x={xHint} y={yHint} >
                     <DangerIcon />
@@ -64,7 +64,7 @@ interface PasswordInputProps {
     placeHolder: string
     name: string
     xHint?: xPositionHint,
-    yHint?: yPositionHint
+    yHint?: yPositionHint,
 }
 
 
@@ -74,7 +74,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHo
     const textError = errors[name]?.message as string;
 
     return (
-        <div className={cn('w-full relative', className)}>
+        <div className={cn('w-full relative rounded-sm', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} placeholder={placeHolder} {...register(name)} />
                 <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4 right-3' />
@@ -130,12 +130,12 @@ interface CheckboxProps {
 export const Checkbox: React.FC<CheckboxProps> = ({ title, className }: CheckboxProps) => {
     const { boolean, swap } = useBoolean()
     return (
-        <div onClick={swap} className={cn('cursor-pointer flex gap-3.5', className)} >
-            <p className='text-sm'>{title}</p>
+        <div onClick={swap} className={cn('cursor-pointer flex gap-2', className)} >
+            <p className='text-md'>{title}</p>
             <div className="flex justify-center flex-col relative icon-sm">
-                <input type='checkbox' className={cn('transition-03 absolute top-1.5 border-0 scale-95', (boolean && 'opacity-0'))} style={{ width: 'fit-content' }} />
+                <input type='checkbox' className={cn('transition-300 absolute top-1.5 border-0 scale-95', (boolean && 'opacity-0'))} style={{ width: 'fit-content' }} />
                 <img src='/icon/accept.svg' alt=''
-                    className={cn('transition-03 icon-sm absolute top-1', (!boolean && 'opacity-0'))}
+                    className={cn('transition-300 icon-sm absolute top-1', (!boolean && 'opacity-0'))}
                 />
             </div>
         </div>

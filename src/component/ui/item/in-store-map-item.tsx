@@ -16,10 +16,10 @@ export const InStoreMapItem: React.FC<mapDto> = ({
     }
     return (
         <div
-            className="flex gap-4 mount-opacity h-[12vh] m-1 p-2 cursor-pointer bg-color-dark-hover transition-03 rounded-sm hover-hide-img"
+            className="flex gap-4 mount-opacity h-[12vh] m-1 p-2 cursor-pointer bg-color-dark-hover transition-300 rounded-sm hover-hide-img"
             data={JSON.stringify({ name, path, isMap: true, size })}
         >
-            <div className="h-full w-1/2 bg-img bg-shadow transition-03 rounded-sm" style={{ backgroundImage: `url(${path})` }} onClick={clickHAndler}></div>
+            <div className="h-full w-1/2 bg-img bg-shadow transition-300 rounded-sm" style={{ backgroundImage: `url(${path})` }} onClick={clickHAndler}></div>
             <p className='pointer-events-none unwrap-text w-1/2 h-full text-nowrap overflow-hidden text-ellipsis rounded-sm'>{name}</p>
         </div>
     )

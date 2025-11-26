@@ -54,7 +54,7 @@ export function SortableItem({ children, id, item: { name, path } }: PropsWithCh
     return (
         <SortableItemContext.Provider value={context}>
             <div
-                className='flex items-center justify-between px-3 pr-3 py-4 bg-color-hover transition-03'
+                className='flex items-center justify-between px-3 pr-3 py-4 bg-color-hover transition-300'
                 style={{ cursor: 'move', 'position': 'relative', ...style }}
                 ref={setNodeRef}
             >

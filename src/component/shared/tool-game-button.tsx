@@ -4,7 +4,7 @@ import { Modal } from '@component/case/modal'
 import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
 import { toast } from '@lib/function'
 import { useLocation } from 'react-router-dom'
-import { host } from '@/export'
+import { host, slogan } from '@/export'
 import { AddObject, AddEntity } from '@/component/case/add-to-session'
 import { InStoreEntityItem, InStoreObjectItem } from '@component/ui/item/'
 import { entityDto, objectDto } from '@/model'
@@ -22,7 +22,7 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
         toast(dispath, "message", { text: 'Сохранено' }); console.log(session)
     }
     const forwardClick = React.useCallback(() => {
-        navigator.clipboard.writeText(`Играйте вместе с друзьями! \n${host}${pathname}`);
+        navigator.clipboard.writeText(`${slogan} \n${host}${pathname}`);
         toast(dispath, "message", { text: 'Ссылка скопирована' })
     }, [])
 

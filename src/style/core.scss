@@ -39,20 +39,7 @@
 
 body {
     background-color: $bg-color;
-    // display: flex;
     height: fit-content !important;
-    // background-image: url('/img/carousel-item-1.jpg');
-    background-position: center;
-    background-size: cover;
-}
-
-.reverse {
-    transform: scaleX(-1);
-}
-
-.fill {
-    position: absolute;
-    inset: 0 0 0 0;
 }
 
 .child-fill-event {
@@ -77,6 +64,11 @@ body {
     aspect-ratio: 1/1;
 }
 
+.icon-3xl {
+    width: 91px;
+    aspect-ratio: 1/1;
+}
+
 .icon-md {
     width: 30px;
     aspect-ratio: 1/1;
@@ -97,15 +89,15 @@ body {
     aspect-ratio: 1/1;
 }
 
-.transition-07 {
+.transition-700 {
     transition: .7s;
 }
 
-.transition-03 {
+.transition-300 {
     transition: .3s;
 }
 
-.transition-20 {
+.transition-2000 {
     transition: 2s;
 }
 

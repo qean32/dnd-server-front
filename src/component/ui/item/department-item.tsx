@@ -14,17 +14,17 @@ export const DepartmentItem: React.FC<Props> = ({ discription, name, path }: Pro
     return (
         <Link to={`/department/${name}`}>
             <div className="flex gap-10 border-b">
-                <div className="overflow-hidden w-full">
+                <div className="overflow-hidden w-full pl-2">
                     <p className="text-4xl">{name.toUpperCase()}</p>
                     <p className='text-md pt-2'>{discription}</p>
                     <div className='flex items-center gap-2 mt-2'>
                         <img src="/icon/news.svg" alt="" className='icon-sm-' />
                         <p>32</p>
                     </div>
-                    <PostItem likes={0} {...fakePost[0]} fixed />
+                    <PostItem likes={0} {...fakePost[0]} fixed className='pl-2 -translate-x-2' />
                 </div>
-                <div className='w-1/5 p-4 pt-0'>
-                    <img src={path} alt="" className='rounded-lg max-w-[180px] bg-shadow' />
+                <div className='w-1/6 pb-4 pt-0'>
+                    <img src={path} alt="" className='rounded-lg w-full bg-shadow' />
                 </div>
             </div>
         </Link>

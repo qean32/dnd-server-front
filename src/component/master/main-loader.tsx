@@ -16,9 +16,9 @@ export const MainLoader: React.FC<Props> = ({ }: Props) => {
         setTimeout(off, 2000)
     }, [])
     return (
-        <div className={cn("fixed flex-col gap-5 inset-0 bg-color-darkness flex justify-center items-center transition-03", (!boolean && 'pointer-events-none opacity-0'))} style={{ zIndex: '60' }}>
+        <div className={cn("fixed flex-col gap-7 inset-0 bg-color-darkness flex justify-center items-center transition-300", (!boolean && 'pointer-events-none opacity-0'))} style={{ zIndex: '60' }}>
             <Logo size='icon-2xl' />
-            <p className='text-sm'>
+            <p className='text-md max-w-[400px] text-center'>
                 {ref.current ?? "Удачи!"}
             </p>
         </div>

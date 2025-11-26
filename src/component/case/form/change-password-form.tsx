@@ -19,12 +19,20 @@ export const ChangePasswordForm: React.FC<Props> = ({ }: Props) => {
     return (
         <FormProvider {...form}>
 
-            <form className="w-1/2 h-full flex justify-center" onSubmit={submitHandler}>
+            <form className="h-full flex justify-center" onSubmit={submitHandler}>
                 <div className="w-fit flex flex-col gap-3">
                     <Title className="pb-4">Изменение пароля</Title>
                     <div className="w-[35vh] flex flex-col gap-5">
-                        <PasswordInput placeHolder="Введите пароль" name='password' />
-                        <PasswordInput placeHolder="Повторите пароль" name='confirmPassword' />
+                        <PasswordInput
+                            placeHolder="Введите пароль"
+                            name='password'
+                            xHint='right'
+                        />
+                        <PasswordInput
+                            placeHolder="Повторите пароль"
+                            name='confirmPassword'
+                            xHint='right'
+                        />
                         <Button variant="acceess" className="w-full py-3" >Сохранить</Button>
                     </div>
                 </div>

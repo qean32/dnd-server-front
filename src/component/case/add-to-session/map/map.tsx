@@ -16,7 +16,7 @@ export const AddMap: React.FC<Props> = ({ swap }: Props) => {
     return (
         <div className="w-[25%] h-full flex flex-col json-add relative">
             <div className="w-full overflow-hidden h-full">
-                <div className={cn("w-[200%] flex h-full transition-03", (part.boolean && "-translate-x-1/2"))}>
+                <div className={cn("w-[200%] flex h-full transition-300", (part.boolean && "-translate-x-1/2"))}>
                     <AddFromForm part={part}>
                         <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
                     </AddFromForm>

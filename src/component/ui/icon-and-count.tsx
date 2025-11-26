@@ -25,7 +25,7 @@ export const IconAndCount: React.FC<Props> = ({ className, iconAction, icon, cou
         swap()
     }
     return (
-        <div className={cn('overflow-hidden py-5 flex gap-2 h-[30px] bg-color-light-hover transition-03 px-2 cursor-pointer items-center rounded-2xl', className)} onClick={clickHandler}>
+        <div className={cn('overflow-hidden py-5 flex gap-2 h-[30px] bg-color-light-hover transition-300 px-2 cursor-pointer items-center rounded-2xl', className)} onClick={clickHandler}>
             <img src={boolean ? iconAction : icon} className='icon-sm-' alt="" />
             <div>
                 <div className='flex'>

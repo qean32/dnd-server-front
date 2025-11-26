@@ -1,6 +1,4 @@
 import { ResetPasswordForm } from "@component/case/form"
-import { Page } from "@component/master/h-order-component"
-import { AuthBackground } from "@component/ui"
 import { title } from "@/export"
 import { usePage } from "@lib/castom-hook"
 
@@ -8,13 +6,13 @@ export const ResetPassword = () => {
     const { } = usePage(title.editProfile)
 
     return (
-        <Page className="pt-10" size="w-[50%]">
-            <div className="w-full flex justify-center h-[40vh]">
-                <div className="bg-color-dark rounded-lg w-full flex relative py-15">
-                    <AuthBackground text=" " />
+        <main className="flex justify-center items-center w-full h-[90vh] bg-icons">
+
+            <div className="w-fit h-[40vh] -translate-y-1/3">
+                <div className="px-10 bg-color rounded-lg py-10 pt-7 outline-bg-light">
                     <ResetPasswordForm />
                 </div>
             </div>
-        </Page>
+        </main>
     )
 }

@@ -8,7 +8,11 @@ interface Props {
 }
 
 
-export const Page: React.FC<Props> = ({ children, className, size = 'w-[60%]' }: Props) => {
+export const Page: React.FC<Props> = ({
+    children,
+    className,
+    size = 'w-[60%]'
+}: Props) => {
     return (
         <main className={cn("w-full flex justify-center items-start", className)}>
             <div className={cn("h-full bg-color py-4 px-8 box-content", size)}>

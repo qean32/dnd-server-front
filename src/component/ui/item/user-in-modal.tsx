@@ -9,7 +9,7 @@ interface Props extends userDto {
 export const UserInModal: React.FC<Props> = ({ ava, name, id }: Props) => {
     return (
         <div
-            className="flex px-4 py-2 gap-5 bg-color-dark-hover items-center transition-03 bg-color cursor-pointer child-no-fill-event"
+            className="flex px-4 py-2 gap-5 bg-color-dark-hover items-center transition-300 bg-color cursor-pointer child-no-fill-event"
             // @ts-ignore
             data={JSON.stringify({ id })}>
             <Ava path={ava ?? ''} className='bg-color-darkness' size='ava-md' />

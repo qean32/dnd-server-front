@@ -1,8 +1,8 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import * as pages from './pages'
-import { RefreshToken, ToastArea } from "./component/master"
+import { MainLoader, RefreshToken, ToastArea } from "./component/master"
 import { Header, Navigate } from "./component/shared"
-import { ProtectedRouteTechWork } from "./pages/protected-route"
+import { ProtectedRouteSession, ProtectedRouteTechWork } from "./pages/protected-route"
 
 export const Router = () => {
     return (
@@ -14,7 +14,12 @@ export const Router = () => {
             <ProtectedRouteTechWork>
 
                 <Routes>
-                    <Route element={<pages.Session />} path="/session/:id/:name" />
+                    <Route element={
+                        <ProtectedRouteSession>
+                            <MainLoader />
+                            <pages.Session />
+                        </ProtectedRouteSession>
+                    } path="/session/:id/:name" />
                     <Route element={<pages.Profile />} path="/profile/:id/:name" />
                     <Route element={<pages.Main />} path="/" />
                     <Route element={<pages.CreatePost />} path="/create-post" />

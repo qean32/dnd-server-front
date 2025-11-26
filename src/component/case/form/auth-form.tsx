@@ -8,7 +8,6 @@ import { useMyForm } from '@/lib/castom-hook'
 interface Props {
 }
 
-
 export const AuthForm: React.FC<Props> = ({ }: Props) => {
     const { form, submitHandler } =
         useMyForm<authFormDto>(
@@ -24,9 +23,18 @@ export const AuthForm: React.FC<Props> = ({ }: Props) => {
                 <div className="w-fit flex flex-col gap-3">
                     <Title>ВХОД</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col gap-5">
-                        <TextInput placeHolder="никнейм или почта" name='nameOrEmail' />
-                        <PasswordInput placeHolder="пароль" name='password' xHint='right' />
-                        <Link className='text-sm' to={'/reset-password'}>востановить пароль</Link>
+                        <TextInput
+                            className='outline-bg-light'
+                            placeHolder="никнейм или почта"
+                            name='nameOrEmail'
+                        />
+                        <PasswordInput
+                            placeHolder="пароль"
+                            name='password'
+                            xHint='right'
+                            className='outline-bg-light'
+                        />
+                        <Link to={'/reset-password'} className='pl-1 cursor-pointer'>Востановить пароль</Link>
                     </div>
                     <Button className="px-5 py-3" variant='acceess' children={<p>Вход</p>} />
                 </div>

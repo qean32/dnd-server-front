@@ -25,7 +25,11 @@ export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
                     <Title>РЕДАКТОР</Title>
                     <div className="flex-1 w-[35vh] pt-2 flex flex-col justify-between pb-3">
                         <div className="flex gap-2 flex-col">
-                            <TextInput placeHolder="никнейм" name='name' />
+                            <TextInput
+                                placeHolder="никнейм"
+                                name='name'
+                                className='outline-bg-light'
+                            />
                             <ImgInput title='фото профиля' className='pl-1 pt-5' />
                         </div>
                         <Link to={'/change-password'} className='pl-1 cursor-pointer'>Изменить пароль</Link>
