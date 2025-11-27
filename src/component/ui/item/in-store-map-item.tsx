@@ -12,7 +12,7 @@ export const InStoreMapItem: React.FC<mapDto> = ({
     const dispath = useAppDispatch()
 
     const clickHAndler = () => {
-        dispath(swapViewImg({ href: path }))
+        dispath(swapViewImg({ path }))
     }
     return (
         <div

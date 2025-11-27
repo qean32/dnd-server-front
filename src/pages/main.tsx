@@ -14,7 +14,7 @@ export const Main = () => {
             <Carousel />
             <MainBanner />
             <div className="w-full flex justify-center mt-10" ref={refHandler}>
-                <div className={cn("w-8/12 py-10 transition-2000", (boolean ? '' : '-translate-x-10 opacity-20'))}>
+                <div className={cn("w-8/12 py-10 transition-700", (boolean ? '' : '-translate-x-10 opacity-20'))}>
                     <p className="text-7xl">ПОЧЕМУ МЫ?</p>
                     <ul className="text-2xl list-disc list-inside">
                         <li>Лучшие сервера</li>
@@ -26,13 +26,13 @@ export const Main = () => {
             </div>
 
             <div className="w-full flex justify-center" ref={refHandler_}>
-                <div className={cn("w-8/12 py-10 transition-2000 flex items-end flex-col", (boolean_ ? '' : 'translate-x-10 opacity-20'))}>
+                <div className={cn("w-8/12 py-10 transition-700 flex items-end flex-col", (boolean_ ? '' : 'translate-x-10 opacity-20'))}>
                     <p className="text-7xl">ПАРТИЯ МЕЧТЫ</p>
                 </div>
             </div>
 
             <div className="w-full flex justify-center" ref={refHandler__}>
-                <div className={cn("w-8/12 py-10 transition-2000", (boolean__ ? '' : 'translate-y-10 opacity-20'))}>
+                <div className={cn("w-8/12 py-10 transition-700", (boolean__ ? '' : 'translate-y-10 opacity-20'))}>
                     <p className="text-7xl">ЧТО ТАКОЕ <span className="text-red-800">D&D</span> ?</p>
                     <p className="text-2xl pt-2">Dungeons & Dragons (D&D, DnD; Подземелья и драконы) — настольная ролевая игра в жанре фэнтези.</p>
                     <p className="text-md">

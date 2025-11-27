@@ -26,12 +26,12 @@ export const Session = () => {
 
 const Modal: React.FC = () => {
     const dispath = useAppDispatch()
-    const { href } = useAppSelector(state => state.addCharacterInGame)
-    const { href: hrefImg } = useAppSelector(state => state.viewImg)
+    const { path } = useAppSelector(state => state.addCharacterInGame)
+    const { path: pathImg } = useAppSelector(state => state.viewImg)
     return (
         <>
-            <AddCharacterInGame swap={() => dispath(swapAddCharacterInGamePath({ href: '' }))} view={!!href} />
-            <ViewImg swap={() => dispath(swapViewImg({ href: '' }))} view={!!hrefImg} />
+            <AddCharacterInGame swap={() => dispath(swapAddCharacterInGamePath({ path: '' }))} view={!!path} />
+            <ViewImg swap={() => dispath(swapViewImg({ path: '' }))} view={!!pathImg} />
         </>
     )
 }

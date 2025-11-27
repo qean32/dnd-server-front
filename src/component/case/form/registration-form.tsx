@@ -34,11 +34,13 @@ export const RegistrationForm: React.FC<Props> = ({ }: Props) => {
                         />
                         <PasswordInput
                             className='outline-bg-light'
+                            xHint='right'
                             placeHolder="пароль"
                             name='password'
                         />
                         <PasswordInput
                             className='outline-bg-light'
+                            xHint='right'
                             placeHolder="повторите пароль"
                             name='confirmPassword'
                         />

@@ -11,7 +11,12 @@ interface Props {
 }
 
 
-export const DepartmentItem: React.FC<Props> = ({ discription, name, path, count }: Props) => {
+export const DepartmentItem: React.FC<Props> = ({
+    discription,
+    name,
+    path,
+    count
+}: Props) => {
     return (
         <Link to={`/department/${name}`}>
             <div className="flex gap-10 border-b">

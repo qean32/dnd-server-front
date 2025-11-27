@@ -1,15 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
-type stateDto = { href: string }
+type stateDto = { path: string }
 
-const initialState: stateDto = { href: '' }
+const initialState: stateDto = { path: '' }
 
 const addCharacterInGamePathSlice = createSlice({
     name: 'add-character-in-game',
     initialState,
     reducers: {
-        swapAddCharacterInGamePath(state: stateDto, { payload: { href } }: PayloadAction<{ href: string }>) {
-            state.href = href
+        swapAddCharacterInGamePath(state: stateDto, { payload: { path } }: PayloadAction<{ path: string }>) {
+            state.path = path
         },
     },
 })

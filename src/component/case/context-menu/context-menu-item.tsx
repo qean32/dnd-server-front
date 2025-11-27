@@ -8,7 +8,11 @@ interface Props {
 }
 
 
-export const ContextMenuItem: React.FC<Props> = ({ className, children, fn }: Props) => {
+export const ContextMenuItem: React.FC<Props> = ({
+    children,
+    className,
+    fn
+}: Props) => {
     return (
         <p
             onClick={fn}

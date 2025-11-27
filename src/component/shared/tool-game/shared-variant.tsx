@@ -15,7 +15,11 @@ interface Props {
 }
 
 
-export const SharedVariant: React.FC<Props> = ({ mapsData, name, characters }: Props) => {
+export const SharedVariant: React.FC<Props> = ({
+    mapsData,
+    name,
+    characters
+}: Props) => {
     const { session: sessionView } = useAppSelector(state => state.viewContent)
 
     return (<>

@@ -7,7 +7,11 @@ interface Props {
 }
 
 
-export const UnwrapArray: React.FC<Props> = ({ items, title, renderItem }: Props) => {
+export const UnwrapArray: React.FC<Props> = ({
+    items,
+    title,
+    renderItem
+}: Props) => {
     return (
         <div className='w-1/4'>
             <p className='pl-3 pb-2'>{title}</p>

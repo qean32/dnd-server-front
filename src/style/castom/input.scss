@@ -207,7 +207,7 @@ label {
 .checkbox-pop:checked+label span {
     &:before {
         animation: pop .4s ease;
-        z-index: 100;
+        z-index: 10;
         background: $border-color;
     }
 }

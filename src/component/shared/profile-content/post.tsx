@@ -36,7 +36,7 @@ export const Post: React.FC<Props> = ({ view }: Props) => {
 
             <ViewAuthor>
                 <div className="px-4">
-                    <Link to={'/create-post'}><PlusButton className='h-[100px] w-full my-2' iconSize='icon-md' /></Link>
+                    <Link to={'/create-post'}><PlusButton className='h-[100px] mt-1' iconSize='icon-md' /></Link>
                 </div>
             </ViewAuthor>
         </div>

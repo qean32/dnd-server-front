@@ -17,7 +17,7 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
-        dispath(swapAddCharacterInGamePath({ href: getHTMLData(e, 'data', true).id }))
+        dispath(swapAddCharacterInGamePath({ path: getHTMLData(e, 'data', true).id }))
     }
     return (
         <Modal

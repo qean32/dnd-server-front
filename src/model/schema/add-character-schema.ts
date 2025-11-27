@@ -1,7 +1,7 @@
 import z from "zod";
 
 export const addCharacterSchema = z.object({
-    link: z
+    path: z
         .string()
         .regex(
             /^[A-Za-z0-9]+$/,
@@ -10,5 +10,5 @@ export const addCharacterSchema = z.object({
 });
 
 export type addCharacterDto = {
-    link: string
+    path: string
 }

@@ -7,7 +7,10 @@ interface Props {
 }
 
 
-export const TextInfo: React.FC<Props> = ({ className, title }: Props) => {
+export const TextInfo: React.FC<Props> = ({
+    className,
+    title
+}: Props) => {
     return (
         <div className={cn("pt-5 pb-3", className)}>
             <p className="text-5xl">D&D Belive {title}</p>

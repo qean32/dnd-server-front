@@ -3,17 +3,21 @@ import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { ModalCross } from '@component/ui'
 import { FilterAddSomething, GroupTokenInModal } from '@component/shared'
-import { propsComponent } from '@/model'
 
 interface Props {
     view: boolean
     swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
     renderItem(item: any): React.ReactNode
-    accept: propsComponent
+    accept: any
 }
 
 
-export const AddSomething: React.FC<Props> = ({ view, swap, renderItem, accept: Accept }: Props) => {
+export const AddSomething: React.FC<Props> = ({
+    view,
+    swap,
+    renderItem,
+    accept: Accept
+}: Props) => {
     return (
         <Modal
             swap={swap}

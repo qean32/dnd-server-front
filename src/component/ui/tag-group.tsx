@@ -8,7 +8,10 @@ interface Props {
 }
 
 
-export const TagGroup: React.FC<Props> = ({ className, tags }: Props) => {
+export const TagGroup: React.FC<Props> = ({
+    className,
+    tags
+}: Props) => {
     return (
         <div className={cn('', className)}>
             {tags.split(',').map(item => {

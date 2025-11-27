@@ -29,13 +29,25 @@ export const AddFromForm: React.FC<Props> = ({ children, part }: Props) => {
                             name='path'
                             className='w-full flex justify-center'
                             iconSize='icon-lg'
-                            labelClass='p-0 w-1/2 aspect-square overflow-hidden rounded-full outline-bg-light cursor-pointer bg-color-dark' />
+                            labelClass='p-0 w-1/2 aspect-square overflow-hidden rounded-full outline-bg-light cursor-pointer bg-color-dark'
+                        />
                     </div>
                     <div className='px-5'>
-                        <TextInput placeHolder='Название' className='my-5' name='name' xHint='left' yHint='bottom' />
+                        <TextInput
+                            placeHolder='Название'
+                            className='my-5'
+                            name='name'
+                            xHint='left'
+                            yHint='bottom'
+                        />
+
                         <div className="flex justify-between text-sm">
                             <p>Инициатива</p>
-                            <TextInput className='w-[60px]' placeHolder='' name='initiative' />
+                            <TextInput
+                                className='w-[60px]'
+                                placeHolder=''
+                                name='initiative'
+                            />
                         </div>
                         <TextArea title='Описание' className='h-[160px] overflow-scroll bg-color-dark p-4 py-2 my-2 mb-4' name="discription" />
                     </div>

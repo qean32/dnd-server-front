@@ -5,7 +5,12 @@ interface Props extends characterDto {
 }
 
 
-export const CharacterItemInAdd: React.FC<Props> = ({ id, name, discription, path = '/img/entity.jpg' }: Props) => {
+export const CharacterItemInAdd: React.FC<Props> = ({
+    id,
+    name,
+    path = '/img/entity.jpg',
+    discription,
+}: Props) => {
     return (
         <div data={JSON.stringify({ id, name, discription, path })}
             className='prime-hover relative overflow-hidden rounded-sm running-line-parent h-[100px] cursor-pointer bg-color-dark-hover transition-300 bg-img hover:-translate-y-2'>

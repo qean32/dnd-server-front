@@ -66,7 +66,13 @@ interface PasswordInputProps {
 }
 
 
-export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder, name, xHint = 'left', yHint = 'center-y' }: PasswordInputProps) => {
+export const PasswordInput: React.FC<PasswordInputProps> = ({
+    className,
+    placeHolder,
+    name,
+    xHint = 'left',
+    yHint = 'center-y'
+}: PasswordInputProps) => {
     const view = useBoolean(false)
     const { register, formState: { errors } } = useFormContext()
     const textError = errors[name]?.message as string;
@@ -93,7 +99,10 @@ interface InputFileProps {
 }
 
 
-export const ImgInput: React.FC<InputFileProps> = ({ className, title }: InputFileProps) => {
+export const ImgInput: React.FC<InputFileProps> = ({
+    className,
+    title
+}: InputFileProps) => {
     const id = generateId().toString()
     const [src, setSrc] = React.useState<any>([]);
     const urls = src.map((file: any) => URL.createObjectURL(file));
@@ -146,7 +155,10 @@ interface FileProps {
 }
 
 
-export const FileInput: React.FC<FileProps> = ({ className, name }: FileProps) => {
+export const FileInput: React.FC<FileProps> = ({
+    className,
+    name
+}: FileProps) => {
     const id = generateId().toString()
     const { setValue } = useFormContext()
 

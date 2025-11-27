@@ -12,7 +12,13 @@ interface Props {
 }
 
 
-export const AccessAction: React.FC<Props> = ({ view, swap, fn, warning, warningButtonText }: Props) => {
+export const AccessAction: React.FC<Props> = ({
+    view,
+    swap,
+    fn,
+    warning,
+    warningButtonText
+}: Props) => {
 
     return (
         <Modal

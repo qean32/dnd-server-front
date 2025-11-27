@@ -6,7 +6,7 @@ import { Button, ModalCross } from '@component/ui'
 
 interface Props {
     view: boolean
-    swap: React.MouseEventHandler<HTMLDivElement>
+    swap: React.MouseEventHandler<HTMLButtonElement | HTMLDivElement>
 }
 
 
@@ -24,7 +24,7 @@ export const AddSession: React.FC<Props> = ({ view, swap }: Props) => {
                 <ModalCross fn={swap} />
                 <AddSessionForm>
                     <>
-                        <Button variant='ghost'><p>Отмена</p></Button>
+                        <Button variant='ghost' fn={swap}><p>Отмена</p></Button>
                         <Button variant='acceess' type='submit' ><p>Добавить</p></Button></>
                 </AddSessionForm>
             </div>

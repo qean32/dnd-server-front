@@ -8,7 +8,10 @@ interface Props {
 }
 
 
-export const ContextMenu: React.FC<Props> = ({ className, children }: Props) => {
+export const ContextMenu: React.FC<Props> = ({
+    className,
+    children
+}: Props) => {
     const { boolean, swap } = useBoolean()
 
     return (

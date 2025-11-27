@@ -15,7 +15,13 @@ interface Props {
 }
 
 
-export const Modal: React.FC<Props> = ({ className, children, view, animation: { close, open }, swap }: Props) => {
+export const Modal: React.FC<Props> = ({
+    className,
+    children,
+    view,
+    animation: { close, open },
+    swap
+}: Props) => {
     const dispay = useMount(view)
     if (!dispay) {
         return null

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button } from '@component/ui'
+import { Button, UnwrapFiles } from '@component/ui'
 import { ViewAuthor } from '@component/master/h-order-component'
 import { Modal } from '@component/case/modal'
 import { MainBlock, CommentBlock, PostInfo } from '.'
@@ -20,6 +20,25 @@ export const PostContent: React.FC<Props> = ({ }: Props) => {
                     <Button variant="reject" className="my-2">Удалить пост</Button></Modal.Root></ViewAuthor>
             <PostInfo {...fakeUser[0]} email='' />
             <MainBlock />
+            <UnwrapFiles
+                className='my-5'
+                
+                files={
+                    [
+                        {
+                            path: 'zxc.jpg'
+                        },
+                        {
+                            path: 'php.php'
+                        },
+                        {
+                            path: 'img.svg'
+                        },
+                        {
+                            path: 'zxc.html'
+                        },
+                    ]
+                } />
             <CommentBlock />
         </>
     )

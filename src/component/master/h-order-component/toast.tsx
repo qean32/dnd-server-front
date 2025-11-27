@@ -9,7 +9,11 @@ interface Props {
 }
 
 
-export const Toast: React.FC<Props> = ({ className, children, view }: Props) => {
+export const Toast: React.FC<Props> = ({
+    className,
+    children,
+    view
+}: Props) => {
     const display = useMount(view, 1000)
 
     if (!display) {

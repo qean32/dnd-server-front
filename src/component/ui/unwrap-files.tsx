@@ -5,15 +5,25 @@ import { File } from '@component/ui'
 
 interface Props {
     className?: string
-    files: fileDto[]
+    files: fileDto[],
+    imgView?: boolean
 }
 
 
-export const UnwrapFiles: React.FC<Props> = ({ className, files }: Props) => {
+export const UnwrapFiles: React.FC<Props> = ({
+    className,
+    files,
+    imgView = true
+}: Props) => {
+
     return (
         <div className={cn("flex flex-col gap-2", className)}>
             {!!files.length && files.map(item => {
-                return <File link={item.name} className="bg-color-dark py-4 px-5" />
+                return <File
+                    imgView={imgView}
+                    path={item.path}
+                    className="bg-color-dark py-4 px-5"
+                />
             })}
         </div>
     )

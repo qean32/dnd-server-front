@@ -10,7 +10,7 @@ export const MapItem: React.FC<Props> = ({ }: Props) => {
     const dispath = useAppDispatch()
 
     const clickHAndler = () => {
-        dispath(swapViewImg({ href: '/img/carousel-item-1.jpg' }))
+        dispath(swapViewImg({ path: '/img/carousel-item-1.jpg' }))
     }
     return (
         <div className="mount-opacity relative h-[9vh] cursor-pointer" onClick={clickHAndler}>
