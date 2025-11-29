@@ -3,7 +3,6 @@ import { ButtonInGroup, GroupButton } from '@component/ui'
 import { Modal } from '@component/case/modal'
 import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
 import { toast } from '@lib/function'
-import { useLocation } from 'react-router-dom'
 import { host, slogan } from '@/export'
 import { AddObject, AddEntity } from '@/component/case/add-to-session'
 import { InStoreEntityItem, InStoreObjectItem } from '@component/ui/item/'
@@ -15,14 +14,13 @@ interface Props {
 
 export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
     const dispath = useAppDispatch()
-    const { pathname } = useLocation()
     const { session } = useAppSelector(state => state.session)
     const saveGame = () => {
         localStorage.setItem("game-storage", JSON.stringify(session));
         toast(dispath, "message", { text: 'Сохранено' }); console.log(session)
     }
     const forwardClick = React.useCallback(() => {
-        navigator.clipboard.writeText(`${slogan} \n${host}${pathname}`);
+        navigator.clipboard.writeText(`${slogan} \n${host}${window.location.pathname.slice(1)}`);
         toast(dispath, "message", { text: 'Ссылка скопирована' })
     }, [])
 

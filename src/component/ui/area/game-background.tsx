@@ -16,8 +16,8 @@ export const GameBackground: React.FC<Props> = ({ }: Props) => {
         image={bgGameArea}
         // width={currentMap.siz/e.x}
         // height={currentMap.size.y}
-        y={((window.innerHeight / 2) - currentMap.size.y / 2) - 64 /* header height */}
-        x={(window.innerWidth / 2) - currentMap.size.x / 2}
+        y={0}
+        x={0}
         cornerRadius={[10, 10, 10, 10]}
     />;
 }

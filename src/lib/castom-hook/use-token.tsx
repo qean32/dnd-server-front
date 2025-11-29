@@ -26,10 +26,18 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     };
 
     const dragEndHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        dispath(changeSomethingEntity({ type: 'entities', payload: { id: e.currentTarget.attrs.id, position: { ...e.currentTarget._lastPos } } }))
+        dispath(changeSomethingEntity({
+            type: 'entities', payload: {
+                id: e.currentTarget.attrs.id,
+                position: {
+                    y: e.target.attrs.y,
+                    x: e.target.attrs.x,
+                }
+            }
+        }))
         rectRef.current.to({
-            y: 2000,
-            x: 100,
+            y: e.target.attrs.y,
+            x: e.target.attrs.x,
             duration: 0.7,
         })
     };
