@@ -1,7 +1,7 @@
 import React from "react";
 import useImage from "use-image";
 import { useBoolean } from "./use-boolean";
-import { changeSomethingEntity } from "@/store/session-store";
+import { changeEntity } from "@/store/session-store";
 import { useAppDispatch } from "./redux";
 
 export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
@@ -26,7 +26,7 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     };
 
     const dragEndHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        dispath(changeSomethingEntity({
+        dispath(changeEntity({
             type: 'entities', payload: {
                 id: e.currentTarget.attrs.id,
                 position: {

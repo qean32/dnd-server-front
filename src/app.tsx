@@ -26,7 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
 
 
 /**
- * add this in React -> declare namespace React
+ * push this in React -> declare namespace React
  * interface HTMLAttributes<T> extends DOMAttributes<T> {
  *   data?: string;
  *   value?: string;

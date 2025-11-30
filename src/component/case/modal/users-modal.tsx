@@ -3,8 +3,8 @@ import { getHTMLData, stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { ModalCross, NoFindData } from '@component/ui'
 import { useAppDispatch } from '@/lib/castom-hook/redux'
-import { swapAddCharacterInGamePath } from '@/store/add-character-in-game-path-store'
 import { UserInModal } from '@/component/ui/item'
+import { swapCharacterPush } from '@/store/view-content-store'
 
 interface Props {
     view: boolean
@@ -16,8 +16,7 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
     const dispath = useAppDispatch()
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        // @ts-ignore
-        dispath(swapAddCharacterInGamePath({ path: getHTMLData(e, 'data', true).id }))
+        dispath(swapCharacterPush(getHTMLData(e, 'data', true).id))
     }
     return (
         <Modal

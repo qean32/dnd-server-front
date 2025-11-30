@@ -20,7 +20,7 @@ export const Character: React.FC<{}> = ({ }: {}) => {
                     <LinkCharacterItem path='https://aternia.games/i/dnd/character_sheet/show/10399ffb-e071-4c6d-b7f2-3f4fcee3fab0' key={_} number={_ + 1} name='Клиган Клиган' />
                 )}
                 <ViewAuthor>
-                    <Modal.Root modal={Modal.AddCharacterInProfile}>
+                    <Modal.Root modal={Modal.PushCharacterInProfile}>
                         <PlusButton className='h-[100px]' iconSize='icon-sm' />
                     </Modal.Root>
                 </ViewAuthor>

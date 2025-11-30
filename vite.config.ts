@@ -13,8 +13,8 @@ export default defineConfig(({ mode }) => {
       tailwindcss()
     ],
     define: {
-      'process.env.SOME_KEY': JSON.stringify(env.SOME_KEY),
-      'process.env.SOME_KEY_': JSON.stringify(env.SOME_KEY + 'zxc')
+      'process.env.SERVER_HOST': JSON.stringify(env.SERVER_HOST),
+      'process.env.CLIENT_HOST': JSON.stringify(env.CLIENT_HOST)
     },
     resolve: {
       alias: {

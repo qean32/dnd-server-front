@@ -1,10 +1,9 @@
 import React from 'react'
 import { useBoolean } from '@/lib/castom-hook'
-import { propsComponent } from '@/model'
 
 interface Props {
     children: React.ReactNode
-    modal: propsComponent
+    modal: any
     props?: any
 }
 

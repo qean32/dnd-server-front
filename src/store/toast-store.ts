@@ -11,7 +11,7 @@ const toastSlice = createSlice({
     name: 'toast-store',
     initialState,
     reducers: {
-        addToast: (state: stateDto, { payload }: PayloadAction<toastDto>) => {
+        pushToast: (state: stateDto, { payload }: PayloadAction<toastDto>) => {
             state.toasts = [...state.toasts, { ...payload, view: true }]
         },
         removeToast: (state: stateDto, { payload }: PayloadAction<idDto>) => {
@@ -26,4 +26,4 @@ const toastSlice = createSlice({
 })
 
 export const toastReducer = toastSlice.reducer
-export const { addToast, removeToast } = toastSlice.actions
+export const { pushToast, removeToast } = toastSlice.actions

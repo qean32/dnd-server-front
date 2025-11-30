@@ -13,6 +13,6 @@ export type toastPayloadDto = {
 
 export type toastKeyDto =
     ''
-    | 'add-entity'
+    | 'push-entity'
     | 'event-message'
     | 'message'

@@ -3,8 +3,8 @@ import { ButtonInGroup, GroupButton } from '@component/ui'
 import { Modal } from '@component/case/modal'
 import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
 import { toast } from '@lib/function'
-import { host, slogan } from '@/export'
-import { AddObject, AddEntity } from '@/component/case/add-to-session'
+import { slogan } from '@/export'
+import { PushObject, PushEntity } from '@/component/case/push-to-session'
 import { InStoreEntityItem, InStoreObjectItem } from '@component/ui/item/'
 import { entityDto, objectDto } from '@/model'
 
@@ -20,7 +20,7 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
         toast(dispath, "message", { text: 'Сохранено' }); console.log(session)
     }
     const forwardClick = React.useCallback(() => {
-        navigator.clipboard.writeText(`${slogan} \n${host}${window.location.pathname.slice(1)}`);
+        navigator.clipboard.writeText(`${slogan} \n${process.env.CLIENT_HOST}${window.location.pathname.slice(1)}`);
         toast(dispath, "message", { text: 'Ссылка скопирована' })
     }, [])
 
@@ -40,9 +40,9 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
                     <ButtonInGroup children={<img className='icon-sm' src='/icon/grid.svg' />} />
                     <ButtonInGroup fn={forwardClick} children={<img className='icon-sm' src='/icon/forward.svg' />} />
                     <ButtonInGroup fn={saveGame} children={<img className='icon-sm' src='/icon/save.svg' />} />
-                    <Modal.Root modal={Modal.AddSomething} props={{ renderItem: (item: entityDto) => <InStoreEntityItem {...item} />, accept: AddEntity }}>
+                    <Modal.Root modal={Modal.PushSomething} props={{ renderItem: (item: entityDto) => <InStoreEntityItem {...item} />, accept: PushEntity }}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/dragon.svg' />} /></Modal.Root>
-                    <Modal.Root modal={Modal.AddSomething} props={{ renderItem: (item: objectDto) => <InStoreObjectItem {...item} />, accept: AddObject }}>
+                    <Modal.Root modal={Modal.PushSomething} props={{ renderItem: (item: objectDto) => <InStoreObjectItem {...item} />, accept: PushObject }}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/object.svg' />} /></Modal.Root>
                     <Modal.Root modal={Modal.ImgCarousel}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/img-carousel.svg' />} /></Modal.Root>

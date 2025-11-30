@@ -13,7 +13,7 @@ export const Session: React.FC<{}> = ({ }: {}) => {
             )}
             <NoFindData title="Пользователь не выкладывал статьи" className="min-h-[500px]" view={false} />
             <ViewAuthor>
-                <Modal.Root modal={Modal.AddSession}>
+                <Modal.Root modal={Modal.PushSession}>
                     <div className="px-4">
                         <PlusButton className='h-[85px] my-5 mb-2' iconSize='icon-sm' />
                     </div>

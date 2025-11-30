@@ -1,5 +1,5 @@
 import React from 'react'
-import { AddTagInForm, FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
+import { PushTagInForm, FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
 import { previewPost } from '@/lib/function'
 import { fileDto } from '@/model'
 import { FormProvider } from 'react-hook-form'
@@ -41,7 +41,7 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
                 />
 
                 <div className="py-5">
-                    <AddTagInForm
+                    <PushTagInForm
                         name='tags'
                     />
                 </div>

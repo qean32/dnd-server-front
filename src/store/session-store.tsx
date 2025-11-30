@@ -1,10 +1,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { sessionDto, mapDto } from "@/model";
+import { sessionDto, mapDto, idDto } from "@/model";
+import { characterDto, entityDto } from "@/model/entities.dto";
 
 const gameStorage = 'game-storage'
 const bestiaryStorage = 'bestiary-storage'
+type mapDataDto = 'entities' | 'objects'
 
 type stateDto = { session: sessionDto, bestiary: any[] }
+
+function swap(array: any[]) {
+    [array[0], array[array.length - 1]] = [array[array.length - 1], array[0]];
+    return array;
+}
 
 const initialState: stateDto = {
     session: {
@@ -19,23 +26,77 @@ const sessionSlice = createSlice({
     name: 'session-store',
     initialState,
     reducers: {
-        changeSomethingEntity: (state: stateDto, { payload: { payload, type } }: PayloadAction<{ type: 'entities' | 'objects', payload: any }>) => {
+        changeEntity: (state: stateDto, { payload: { payload, type } }: PayloadAction<{ type: mapDataDto, payload: any }>) => {
             state.session.mapsData[state.session.currentMap.name][type] = [
                 ...state.session.mapsData[state.session.currentMap.name][type].filter(item => item.id != payload.id),
                 { ...state.session.mapsData[state.session.currentMap.name][type].find(item => item.id == payload.id), ...payload }
             ]
         },
-        swapCurrentMap: (state: stateDto, { payload: { map } }: PayloadAction<{ map: mapDto }>) => {
-            state.session.currentMap = map
+        swapCurrentMap: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
+            state.session.currentMap =
+                state.session.maps.find(item => item.id == id)
+                ??
+                state.session.currentMap
         },
-        changeQueue: (state: stateDto, { payload: { queue, name } }: PayloadAction<{ queue: any[], name: string }>) => {
-            state.session.mapsData[name].queue = queue
+        changeQueue: (state: stateDto, { payload: { queue } }: PayloadAction<{ queue: any[] }>) => {
+            state.session.mapsData[state.session.currentMap.name].queue = queue
         },
-        addToBestiary: (state: stateDto, { payload: { newEntity } }: PayloadAction<any>) => {
+        nextQueue: (state: stateDto) => {
+            state.session.mapsData[state.session.currentMap.name].queue = swap(state.session.mapsData[state.session.currentMap.name].queue)
+        },
+        editBestiary: (state: stateDto, { payload: { id, newEntity } }: PayloadAction<{ id: number, newEntity: entityDto }>) => {
+            state.bestiary = [
+                ...state.bestiary.filter(item => item.id != id),
+                newEntity
+            ]
+        },
+        pushMap: (state: stateDto, { payload: { newMap } }: PayloadAction<{ newMap: mapDto }>) => {
+            state.session.maps = [
+                ...state.session.maps,
+                newMap
+            ]
+        },
+        pushCharacter: (state: stateDto, { payload: { newChar } }: PayloadAction<{ newChar: characterDto }>) => {
+            state.session.characters = [
+                ...state.session.characters,
+                newChar
+            ]
+        },
+        pushToBestiary: (state: stateDto, { payload: { newEntity } }: PayloadAction<any>) => {
             state.bestiary = [...state.bestiary, newEntity]
-        }
+        },
+        pushToSession: (state: stateDto, { payload: { newEntity, type } }: PayloadAction<{ newEntity: any, type: mapDataDto }>) => {
+            state.session.mapsData[state.session.currentMap.name][type] = [
+                ...state.session.mapsData[state.session.currentMap.name][type],
+                newEntity
+            ]
+        },
+        removeCharacter: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
+            state.session.characters = state.session.characters.filter(item => item.id != id)
+        },
+        removeEntity: (state: stateDto, { payload: { id, type } }: PayloadAction<{ id: number, type: mapDataDto }>) => {
+            // @ts-ignore
+            state.session.mapsData[state.session.currentMap.name][type]
+                = state.session.mapsData[state.session.currentMap.name][type].filter(item => item.id != id)
+        },
+        removeMap: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
+            state.session.maps = state.session.maps.filter(item => item.id != id)
+        },
     },
 })
 
 export const sessionReducer = sessionSlice.reducer
-export const { changeSomethingEntity, swapCurrentMap, changeQueue, addToBestiary } = sessionSlice.actions
+export const {
+    changeEntity,
+    swapCurrentMap,
+    changeQueue,
+    pushToBestiary,
+    pushToSession,
+    pushMap,
+    editBestiary,
+    removeEntity,
+    removeMap,
+    nextQueue,
+    pushCharacter,
+    removeCharacter
+} = sessionSlice.actions

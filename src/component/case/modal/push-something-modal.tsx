@@ -1,0 +1,42 @@
+import React from 'react'
+import { stopPropagation } from '@/lib/function'
+import { Modal } from '@component/master/h-order-component'
+import { ModalCross } from '@component/ui'
+import { FilterPushSomething, GroupTokenInModal } from '@component/shared'
+
+interface Props {
+    view: boolean
+    swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
+    renderItem(item: any): React.ReactNode
+    accept: any
+}
+
+
+export const PushSomething: React.FC<Props> = ({
+    view,
+    swap,
+    renderItem,
+    accept: Accept
+}: Props) => {
+    return (
+        <Modal
+            swap={swap}
+            view={view}
+            animation={{
+                open: 'modal-open',
+                close: 'modal-close'
+            }}
+        >
+            <div className="relative bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden" onClick={stopPropagation}>
+                <ModalCross fn={swap} />
+                <div className="w-9/12 h-full overflow-scroll relative">
+                    <FilterPushSomething />
+                    <GroupTokenInModal title='Базовый набор' renderItem={renderItem} />
+                    <GroupTokenInModal title='Набор Хелойвин' renderItem={renderItem} />
+                </div>
+                <Accept swap={swap}
+                />
+            </div>
+        </Modal>
+    )
+}

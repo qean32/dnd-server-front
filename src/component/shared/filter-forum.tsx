@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, DatePickerUI, AddTagInFilter } from '@component/ui'
+import { Button, DatePickerUI, PushTagInFilter } from '@component/ui'
 import { useNavigate } from 'react-router-dom'
 
 interface Props {
@@ -14,7 +14,7 @@ export const FilterForum: React.FC<Props> = ({ }: Props) => {
             <p className="text-2xl font-bold">ФИЛЬТРЫ</p>
             <DatePickerUI />
 
-            <AddTagInFilter
+            <PushTagInFilter
                 className="pt-5"
             />
             <div className='flex justify-between pt-15'>

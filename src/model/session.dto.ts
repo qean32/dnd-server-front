@@ -5,7 +5,7 @@ export interface sessionDto {
     id: string
     name: string
     currentMap: mapDto
-    host: userDto
+    DungeonMaster: userDto
     maps: mapDto[]
     characters: characterDto[]
     mapsData: mapsDataDto,

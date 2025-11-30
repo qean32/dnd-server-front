@@ -2,11 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type profileType = 'post' | 'session' | 'character'
 type sessionType = 'bestiary' | 'characters' | 'queue' | 'objects'
-type stateDto = { profile: profileType, session: sessionType }
+type pushCharType = string | null
+type stateDto = { profile: profileType, session: sessionType, user: pushCharType }
 
 const initialState: stateDto = {
     profile: 'post',
-    session: 'queue'
+    session: 'queue',
+    user: null
 }
 
 const viewContentSlice = createSlice({
@@ -19,8 +21,11 @@ const viewContentSlice = createSlice({
         swapSessionToolContent: (state: stateDto, { payload }: PayloadAction<sessionType>) => {
             state.session = payload
         },
+        swapCharacterPush: (state: stateDto, { payload }: PayloadAction<pushCharType>) => {
+            state.user = payload
+        }
     },
 })
 
 export const viewContentReducer = viewContentSlice.reducer
-export const { swapProfileContent, swapSessionToolContent } = viewContentSlice.actions
+export const { swapProfileContent, swapSessionToolContent, swapCharacterPush } = viewContentSlice.actions

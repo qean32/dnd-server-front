@@ -1,5 +1,3 @@
-export const serverHost = 'http://localhost:8000/'
-export const host = 'http://localhost:5173/'
 export { axiosInstance } from './service/instance'
 
 export const tokenStorage = 'token-storage'

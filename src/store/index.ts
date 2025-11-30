@@ -1,24 +1,18 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { useDispatch } from 'react-redux'
 import { toastReducer } from './toast-store'
-import { searchReducer } from './search-store'
 import { viewContentReducer } from './view-content-store'
-import { viewGridReducer } from './view-grid-store'
 import { sessionReducer } from './session-store'
 import { viewImgReducer } from './view-img-store'
-import { addCharacterInGameReducer } from './add-character-in-game-path-store'
-import { objectBeingAddedToGameReducer } from './object-being-added-to-game-store'
+import { objectBeingPushedToGameReducer } from './object-being-pushed-to-game-store'
 
 
 const rootReducer = combineReducers({
     toast: toastReducer,
     viewImg: viewImgReducer,
-    addCharacterInGame: addCharacterInGameReducer,
-    search: searchReducer,
     viewContent: viewContentReducer,
     session: sessionReducer,
-    viewGrid: viewGridReducer,
-    addedObject: objectBeingAddedToGameReducer,
+    pushedObject: objectBeingPushedToGameReducer,
 })
 
 export const store = configureStore({

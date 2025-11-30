@@ -2,7 +2,7 @@ import React from 'react'
 import { Title } from '@component/ui'
 import { cn, getHTMLData } from '@/lib/function'
 import { useAppDispatch } from '@/lib/castom-hook/redux'
-import { swapObjectBeingAddedToGame } from '@/store/object-being-added-to-game-store'
+import { swapObjectBeingPushedToGame } from '@/store/object-being-pushed-to-game-store'
 
 interface Props {
     title: string
@@ -16,7 +16,7 @@ export const GroupTokenInModal: React.FC<Props> = ({ title, renderItem }: Props)
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
         const object = getHTMLData(e, 'data', true)
         if (object) {
-            dispath(swapObjectBeingAddedToGame({ object }))
+            dispath(swapObjectBeingPushedToGame({ object }))
         }
     }
 
