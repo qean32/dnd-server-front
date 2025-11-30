@@ -11,6 +11,8 @@ import { usePage } from "@lib/castom-hook";
 
 export const Main = () => {
     const { } = usePage(title.main)
+    console.log(process.env);
+
 
     return (
         <main>
