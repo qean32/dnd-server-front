@@ -7,7 +7,7 @@ interface Props {
 }
 
 
-export const FilterPushSomething: React.FC<Props> = ({ className }: Props) => {
+export const FilterPushToSession: React.FC<Props> = ({ className }: Props) => {
     return (
         <div className={cn('pl-5 sticky top-0 bg-color py-6 pt-4 z-20', className)}>
             <p className='text-2xl pl-0.5 pb-2'>Фильтры</p>

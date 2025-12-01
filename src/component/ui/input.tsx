@@ -142,7 +142,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ title, className }: Checkbox
             <input hidden className="checkbox-pop" type="checkbox" id={id} />
             <label htmlFor={id} className='text-sm flex gap-5 text-justify'>
                 {title}
-                <span className='checkbox-pop-label-span pt-0.5'></span>
+                <span className='checkbox-pop-label-span pt-1'></span>
             </label>
         </div>
     );

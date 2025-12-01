@@ -1,29 +1,23 @@
-export const fakeUser = [
-    { "name": "XenonBladeXenonBlade", "id": 1, "ava": "https://i.pinimg.com/736x/0a/e2/36/0ae2368632a7bb66e25d49db5e700bff.jpg" },
-    { "name": "NeoSparkz XenonBlade", "id": 2, "ava": "https://i.pinimg.com/736x/59/8b/c7/598bc7553799c807d30f61d7c08cd011.jpg" },
-    { "name": "CypherGhost", "id": 3, "ava": "https://i.pinimg.com/1200x/03/68/17/0368175a962d9d47cc0e03e4ce051c69.jpg" },
-    { "name": "ViperPulse", "id": 4, "ava": "https://i.pinimg.com/originals/9a/f9/f1/9af9f10ecfe85c8435f19a085c1f23b6.jpg" },
-    { "name": "ApexNova", "id": 5, "ava": "https://i.pinimg.com/1200x/a2/15/81/a2158151d37997ddf9d9b40dbca71d35.jpg" },
-    { "name": "ShadowKnight99", "id": 6, "ava": "https://i.pinimg.com/736x/79/18/64/791864dc2f37c2da9e72572e9e5d491f.jpg" },
-    { "name": "SoulStormer", "id": 7, "ava": "https://i.pinimg.com/1200x/22/3e/a5/223ea5d407893d2d062eb976170cb476.jpg" },
-    { "name": "LunarStrike", "id": 8, "ava": "https://i.pinimg.com/736x/6a/69/29/6a69293f518dd0b2e668620a75dac4e5.jpg" },
-    { "name": "ZodiacBlaze", "id": 9, "ava": "https://i.pinimg.com/736x/2c/25/c7/2c25c7cecd9012648055b47cb0977e27.jpg" },
-    { "name": "FrostByte", "id": 10, "ava": "https://i.pinimg.com/736x/b6/70/3b/b6703bb50bece02cf26818dca318c4f2.jpg" },
-    { "name": "EchoRift", "id": 11, "ava": "https://i.pinimg.com/originals/22/33/44/2233441256783b547284548597256869.jpg" },
-    { "name": "HyperFlux", "id": 12, "ava": "https://i.pinimg.com/originals/55/66/77/5566773456789abcdeff0123456789ab.jpg" },
-    { "name": "QuantumShard", "id": 13, "ava": "https://i.pinimg.com/originals/88/99/aa/8899aa123456789abcdef0123456789.jpg" },
-    { "name": "ZenithPrime", "id": 14, "ava": "https://i.pinimg.com/originals/bb/cc/dd/bbccddeeff0123456789abcd.jpg" },
-    { "name": "NovaFlare", "id": 15, "ava": "https://i.pinimg.com/originals/ee/ff/00/eeff00123456789abcdeff0123456789.jpg" },
-    { "name": "OmegaPulse", "id": 16, "ava": "https://i.pinimg.com/originals/11/22/33/11223344556677889900.jpg" },
-    { "name": "VortexWolf", "id": 17, "ava": "https://i.pinimg.com/originals/44/55/66/44556677889900112233.jpg" },
-    { "name": "NexusReaver", "id": 18, "ava": "https://i.pinimg.com/originals/77/88/99/77889900112233445566.jpg" },
-    { "name": "StellarHunter", "id": 19, "ava": "https://i.pinimg.com/originals/aa/bb/cc/aabbccddff00112233445566.jpg" },
-    { "name": "TitanFury", "id": 20, "ava": "https://i.pinimg.com/originals/dd/ee/ff/ddeeff001122334455667788.jpg" }
+import { entityDto, mapDto, objectDto, userDto } from "./model"
+import { postDto } from "./model/post.dto"
+
+export const f_user: userDto[] = [
+    { "name": "XenonBladeXenonBlade", "id": 1, "ava": "https://i.pinimg.com/736x/0a/e2/36/0ae2368632a7bb66e25d49db5e700bff.jpg", email: 'zxc' },
+    { "name": "NeoSparkz XenonBlade", "id": 2, "ava": "https://i.pinimg.com/736x/59/8b/c7/598bc7553799c807d30f61d7c08cd011.jpg", "email": 'zxczxc' },
+    { "name": "CypherGhost", "id": 3, "ava": "https://i.pinimg.com/1200x/03/68/17/0368175a962d9d47cc0e03e4ce051c69.jpg", "email": 'zxczxc' },
+    { "name": "ViperPulse", "id": 4, "ava": "https://i.pinimg.com/originals/9a/f9/f1/9af9f10ecfe85c8435f19a085c1f23b6.jpg", "email": 'zxczxc' },
+    { "name": "ApexNova", "id": 5, "ava": "https://i.pinimg.com/1200x/a2/15/81/a2158151d37997ddf9d9b40dbca71d35.jpg", "email": 'zxczxc' },
+    { "name": "ShadowKnight99", "id": 6, "ava": "https://i.pinimg.com/736x/79/18/64/791864dc2f37c2da9e72572e9e5d491f.jpg", "email": 'zxczxc' },
+    { "name": "SoulStormer", "id": 7, "ava": "https://i.pinimg.com/1200x/22/3e/a5/223ea5d407893d2d062eb976170cb476.jpg", "email": 'zxczxc' },
+    { "name": "LunarStrike", "id": 8, "ava": "https://i.pinimg.com/736x/6a/69/29/6a69293f518dd0b2e668620a75dac4e5.jpg", "email": 'zxczxc' },
+    { "name": "ZodiacBlaze", "id": 9, "ava": "https://i.pinimg.com/736x/2c/25/c7/2c25c7cecd9012648055b47cb0977e27.jpg", "email": 'zxczxc' },
+    { "name": "FrostByte", "id": 10, "ava": "https://i.pinimg.com/736x/b6/70/3b/b6703bb50bece02cf26818dca318c4f2.jpg", "email": 'zxczxc' },
 ]
 
-export const fakePost = [
+export const f_post: postDto[] = [
     {
         "title": "Как развивается d&d сообщество",
+        "likes": 12,
         "discription": "Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons.",
         "user": { name: "DM_Master", id: 1 },
         "views": 3456,
@@ -33,6 +27,7 @@ export const fakePost = [
     {
         "title": "Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D",
         "discription": "Советы новичкам, которые хотят окунуться в мир настольных ролевых игр.",
+        "likes": 52,
         "user": { name: "RollerGirl", id: 1 },
         "views": 2100,
         "tags": "D&D, советы, начало",
@@ -41,6 +36,7 @@ export const fakePost = [
     {
         "title": "Создание незабываемого персонажа",
         "discription": "Полезные рекомендации по созданию уникальных героев для вашей кампании.",
+        "likes": 52,
         "user": { name: "CharacterCreator", id: 1 },
         "views": 4500,
         "tags": "D&D, персонажи, креатив",
@@ -49,6 +45,7 @@ export const fakePost = [
     {
         "title": "Что нового в мире Dungeons & Dragons?",
         "discription": "Обзор последних обновлений и дополнений к любимой игре.",
+        "likes": 52,
         "user": { name: "RulesExpert", id: 1 },
         "views": 6789,
         "tags": "D&D, обновления, новинки",
@@ -57,6 +54,7 @@ export const fakePost = [
     {
         "title": "Где проходят лучшие игровые сессии?",
         "discription": "Рассказываем о местах, где можно поиграть в D&D офлайн и онлайн.",
+        "likes": 52,
         "user": { name: "SessionGuide", id: 1 },
         "views": 1500,
         "tags": "D&D, сообщества, мероприятия",
@@ -65,6 +63,7 @@ export const fakePost = [
     {
         "title": "Топ-5 самых интересных приключений в D&D",
         "discription": "Подборка захватывающих сюжетов для вашего следующего приключения.",
+        "likes": 52,
         "user": { name: "AdventureSeeker", id: 1 },
         "views": 8900,
         "tags": "D&D, приключения, топ",
@@ -73,6 +72,7 @@ export const fakePost = [
     {
         "title": "Особенности русской школы мастера подземелий",
         "discription": "Особенности российского подхода к проведению кампаний в D&D.",
+        "likes": 52,
         "user": { name: "RussianDM", id: 1 },
         "views": 2345,
         "tags": "D&D, Россия, мастера",
@@ -81,6 +81,7 @@ export const fakePost = [
     {
         "title": "Самые необычные расы и классы в D&D",
         "discription": "Узнайте больше о нестандартных расах и классах в популярной ролевой игре.",
+        "likes": 52,
         "user": { name: "RaceExplorer", id: 1 },
         "views": 3400,
         "tags": "D&D, расы, классы",
@@ -89,6 +90,7 @@ export const fakePost = [
     {
         "title": "Какие бонусы получают игроки за взаимодействие?",
         "discription": "Преимущества активного участия игроков в игровом процессе.",
+        "likes": 52,
         "user": { name: "InteractionPro", id: 1 },
         "views": 1234,
         "tags": "D&D, участие, бонус",
@@ -97,6 +99,7 @@ export const fakePost = [
     {
         "title": "История развития Dungeons & Dragons",
         "discription": "Краткий экскурс в историю самой известной ролевой игры мира.",
+        "likes": 52,
         "user": { name: "HistoryBuff", id: 1 },
         "views": 5678,
         "tags": "D&D, история, эволюция",
@@ -105,6 +108,7 @@ export const fakePost = [
     {
         "title": "Стратегии победы над драконами",
         "discription": "Как победить грозных драконов в ваших приключениях.",
+        "likes": 52,
         "user": { name: "DragonSlayer", id: 1 },
         "views": 7890,
         "tags": "D&D, стратегии, драконы",
@@ -113,6 +117,7 @@ export const fakePost = [
     {
         "title": "Как провести незабываемое сражение?",
         "discription": "Практические советы для мастеров игры по организации захватывающих боев.",
+        "likes": 52,
         "user": { name: "BattleMaster", id: 1 },
         "views": 3456,
         "tags": "D&D, сражения, организация",
@@ -121,6 +126,7 @@ export const fakePost = [
     {
         "title": "Совместимы ли разные издания D&D?",
         "discription": "Можно ли совмещать правила разных изданий в одной игровой сессии?",
+        "likes": 52,
         "user": { name: "EditionMixologist", id: 1 },
         "views": 4567,
         "tags": "D&D, совместимость, правила",
@@ -129,6 +135,7 @@ export const fakePost = [
     {
         "title": "Адаптация классики для современной аудитории",
         "discription": "Как адаптируются старые сценарии под современное поколение игроков.",
+        "likes": 52,
         "user": { name: "ClassicAdaptor", id: 1 },
         "views": 6789,
         "tags": "D&D, классика, адаптация",
@@ -137,6 +144,7 @@ export const fakePost = [
     {
         "title": "Основные механики взаимодействия персонажей",
         "discription": "Разбираем основные способы взаимодействия персонажей друг с другом.",
+        "likes": 52,
         "user": { name: "Interacter", id: 1 },
         "views": 2345,
         "tags": "D&D, механика, взаимодействие",
@@ -145,6 +153,7 @@ export const fakePost = [
     {
         "title": "Реальные истории из сессий D&D",
         "discription": "Игроки рассказывают забавные случаи из реальных игр.",
+        "likes": 52,
         "user": { name: "Storyteller", id: 1 },
         "views": 9012,
         "tags": "D&D, реальные, орииопыт",
@@ -153,6 +162,7 @@ export const fakePost = [
     {
         "title": "За кулисами создания собственных миров",
         "discription": "Процесс разработки новых фэнтезийных вселенных для D&D.",
+        "likes": 52,
         "user": { name: "WorldBuilder", id: 1 },
         "views": 3456,
         "tags": "D&D, создание, овфантазия",
@@ -161,6 +171,7 @@ export const fakePost = [
     {
         "title": "Учимся рисовать карты для кампаний",
         "discription": "Простые шаги для рисования увлекательных карт в стиле D&D.",
+        "likes": 52,
         "user": { name: "MapMaker", id: 1 },
         "views": 5678,
         "tags": "D&D, карты, рисование",
@@ -169,6 +180,7 @@ export const fakePost = [
     {
         "title": "Лучшие аксессуары для D&D-игроков",
         "discription": "Полезные вещи, которые сделают ваши игровые вечера комфортнее.",
+        "likes": 52,
         "user": { name: "GearCollector", id: 1 },
         "views": 4567,
         "tags": "D&D, аксессуары, полезности",
@@ -177,6 +189,7 @@ export const fakePost = [
     {
         "title": "Зачем нужны побочные квесты?",
         "discription": "Как дополнительные задания обогащают игру и развивают персонажей.",
+        "likes": 52,
         "user": { name: "QuestDesigner", id: 1 },
         "views": 6789,
         "tags": "D&D, квесты, развитие",
@@ -185,6 +198,7 @@ export const fakePost = [
     {
         "title": "Правильное использование заклинаний",
         "discription": "Основы магии и грамотное применение магических способностей.",
+        "likes": 52,
         "user": { name: "SpellCaster", id: 1 },
         "views": 7890,
         "tags": "D&D, магия, заклинания",
@@ -192,4 +206,133 @@ export const fakePost = [
     }
 ]
 
-export const fakeTags = ["dnd", "фентези", "zxccursed", "разработка", "web"]
+export const f_tag: string[] = ["dnd", "фентези", "zxccursed", "разработка", "web"]
+
+export const f_map: mapDto[] = [
+    {
+        id: 1,
+        name: 'map1',
+        path: 'map1.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 2,
+        name: 'map2',
+        path: 'map2.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 3,
+        name: 'map3',
+        path: 'map3.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 4,
+        name: 'map4',
+        path: 'map4.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 5,
+        name: 'map5',
+        path: 'map5.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+]
+
+export const f_object: objectDto[] = [
+    {
+        id: 1,
+        name: 'object1',
+        path: 'object1.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 2,
+        name: 'object2',
+        path: 'object2.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 3,
+        name: 'object3',
+        path: 'object3.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 4,
+        name: 'object4',
+        path: 'object4.jpg',
+        source: { id: 1, name: 'object1' },
+    },
+    {
+        id: 5,
+        name: 'object5',
+        path: 'object5.jpg',
+        source: { id: 1, name: 'object1' },
+    }
+]
+
+export const f_entity: entityDto[] = [
+    {
+        id: 1,
+        discription: 'discription1',
+        initiative: 30,
+        name: 'entity1',
+        path: 'entity1.jpg',
+        size: 50,
+        source: { id: 1, name: 'object1' },
+        status: 'live',
+        position: { x: 0, y: 0 },
+        view: true
+    },
+    {
+        id: 2,
+        discription: 'discription2',
+        initiative: 30,
+        name: 'entity2',
+        path: 'entity2.jpg',
+        size: 50,
+        source: { id: 1, name: 'object1' },
+        status: 'live',
+        position: { x: 0, y: 0 },
+        view: true
+    },
+    {
+        id: 3,
+        discription: 'discription3',
+        initiative: 30,
+        name: 'entity3',
+        path: 'entity3.jpg',
+        size: 50,
+        source: { id: 1, name: 'object1' },
+        status: 'live',
+        position: { x: 0, y: 0 },
+        view: true
+    },
+    {
+        id: 4,
+        discription: 'discription4',
+        initiative: 30,
+        name: 'entity4',
+        path: 'entity4.jpg',
+        size: 50,
+        source: { id: 1, name: 'object1' },
+        status: 'live',
+        position: { x: 0, y: 0 },
+        view: true
+    },
+    {
+        id: 5,
+        discription: 'discription5',
+        initiative: 30,
+        name: 'entity5',
+        path: 'entity5.jpg',
+        size: 50,
+        source: { id: 1, name: 'object1' },
+        status: 'live',
+        position: { x: 0, y: 0 },
+        view: true
+    }
+]

@@ -1,7 +1,7 @@
 import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
-import { fakePost } from '@/fake-data'
+import { f_post } from '@/f'
 import { ModalCross, PlusButton } from '@component/ui'
 import * as ModalGroup from './index-group'
 import { InStoreMapItem, MapItem } from '@component/ui/item'
@@ -27,10 +27,10 @@ export const MapsGame: React.FC<Props> = ({ view, swap }: Props) => {
                 <ModalCross fn={swap} />
                 <p className='pl-5 pt-2 text-2xl'>Карты</p>
                 <div className='grid gap-5 p-5 grid-cols-6 adaptive2k-grid-column-7'>
-                    {fakePost.slice(0, 9).map((__, _) =>
+                    {f_post.slice(0, 9).map((__, _) =>
                         <MapItem key={_} />
                     )}
-                    <ModalGroup.Root modal={ModalGroup.PushSomething} props={{ renderItem: InStoreMapItem, accept: PushMap }}>
+                    <ModalGroup.Root modal={ModalGroup.PushToSession} props={{ renderItem: InStoreMapItem, accept: PushMap }}>
                         <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' /></ModalGroup.Root>
                 </div>
             </div>

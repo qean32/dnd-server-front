@@ -17,7 +17,7 @@ export const UnwrapFiles: React.FC<Props> = ({
 }: Props) => {
 
     return (
-        <div className={cn("flex flex-col gap-2", className)}>
+        <div className={cn("flex flex-col gap-1", className)}>
             {!!files.length && files.map(item => {
                 return <File
                     imgView={imgView}

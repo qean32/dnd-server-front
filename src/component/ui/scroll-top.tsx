@@ -17,7 +17,7 @@ export const ScrollTop: React.FC<Props> = ({ }: Props) => {
         } else {
             off()
         }
-    }, 200)
+    }, 150)
 
     React.useEffect(() => {
         window.addEventListener('scroll', fn)

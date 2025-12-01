@@ -3,7 +3,7 @@ import { Button, UnwrapFiles } from '@component/ui'
 import { ViewAuthor } from '@component/master/h-order-component'
 import { Modal } from '@component/case/modal'
 import { MainBlock, CommentBlock, PostInfo } from '.'
-import { fakeUser } from '@/fake-data'
+import { f_user } from '@/f'
 
 interface Props {
     className?: string
@@ -18,15 +18,15 @@ export const PostContent: React.FC<Props> = ({ }: Props) => {
                 {/* @ts-ignore */}
                 <Modal.Root modal={Modal.AccessAction} fn={() => console.log('zxc')} props={{ warning: "Вы собираетесь удалить пост?", warningButtonText: 'Удалить пост' }}>
                     <Button variant="reject" className="my-2">Удалить пост</Button></Modal.Root></ViewAuthor>
-            <PostInfo {...fakeUser[0]} email='' />
+            <PostInfo {...f_user[0]} email='' />
             <MainBlock />
             <UnwrapFiles
                 className='my-5'
-                
+                imgView
                 files={
                     [
                         {
-                            path: 'zxc.jpg'
+                            path: '/img/entity.jpg'
                         },
                         {
                             path: 'php.php'

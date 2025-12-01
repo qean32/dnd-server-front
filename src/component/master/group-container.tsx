@@ -25,7 +25,7 @@ export const GroupContainer: React.FC<Props> = ({
                         {renderItem(item)}</React.Fragment>
                 )
             })}
-            <NoFindData title='По вашему запросу ничего не найдено' view={!!finaldata.length} />
+            <NoFindData title='По вашему запросу ничего не найдено' view={!finaldata.length} />
             {loading &&
                 <div className="flex-1 flex justify-center items-center">
                     <Loader />

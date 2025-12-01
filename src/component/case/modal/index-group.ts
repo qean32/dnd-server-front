@@ -1,6 +1,6 @@
 export { EntityMore } from './entity-more-modal'
 export { Notes } from './notes-modal'
-export { PushSomething } from './push-something-modal'
+export { PushToSession } from './push-to-session-modal'
 export { PushCharacterInGame } from './push-character-in-game-modal'
 export { PushCharacterInProfile } from './push-character-in-profile-modal'
 export { PushSession } from './push-session-modal'

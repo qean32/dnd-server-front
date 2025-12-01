@@ -2,7 +2,7 @@ import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { ModalCross } from '@component/ui'
-import { FilterPushSomething, GroupTokenInModal } from '@component/shared'
+import { FilterPushToSession, GroupTokenInModal } from '@component/shared'
 
 interface Props {
     view: boolean
@@ -12,7 +12,7 @@ interface Props {
 }
 
 
-export const PushSomething: React.FC<Props> = ({
+export const PushToSession: React.FC<Props> = ({
     view,
     swap,
     renderItem,
@@ -30,7 +30,7 @@ export const PushSomething: React.FC<Props> = ({
             <div className="relative bg-color w-8/12 h-9/12 rounded-md flex overflow-hidden" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
                 <div className="w-9/12 h-full overflow-scroll relative">
-                    <FilterPushSomething />
+                    <FilterPushToSession />
                     <GroupTokenInModal title='Базовый набор' renderItem={renderItem} />
                     <GroupTokenInModal title='Набор Хелойвин' renderItem={renderItem} />
                 </div>

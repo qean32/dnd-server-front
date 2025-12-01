@@ -16,7 +16,7 @@ export const File: React.FC<Props> = ({
 
     if (imgView && IsImageFile(path)) {
         return <>
-            <img src={path} alt="" className='max-w-[600px]' />
+            <img src={path} alt="" className='max-w-[400px] rounded-sm mb-3' />
         </>
     }
 

@@ -30,7 +30,7 @@ export const Button: React.FC<Props> = ({
             onClick={fn}
             type={type}
             className={cn(
-                'transition-300 rounded-md cursor-pointer px-3 py-2',
+                'transition-300 rounded-md cursor-pointer px-2 py-2',
                 className,
                 map.get(variant)
             )}>

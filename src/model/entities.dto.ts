@@ -26,7 +26,6 @@ export interface characterDto extends entityDto {
 }
 
 export interface mapDto extends abstractEntity {
-    size: coordinateDto
 }
 
 export interface objectDto extends abstractEntity {

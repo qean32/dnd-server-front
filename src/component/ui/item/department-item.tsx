@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { PostItem } from './post-item'
-import { fakePost } from '@/fake-data'
+import { f_post } from '@/f'
 
 interface Props {
     name: string
@@ -27,7 +27,7 @@ export const DepartmentItem: React.FC<Props> = ({
                         <img src="/icon/news.svg" alt="" className='icon-sm-' />
                         <p>{count}</p>
                     </div>
-                    <PostItem likes={0} {...fakePost[0]} fixed className='pl-2 -translate-x-2' />
+                    <PostItem likes={0} {...f_post[0]} fixed className='pl-2 -translate-x-2' />
                 </div>
                 <div className='w-1/6 pb-4 pt-0'>
                     <div className="rounded-lg w-full bg-img bg-shadow h-full"

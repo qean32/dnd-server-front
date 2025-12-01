@@ -2,7 +2,7 @@ import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { Button, ModalCross, NoFindData } from '@component/ui'
-import { fakePost } from '@/fake-data'
+import { f_post } from '@/f'
 import { CharacterItemInPush } from '@component/ui/item'
 
 interface Props {
@@ -26,7 +26,7 @@ export const PushCharacterInGame: React.FC<Props> = ({ view, swap }: Props) => {
                 <p className='pl-5 py-4 text-2xl'>Персонажи игрока</p>
                 <NoFindData title='У игрока нет персонажей!' view={false} className='py-5' />
                 <div className='grid gap-5 py-5 grid-cols-8 min-h-[33vh] max-h-[33vh] overflow-scroll'>
-                    {fakePost.slice(0, 14).map((__, _) =>
+                    {f_post.slice(0, 14).map((__, _) =>
                         // @ts-ignore
                         <CharacterItemInPush key={_} id={_ + 1} name='Клиган Клиган' discription='' />
                     )}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, DatePickerUI, PushTagInFilter } from '@component/ui'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 interface Props {
 }
@@ -24,8 +24,8 @@ export const FilterForum: React.FC<Props> = ({ }: Props) => {
                     type='reset'
                 >
                     <p>Сбросить</p></Button>
-                {/* <div className='w-fit'><Link to={'/create-post'}>
-                    <Button variant='acceess' className='mt-5 py-3'><img src='/icon/edit.svg' /></Button></Link></div> */}
+                <div className='w-fit'><Link to={'/create-post'}>
+                    <Button className='px-2'><img src='/icon/edit.svg' /></Button></Link></div>
             </div>
         </form>
     )
