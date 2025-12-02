@@ -1,7 +1,7 @@
 import React from 'react'
-import { PushTagInForm, FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapFiles } from '../../ui'
+import { PushTagInForm, FakeTextInput, Button, UploadFilesInCreatePost, Select, Hints, TextArea, UnwrapRemoveFiles } from '../../ui'
 import { previewPost } from '@/lib/function'
-import { FormProvider, useFormContext } from 'react-hook-form'
+import { FormProvider } from 'react-hook-form'
 import { createPostFormDto, createPostSchema } from '@/model/schema'
 import { useMyForm } from '@/lib/castom-hook'
 
@@ -37,6 +37,8 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
                     preview={() => previewPost(ref)}
                 />
 
+                <UnwrapRemoveFiles />
+
                 <div className="py-5">
                     <PushTagInForm
                         name='tags'
@@ -46,7 +48,7 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
                 <TextArea
                     title="Описание вашей статьи"
                     className='min-h-[160px] p-2 px-3 mb-5'
-                    name='discription'
+                    name='description'
                 />
 
                 <TextArea
@@ -56,8 +58,6 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
                     className='p-2 px-3 min-h-[600px]'
                     name='text'
                 />
-
-                <UnwrapFiles_ />
                 <Hints />
             </form>
         </FormProvider>
@@ -66,14 +66,6 @@ export const CreatePostForm: React.FC<Props> = ({ }: Props) => {
 
 type Props_ = {
     preview: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
-}
-
-const UnwrapFiles_ = () => {
-    const { watch } = useFormContext()
-
-    return (
-        <UnwrapFiles className='pt-5 gap-3 pointer-events-none' files={[]} imgView={false} />
-    )
 }
 
 const Upper: React.FC<Props_> = ({ preview }: Props_) => {

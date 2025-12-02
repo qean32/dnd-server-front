@@ -3,12 +3,14 @@ import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { ModalCross } from '@component/ui'
 import { FilterPushToSession, GroupTokenInModal } from '@component/shared'
+import { f_entity, f_map, f_object } from '@/f'
 
 interface Props {
     view: boolean
     swap: React.MouseEventHandler<HTMLDivElement | HTMLButtonElement>
     renderItem(item: any): React.ReactNode
     accept: any
+    type: 'map' | 'entity' | 'object'
 }
 
 
@@ -16,8 +18,20 @@ export const PushToSession: React.FC<Props> = ({
     view,
     swap,
     renderItem,
+    type,
     accept: Accept
 }: Props) => {
+    let primeItems = {};
+    const data = type == 'entity' ? f_entity : type == 'map' ? f_map : f_object
+    data.forEach(item => {
+        // @ts-ignore
+        primeItems[item.source.name] = [
+            // @ts-ignore
+            ...primeItems[item.source.name] ?? [],
+            item
+        ]
+    })
+
     return (
         <Modal
             swap={swap}
@@ -31,8 +45,11 @@ export const PushToSession: React.FC<Props> = ({
                 <ModalCross fn={swap} />
                 <div className="w-9/12 h-full overflow-scroll relative">
                     <FilterPushToSession />
-                    <GroupTokenInModal title='Базовый набор' renderItem={renderItem} />
-                    <GroupTokenInModal title='Набор Хелойвин' renderItem={renderItem} />
+                    {
+                        Object.values(primeItems).map((item: any) => {
+                            return <GroupTokenInModal items={item} renderItem={renderItem} />
+                        })
+                    }
                 </div>
                 <Accept swap={swap}
                 />

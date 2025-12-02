@@ -28,7 +28,7 @@ export const PushCharacterInGame: React.FC<Props> = ({ view, swap }: Props) => {
                 <div className='grid gap-5 py-5 grid-cols-8 min-h-[33vh] max-h-[33vh] overflow-scroll'>
                     {f_post.slice(0, 14).map((__, _) =>
                         // @ts-ignore
-                        <CharacterItemInPush key={_} id={_ + 1} name='Клиган Клиган' discription='' />
+                        <CharacterItemInPush key={_} id={_ + 1} name='Клиган Клиган' description='' />
                     )}
                 </div>
                 <div className="flex justify-end gap-2">

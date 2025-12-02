@@ -1,6 +1,6 @@
 export type postDto = {
     title: string,
-    discription: string,
+    description: string,
     tags: string
     user: {
         name: string

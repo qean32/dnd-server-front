@@ -6,7 +6,7 @@ export const createPostSchema = z.object({
     text: z
         .string()
         .min(10, { message: 'Минимальная длинна 10' }),
-    discription: z
+    description: z
         .string()
         .min(10, { message: 'Минимальная длинна 10' }),
     tags: z
@@ -21,7 +21,7 @@ export const createPostSchema = z.object({
 export type createPostFormDto = {
     department: string
     text: string
-    discription: string
+    description: string
     tags: string
     files: any
     title: string

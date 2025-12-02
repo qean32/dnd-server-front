@@ -9,7 +9,7 @@ interface Props extends postDto {
 }
 
 export const PostItem: React.FC<Props> = ({
-    discription,
+    description,
     tags,
     title,
     user,
@@ -24,7 +24,7 @@ export const PostItem: React.FC<Props> = ({
                 {fixed && <img src="/icon/fixed.svg" alt="" className='absolute top-2 right-2' />}
                 <div className='flex flex-col justify-between'>
                     <p className='text-2xl'>{title}</p>
-                    <p className='text-sm pr-4'>{discription}</p>
+                    <p className='text-sm pr-4'>{description}</p>
                     <UnwrapTags tags={tags} className='' />
                 </div>
                 <p className='translate-y-1'>{user.name}</p>

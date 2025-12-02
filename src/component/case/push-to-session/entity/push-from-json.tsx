@@ -19,7 +19,7 @@ export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
             part.on()
         }
     }, [data])
-    const entity = data?.isEntity ? data : { path: '', name: '', id: 0, discription: '', initiative: 0 }
+    const entity = data?.isEntity ? data : { path: '', name: '', id: 0, description: '', initiative: 0 }
 
     return (
         <div className="w-1/2 flex-1 flex flex-col">
@@ -37,7 +37,7 @@ export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
                                 <DisabledInput value={entity.initiative} className='w-[60px]' />
                             </div>
                             <div className="h-[160px] overflow-scroll rounded-sm bg-color-dark p-4 py-2 my-2 mb-4">
-                                {entity?.discription}
+                                {entity?.description}
                             </div>
                         </div>
                     </>

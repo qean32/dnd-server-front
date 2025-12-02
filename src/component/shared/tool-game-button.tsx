@@ -40,9 +40,9 @@ export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
                     <ButtonInGroup children={<img className='icon-sm' src='/icon/grid.svg' />} />
                     <ButtonInGroup fn={forwardClick} children={<img className='icon-sm' src='/icon/forward.svg' />} />
                     <ButtonInGroup fn={saveGame} children={<img className='icon-sm' src='/icon/save.svg' />} />
-                    <Modal.Root modal={Modal.PushToSession} props={{ renderItem: (item: entityDto) => <InStoreEntityItem {...item} />, accept: PushEntity }}>
+                    <Modal.Root modal={Modal.PushToSession} props={{ type: 'entity', renderItem: (item: entityDto) => <InStoreEntityItem {...item} />, accept: PushEntity }}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/dragon.svg' />} /></Modal.Root>
-                    <Modal.Root modal={Modal.PushToSession} props={{ renderItem: (item: objectDto) => <InStoreObjectItem {...item} />, accept: PushObject }}>
+                    <Modal.Root modal={Modal.PushToSession} props={{ type: 'object', renderItem: (item: objectDto) => <InStoreObjectItem {...item} />, accept: PushObject }}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/object.svg' />} /></Modal.Root>
                     <Modal.Root modal={Modal.ImgCarousel}>
                         <ButtonInGroup children={<img className='icon-sm' src='/icon/img-carousel.svg' />} /></Modal.Root>

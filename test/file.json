@@ -10,7 +10,7 @@
         {
             "id": 1,
             "name": "main",
-            "path": ""
+            "path": "/img/map.jpg"
         }
     ],
     "characters": [
@@ -114,32 +114,6 @@
                     "size": 50
                 },
                 {
-                    "id": "42342342311",
-                    "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/carousel-item-1.jpg",
-                    "position": {
-                        "y": 344,
-                        "x": 1542
-                    },
-                    "status": "dead",
-                    "view": true,
-                    "size": 50
-                },
-                {
-                    "id": "13545112",
-                    "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/carousel-item-1.jpg",
-                    "position": {
-                        "y": 443,
-                        "x": 1499
-                    },
-                    "status": "dead",
-                    "view": true,
-                    "size": 50
-                },
-                {
                     "id": "1132311",
                     "discription": "",
                     "name": "zxccursed8",
@@ -192,32 +166,6 @@
                     "size": 50
                 },
                 {
-                    "id": "11345345",
-                    "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/carousel-item-1.jpg",
-                    "position": {
-                        "y": 773.5239500000001,
-                        "x": 1013.92581
-                    },
-                    "status": "dead",
-                    "view": true,
-                    "size": 50
-                },
-                {
-                    "id": "1334534511",
-                    "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/carousel-item-1.jpg",
-                    "position": {
-                        "y": 780.5765000000002,
-                        "x": 895.92736
-                    },
-                    "status": "dead",
-                    "view": true,
-                    "size": 50
-                },
-                {
                     "id": "14234234112",
                     "discription": "",
                     "name": "zxccursed",
@@ -225,19 +173,6 @@
                     "position": {
                         "y": 657.5072487045913,
                         "x": 715.0615312954087
-                    },
-                    "status": "dead",
-                    "view": true,
-                    "size": 50
-                },
-                {
-                    "id": "1153453441",
-                    "discription": "",
-                    "name": "zxccursed",
-                    "path": "/img/carousel-item-1.jpg",
-                    "position": {
-                        "y": 647.2936599999998,
-                        "x": 935.54714
                     },
                     "status": "dead",
                     "view": true,
@@ -379,8 +314,8 @@
                     "name": "zxccursed7",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
-                        "y": 822.5712,
-                        "x": 1730.9695800000009
+                        "y": 1004.5588300000003,
+                        "x": 1524.8243000000011
                     },
                     "status": "dead",
                     "view": true,
@@ -392,12 +327,115 @@
                     "name": "zxccursed",
                     "path": "/img/carousel-item-1.jpg",
                     "position": {
-                        "y": 918.4413100000002,
-                        "x": 1725.1231500000004
+                        "y": 1074.7212823702607,
+                        "x": 1543.1852717182046
                     },
                     "status": "dead",
                     "view": true,
                     "size": 50
+                },
+                {
+                    "id": "1334534511",
+                    "discription": "",
+                    "name": "zxccursed",
+                    "path": "/img/carousel-item-1.jpg",
+                    "position": {
+                        "y": 982.8885000000004,
+                        "x": 889.27236
+                    },
+                    "status": "dead",
+                    "view": true,
+                    "size": 50
+                },
+                {
+                    "id": "11345345",
+                    "discription": "",
+                    "name": "zxccursed",
+                    "path": "/img/carousel-item-1.jpg",
+                    "position": {
+                        "y": 774.85495,
+                        "x": 1069.8278099999998
+                    },
+                    "status": "dead",
+                    "view": true,
+                    "size": 50
+                },
+                {
+                    "id": "1153453441",
+                    "discription": "",
+                    "name": "zxccursed",
+                    "path": "/img/carousel-item-1.jpg",
+                    "position": {
+                        "y": 551.4616599999997,
+                        "x": 1400.06614
+                    },
+                    "status": "dead",
+                    "view": true,
+                    "size": 50
+                },
+                {
+                    "id": "13545112",
+                    "discription": "",
+                    "name": "zxccursed",
+                    "path": "/img/carousel-item-1.jpg",
+                    "position": {
+                        "y": 444.331,
+                        "x": 1552.24
+                    },
+                    "status": "dead",
+                    "view": true,
+                    "size": 50
+                },
+                {
+                    "id": "42342342311",
+                    "discription": "",
+                    "name": "zxccursed",
+                    "path": "/img/carousel-item-1.jpg",
+                    "position": {
+                        "y": 946.9430000000002,
+                        "x": 2039.7939999999999
+                    },
+                    "status": "dead",
+                    "view": true,
+                    "size": 50
+                },
+                {
+                    "name": "Тролль",
+                    "path": "/img/f/entity6.jpg",
+                    "description": "Грубое существо, живущее в горах или лесах.",
+                    "initiative": 30,
+                    "id": "6",
+                    "status": "live",
+                    "position": {
+                        "y": 243.04317461820318,
+                        "x": 647.4473922903142
+                    },
+                    "view": true,
+                    "size": 50,
+                    "source": {
+                        "id": 2,
+                        "name": "Мелкие твари"
+                    },
+                    "isEntity": true
+                },
+                {
+                    "name": "Гоблин Гоблин",
+                    "path": "/img/entity.jpg",
+                    "discription": "Тайвин Ланнистер — вымышленный персонаж фэнтезийного сериала «Песнь льда и пламени» американского писателя Джорджа Р. Р. Мартина и его телевизионной адаптации «Игра престолов».",
+                    "initiative": 10,
+                    "id": "52",
+                    "status": "dead",
+                    "position": {
+                        "y": 266.2990000000001,
+                        "x": 788.722
+                    },
+                    "view": true,
+                    "size": 50,
+                    "source": {
+                        "id": 1,
+                        "name": "1"
+                    },
+                    "isEntity": true
                 }
             ],
             "objects": [],

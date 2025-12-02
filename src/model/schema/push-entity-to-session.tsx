@@ -9,13 +9,13 @@ export const pushEntityToSessionSchema = z.object({
     path: z
         .any()
     ,
-    discription: z.string().max(255, { message: 'Максимальная длина 255 символа' }),
+    description: z.string().max(255, { message: 'Максимальная длина 255 символа' }),
     initiative: z.string()
 });
 
 export type pushEntityToSessionFormDto = {
     name: string
     path: any
-    discription: string
+    description: string
     initiative: string
 }

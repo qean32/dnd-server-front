@@ -24,7 +24,6 @@ export const CommentItem: React.FC<Props> = ({
     files = [
         { path: 'zxc.zxc' },
         { path: '/img/entity.jpg' },
-        { path: 'zxc.zxc' }
     ]
 }: Props) => {
     return (
@@ -39,7 +38,7 @@ export const CommentItem: React.FC<Props> = ({
                     {
                         !!files.length &&
                         <>
-                            <p>Прикрепленный файлы</p>
+                            <p>Прикрепленные файлы</p>
                             <UnwrapFiles files={files} imgView />
                         </>
                     }

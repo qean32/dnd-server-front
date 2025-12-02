@@ -14,21 +14,39 @@ export const File: React.FC<Props> = ({
     imgView = false
 }: Props) => {
 
+    if (!imgView) {
+
+        return (
+            <div
+                data={JSON.stringify({ path })}
+                className={cn(
+                    className,
+                    'py-2 rounded-md transition-300 bg-color-darkness-hover pointer-events-auto'
+                )}
+            >
+                <p className='cursor-pointer pointer-events-none fit-content'>{path}</p>
+            </div>
+        )
+    }
+
     if (imgView && IsImageFile(path)) {
         return <>
             <img src={path} alt="" className='max-w-[400px] rounded-sm mb-3' />
         </>
     }
 
-    return (
-        <a
-            className={cn(
-                className,
-                'py-2 rounded-md transition-300 bg-color-darkness-hover'
-            )}
-            target='_blank'
-            href={path}>
-            <p className='cursor-pointer fit-content'>{path}</p>
-        </a>
-    )
+    else {
+        return (
+            <a
+                href={path}
+                target='_blank'
+                className={cn(
+                    className,
+                    'py-2 rounded-md transition-300 bg-color-darkness-hover pointer-events-auto'
+                )}
+            >
+                <p className='cursor-pointer fit-content'>{path}</p>
+            </a>
+        )
+    }
 }

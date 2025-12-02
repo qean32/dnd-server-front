@@ -159,15 +159,15 @@ export const FileInput: React.FC<FileProps> = ({
     className,
     name
 }: FileProps) => {
-    const id = generateId().toString()
-    const { setValue } = useFormContext()
-
+    const { setValue, watch } = useFormContext()
     const changeHandlerFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
+        const arr = Array.from(watch(name) ?? [])
 
-            setValue(name, e.target.files)
+        if (e.target.files) {
+            setValue(name, [...arr, ...Array.from(e.target.files)])
         }
     }
+    const id = generateId().toString()
 
     return (
         <div className={cn('w-fit', className)}>

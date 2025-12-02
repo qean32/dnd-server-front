@@ -5,14 +5,14 @@ import { f_post } from '@/f'
 
 interface Props {
     name: string
-    discription: string
+    description: string
     path: string
     count: number
 }
 
 
 export const DepartmentItem: React.FC<Props> = ({
-    discription,
+    description,
     name,
     path,
     count
@@ -22,7 +22,7 @@ export const DepartmentItem: React.FC<Props> = ({
             <div className="flex gap-10 border-b">
                 <div className="overflow-hidden w-full pl-2">
                     <p className="text-4xl">{name.toUpperCase()}</p>
-                    <p className='text-md pt-2'>{discription}</p>
+                    <p className='text-md pt-2'>{description}</p>
                     <div className='flex items-center gap-2 mt-2'>
                         <img src="/icon/news.svg" alt="" className='icon-sm-' />
                         <p>{count}</p>

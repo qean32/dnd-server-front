@@ -32,9 +32,9 @@ const sessionSlice = createSlice({
                 { ...state.session.mapsData[state.session.currentMap.name][type].find(item => item.id == payload.id), ...payload }
             ]
         },
-        swapCurrentMap: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
+        swapCurrentMap: (state: stateDto, { payload }: PayloadAction<{ path: string }>) => {
             state.session.currentMap =
-                state.session.maps.find(item => item.id == id)
+                state.session.maps.find(item => item.path == payload.path)
                 ??
                 state.session.currentMap
         },
@@ -50,26 +50,38 @@ const sessionSlice = createSlice({
                 newEntity
             ]
         },
-        pushMap: (state: stateDto, { payload: { newMap } }: PayloadAction<{ newMap: mapDto }>) => {
+        pushMap: (state: stateDto, { payload }: PayloadAction<mapDto>) => {
             state.session.maps = [
                 ...state.session.maps,
-                newMap
+                { ...payload, id: state.session.maps.length++ }
             ]
+            state.session.mapsData[payload.name] = {
+                entities: [],
+                objects: [],
+                queue: []
+            }
         },
-        pushCharacter: (state: stateDto, { payload: { newChar } }: PayloadAction<{ newChar: characterDto }>) => {
+        pushCharacter: (state: stateDto, { payload }: PayloadAction<characterDto>) => {
             state.session.characters = [
                 ...state.session.characters,
-                newChar
+                payload
             ]
         },
-        pushToBestiary: (state: stateDto, { payload: { newEntity } }: PayloadAction<any>) => {
-            state.bestiary = [...state.bestiary, newEntity]
+        pushToBestiary: (state: stateDto, { payload }: PayloadAction<entityDto>) => {
+            state.bestiary = [...state.bestiary, payload]
         },
         pushToSession: (state: stateDto, { payload: { newEntity, type } }: PayloadAction<{ newEntity: any, type: mapDataDto }>) => {
             state.session.mapsData[state.session.currentMap.name][type] = [
                 ...state.session.mapsData[state.session.currentMap.name][type],
-                newEntity
+                { ...newEntity, id: state.session.mapsData[state.session.currentMap.name][type].length++ }
             ]
+
+            if (type == 'entities') {
+                state.session.mapsData[state.session.currentMap.name].queue = [
+                    ...state.session.mapsData[state.session.currentMap.name].queue,
+                    newEntity
+                ].sort((a, b) => b.initiative - a.initiative)
+            }
         },
         removeCharacter: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
             state.session.characters = state.session.characters.filter(item => item.id != id)

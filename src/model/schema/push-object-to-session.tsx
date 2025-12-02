@@ -7,7 +7,7 @@ export const pushObjectToSessionSchema = z.object({
         .min(4, { message: 'Минимальная длина - 8' })
     ,
     path: z.any(),
-    // discription: z.string().max(255, { message: 'Мексимальная длина 255 символа' }),
+    // description: z.string().max(255, { message: 'Мексимальная длина 255 символа' }),
 });
 
 export type pushObjectToSessionFormDto = {

@@ -16,7 +16,6 @@ export const UploadFilesInCreatePost: React.FC<Props> = ({
         const arr = Array.from(watch(name) ?? [])
 
         if (e.target.files) {
-            console.log(arr)
             setValue(name, [...arr, ...Array.from(e.target.files)])
         }
     }

@@ -14,9 +14,11 @@ interface sourceDto extends idDto {
     name: string
 }
 
+type statusDto = 'live' | 'dead' | 'stan'
+
 export interface entityDto extends abstractEntity {
-    discription: string
-    status: 'live' | 'dead' | 'stan'
+    description: string
+    status: statusDto
     size: number
     initiative: number
 }

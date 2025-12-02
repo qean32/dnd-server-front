@@ -1,6 +1,7 @@
 import { Button, DisabledInput, NoFindData } from '@/component/ui'
 import { TypeUseBoolen } from '@/lib/castom-hook'
-import { useAppSelector } from '@/lib/castom-hook/redux'
+import { useAppDispatch, useAppSelector } from '@/lib/castom-hook/redux'
+import { pushMap } from '@/store/session-store'
 import React from 'react'
 
 interface Props {
@@ -11,6 +12,11 @@ interface Props {
 
 export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
     const { object: data } = useAppSelector(state => state.pushedObject)
+    const dispath = useAppDispatch()
+    const push = () => {
+        dispath(pushMap(data))
+    }
+
     React.useEffect(() => {
         if (data) {
             part.on()
@@ -42,7 +48,7 @@ export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
                     {children}
                     <Button
                         type='submit'
-                        fn={() => { }}
+                        fn={push}
                         variant='acceess'
                     >
                         <p className='pointer-events-none'>Добавить</p></Button>

@@ -23,22 +23,7 @@ export const PostContent: React.FC<Props> = ({ }: Props) => {
             <UnwrapFiles
                 className='my-5'
                 imgView
-                files={
-                    [
-                        {
-                            path: '/img/entity.jpg'
-                        },
-                        {
-                            path: 'php.php'
-                        },
-                        {
-                            path: 'img.svg'
-                        },
-                        {
-                            path: 'zxc.html'
-                        },
-                    ]
-                } />
+                files={[{ path: '/img/entity.jpg' }]} />
             <CommentBlock />
         </>
     )

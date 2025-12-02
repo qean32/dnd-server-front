@@ -1,7 +1,7 @@
 import React from 'react'
 import { commentFormDto, commentSchema } from '@/model/schema'
 import { FormProvider } from 'react-hook-form'
-import { Button, FileInput, TextArea } from '@/component/ui'
+import { Button, FileInput, TextArea, UnwrapRemoveFiles } from '@/component/ui'
 import { useMyForm } from '@/lib/castom-hook'
 
 interface Props {
@@ -33,6 +33,7 @@ export const CommentForm: React.FC<Props> = ({ }: Props) => {
                         <Button type='submit'>
                             <img src="/icon/send.svg" alt="" className="icon-md" /></Button>
                     </div>
+                    <UnwrapRemoveFiles />
                 </div>
             </form>
         </FormProvider>

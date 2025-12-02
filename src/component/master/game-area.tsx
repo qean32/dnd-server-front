@@ -32,7 +32,7 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                 <Group>
                     <GameBackground />
 
-                    {[...mapsData[currentMap.name].entities].map((item: entityDto, _: number) => {
+                    {[...mapsData[currentMap.name]?.entities ?? []].map((item: entityDto, _: number) => {
                         return <Entity {...item} key={_} />
                     })}
                 </Group>

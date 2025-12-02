@@ -51,7 +51,7 @@ export const PushFromForm: React.FC<Props> = ({ children, part }: Props) => {
                                 name='initiative'
                             />
                         </div>
-                        <TextArea title='Описание' className='h-[160px] overflow-scroll bg-color-dark p-4 py-2 my-2 mb-4' name="discription" />
+                        <TextArea title='Описание' className='h-[160px] overflow-scroll bg-color-dark p-4 py-2 my-2 mb-4' name="description" />
                     </div>
                 </div>
                 <div className="flex justify-end flex-col pb-6 pr-4 items-end">
