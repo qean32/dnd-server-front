@@ -55,7 +55,7 @@ export function SortableItem({ children, id, item: { name, path } }: PropsWithCh
         <SortableItemContext.Provider value={context}>
             <div
                 className='flex items-center justify-between px-3 pr-3 py-4 bg-color-hover transition-300'
-                style={{ cursor: 'move', 'position': 'relative', ...style }}
+                style={{ 'position': 'relative', ...style }}
                 ref={setNodeRef}
             >
                 <div className="flex gap-2 flex-1 justify-between">
@@ -63,7 +63,7 @@ export function SortableItem({ children, id, item: { name, path } }: PropsWithCh
                         <Ava path={path ?? ''} size='ava-md' />
                         <p className='pl-3 flex-1 text-ellipsis overflow-hidden text-nowrap'>{name ?? ''}</p>
                     </div>
-                    <EntityItemMenu />
+                    <EntityItemMenu id={Number(id)} />
                 </div>
                 {children}
             </div >
@@ -75,7 +75,7 @@ export function DragHandle() {
     const { attributes, listeners, ref } = useContext(SortableItemContext);
 
     return (
-        <div style={{ position: 'absolute', inset: 0, cursor: 'move' }}  {...attributes} {...listeners} ref={ref}>
+        <div style={{ position: 'absolute', inset: 0, cursor: 'move', zIndex: '10' }}  {...attributes} {...listeners} ref={ref}>
         </div>
     );
 }

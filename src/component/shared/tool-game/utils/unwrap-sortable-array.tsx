@@ -20,19 +20,17 @@ interface Props {
     items: any[]
     renderItem(item: any): React.ReactNode
     title: string
-    name: string
 }
 
 
 export function UnwrapSortableArray({
     items,
-    name,
     title,
     renderItem
 }: Props) {
     const dispath = useAppDispatch()
     const onChange = (array: any[]) => {
-        dispath(changeQueue({ queue: array, name }))
+        dispath(changeQueue({ queue: array }))
     }
     const [active, setActive] = React.useState<Active | null>(null);
     const activeItem = React.useMemo(

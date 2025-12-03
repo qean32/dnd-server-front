@@ -10,17 +10,17 @@ import { characterDto, entityDto } from '@/model/entities.dto'
 
 interface Props {
     mapsData: mapsDataDto
-    name: string
     characters: characterDto[]
     bestiary: entityDto[]
+    id: number
 }
 
 
 export const SharedVariant: React.FC<Props> = ({
     mapsData,
-    name,
     characters,
-    bestiary
+    bestiary,
+    id
 }: Props) => {
     const { session: sessionView } = useAppSelector(state => state.viewContent)
 
@@ -42,8 +42,7 @@ export const SharedVariant: React.FC<Props> = ({
                             <DragHandle />
                         </SortableItem>
                     )}
-                    name={name}
-                    items={mapsData[name].queue}
+                    items={mapsData[id]?.queue}
                     title='ОЧЕРЕДЬ'
                 />
                 <UnwrapArray
@@ -53,7 +52,7 @@ export const SharedVariant: React.FC<Props> = ({
                 />
                 <UnwrapArray
                     renderItem={InToolObjectItem}
-                    items={mapsData[name].objects}
+                    items={mapsData[id]?.objects}
                     title='ОБЬЕКТЫ'
                 />
                 <UnwrapArray

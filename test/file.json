@@ -1,6 +1,6 @@
 {
     "currentMap": {
-        "id": 1,
+        "id": 0,
         "name": "main",
         "path": "/img/map.jpg"
     },
@@ -8,7 +8,7 @@
     "name": "zxc1",
     "maps": [
         {
-            "id": 1,
+            "id": 0,
             "name": "main",
             "path": "/img/map.jpg"
         }
@@ -33,7 +33,7 @@
         }
     ],
     "mapsData": {
-        "main": {
+        "0": {
             "entities": [
                 {
                     "id": 111,

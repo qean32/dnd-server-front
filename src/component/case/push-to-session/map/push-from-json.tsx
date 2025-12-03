@@ -1,6 +1,7 @@
 import { Button, DisabledInput, NoFindData } from '@/component/ui'
 import { TypeUseBoolen } from '@/lib/castom-hook'
 import { useAppDispatch, useAppSelector } from '@/lib/castom-hook/redux'
+import { generateId } from '@/lib/function'
 import { pushMap } from '@/store/session-store'
 import React from 'react'
 
@@ -14,7 +15,7 @@ export const PushFromJSON: React.FC<Props> = ({ switcher, swap }: Props) => {
     const { object: data } = useAppSelector(state => state.pushedObject)
     const dispath = useAppDispatch()
     const push = (e: React.MouseEvent<HTMLButtonElement>) => {
-        dispath(pushMap(data))
+        dispath(pushMap({ ...data, id: generateId() }))
         swap(e)
     }
 
