@@ -9,7 +9,7 @@ export const UnwrapRemoveFiles: React.FC<{}> = ({ }: {}) => {
         return { path: item.name }
     }) : []
     const removeHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        const path = getHTMLData(e, 'data', true).path
+        const path = getHTMLData(e, true).path
         if (path) {
             setValue('files', [...watch('files')].filter(item => item.name != path))
         }

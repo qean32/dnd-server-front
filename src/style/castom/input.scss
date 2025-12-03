@@ -17,27 +17,10 @@ input:focus {
     outline: 0px solid $bg-color-light;
 }
 
-// select {
-//     all: unset
-// }
-
 input[type="search"] {
     padding: 12px 18px;
     letter-spacing: 1.5px;
-    // outline: 0px solid $bg-color-light;
 }
-
-.text-warning {
-    font-size: 14px;
-    padding: 0 0 0 2px;
-    max-width: 100%;
-    color: $red-color;
-    height: 20px;
-}
-
-// button {
-// outline: 1px transparent solid;
-// }
 
 .btn-in-group {
     outline: none;

@@ -32,9 +32,9 @@ const sessionSlice = createSlice({
                 { ...state.session.mapsData[state.session.currentMap.name][type].find(item => item.id == payload.id), ...payload }
             ]
         },
-        swapCurrentMap: (state: stateDto, { payload }: PayloadAction<{ path: string }>) => {
+        swapCurrentMap: (state: stateDto, { payload }: PayloadAction<idDto>) => {
             state.session.currentMap =
-                state.session.maps.find(item => item.path == payload.path)
+                state.session.maps.find(item => item.id == payload.id)
                 ??
                 state.session.currentMap
         },

@@ -1,22 +1,28 @@
 import { Button, DisabledInput, NoFindData } from '@/component/ui'
 import { TypeUseBoolen } from '@/lib/castom-hook'
 import { useAppSelector } from '@/lib/castom-hook/redux'
+import { pushDataInSessionInit } from '@/lib/function'
 import React from 'react'
 
 interface Props {
-    part: TypeUseBoolen
-    children: React.ReactNode
+    switcher: TypeUseBoolen
+    swap: React.MouseEventHandler<HTMLButtonElement>
 }
 
 
-export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
+export const PushFromJSON: React.FC<Props> = ({ switcher, swap }: Props) => {
     const { object: data } = useAppSelector(state => state.pushedObject)
+    const push = pushDataInSessionInit()
+    const pushHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+        push(data);
+        swap(e);
+    }
+
     React.useEffect(() => {
         if (data) {
-            part.on()
+            switcher.on()
         }
     }, [data])
-    // @ts-ignore
     const object = data?.isObject ? data : { path: '', name: '', id: 0, size: { x: 0, y: 0 } }
 
     return (
@@ -36,15 +42,12 @@ export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
                 <NoFindData title='токен не выбран' className='h-full' view={!data?.isObject} />
             </div>
             <div className="flex justify-end flex-col pb-6 pr-4 items-end">
-                <div className="flex gap-2" data={JSON.stringify({ ...data })}>
-                    {children}
-                    <Button
-                        type='submit'
-                        variant='acceess'
-                    >
-                        <p className='pointer-events-none'>Добавить</p></Button>
+                <div className="flex gap-2 pb-1">
+                    <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                    <Button variant='ghost' fn={switcher.off}>
+                        <p className='pointer-events-none'>Кастомный объект</p></Button>
                 </div>
-                <Button variant='acceess' fn={part.off} className='mt-3 w-11/12'><p>Добавить свою обьект</p></Button>
+                <Button variant='acceess' type='submit' fn={pushHandler} className='mt-2 w-11/12'><p>Добавить</p></Button>
             </div>
         </div>
     )

@@ -1,27 +1,27 @@
 import React from 'react'
 import { ButtonInGroup, GroupButton } from '@component/ui'
 import { Modal } from '@component/case/modal'
-import { useAppDispatch, useAppSelector } from '@lib/castom-hook/redux'
-import { toast } from '@lib/function'
+import { useAppSelector } from '@lib/castom-hook/redux'
 import { slogan } from '@/export'
 import { PushObject, PushEntity } from '@/component/case/push-to-session'
 import { InStoreEntityItem, InStoreObjectItem } from '@component/ui/item/'
 import { entityDto, objectDto } from '@/model'
+import { useToast } from '@/lib/castom-hook'
 
 interface Props {
 }
 
 
 export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
-    const dispath = useAppDispatch()
+    const toast = useToast()
     const { session } = useAppSelector(state => state.session)
     const saveGame = () => {
         localStorage.setItem("game-storage", JSON.stringify(session));
-        toast(dispath, "message", { text: 'Сохранено' }); console.log(session)
+        toast("message", { text: 'Сохранено' });
     }
     const forwardClick = React.useCallback(() => {
         navigator.clipboard.writeText(`${slogan} \n${process.env.CLIENT_HOST}${window.location.pathname.slice(1)}`);
-        toast(dispath, "message", { text: 'Ссылка скопирована' })
+        toast("message", { text: 'Ссылка скопирована' })
     }, [])
 
     return (

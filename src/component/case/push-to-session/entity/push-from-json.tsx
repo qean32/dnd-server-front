@@ -5,18 +5,22 @@ import { pushDataInSessionInit } from '@/lib/function'
 import React from 'react'
 
 interface Props {
-    part: TypeUseBoolen
-    children: React.ReactNode
+    switcher: TypeUseBoolen
+    swap: React.MouseEventHandler<HTMLButtonElement>
 }
 
 
-export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
+export const PushFromJSON: React.FC<Props> = ({ switcher, swap }: Props) => {
     const { object: data } = useAppSelector(state => state.pushedObject)
     const push = pushDataInSessionInit()
+    const pushHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+        push(data);
+        swap(e);
+    }
 
     React.useEffect(() => {
         if (data) {
-            part.on()
+            switcher.on()
         }
     }, [data])
     const entity = data?.isEntity ? data : { path: '', name: '', id: 0, description: '', initiative: 0 }
@@ -46,11 +50,17 @@ export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
             </div>
             <div className="flex justify-end flex-col pb-6 pr-4 items-end">
                 <div className="flex gap-2 pb-1" data={JSON.stringify({ ...data })}>
-                    {children}
-                    <Button variant='acceess' fn={() => { push(data) }}>
-                        <p className='pointer-events-none'>Добавить</p></Button>
+                    <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                    <Button variant='ghost' fn={switcher.off}>
+                        <p className='pointer-events-none'>Кастомный объект</p></Button>
                 </div>
-                <Button variant='acceess' fn={part.off} className='mt-2 w-11/12'><p>Добавить свой токен</p></Button>
+                <Button
+                    variant='acceess'
+                    type='submit'
+                    fn={pushHandler}
+                    className='mt-2 w-11/12'
+                >
+                    <p>Добавить</p></Button>
             </div>
         </div>
     )

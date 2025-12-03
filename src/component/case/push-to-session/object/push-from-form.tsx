@@ -1,20 +1,27 @@
 import { Button, TextInput, UploadImgArea } from '@/component/ui'
 import { TypeUseBoolen, useMyForm } from '@/lib/castom-hook'
+import { pushDataInSessionInit } from '@/lib/function'
 import { pushObjectToSessionFormDto, pushObjectToSessionSchema } from '@/model/schema'
 import React from 'react'
 import { FormProvider } from 'react-hook-form'
 
 interface Props {
-    part: TypeUseBoolen
-    children: React.ReactNode
+    switcher: TypeUseBoolen
+    swap: React.MouseEventHandler<HTMLButtonElement>
 }
 
 
-export const PushFromForm: React.FC<Props> = ({ children, part }: Props) => {
+export const PushFromForm: React.FC<Props> = ({ swap, switcher }: Props) => {
+    const push = pushDataInSessionInit()
+    const pushHandler = (data: any) => {
+        push(data);
+        // @ts-ignore
+        swap();
+    }
     const { form, submitHandler } =
         useMyForm<pushObjectToSessionFormDto>(
             pushObjectToSessionSchema,
-            () => { },
+            (data: any) => { pushHandler(data) },
             () => { }
         )
 
@@ -35,12 +42,17 @@ export const PushFromForm: React.FC<Props> = ({ children, part }: Props) => {
                     </div>
                 </div>
                 <div className="flex justify-end flex-col pb-6 pr-4 items-end">
-                    <div className="flex gap-2">
-                        {children}
-                        <Button fn={() => { }} type='submit' variant='acceess'>
-                            <p className='pointer-events-none'>Добавить</p></Button>
+                    <div className="flex gap-2 pb-1">
+                        <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                        <Button variant='ghost' fn={switcher.on}>
+                            <p className='pointer-events-none'>Назад</p></Button>
                     </div>
-                    <Button variant='acceess' fn={part.on} className='mt-3 w-11/12'><p>Назад</p></Button>
+                    <Button
+                        variant='acceess'
+                        type='submit'
+                        className='mt-2 w-11/12'
+                    >
+                        <p>Добавить</p></Button>
                 </div>
             </form>
         </FormProvider>

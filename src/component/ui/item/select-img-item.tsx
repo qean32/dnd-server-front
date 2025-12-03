@@ -3,7 +3,7 @@ import { cn } from '@lib/function'
 
 interface Props {
     path: string
-    value: string
+    value: string | number
     className: string
 }
 

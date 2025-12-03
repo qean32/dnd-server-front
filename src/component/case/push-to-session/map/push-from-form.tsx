@@ -5,12 +5,12 @@ import React from 'react'
 import { FormProvider } from 'react-hook-form'
 
 interface Props {
-    part: TypeUseBoolen
-    children: React.ReactNode
+    switcher: TypeUseBoolen
+    swap: React.MouseEventHandler<HTMLButtonElement>
 }
 
 
-export const PushFromForm: React.FC<Props> = ({ children, part }: Props) => {
+export const PushFromForm: React.FC<Props> = ({ swap, switcher }: Props) => {
     const { form, submitHandler } =
         useMyForm<pushMapToSessionFormDto>(
             pushMapToSessionSchema,
@@ -35,7 +35,7 @@ export const PushFromForm: React.FC<Props> = ({ children, part }: Props) => {
                 </div>
                 <div className="flex justify-end flex-col pb-6 pr-4 items-end">
                     <div className="flex gap-2">
-                        {children}
+                        <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
                         <Button
                             fn={() => { }}
                             variant='acceess'
@@ -43,7 +43,7 @@ export const PushFromForm: React.FC<Props> = ({ children, part }: Props) => {
                         >
                             <p className='pointer-events-none'>Добавить</p></Button>
                     </div>
-                    <Button variant='acceess' fn={part.on} className='mt-3 w-11/12'><p>Назад</p></Button>
+                    <Button variant='acceess' fn={switcher.on} className='mt-3 w-11/12'><p>Назад</p></Button>
                 </div>
             </form>
         </FormProvider>

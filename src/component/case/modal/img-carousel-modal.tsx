@@ -16,8 +16,7 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
     const ref = React.useRef<null | HTMLDivElement>(null)
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        // @ts-ignore
-        setValue(getHTMLData(e, 'value'))
+        setValue(getHTMLData(e, false, 'value'))
     }
 
     const scroll = (value: number) => {

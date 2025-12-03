@@ -28,6 +28,7 @@ const Modal: React.FC = () => {
     const dispath = useAppDispatch()
     const { user } = useAppSelector(state => state.viewContent)
     const { path: pathImg } = useAppSelector(state => state.viewImg)
+
     return (
         <>
             <PushCharacterInGame swap={() => dispath(swapCharacterPush(null))} view={!!user} />

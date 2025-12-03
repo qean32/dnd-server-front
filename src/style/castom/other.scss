@@ -39,21 +39,6 @@
     }
 }
 
-.hover-translate-y {
-    transition: .3s;
-
-    &:hover {
-        transform: translateY(-5px);
-    }
-}
-
-.btn-hover-outline {
-    &:hover {
-        background-color: $bg-color !important;
-        outline: 1px $bg-color-light solid !important;
-    }
-}
-
 .running-line-parent:hover {
     .running-line {
         text-overflow: unset;
@@ -86,29 +71,6 @@
     }
 }
 
-// .hover-hide-img {
-// &:hover {
-//     .bg-img {
-//         width: 0;
-//     }
-
-//     .unwrap-text {
-//         transform: translateX(-12px);
-//         width: fit-content;
-//         text-wrap: initial;
-//         overflow: visible !important;
-//     }
-
-//     .unwrap-text-no-wrap {
-//         transform: translateX(-12px);
-//     }
-
-//     .hover-w-full {
-//         width: 100% !important;
-//     }
-// }
-// }
-
 [contenteditable=true]:empty:before {
     content: attr(placeholder);
     pointer-events: none;
@@ -120,10 +82,6 @@
     &>div {
         width: fit-content;
     }
-}
-
-.pointer-events-auto- {
-    pointer-events: auto !important;
 }
 
 .arrow-auth-relative:hover {
@@ -168,7 +126,7 @@
     }
 }
 
-.bg-shadow-:before {
+.bg-shadow-prime:before {
     content: '';
     display: block;
     width: 100%;

@@ -1,3 +1,4 @@
+import { NoFindData } from '@/component/ui'
 import React from 'react'
 
 interface Props {
@@ -10,7 +11,7 @@ interface Props {
 export const UnwrapArray: React.FC<Props> = ({
     items,
     title,
-    renderItem
+    renderItem,
 }: Props) => {
     return (
         <div className='w-1/4'>
@@ -19,6 +20,14 @@ export const UnwrapArray: React.FC<Props> = ({
                 {items.map(item => {
                     return <React.Fragment key={item.id} >{renderItem(item)}</React.Fragment>
                 })}
+
+                {
+                    !items.length
+                    &&
+                    <div className="flex justify-center pt-10">
+                        <NoFindData title='ТУТ ПОКА ПУСТО' view={!items.length} />
+                    </div>
+                }
             </div>
         </div>
     )

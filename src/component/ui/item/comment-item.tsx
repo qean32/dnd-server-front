@@ -1,13 +1,7 @@
 import React from 'react'
 import { Ava, UnwrapFiles } from '..'
 import { Link } from 'react-router-dom'
-import { fileDto, idDto, userDto } from '@/model'
-
-type commentDto = idDto & {
-    user: userDto
-    text: string
-    files: fileDto[]
-}
+import { commentDto } from '@/model'
 
 interface Props extends commentDto {
 }
@@ -24,7 +18,8 @@ export const CommentItem: React.FC<Props> = ({
     files = [
         { path: 'zxc.zxc' },
         { path: '/img/entity.jpg' },
-    ]
+    ],
+    date = '20.05.2006'
 }: Props) => {
     return (
         <div className="flex gap-2 justify-between pt-2 px-5">
@@ -44,7 +39,7 @@ export const CommentItem: React.FC<Props> = ({
                     }
                 </div>
             </div>
-            <p className='text-sm w-[100px] pl-5'>20.05.20</p>
+            <p className='text-sm w-[100px] pl-5'>{date}</p>
         </div>
     )
 }

@@ -3,7 +3,7 @@ import { getHTMLData, stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { ModalCross, PlusButton } from '@component/ui'
 import * as ModalGroup from './index-group'
-import { InStoreMapItem, SelectImgItem } from '@component/ui/item'
+import { InStoreMapItem, SelectMapItem } from '@component/ui/item'
 import { PushMap } from '@/component/case/push-to-session'
 import { useAppDispatch, useAppSelector } from '@/lib/castom-hook/redux'
 import { swapCurrentMap } from '@/store/session-store'
@@ -18,7 +18,7 @@ export const MapsGame: React.FC<Props> = ({ view, swap }: Props) => {
     const { session: { maps, currentMap } } = useAppSelector(state => state.session)
     const dispath = useAppDispatch()
     const swapHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        dispath(swapCurrentMap({ path: getHTMLData(e, 'value') }))
+        dispath(swapCurrentMap({ id: getHTMLData(e, true).id }))
     }
 
     return (
@@ -34,8 +34,8 @@ export const MapsGame: React.FC<Props> = ({ view, swap }: Props) => {
                 <ModalCross fn={swap} />
                 <p className='pl-5 pt-2 text-2xl'>Карты</p>
                 <div className='grid gap-5 p-5 grid-cols-6 adaptive2k-grid-column-7' onClick={swapHandler}>
-                    {maps.map(({ path }) =>
-                        <SelectImgItem className='h-[9vh]' path={path} value={currentMap.path} />
+                    {maps.map((item) =>
+                        <SelectMapItem value={currentMap.id} data={item} path={item.path} />
                     )}
                     <ModalGroup.Root modal={ModalGroup.PushToSession} props={{ type: 'map', renderItem: InStoreMapItem, accept: PushMap }}>
                         <PlusButton className='h-[9vh] w-1/9 px-5' iconSize='icon-sm' /></ModalGroup.Root>

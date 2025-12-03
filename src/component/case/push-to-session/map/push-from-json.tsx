@@ -5,21 +5,22 @@ import { pushMap } from '@/store/session-store'
 import React from 'react'
 
 interface Props {
-    part: TypeUseBoolen
-    children: React.ReactNode
+    switcher: TypeUseBoolen
+    swap: React.MouseEventHandler<HTMLButtonElement>
 }
 
 
-export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
+export const PushFromJSON: React.FC<Props> = ({ switcher, swap }: Props) => {
     const { object: data } = useAppSelector(state => state.pushedObject)
     const dispath = useAppDispatch()
-    const push = () => {
+    const push = (e: React.MouseEvent<HTMLButtonElement>) => {
         dispath(pushMap(data))
+        swap(e)
     }
 
     React.useEffect(() => {
         if (data) {
-            part.on()
+            switcher.on()
         }
     }, [data])
     // @ts-ignore
@@ -45,15 +46,11 @@ export const PushFromJSON: React.FC<Props> = ({ part, children }: Props) => {
             </div>
             <div className="flex justify-end flex-col pb-6 pr-4 items-end">
                 <div className="flex gap-2" data={JSON.stringify({ ...data })}>
-                    {children}
-                    <Button
-                        type='submit'
-                        fn={push}
-                        variant='acceess'
-                    >
-                        <p className='pointer-events-none'>Добавить</p></Button>
+                    <Button fn={swap} variant='ghost'><p>Отмена</p></Button>
+                    <Button fn={switcher.off} variant='ghost'>
+                        <p className='pointer-events-none'>Кастомная карта</p></Button>
                 </div>
-                <Button variant='acceess' fn={part.off} className='mt-3 w-11/12'><p>Добавить свою карту</p></Button>
+                <Button type='submit' variant='acceess' fn={push} className='mt-3 w-11/12'><p>Добавить</p></Button>
             </div>
         </div>
     )

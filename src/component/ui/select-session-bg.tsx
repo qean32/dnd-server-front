@@ -13,8 +13,7 @@ export const SelectSessionBG: React.FC<Props> = ({ }: Props) => {
     const { register } = useFormContext()
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        // @ts-ignore
-        setValue(getHTMLData(e, 'value'))
+        setValue(getHTMLData(e, false, 'value'))
     }
     return (
         <>

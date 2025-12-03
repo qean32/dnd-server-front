@@ -2,7 +2,7 @@ import z from "zod";
 
 export const createPostSchema = z.object({
     department: z
-        .string(),
+        .number(),
     text: z
         .string()
         .min(10, { message: 'Минимальная длинна 10' }),
@@ -19,7 +19,7 @@ export const createPostSchema = z.object({
 });
 
 export type createPostFormDto = {
-    department: string
+    department: number
     text: string
     description: string
     tags: string

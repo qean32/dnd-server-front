@@ -6,19 +6,21 @@ import { SortableItem, DragHandle, UnwrapArray, UnwrapSortableArray } from './ut
 import { useAppSelector } from '@lib/castom-hook/redux'
 import { mapsDataDto } from '@/model'
 import { InToolEntityItem, InToolObjectItem, InToolCharacterItem } from '@component/ui/item'
-import { characterDto } from '@/model/entities.dto'
+import { characterDto, entityDto } from '@/model/entities.dto'
 
 interface Props {
     mapsData: mapsDataDto
     name: string
     characters: characterDto[]
+    bestiary: entityDto[]
 }
 
 
 export const SharedVariant: React.FC<Props> = ({
     mapsData,
     name,
-    characters
+    characters,
+    bestiary
 }: Props) => {
     const { session: sessionView } = useAppSelector(state => state.viewContent)
 
@@ -46,12 +48,12 @@ export const SharedVariant: React.FC<Props> = ({
                 />
                 <UnwrapArray
                     renderItem={InToolEntityItem}
-                    items={mapsData[name].entities}
+                    items={bestiary}
                     title='БЕСТИАРИЙ'
                 />
                 <UnwrapArray
                     renderItem={InToolObjectItem}
-                    items={mapsData[name].entities}
+                    items={mapsData[name].objects}
                     title='ОБЬЕКТЫ'
                 />
                 <UnwrapArray

@@ -16,7 +16,7 @@ export const Users: React.FC<Props> = ({ view, swap }: Props) => {
     const dispath = useAppDispatch()
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        dispath(swapCharacterPush(getHTMLData(e, 'data', true).id))
+        dispath(swapCharacterPush(getHTMLData(e, true).id))
     }
     return (
         <Modal

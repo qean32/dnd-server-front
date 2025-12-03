@@ -7,8 +7,8 @@ interface SearchProps {
 }
 
 export const Search: React.FC<SearchProps> = ({ className = 'w-full' }: SearchProps) => {
-    const [_, setSearch] = useQueryParam('search', '')
     const [value, setValue] = React.useState('')
+    const [_, setSearch] = useQueryParam('search', '')
     const debounceValue = useDebounce(value)
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)

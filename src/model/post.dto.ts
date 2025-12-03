@@ -5,9 +5,9 @@ export type postDto = {
     user: {
         name: string
         id: number
+        ava: string
     },
     department: string
-    views: number
     likes: number
     fixed?: boolean
 }
