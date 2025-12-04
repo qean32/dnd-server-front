@@ -6,12 +6,14 @@ import { useAppDispatch } from "./redux";
 
 export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
     const [image] = useImage(path);
+    console.log(image);
+
     const rectRef = React.useRef<null | HTMLCanvasElement | any>();
     const trRef = React.useRef<null | HTMLCanvasElement | any>();
     const transform = useBoolean()
 
     const mouseOverHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        e.target.getStage().container().style.cursor = 'move';
+        e.target.getStage().container().style.cursor = 'pointer';
     };
 
     const mouseOutHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
@@ -22,12 +24,14 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
         transform.swap()
     };
 
-    const dragStartHandler = () => {
+    const dragStartHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
+        e.target.getStage().container().style.cursor = 'move';
     };
 
     const dragEndHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
+        e.target.getStage().container().style.cursor = 'pointer';
         dispath(changeEntity({
-            type: 'entities', payload: {
+            payload: {
                 id: e.currentTarget.attrs.id,
                 position: {
                     y: e.target.attrs.y,

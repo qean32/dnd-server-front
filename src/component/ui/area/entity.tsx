@@ -21,7 +21,7 @@ const restObjectTransform = {
 }
 
 
-export const Entity: React.FC<entityDto> = React.memo((props: entityDto) => {
+export const Entity: React.FC<entityDto> = (props: entityDto) => {
     const [
         { id, path, position, size, view },
         setState] = React.useState<entityDto>(props)
@@ -84,4 +84,4 @@ export const Entity: React.FC<entityDto> = React.memo((props: entityDto) => {
             />
         </>
     )
-})
+}

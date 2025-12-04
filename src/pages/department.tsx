@@ -33,7 +33,7 @@ const MainSideForum: React.FC<{}> = ({ }: {}) => {
             <Search />
             <PostColumn />
             <div className="pb-4">
-                <PostItem likes={0} {...f_post[10]} fixed={true} className="pl-2" />
+                <PostItem {...f_post[10]} fixed={true} className="pl-2" />
             </div>
             <GroupContainer
                 items={f_post}

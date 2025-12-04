@@ -27,7 +27,7 @@ const SortableItemContext = createContext<Context>({
     ref() { }
 });
 
-export function SortableItem({ children, id, item: { name, path } }: PropsWithChildren<Props>) {
+export function SortableItem({ children, id, item }: PropsWithChildren<Props>) {
     const {
         attributes,
         isDragging,
@@ -60,10 +60,10 @@ export function SortableItem({ children, id, item: { name, path } }: PropsWithCh
             >
                 <div className="flex gap-2 flex-1 justify-between">
                     <div className="flex gap-2">
-                        <Ava path={path ?? ''} size='ava-md' />
-                        <p className='pl-3 flex-1 text-ellipsis overflow-hidden text-nowrap'>{name ?? ''}</p>
+                        <Ava path={item.path ?? ''} size='ava-md' />
+                        <p className='pl-3 flex-1 text-ellipsis overflow-hidden text-nowrap'>{item.name ?? ''}</p>
                     </div>
-                    <EntityItemMenu id={Number(id)} />
+                    <EntityItemMenu {...item} />
                 </div>
                 {children}
             </div >

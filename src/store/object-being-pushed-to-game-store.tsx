@@ -1,4 +1,3 @@
-import { generateId } from "@/lib/function";
 import { entityDto, mapDto, objectDto } from "@/model";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
@@ -11,7 +10,7 @@ const objectBeingPushedToGameSlice = createSlice({
     initialState,
     reducers: {
         swapObjectBeingPushedToGame(state: stateDto, { payload: { object } }: PayloadAction<{ object: entityDto | mapDto | objectDto }>) {
-            state.object = { ...object, id: generateId() }
+            state.object = object
         },
     },
 })

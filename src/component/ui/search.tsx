@@ -1,4 +1,4 @@
-import { useDebounce, useHandlerClearQuery, useQueryParam } from "@/lib/castom-hook"
+import { useDebounce, useQueryParam } from "@/lib/castom-hook"
 import { cn } from "@/lib/function"
 import React from 'react'
 
@@ -8,15 +8,18 @@ interface SearchProps {
 
 export const Search: React.FC<SearchProps> = ({ className = 'w-full' }: SearchProps) => {
     const [value, setValue] = React.useState('')
-    const [_, setSearch] = useQueryParam('search', '')
+    const { param: search, pushQ } = useQueryParam('search')
+
     const debounceValue = useDebounce(value)
     const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         setValue(e.target.value)
     }
     React.useEffect(() => {
-        setSearch(debounceValue)
+        pushQ(debounceValue)
     }, [debounceValue])
-    useHandlerClearQuery('search', () => { setSearch(''); setValue('') })
+    React.useEffect(() => {
+        setValue(search ?? '')
+    }, [search])
 
 
     return (

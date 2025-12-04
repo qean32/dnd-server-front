@@ -1,11 +1,29 @@
 import { entityDto, mapDto, objectDto } from "@/model"
 import { useAppDispatch } from "../castom-hook/redux"
-import { pushToSession } from "@/store/session-store"
+import { pushEntity, pushMap, pushObject } from "@/store/session-store"
 
-export const pushDataInSessionInit = () => {
-    // JSON.parse(e.target.parentElement.parentElement.getAttribute('data'))
+export const pushDataInSessionInit = (type: 'object' | 'entity' | 'map') => {
     const dispath = useAppDispatch()
-    const push = (data: entityDto | mapDto | objectDto) => dispath(pushToSession({ newEntity: data, type: 'entities' }))
+
+    if (type == 'entity') {
+        const push = (data: entityDto) => dispath(pushEntity(data))
+
+        return push
+    }
+
+    if (type == 'object') {
+        const push = (data: objectDto) => dispath(pushObject(data))
+
+        return push
+    }
+
+    if (type == 'map') {
+        const push = (data: mapDto) => dispath(pushMap(data))
+
+        return push
+    }
+
+    const push = () => { }
 
     return push
 }

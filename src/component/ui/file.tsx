@@ -1,5 +1,5 @@
 import React from 'react'
-import { cn, IsImageFile } from '@lib/function'
+import { cn, isImageFile } from '@lib/function'
 
 interface Props {
     className?: string
@@ -29,7 +29,7 @@ export const File: React.FC<Props> = ({
         )
     }
 
-    if (imgView && IsImageFile(path)) {
+    if (imgView && isImageFile(path)) {
         return <>
             <img src={path} alt="" className='max-w-[400px] rounded-sm mb-3' />
         </>

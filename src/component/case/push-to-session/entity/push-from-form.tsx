@@ -12,7 +12,7 @@ interface Props {
 
 
 export const PushFromForm: React.FC<Props> = ({ swap, switcher }: Props) => {
-    const push = pushDataInSessionInit()
+    const push = pushDataInSessionInit('entity')
     const pushHandler = (data: any) => {
         push(data);
         // @ts-ignore

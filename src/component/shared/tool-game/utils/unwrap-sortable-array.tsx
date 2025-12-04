@@ -68,7 +68,7 @@ export function UnwrapSortableArray({
                     }}
                 >
                     <SortableContext items={items}>
-                        <div className='flex-1 pt-2 pb-2 max-h-full overflow-scroll'>
+                        <div className='h-full pt-2 pb-2 max-h-full overflow-scroll'>
                             {items.map(item => {
                                 return <React.Fragment key={item.id} >{renderItem(item)}</React.Fragment>
                             })}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useBoolean, useHandlerClearQuery, useQueryParam } from '@/lib/castom-hook'
+import { useBoolean, useQueryParam } from '@/lib/castom-hook'
 import { cn } from '@/lib/function'
 import { UnwrapTags } from '@component/ui'
 import { f_tag } from '@/f'
@@ -12,22 +12,21 @@ interface Props {
 export const PushTagInFilter: React.FC<Props> = ({
     className,
 }: Props) => {
-    const [tags, setTags] = useQueryParam('tags', '')
+    const { param: tags, pushQ } = useQueryParam('tags')
     const { boolean: view, swap } = useBoolean()
-    useHandlerClearQuery('tags', setTags)
 
     const clickHandlerPush = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
         const tag = e.target.innerHTML
         if (!tags.includes(tag))
-            setTags(tags + tag + ',')
+            pushQ(tags + tag + ',')
         swap()
     }
 
     const clickHandlerRemove = (e: React.MouseEvent<HTMLDivElement>) => {
         // @ts-ignore
         const newTags = tags.split(',').slice(0, -1).filter(item => item != e.target.innerHTML).join(',')
-        setTags(`${newTags}${!!newTags.length ? ',' : ''}`);
+        pushQ(`${newTags}${!!newTags.length ? ',' : ''}`);
     }
 
     return (

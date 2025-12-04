@@ -1,8 +1,7 @@
 import { Button, DisabledInput, NoFindData } from '@/component/ui'
 import { TypeUseBoolen } from '@/lib/castom-hook'
-import { useAppDispatch, useAppSelector } from '@/lib/castom-hook/redux'
-import { generateId } from '@/lib/function'
-import { pushMap } from '@/store/session-store'
+import { useAppSelector } from '@/lib/castom-hook/redux'
+import { pushDataInSessionInit } from '@/lib/function'
 import React from 'react'
 
 interface Props {
@@ -13,9 +12,9 @@ interface Props {
 
 export const PushFromJSON: React.FC<Props> = ({ switcher, swap }: Props) => {
     const { object: data } = useAppSelector(state => state.pushedObject)
-    const dispath = useAppDispatch()
-    const push = (e: React.MouseEvent<HTMLButtonElement>) => {
-        dispath(pushMap({ ...data, id: generateId() }))
+    const push = pushDataInSessionInit('map')
+    const pushHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
+        push(data)
         swap(e)
     }
 
@@ -51,7 +50,7 @@ export const PushFromJSON: React.FC<Props> = ({ switcher, swap }: Props) => {
                     <Button fn={switcher.off} variant='ghost'>
                         <p className='pointer-events-none'>Кастомная карта</p></Button>
                 </div>
-                <Button type='submit' variant='acceess' fn={push} className='mt-3 w-11/12'><p>Добавить</p></Button>
+                <Button type='submit' variant='acceess' fn={pushHandler} className='mt-3 w-11/12'><p>Добавить</p></Button>
             </div>
         </div>
     )

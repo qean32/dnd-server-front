@@ -1,7 +1,8 @@
 import React from 'react'
 import { ButtonInGroup } from '@component/ui'
-import { useAppDispatch } from '@/store'
-import { swapSessionToolContent } from '@/store/view-content-store'
+import { useQueryParam } from '@/lib/castom-hook'
+import { qParamName } from '@/export'
+import { getHTMLData } from '@/lib/function'
 
 interface Props {
     swap: React.MouseEventHandler<HTMLButtonElement>
@@ -9,11 +10,10 @@ interface Props {
 
 
 export const ShortVariant: React.FC<Props> = ({ swap }: Props) => {
-    const dispath = useAppDispatch()
+    const { pushQ } = useQueryParam(qParamName.sContent)
 
     const swapGameView = (e: React.MouseEvent<HTMLButtonElement>) => {
-        // @ts-ignore
-        dispath(swapSessionToolContent(e.target.children[0].getAttribute('data')))
+        pushQ(getHTMLData(e))
         swap(e)
     }
 

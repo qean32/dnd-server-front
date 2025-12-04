@@ -8,12 +8,12 @@ interface SelectProps {
 
 
 export const SelectToQuery: React.FC<SelectProps> = ({ className = 'w-fit', options }: SelectProps) => {
-    const [_, setSelect] = useQueryParam('select', '')
+    const { pushQ } = useQueryParam('select')
 
     return (
         <select
             className={cn('flex-1', className)}
-            onChange={e => setSelect(e.target.value)}
+            onChange={e => pushQ(e.target.value)}
         >
             {options.map(({ title, value, id }) => {
                 return <option key={id} value={value}>{title}</option>

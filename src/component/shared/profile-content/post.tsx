@@ -30,7 +30,7 @@ export const Post: React.FC<Props> = ({ view }: Props) => {
             <PostColumn className="pl-5" />
             {!!f_post.length &&
                 f_post.slice(0, 6).map(item => {
-                    return <PostItem likes={0} {...item} key={item.title} className="pl-5" />
+                    return <PostItem {...item} key={item.title} className="pl-5" />
                 })}
             <NoFindData title="Пользователь не выкладывал статьи" className="min-h-[500px]" view={false} />
 

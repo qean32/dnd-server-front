@@ -11,7 +11,9 @@ export const CommentBlock: React.FC<Props> = ({ }: Props) => {
         <div className="bg-color-dark rounded-lg pb-2">
             <CommentForm />
             <p className='pl-6 py-2 text-2xl'>Коментарии</p>
-            <CommentItem />
+            {[{}].map(item => {
+                return (<CommentItem {...item} />)
+            })}
         </div>
     )
 }

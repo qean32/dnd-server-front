@@ -2,6 +2,12 @@ export { axiosInstance } from './service/instance'
 
 export const tokenStorage = 'token-storage'
 export const invalidTokenMessage = 'invalid token!'
+export const qParamName = {
+    pContent: 'pContent',
+    vImg: 'vImg',
+    sContent: 'sContent',
+    pCharacter: 'pCharacter'
+}
 
 export const nameProject = 'Reborn Phoenix'
 export const slogan = 'Играйте вместе с нами!'

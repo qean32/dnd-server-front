@@ -1,7 +1,8 @@
 import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
-import { useAppSelector } from '@/lib/castom-hook/redux'
+import { useQueryParam } from '@/lib/castom-hook'
+import { qParamName } from '@/export'
 
 interface Props {
     view: boolean
@@ -10,16 +11,16 @@ interface Props {
 
 
 export const ViewImg: React.FC<Props> = ({ view, swap }: Props) => {
-    const { path } = useAppSelector(state => state.viewImg)
-    const [statePath, setStatePath] = React.useState(path)
+    const { param } = useQueryParam(qParamName.vImg)
+    const [statePath, setStatePath] = React.useState(param)
 
     React.useEffect(() => {
-        if (!path) {
+        if (!param) {
             setTimeout(() => { setStatePath('') }, 1000)
             return
         }
-        setStatePath(path)
-    }, [path])
+        setStatePath(param)
+    }, [param])
 
     return (
         <Modal

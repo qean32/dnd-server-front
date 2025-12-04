@@ -1,14 +1,14 @@
 import React from 'react'
-import { useAppDispatch } from '@lib/castom-hook/redux'
-import { swapViewImg } from '@/store/view-img-store'
 import { mapDto } from '@/model'
+import { useQueryParam } from '@/lib/castom-hook'
+import { qParamName } from '@/export'
 
 
 export const InStoreMapItem: React.FC<mapDto> = (item: mapDto) => {
-    const dispath = useAppDispatch()
+    const { pushQ } = useQueryParam(qParamName.vImg)
 
     const clickHAndler = () => {
-        dispath(swapViewImg({ path: item.path }))
+        pushQ(item.path)
     }
     return (
         <div
