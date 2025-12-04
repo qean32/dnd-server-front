@@ -6,7 +6,6 @@ import { useAppDispatch } from "./redux";
 
 export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
     const [image] = useImage(path);
-    console.log(image);
 
     const rectRef = React.useRef<null | HTMLCanvasElement | any>();
     const trRef = React.useRef<null | HTMLCanvasElement | any>();

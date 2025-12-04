@@ -12,7 +12,10 @@ interface Props {
 export const GameArea: React.FC<Props> = ({ }: Props) => {
     const { session: { currentMap: { id }, mapsData } } = useAppSelector(state => state.session)
     const { handleWheel, stage } = useStage()
-
+    const [entities, setEntities] = React.useState(mapsData[id].entities)
+    React.useEffect(() => {
+        setEntities(mapsData[id].entities)
+    }, [id])
 
     return (
         <Stage
@@ -33,10 +36,23 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                     <GameBackground />
                 </Group>
 
-                {[...mapsData[id]?.entities ?? []].map((item: entityDto, _: number) => {
-                    return <Entity {...item} key={_} />
-                })}
+                <Zxzc entities={entities} />
             </Layer>
         </Stage>
+    )
+}
+
+const Zxzc = ({ entities }: any) => {
+    console.log(entities);
+
+
+    return (
+        <>
+            {
+                entities.map((item: entityDto, _: number) => {
+                    return <Entity {...item} key={_} />
+                })
+            }
+        </>
     )
 }

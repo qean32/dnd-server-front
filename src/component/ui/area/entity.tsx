@@ -22,10 +22,6 @@ const restObjectTransform = {
 
 
 export const Entity: React.FC<entityDto> = (props: entityDto) => {
-    const [
-        { id, path, position, size, view },
-        setState] = React.useState<entityDto>(props)
-
     const dispath = useAppDispatch()
     const {
         clickHandler,
@@ -38,24 +34,25 @@ export const Entity: React.FC<entityDto> = (props: entityDto) => {
         rectRef,
         trRef,
         viewTransform
-    } = useToken(dispath, path)
+    } = useToken(dispath, props.path)
+
 
     return (
         <>
             <Circle
-                id={id.toString()}
+                id={props.id.toString()}
                 ref={rectRef}
                 draggable={true}
-                visible={view}
+                visible={props.view}
                 {...restObject}
-                {...position}
+                {...props.position}
                 radius={image ? (image?.height > image.width ? image.width : image.height) / 2 : 0}
                 fillPatternImage={image}
                 fillPatternX={image ? -image?.width / 2 : 0}
                 fillPatternY={image ? -image?.height / 2 : 0}
                 scale={{
-                    y: image ? ((size / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
-                    x: image ? ((size / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
+                    y: image ? ((props.size / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
+                    x: image ? ((props.size / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
                 }}
 
                 onClick={clickHandler}
@@ -76,7 +73,6 @@ export const Entity: React.FC<entityDto> = (props: entityDto) => {
                     if (newBox.width < 70) {
                         return oldBox;
                     }
-                    setState(prev => { return { ...prev, size: newBox.width } })
                     return newBox;
                 }}
                 onTransformEnd={(e) => { console.log(e) }}

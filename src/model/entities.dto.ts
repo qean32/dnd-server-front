@@ -27,7 +27,7 @@ export interface characterDto extends entityDto {
     user: userDto
 }
 
-export interface mapDto extends abstractEntity {
+export interface mapDto extends Omit<abstractEntity, "position" & 'view'> {
 }
 
 export interface objectDto extends abstractEntity {
