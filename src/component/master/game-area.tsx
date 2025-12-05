@@ -15,7 +15,7 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
     const [entities, setEntities] = React.useState(mapsData[id].entities)
     React.useEffect(() => {
         setEntities(mapsData[id].entities)
-    }, [id])
+    }, [id, mapsData[id]])
 
     return (
         <Stage
@@ -35,24 +35,12 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                 <Group>
                     <GameBackground />
                 </Group>
-
-                <Zxzc entities={entities} />
+                {!!entities.length &&
+                    entities.map((item: entityDto, _: number) => {
+                        return <Entity {...item} key={_} />
+                    })
+                }
             </Layer>
         </Stage>
-    )
-}
-
-const Zxzc = ({ entities }: any) => {
-    console.log(entities);
-
-
-    return (
-        <>
-            {
-                entities.map((item: entityDto, _: number) => {
-                    return <Entity {...item} key={_} />
-                })
-            }
-        </>
     )
 }

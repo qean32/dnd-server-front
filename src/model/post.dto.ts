@@ -1,4 +1,6 @@
-export type postDto = {
+import { idDto } from "./id.dto"
+
+export type postDto = idDto & {
     title: string,
     description: string,
     tags: string

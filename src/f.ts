@@ -16,6 +16,7 @@ export const f_user: userDto[] = [
 
 export const f_post: postDto[] = [
     {
+        id: 1,
         "title": "Как развивается d&d сообщество",
         "likes": 12,
         "description": "Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons. Анализ роста и изменений в сообществе любителей Dungeons & Dragons.",
@@ -24,6 +25,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 2,
         "title": "Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D Лучшие советы начинающим игрокам D&D",
         "description": "Советы новичкам, которые хотят окунуться в мир настольных ролевых игр.",
         "likes": 52,
@@ -32,6 +34,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 3,
         "title": "Создание незабываемого персонажа",
         "description": "Полезные рекомендации по созданию уникальных героев для вашей кампании.",
         "likes": 52,
@@ -40,6 +43,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 4,
         "title": "Что нового в мире Dungeons & Dragons?",
         "description": "Обзор последних обновлений и дополнений к любимой игре.",
         "likes": 52,
@@ -48,6 +52,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 5,
         "title": "Где проходят лучшие игровые сессии?",
         "description": "Рассказываем о местах, где можно поиграть в D&D офлайн и онлайн.",
         "likes": 52,
@@ -56,6 +61,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 6,
         "title": "Топ-5 самых интересных приключений в D&D",
         "description": "Подборка захватывающих сюжетов для вашего следующего приключения.",
         "likes": 52,
@@ -64,6 +70,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 7,
         "title": "Особенности русской школы мастера подземелий",
         "description": "Особенности российского подхода к проведению кампаний в D&D.",
         "likes": 52,
@@ -72,6 +79,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 8,
         "title": "Самые необычные расы и классы в D&D",
         "description": "Узнайте больше о нестандартных расах и классах в популярной ролевой игре.",
         "likes": 52,
@@ -80,6 +88,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 9,
         "title": "Какие бонусы получают игроки за взаимодействие?",
         "description": "Преимущества активного участия игроков в игровом процессе.",
         "likes": 52,
@@ -88,6 +97,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 10,
         "title": "История развития Dungeons & Dragons",
         "description": "Краткий экскурс в историю самой известной ролевой игры мира.",
         "likes": 52,
@@ -96,6 +106,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 11,
         "title": "Стратегии победы над драконами",
         "description": "Как победить грозных драконов в ваших приключениях.",
         "likes": 52,
@@ -104,6 +115,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 12,
         "title": "Как провести незабываемое сражение?",
         "description": "Практические советы для мастеров игры по организации захватывающих боев.",
         "likes": 52,
@@ -112,6 +124,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 13,
         "title": "Совместимы ли разные издания D&D?",
         "description": "Можно ли совмещать правила разных изданий в одной игровой сессии?",
         "likes": 52,
@@ -120,6 +133,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 14,
         "title": "Адаптация классики для современной аудитории",
         "description": "Как адаптируются старые сценарии под современное поколение игроков.",
         "likes": 52,
@@ -128,6 +142,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 15,
         "title": "Основные механики взаимодействия персонажей",
         "description": "Разбираем основные способы взаимодействия персонажей друг с другом.",
         "likes": 52,
@@ -136,6 +151,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 16,
         "title": "Реальные истории из сессий D&D",
         "description": "Игроки рассказывают забавные случаи из реальных игр.",
         "likes": 52,
@@ -144,6 +160,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 17,
         "title": "За кулисами создания собственных миров",
         "description": "Процесс разработки новых фэнтезийных вселенных для D&D.",
         "likes": 52,
@@ -152,6 +169,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 18,
         "title": "Учимся рисовать карты для кампаний",
         "description": "Простые шаги для рисования увлекательных карт в стиле D&D.",
         "likes": 52,
@@ -160,6 +178,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 19,
         "title": "Лучшие аксессуары для D&D-игроков",
         "description": "Полезные вещи, которые сделают ваши игровые вечера комфортнее.",
         "likes": 52,
@@ -168,6 +187,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 20,
         "title": "Зачем нужны побочные квесты?",
         "description": "Как дополнительные задания обогащают игру и развивают персонажей.",
         "likes": 52,
@@ -176,6 +196,7 @@ export const f_post: postDto[] = [
         "department": 'D&D',
     },
     {
+        id: 21,
         "title": "Правильное использование заклинаний",
         "description": "Основы магии и грамотное применение магических способностей.",
         "likes": 52,
@@ -187,341 +208,321 @@ export const f_post: postDto[] = [
 
 export const f_tag: string[] = ["dnd", "фентези", "zxccursed", "разработка", "web"]
 
-export const f_map: mapDto[] = [
+export const f_map: Omit<mapDto, 'id'>[] = [
     {
-        "id": 1,
         "name": "Таверна у Магнуса",
         "path": "/img/f/map1.jpg",
         "source": { "id": 1, "name": "Таверны" }
     },
     {
-        "id": 2,
         "name": "Подземелье Алдуина",
         "path": "/img/f/map2.jpg",
         "source": { "id": 1, "name": "Подземелья" }
     },
     {
-        "id": 3,
         "name": "Чертог Замка",
         "path": "/img/f/map3.jpg",
         "source": { "id": 1, "name": "Замок" }
     },
     {
-        "id": 4,
         "name": "Комната",
         "path": "/img/f/map4.jpg",
         "source": { "id": 1, "name": "Комнаты" }
     },
     {
-        "id": 5,
         "name": "Чащя",
         "path": "/img/f/map5.jpg",
         "source": { "id": 1, "name": "Природа" }
     },
     {
-        "id": 6,
         "name": "Лесная тропа",
         "path": "/img/f/map6.jpg",
         "source": { "id": 2, "name": "Природа" }
     },
     {
-        "id": 7,
         "name": "Городская площадь",
         "path": "/img/f/map7.jpg",
         "source": { "id": 3, "name": "Город" }
     },
     {
-        "id": 8,
         "name": "Пустыня",
         "path": "/img/f/map8.jpg",
         "source": { "id": 4, "name": "Природа" }
     },
     {
-        "id": 9,
         "name": "Горная вершина",
         "path": "/img/f/map9.jpg",
         "source": { "id": 5, "name": "Природа" }
     },
     {
-        "id": 10,
         "name": "Заброшенная фабрика",
         "path": "/img/f/map10.jpg",
         "source": { "id": 6, "name": "Город" }
     },
     {
-        "id": 11,
         "name": "Речной берег",
         "path": "/img/f/map11.jpg",
         "source": { "id": 7, "name": "Природа" }
     },
     {
-        "id": 12,
         "name": "Ледяной пещерный зал",
         "path": "/img/f/map12.jpg",
         "source": { "id": 8, "name": "Подземелья" }
     },
     {
-        "id": 13,
         "name": "Заброшенная деревня",
         "path": "/img/f/map13.jpg",
         "source": { "id": 9, "name": "Деревни" }
     },
     {
-        "id": 14,
         "name": "Магическая лаборатория",
         "path": "/img/f/map14.jpg",
         "source": { "id": 10, "name": "Подземелья" }
     },
     {
-        "id": 15,
         "name": "Крепость",
         "path": "/img/f/map15.jpg",
         "source": { "id": 11, "name": "Замок" }
     },
     {
-        "id": 16,
         "name": "Пляж",
         "path": "/img/f/map16.jpg",
         "source": { "id": 12, "name": "Природа" }
     },
     {
-        "id": 17,
         "name": "Заснеженная равнина",
         "path": "/img/f/map17.jpg",
         "source": { "id": 13, "name": "Природа" }
     },
     {
-        "id": 18,
         "name": "Древний храм",
         "path": "/img/f/map18.jpg",
         "source": { "id": 14, "name": "Замок" }
     },
     {
-        "id": 19,
         "name": "Карта звездного неба",
         "path": "/img/f/map19.jpg",
         "source": { "id": 15, "name": "Природа" }
     },
     {
-        "id": 20,
         "name": "Тропический остров",
         "path": "/img/f/map20.jpg",
         "source": { "id": 16, "name": "Природа" }
     }
 ]
 
-export const f_object: objectDto[] = [
+export const f_object: Omit<objectDto, 'id'>[] = [
     {
-        id: 1,
+        status: 'live',
         name: 'Гоблин',
         path: '/img/f/object1.jpg',
         source: { id: 1, name: 'Мелкие твари' },
     },
     {
-        id: 2,
+        status: 'live',
         name: 'Гремлин',
         path: '/img/f/object2.jpg',
         source: { id: 1, name: 'Мелкие твари' },
     },
     {
-        id: 3,
+        status: 'live',
         name: 'Громовой дракон',
         path: '/img/f/object3.jpg',
         source: { id: 1, name: 'Драконы' },
     },
     {
-        id: 4,
+        status: 'live',
         name: 'Огненый дракон',
         path: '/img/f/object4.jpg',
         source: { id: 1, name: 'Драконы' },
     },
     {
-        id: 5,
+        status: 'live',
         name: 'Стражник',
         path: '/img/f/object5.jpg',
         source: { id: 1, name: 'Стражна' },
     }
 ]
 
-export const f_entity: entityDto[] = [
+export const f_entity: Omit<entityDto, 'id'>[] = [
     {
-        id: 1,
         name: 'Гоблин',
         path: '/img/f/entity1.jpg',
         source: { id: 1, name: 'Мелкие твари' },
         description: 'Маленькое злое существо, часто встречающееся в подземельях.',
         initiative: 130,
-        size: 70,
-        status: 'live'
+        size: 2,
+        status: 'live',
+        idInBestiary: 123
     },
     {
-        id: 2,
         name: 'Гремлин',
         path: '/img/f/entity2.jpg',
         source: { id: 1, name: 'Мелкие твари' },
         description: 'Маленькое вредное существо, известное своим коварством.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1234
     },
     {
-        id: 3,
         name: 'Громовой дракон',
         path: '/img/f/entity3.jpg',
         source: { id: 1, name: 'Драконы' },
         description: 'Могучий дракон, умеющий вызывать грозы и молнии.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1123
     },
     {
-        id: 4,
         name: 'Огненный дракон',
         path: '/img/f/entity4.jpg',
         source: { id: 1, name: 'Драконы' },
         description: 'Дракон, способный извергать пламя изо рта.',
         initiative: 5,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1223
     },
     {
-        id: 5,
         name: 'Стражник',
         path: '/img/f/entity5.jpg',
         source: { id: 1, name: 'Люди' },
         description: 'Защитник или охранник, охраняющий важные объекты.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1323
     },
     {
-        id: 6,
         name: 'Тролль',
         path: '/img/f/entity6.jpg',
         source: { id: 2, name: 'Мелкие твари' },
         description: 'Грубое существо, живущее в горах или лесах.',
         initiative: 52,
-        size: 70,
-        status: 'live'
+        size: 3,
+        status: 'live',
+        idInBestiary: 1423
     },
     {
-        id: 7,
         name: 'Волшебник',
         path: '/img/f/entity7.jpg',
         source: { id: 3, name: 'Люди' },
         description: 'Мастер магии, владеющий силой заклинаний.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1253
     },
     {
-        id: 8,
         name: 'Ведьма',
         path: '/img/f/entity8.jpg',
         source: { id: 3, name: 'Люди' },
         description: 'Знахарка или магиня, использующая магию для своих целей.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1243
     },
     {
-        id: 10,
         name: 'Орк',
         path: '/img/f/entity10.jpg',
         source: { id: 2, name: 'Мелкие твари' },
         description: 'Суровое воинственное существо, обычно враждебное людям.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 1273
     },
     {
-        id: 11,
         name: 'Эльф',
         path: '/img/f/entity11.jpg',
         source: { id: 5, name: 'Люди' },
         description: 'Лесное существо, известное своей грацией и магическими способностями.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 12312
     },
     {
-        id: 12,
         name: 'Гном',
         path: '/img/f/entity12.jpg',
         source: { id: 5, name: 'Люди' },
         description: 'Маленькое, но искусное в кузнечном деле существо.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 43123
     },
     {
-        id: 13,
         name: 'Демон',
         path: '/img/f/entity13.jpg',
         source: { id: 6, name: 'Темные существа' },
         description: 'Зловещее существо, связанное с тьмой и магией зла.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 12343
     },
     {
-        id: 15,
         name: 'Медведь',
         path: '/img/f/entity15.jpg',
         source: { id: 8, name: 'Животные' },
         description: 'Большое хищное животное, обитающее в лесах.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 123
     },
     {
-        id: 16,
         name: 'Змей',
         path: '/img/f/entity16.jpg',
         source: { id: 8, name: 'Животные' },
         description: 'Длинное пресмыкающееся существо, часто ядовитое.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 564123
     },
     {
-        id: 17,
         name: 'Летучая мышь',
         path: '/img/f/entity17.jpg',
         source: { id: 8, name: 'Животные' },
         description: 'Небольшое ночное существо, летающее в тёмных местах.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 234123
     },
     {
-        id: 18,
         name: 'Русалка',
         path: '/img/f/entity18.jpg',
         source: { id: 9, name: 'Морские существа' },
         description: 'Морское существо с верхней частью человека и хвостом рыбы.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 67123
     },
     {
-        id: 19,
         name: 'Кракен',
         path: '/img/f/entity19.jpg',
         source: { id: 9, name: 'Морские существа' },
         description: 'Гигантское морское существо, способное разрушать корабли.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 423123
     },
     {
-        id: 20,
         name: 'Дракон',
         path: '/img/f/entity20.jpg',
         source: { id: 1, name: 'Драконы' },
         description: 'Величественное существо, владеющее магией и силой.',
         initiative: 30,
-        size: 70,
-        status: 'live'
+        size: 1,
+        status: 'live',
+        idInBestiary: 64123
     }
 ]

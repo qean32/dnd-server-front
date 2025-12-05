@@ -30,8 +30,8 @@ const sessionSlice = createSlice({
 
         // """"""""""""""""""""""""""""""""""""""""""" { entity action } """"""""""""""""""""""""""""""""""""""""""" //
 
-        changeEntity: (state: stateDto, { payload: { payload } }: PayloadAction<{ payload: Pick<entityDto, 'position' & 'id' & 'size'> }>) => {
-            console.log(state.session.currentMap.id);
+        changeEntity: (state: stateDto, { payload: { payload } }: PayloadAction<{ payload: Pick<entityDto, 'position' | 'id'> }>) => {
+            console.log({ ...state.session.mapsData[state.session.currentMap.id].entities.find(item => item.id == payload.id), ...payload });
 
             state.session.mapsData[state.session.currentMap.id].entities = [
                 // @ts-ignore
@@ -42,15 +42,24 @@ const sessionSlice = createSlice({
         },
         pushEntity: (state: stateDto, { payload }: PayloadAction<entityDto>) => {
             const id = generateId()
+            console.log(payload);
+
             state.session.mapsData[state.session.currentMap.id].entities = [
                 ...state.session.mapsData[state.session.currentMap.id].entities,
-                { ...payload, id }
+                { ...payload, id, description: "_" }
             ]
 
             state.session.mapsData[state.session.currentMap.id].queue = [
                 ...state.session.mapsData[state.session.currentMap.id].queue,
-                { ...payload, id }
+                { ...payload, id, description: "_" }
             ]
+
+            if (!state.bestiary.find(item => item.idInBestiary == payload.idInBestiary)) {
+                state.bestiary = [
+                    ...state.bestiary,
+                    { ...payload }
+                ]
+            }
         },
         removeEntity: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
             state.session.mapsData[state.session.currentMap.id].entities

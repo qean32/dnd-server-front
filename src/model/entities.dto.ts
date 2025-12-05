@@ -7,19 +7,19 @@ interface abstractEntity extends idDto {
     position?: coordinateDto
     name: string
     path: string
-    view?: boolean
 }
 
 interface sourceDto extends idDto {
     name: string
 }
 
-type statusDto = 'live' | 'dead' | 'stan'
+type statusDto = 'live' | 'dead' | 'stan' | 'hidden'
 
 export interface entityDto extends abstractEntity {
+    idInBestiary: number
     description: string
     status: statusDto
-    size: number
+    size: 1 | 2 | 3
     initiative: number
 }
 
@@ -27,8 +27,9 @@ export interface characterDto extends entityDto {
     user: userDto
 }
 
-export interface mapDto extends Omit<abstractEntity, "position" & 'view'> {
+export interface mapDto extends Omit<abstractEntity, "position"> {
 }
 
 export interface objectDto extends abstractEntity {
+    status: statusDto
 }

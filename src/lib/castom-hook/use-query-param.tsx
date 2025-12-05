@@ -1,8 +1,14 @@
+import React from "react";
 import { useSearchParams } from "react-router-dom"
 
-export const useQueryParam = (key: string) => {
+export const useQueryParam = (key: string, defaultValue?: string) => {
     const [param, setParam] = useSearchParams()
     const searchParams = new URLSearchParams(window.location.search);
+
+    React.useEffect(() => {
+        if (defaultValue)
+            pushQ(defaultValue)
+    }, [])
 
     const pushQ = (value: string) => {
         setParam({
