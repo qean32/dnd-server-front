@@ -41,14 +41,27 @@ interface TextInputProps {
 }
 
 
-export const TextInput: React.FC<TextInputProps> = ({ className = 'w-full', placeHolder, validate = true, name, xHint = 'left', yHint = 'center-y' }: TextInputProps) => {
+export const TextInput: React.FC<TextInputProps> = ({
+    className = 'w-full',
+    placeHolder,
+    validate = true,
+    name,
+    xHint = 'left',
+    yHint = 'center-y'
+}: TextInputProps) => {
     const { register, formState: { errors } } = useFormContext()
     const textError = errors[name]?.message as string;
 
     return (
         <div className={cn('relative rounded-sm', className)}>
             {validate && textError &&
-                <HoverHint className='top-1/2 absolute -translate-y-1/2 right-2' text={textError} x={xHint} y={yHint} >
+                <HoverHint
+                    infinity
+                    className='top-1/2 absolute -translate-y-1/2 right-2'
+                    text={textError}
+                    x={xHint}
+                    y={yHint}
+                >
                     <DangerIcon />
                 </HoverHint>
             }
@@ -81,10 +94,18 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
         <div className={cn('w-full relative rounded-sm', className)}>
             <div className='relative'>
                 <input type={view.boolean ? 'text' : 'password'} placeholder={placeHolder} {...register(name)} />
-                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt='' onClick={() => view.swap()} className='cursor-pointer icon-sm- absolute top-4 right-3' />
+                <img src={view.boolean ? '/icon/unlock.svg' : 'icon/lock.svg'} alt=''
+                    onClick={() => view.swap()}
+                    className='cursor-pointer icon-sm- absolute top-4 right-3'
+                />
             </div>
             {textError &&
-                <HoverHint className='top-1/2 absolute -translate-y-1/2 -left-7' text={textError} x={xHint} y={yHint} >
+                <HoverHint
+                    className='top-1/2 absolute -translate-y-1/2 -left-7'
+                    text={textError}
+                    x={xHint}
+                    y={yHint}
+                >
                     <DangerIcon />
                 </HoverHint>
             }
@@ -188,7 +209,13 @@ interface FakeTextProps {
     yHint?: yPositionHint
 }
 
-export const FakeTextInput: React.FC<FakeTextProps> = ({ title, className, name, xHint = 'right', yHint = 'center-y' }: FakeTextProps) => {
+export const FakeTextInput: React.FC<FakeTextProps> = ({
+    title,
+    className,
+    name,
+    xHint = 'right',
+    yHint = 'center-y'
+}: FakeTextProps) => {
     const { register, formState: { errors } } = useFormContext()
     const textError = errors[name]?.message as string;
 
@@ -196,7 +223,12 @@ export const FakeTextInput: React.FC<FakeTextProps> = ({ title, className, name,
         <div className={cn("relative", className)}>
             <input type="text" className='fake-input text-3xl w-fit' defaultValue={title} style={{ outline: 0 }} {...register(name)} />
             {textError &&
-                <HoverHint className='top-1/2 absolute -translate-y-1/2 -left-7' text={textError} x={xHint} y={yHint} >
+                <HoverHint
+                    className='top-1/2 absolute -translate-y-1/2 -left-7'
+                    text={textError}
+                    x={xHint}
+                    y={yHint}
+                >
                     <DangerIcon />
                 </HoverHint>
             }

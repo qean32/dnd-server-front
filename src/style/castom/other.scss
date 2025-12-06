@@ -126,6 +126,14 @@
     }
 }
 
+.infinity-view {
+    & .warning-hint {
+        transform: scaleX(1);
+        opacity: 1;
+        pointer-events: all;
+    }
+}
+
 .bg-shadow-prime:before {
     content: '';
     display: block;

@@ -6,7 +6,7 @@ import { generateId } from "@/lib/function";
 const gameStorage = 'game-storage'
 const bestiaryStorage = 'bestiary-storage'
 
-type stateDto = { session: sessionDto, bestiary: any[] }
+type stateDto = { session: sessionDto, bestiary: Omit<entityDto, 'size' | ''>[] }
 
 function swap(array: any[]) {
     [array[0], array[array.length - 1]] = [array[array.length - 1], array[0]];
@@ -64,7 +64,9 @@ const sessionSlice = createSlice({
 
             if (!state.bestiary.find(item => item.idInBestiary == idInBestiary)) {
                 state.bestiary = [
+                    // @ts-ignore
                     ...state.bestiary,
+                    // @ts-ignore
                     { id, idInBestiary, initiative, source, path, name, description }
                 ]
             }
