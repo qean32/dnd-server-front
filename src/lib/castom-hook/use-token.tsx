@@ -2,6 +2,7 @@ import React from "react";
 import useImage from "use-image";
 import { changeEntity } from "@/store/session-store";
 import { useAppDispatch } from "./redux";
+import { swapTmpEntity } from "@/store/temp-entity";
 
 export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
     const [image] = useImage(path);
@@ -41,7 +42,8 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     const dragMoveHandler = () => {
     };
 
-    const clickHandler = () => {
+    const clickHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
+        dispath(swapTmpEntity({ id: e.currentTarget.attrs.id }))
     }
 
     return { mouseOutHandler, mouseOverHandler, dragMoveHandler, clickHandler, dragEndHandler, dragStartHandler, image, rectRef }

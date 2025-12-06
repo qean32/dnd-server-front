@@ -16,7 +16,7 @@ export const ViewImg: React.FC<Props> = ({ view, swap }: Props) => {
 
     React.useEffect(() => {
         if (!param) {
-            setTimeout(() => { setStatePath('') }, 1000)
+            setTimeout(() => { setStatePath('') }, 200)
             return
         }
         setStatePath(param)

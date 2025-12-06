@@ -31,8 +31,6 @@ const sessionSlice = createSlice({
         // """"""""""""""""""""""""""""""""""""""""""" { entity action } """"""""""""""""""""""""""""""""""""""""""" //
 
         changeEntity: (state: stateDto, { payload: { payload } }: PayloadAction<{ payload: Pick<entityDto, 'position' | 'id'> }>) => {
-            console.log({ ...state.session.mapsData[state.session.currentMap.id].entities.find(item => item.id == payload.id), ...payload });
-
             state.session.mapsData[state.session.currentMap.id].entities = [
                 // @ts-ignore
                 ...state.session.mapsData[state.session.currentMap.id].entities.filter(item => item.id != payload.id),
@@ -40,24 +38,34 @@ const sessionSlice = createSlice({
                 { ...state.session.mapsData[state.session.currentMap.id].entities.find(item => item.id == payload.id), ...payload }
             ]
         },
-        pushEntity: (state: stateDto, { payload }: PayloadAction<entityDto>) => {
+        pushEntity: (state: stateDto, { payload: {
+            description,
+            idInBestiary,
+            initiative,
+            name,
+            path,
+            size,
+            source,
+            status
+        } }: PayloadAction<entityDto>) => {
             const id = generateId()
-            console.log(payload);
 
             state.session.mapsData[state.session.currentMap.id].entities = [
+                // @ts-ignore
                 ...state.session.mapsData[state.session.currentMap.id].entities,
-                { ...payload, id, description: "_" }
+                // @ts-ignore
+                { id, idInBestiary, initiative, status, source, size, path, name }
             ]
 
             state.session.mapsData[state.session.currentMap.id].queue = [
                 ...state.session.mapsData[state.session.currentMap.id].queue,
-                { ...payload, id, description: "_" }
+                { id, idInBestiary, initiative, status, source, size, path, name }
             ]
 
-            if (!state.bestiary.find(item => item.idInBestiary == payload.idInBestiary)) {
+            if (!state.bestiary.find(item => item.idInBestiary == idInBestiary)) {
                 state.bestiary = [
                     ...state.bestiary,
-                    { ...payload }
+                    { id, idInBestiary, initiative, source, path, name, description }
                 ]
             }
         },

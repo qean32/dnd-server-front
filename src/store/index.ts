@@ -3,12 +3,14 @@ import { useDispatch } from 'react-redux'
 import { toastReducer } from './toast-store'
 import { sessionReducer } from './session-store'
 import { objectBeingPushedToGameReducer } from './object-being-pushed-to-game-store'
+import { tempEntityReducer } from './temp-entity'
 
 
 const rootReducer = combineReducers({
     toast: toastReducer,
     session: sessionReducer,
     pushedObject: objectBeingPushedToGameReducer,
+    tempEntity: tempEntityReducer,
 })
 
 export const store = configureStore({
