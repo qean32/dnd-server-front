@@ -8,15 +8,16 @@ interface Props {
     text: string
     x: xPositionHint
     y: yPositionHint
+    fit?: boolean
     infinity?: boolean
 }
 
 const side = {
-    left: "left-6 -translate-x-full",
-    right: "-right-2 translate-x-full",
+    left: "left-8 -translate-x-full",
+    right: "right-5 translate-x-full",
     top: "-top-12",
-    "center-x": "left-0 -translate-x-[50%]",
-    "center-y": "top-0",
+    "center-x": "left-1/2 -translate-x-[50%]",
+    "center-y": "-top-1",
     bottom: "-bottom-12"
 }
 
@@ -27,7 +28,8 @@ export const HoverHint: React.FC<Props> = ({
     x,
     y,
     children,
-    infinity = false
+    infinity = false,
+    fit = false
 }: Props) => {
     return (
         <div className={cn(
@@ -41,9 +43,10 @@ export const HoverHint: React.FC<Props> = ({
                     "warning-hint p-2 px-4 rounded-sm bg-color-dark absolute outline-bg-light opacity-0 pointer-events-none transition-300 min-w-[240px]",
                     side[x],
                     side[y],
-                    (x == "left" ? "origin-right" : "origin-left")
+                    (x == "left" ? "origin-right" : "origin-left"),
+                    (fit && 'no-min-w')
                 )}>
-                <p>
+                <p className="text-center">
                     {text}
                 </p>
             </div>

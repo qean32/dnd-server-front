@@ -12,9 +12,9 @@ interface Props {
 export const GameArea: React.FC<Props> = ({ }: Props) => {
     const { session: { currentMap: { id }, mapsData } } = useAppSelector(state => state.session)
     const { handleWheel, stage } = useStage()
-    const [entities, setEntities] = React.useState(mapsData[id].entities)
+    const [entities, setEntities] = React.useState(mapsData[id].queue)
     React.useEffect(() => {
-        setEntities(mapsData[id].entities)
+        setEntities(mapsData[id].queue)
     }, [id, mapsData[id]])
 
     return (

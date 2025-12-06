@@ -2,7 +2,7 @@ import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { useAppSelector } from '@/lib/castom-hook/redux'
-import { NoFindData } from '@/component/ui'
+import { Initiative, NoFindData } from '@/component/ui'
 
 interface Props {
     view: boolean
@@ -27,11 +27,11 @@ export const EntityMore: React.FC<Props> = ({ view, swap }: Props) => {
         >
             {entity ?
                 <div onClick={stopPropagation} className='bg-color h-full w-[340px] flex items-center justify-start pt-3 flex-col'>
-                    <div className="w-11/12 bg-color-dark aspect-square rounded-sm"></div>
+                    <div className="w-11/12 bg-color-dark aspect-square rounded-sm bg-img" style={{ backgroundImage: `url(${entity ? entity.path : ''})` }} ></div>
                     <div className="w-11/12 rounded-sm pt-4">
-                        <p className='text-2xl'>НАИМЕНОВАНИЕ</p>
-                        <p className='text-justify'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis sunt natus ad voluptas voluptates explicabo labore doloribus harum asperiores quidem!</p>
-
+                        <p className='text-2xl'>{entity ? entity.name : ''}</p>
+                        <p className='text-justify'>{entity ? entity.description : ''}</p>
+                        <Initiative title={entity ? entity.initiative : 0} />
                     </div>
                 </div>
                 :

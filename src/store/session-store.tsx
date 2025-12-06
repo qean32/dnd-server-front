@@ -1,12 +1,12 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { sessionDto, mapDto, idDto } from "@/model";
+import { sessionDto, mapDto, idDto, bestiaryItem } from "@/model";
 import { characterDto, entityDto, objectDto } from "@/model/entities.dto";
 import { generateId } from "@/lib/function";
 
 const gameStorage = 'game-storage'
 const bestiaryStorage = 'bestiary-storage'
 
-type stateDto = { session: sessionDto, bestiary: Omit<entityDto, 'size' | ''>[] }
+type stateDto = { session: sessionDto, bestiary: bestiaryItem[] }
 
 function swap(array: any[]) {
     [array[0], array[array.length - 1]] = [array[array.length - 1], array[0]];
@@ -31,11 +31,11 @@ const sessionSlice = createSlice({
         // """"""""""""""""""""""""""""""""""""""""""" { entity action } """"""""""""""""""""""""""""""""""""""""""" //
 
         changeEntity: (state: stateDto, { payload: { payload } }: PayloadAction<{ payload: Pick<entityDto, 'position' | 'id'> }>) => {
-            state.session.mapsData[state.session.currentMap.id].entities = [
+            state.session.mapsData[state.session.currentMap.id].queue = [
                 // @ts-ignore
-                ...state.session.mapsData[state.session.currentMap.id].entities.filter(item => item.id != payload.id),
+                ...state.session.mapsData[state.session.currentMap.id].queue.filter(item => item.id != payload.id),
                 // @ts-ignore
-                { ...state.session.mapsData[state.session.currentMap.id].entities.find(item => item.id == payload.id), ...payload }
+                { ...state.session.mapsData[state.session.currentMap.id].queue.find(item => item.id == payload.id), ...payload }
             ]
         },
         pushEntity: (state: stateDto, { payload: {
@@ -50,15 +50,10 @@ const sessionSlice = createSlice({
         } }: PayloadAction<entityDto>) => {
             const id = generateId()
 
-            state.session.mapsData[state.session.currentMap.id].entities = [
-                // @ts-ignore
-                ...state.session.mapsData[state.session.currentMap.id].entities,
-                // @ts-ignore
-                { id, idInBestiary, initiative, status, source, size, path, name }
-            ]
-
             state.session.mapsData[state.session.currentMap.id].queue = [
+                // @ts-ignore
                 ...state.session.mapsData[state.session.currentMap.id].queue,
+                // @ts-ignore
                 { id, idInBestiary, initiative, status, source, size, path, name }
             ]
 
@@ -72,10 +67,10 @@ const sessionSlice = createSlice({
             }
         },
         removeEntity: (state: stateDto, { payload: { id } }: PayloadAction<idDto>) => {
-            state.session.mapsData[state.session.currentMap.id].entities
-                = state.session.mapsData[state.session.currentMap.id].entities.filter(item => item.id != id)
             state.session.mapsData[state.session.currentMap.id].queue
-                = state.session.mapsData[state.session.currentMap.id].entities.filter(item => item.id != id)
+                = state.session.mapsData[state.session.currentMap.id].queue.filter(item => item.id != id)
+            state.session.mapsData[state.session.currentMap.id].queue
+                = state.session.mapsData[state.session.currentMap.id].queue.filter(item => item.id != id)
         },
 
         // """"""""""""""""""""""""""""""""""""""""""" { object action } """"""""""""""""""""""""""""""""""""""""""" //
@@ -102,7 +97,6 @@ const sessionSlice = createSlice({
                 { ...payload, id }
             ]
             state.session.mapsData[id] = {
-                entities: [],
                 objects: [],
                 queue: []
             }

@@ -24,7 +24,7 @@ export const email = z
 
 export const confirmPassword = ({ confirmPassword, password }: { confirmPassword: string, password: string }, ctx: any) => {
     if (confirmPassword !== password) {
-        ctx.pushIssue({
+        ctx.addIssue({
             code: "custom",
             message: "Пароли не совпадают",
             path: ['confirmPassword']

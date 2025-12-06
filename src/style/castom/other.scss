@@ -127,11 +127,23 @@
 }
 
 .infinity-view {
+    &:hover {
+        opacity: 0 !important;
+    }
+
     & .warning-hint {
         transform: scaleX(1);
         opacity: 1;
         pointer-events: all;
     }
+}
+
+.no-min-w {
+    min-width: fit-content !important;
+}
+
+.block-prime {
+    position: initial;
 }
 
 .bg-shadow-prime:before {

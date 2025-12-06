@@ -56,7 +56,6 @@ export const TextInput: React.FC<TextInputProps> = ({
         <div className={cn('relative rounded-sm', className)}>
             {validate && textError &&
                 <HoverHint
-                    infinity
                     className='top-1/2 absolute -translate-y-1/2 right-2'
                     text={textError}
                     x={xHint}
@@ -101,7 +100,7 @@ export const PasswordInput: React.FC<PasswordInputProps> = ({
             </div>
             {textError &&
                 <HoverHint
-                    className='top-1/2 absolute -translate-y-1/2 -left-7'
+                    className='top-1/2 absolute -translate-y-1/2 -left-8'
                     text={textError}
                     x={xHint}
                     y={yHint}
