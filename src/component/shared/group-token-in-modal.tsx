@@ -2,36 +2,33 @@ import React from 'react'
 import { Title } from '@component/ui'
 import { cn, getHTMLData } from '@/lib/function'
 import { useAppDispatch } from '@/lib/castom-hook/redux'
-import { swapObjectBeingAddedToGame } from '@/store/object-being-added-to-game-store'
+import { swapObjectBeingPushedToGame } from '@/store/object-being-pushed-to-game-store'
 
 interface Props {
-    title: string
     renderItem(item: any): React.ReactNode
-    items?: any[]
+    items: any[]
 }
 
 
-export const GroupTokenInModal: React.FC<Props> = ({ title, renderItem }: Props) => {
+export const GroupTokenInModal: React.FC<Props> = ({ renderItem, items }: Props) => {
     const dispath = useAppDispatch()
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        const object = getHTMLData(e, 'data', true)
+        const object = getHTMLData(e, true)
         if (object) {
-            dispath(swapObjectBeingAddedToGame({ object }))
+            dispath(swapObjectBeingPushedToGame({ object }))
         }
     }
 
     return (
         <div className="ml-5 rounded-sm pb-2 pt-2">
-            <Title className='pb-2 pl-3'>{title}</Title>
+            <Title className='pb-2 pl-3'>{items[0].source.name}</Title>
             <div className={cn('grid gap-y-2 grid-cols-4 adaptive2k-grid-column-7')} onClick={clickHandler}>
-                {renderItem({})}
-                {renderItem({})}
-                {renderItem({})}
-                {renderItem({})}
-                {renderItem({})}
-                {renderItem({})}
-                {renderItem({})}
-                {renderItem({})}
+                {
+                    !!items.length &&
+                    items.map(item => {
+                        return renderItem(item)
+                    })
+                }
             </div>
         </div>
     )

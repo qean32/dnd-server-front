@@ -2,9 +2,9 @@ import React from 'react'
 import { getHTMLData, stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
 import { ModalCross, NoFindData } from '@component/ui'
-import { useAppDispatch } from '@/lib/castom-hook/redux'
-import { swapAddCharacterInGamePath } from '@/store/add-character-in-game-path-store'
 import { UserInModal } from '@/component/ui/item'
+import { useQueryParam } from '@/lib/castom-hook'
+import { qParamName } from '@/export'
 
 interface Props {
     view: boolean
@@ -13,11 +13,10 @@ interface Props {
 
 
 export const Users: React.FC<Props> = ({ view, swap }: Props) => {
-    const dispath = useAppDispatch()
+    const { pushQ } = useQueryParam(qParamName.pCharacter)
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement>) => {
-        // @ts-ignore
-        dispath(swapAddCharacterInGamePath({ href: getHTMLData(e, 'data', true).id }))
+        pushQ(getHTMLData(e, true).id)
     }
     return (
         <Modal

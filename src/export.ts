@@ -1,11 +1,15 @@
-export const serverHost = 'http://localhost:8000/'
-export const host = 'http://localhost:5173/'
 export { axiosInstance } from './service/instance'
 
 export const tokenStorage = 'token-storage'
 export const invalidTokenMessage = 'invalid token!'
+export const qParamName = {
+    pContent: 'pContent',
+    vImg: 'vImg',
+    sContent: 'sContent',
+    pCharacter: 'pCharacter'
+}
 
-export const nameProject = 'Phenix Reborn'
+export const nameProject = 'Reborn Phoenix'
 export const slogan = 'Играйте вместе с нами!'
 
 export const title = {

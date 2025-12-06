@@ -9,14 +9,18 @@ interface Props {
 }
 
 
-export const Toast: React.FC<Props> = ({ className, children, view }: Props) => {
+export const Toast: React.FC<Props> = ({
+    className,
+    children,
+    view
+}: Props) => {
     const display = useMount(view, 1000)
 
     if (!display) {
         return null
     }
     return (
-        <div className={cn('outline-bg-light w-fit absolute rounded-md overflow-hidden bg-color-darkness mt-2 left-1/2 -translate-x-1/2', className, (view ? 'toast-open' : 'toast-close'))}>
+        <div className={cn('outline-bg-light w-fit absolute rounded-md overflow-hidden bg-color-dark mt-2 left-1/2 -translate-x-1/2', className, (view ? 'toast-open' : 'toast-close'))}>
             {children}
         </div>
     )

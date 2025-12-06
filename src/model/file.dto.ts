@@ -1,4 +1,4 @@
 export type fileDto = {
-    name: string
-    file: File
+    path: string
+    file?: File
 }

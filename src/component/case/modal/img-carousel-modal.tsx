@@ -16,8 +16,7 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
     const ref = React.useRef<null | HTMLDivElement>(null)
 
     const clickHandler = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-        // @ts-ignore
-        setValue(getHTMLData(e, 'value'))
+        setValue(getHTMLData(e, false, 'value'))
     }
 
     const scroll = (value: number) => {
@@ -59,7 +58,7 @@ export const ImgCarousel: React.FC<Props> = ({ view, swap }: Props) => {
                     <ViewImgCarouselItem path='/img/carousel-item-2.jpg' value={value} />
                     <ViewImgCarouselItem path='/img/carousel-item-3.jpg' value={value} />
                     <ViewImgCarouselItem path='/img/carousel-item-4.jpg' value={value} />
-                    <ModalGroup.Root modal={ModalGroup.AddImg}>
+                    <ModalGroup.Root modal={ModalGroup.PushImg}>
                         <PlusButton className='min-w-[120px] h-full' />
                     </ModalGroup.Root>
                 </div>

@@ -1,4 +1,4 @@
-export const getHTMLData = (e: any, name: string = 'data', json: boolean = false) => {
+export const getHTMLData = (e: any, json: boolean = false, name: 'data' | 'value' = 'data') => {
     const data = e.target.getAttribute(name)
 
     if (json) {

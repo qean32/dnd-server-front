@@ -1,6 +1,5 @@
 import React from 'react'
-import { TextInput, Button, PasswordInput, Title } from '@component/ui'
-import { Link } from 'react-router-dom'
+import { TextInput, Button, PasswordInput, Title, LinkPrime } from '@component/ui'
 import { authFormDto, authSchema } from '@/model/schema'
 import { FormProvider } from 'react-hook-form'
 import { useMyForm } from '@/lib/castom-hook'
@@ -34,7 +33,9 @@ export const AuthForm: React.FC<Props> = ({ }: Props) => {
                             xHint='right'
                             className='outline-bg-light'
                         />
-                        <Link to={'/reset-password'} className='pl-1 cursor-pointer'>Востановить пароль</Link>
+                        <LinkPrime
+                            path='/reset-password'
+                        >Востановить пароль</LinkPrime>
                     </div>
                     <Button className="px-5 py-3" variant='acceess' children={<p>Вход</p>} />
                 </div>

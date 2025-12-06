@@ -1,13 +1,15 @@
-export type postDto = {
+import { idDto } from "./id.dto"
+
+export type postDto = idDto & {
     title: string,
-    discription: string,
+    description: string,
     tags: string
     user: {
         name: string
         id: number
+        ava: string
     },
     department: string
-    views: number
     likes: number
     fixed?: boolean
 }

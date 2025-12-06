@@ -17,27 +17,10 @@ input:focus {
     outline: 0px solid $bg-color-light;
 }
 
-// select {
-//     all: unset
-// }
-
 input[type="search"] {
     padding: 12px 18px;
     letter-spacing: 1.5px;
-    // outline: 0px solid $bg-color-light;
 }
-
-.text-warning {
-    font-size: 14px;
-    padding: 0 0 0 2px;
-    max-width: 100%;
-    color: $red-color;
-    height: 20px;
-}
-
-// button {
-// outline: 1px transparent solid;
-// }
 
 .btn-in-group {
     outline: none;
@@ -153,8 +136,8 @@ select {
     }
 }
 
-$checkbox-size: 16px;
-$checkedbox-size: 16px;
+$checkbox-size: 14px;
+$checkedbox-size: 14px;
 $border-color: $bg-color-light;
 
 @keyframes pop {
@@ -207,7 +190,7 @@ label {
 .checkbox-pop:checked+label span {
     &:before {
         animation: pop .4s ease;
-        z-index: 100;
+        z-index: 10;
         background: $border-color;
     }
 }

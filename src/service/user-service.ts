@@ -1,4 +1,3 @@
-import { jwtDecode } from "jwt-decode"
 import { requestGet, requestPatch } from "@lib/function/request"
 import { getToken } from "@lib/function"
 const instance = 'users'
@@ -18,6 +17,6 @@ export const userService = {
 
     updateUser: (ava: any) => {
         // @ts-ignore
-        return requestPatch(`${instance}/${jwtDecode(getToken()).id}/`, ava, true)
+        return requestPatch(`${instance}/${getToken().id}/`, ava, true)
     }
 }

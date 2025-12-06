@@ -11,7 +11,13 @@ interface Props {
 }
 
 
-export const IconAndCount: React.FC<Props> = ({ className, iconAction, icon, count, action }: Props) => {
+export const IconAndCount: React.FC<Props> = ({
+    className,
+    iconAction,
+    icon,
+    count,
+    action
+}: Props) => {
     const [value, setValue] = React.useState(count)
     const { boolean, swap } = useBoolean(action)
 

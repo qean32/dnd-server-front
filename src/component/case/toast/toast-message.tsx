@@ -9,7 +9,11 @@ interface Props {
 }
 
 
-export const ToastMessage: React.FC<Props> = ({ className, view, text }: Props) => {
+export const ToastMessage: React.FC<Props> = ({
+    className,
+    view,
+    text
+}: Props) => {
     return (
         <Toast view={view}>
             <div className={cn("py-3 px-4 flex gap-4 items-center", className)}>

@@ -1,16 +1,16 @@
 import React from 'react'
-import { useAppDispatch } from '@lib/castom-hook/redux'
-import { swapViewImg } from '@/store/view-img-store'
+import { useQueryParam } from '@/lib/castom-hook'
+import { qParamName } from '@/export'
 
 interface Props {
 }
 
 
 export const MapItem: React.FC<Props> = ({ }: Props) => {
-    const dispath = useAppDispatch()
+    const { pushQ } = useQueryParam(qParamName.vImg)
 
     const clickHAndler = () => {
-        dispath(swapViewImg({ href: '/img/carousel-item-1.jpg' }))
+        pushQ('/img/carousel-item-1.jpg')
     }
     return (
         <div className="mount-opacity relative h-[9vh] cursor-pointer" onClick={clickHAndler}>

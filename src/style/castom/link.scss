@@ -1,7 +1,6 @@
 @use '../import.scss' as *;
 
 a.prime-hover {
-    // display: block;
     text-decoration: none;
     position: relative;
 
@@ -11,22 +10,4 @@ a.prime-hover {
             background-color: $bg-color-darkness !important;
         }
     }
-
 }
-
-// a.prime-hover::after {
-//     content: "";
-//     background: whitesmoke;
-//     mix-blend-mode: exclusion;
-//     z-index: 1;
-//     width: calc(100% + 20px);
-//     height: 0;
-//     position: absolute;
-//     bottom: -4px;
-//     left: -10px;
-//     transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
-// }
-
-// a.prime-hover:hover::after {
-//     height: calc(100% + 8px)
-// }

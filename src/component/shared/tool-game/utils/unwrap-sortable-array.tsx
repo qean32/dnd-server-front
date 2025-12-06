@@ -20,19 +20,17 @@ interface Props {
     items: any[]
     renderItem(item: any): React.ReactNode
     title: string
-    name: string
 }
 
 
 export function UnwrapSortableArray({
     items,
-    name,
     title,
     renderItem
 }: Props) {
     const dispath = useAppDispatch()
     const onChange = (array: any[]) => {
-        dispath(changeQueue({ queue: array, name }))
+        dispath(changeQueue({ queue: array }))
     }
     const [active, setActive] = React.useState<Active | null>(null);
     const activeItem = React.useMemo(
@@ -70,7 +68,7 @@ export function UnwrapSortableArray({
                     }}
                 >
                     <SortableContext items={items}>
-                        <div className='flex-1 pt-2 pb-2 max-h-full overflow-scroll'>
+                        <div className='h-full pt-2 pb-2 max-h-full overflow-scroll'>
                             {items.map(item => {
                                 return <React.Fragment key={item.id} >{renderItem(item)}</React.Fragment>
                             })}

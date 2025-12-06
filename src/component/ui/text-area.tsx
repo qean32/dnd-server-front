@@ -32,10 +32,9 @@ export const TextArea: React.FC<Props> = ({
     return (
         <div className={cn("relative", parentDivclassName)}>
             {textError &&
-                <HoverHint className='top-6 absolute -translate-y-1/2 right-2' text={textError} x={'left'} y={'bottom'} >
+                <HoverHint className='top-5 absolute -translate-y-1/2 right-2' text={textError} x={'left'} y={'bottom'} >
                     <DangerIcon />
-                </HoverHint>
-            }
+                </HoverHint>}
             <div
                 contentEditable={true}
                 {...register(name)}

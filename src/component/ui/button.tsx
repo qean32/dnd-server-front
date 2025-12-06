@@ -18,9 +18,22 @@ const map = new Map([
 ])
 
 
-export const Button: React.FC<Props> = ({ className = 'w-fit', children, variant = 'default', fn = () => { }, type = 'button' }: Props) => {
+export const Button: React.FC<Props> = ({
+    className = 'w-fit',
+    children,
+    variant = 'default',
+    fn = () => { },
+    type = 'button'
+}: Props) => {
     return (
-        <button onClick={fn} type={type} className={cn('transition-300 rounded-md cursor-pointer px-3 py-2', className, map.get(variant))}>
+        <button
+            onClick={fn}
+            type={type}
+            className={cn(
+                'transition-300 rounded-md cursor-pointer px-2 py-2',
+                className,
+                map.get(variant)
+            )}>
             {children}
         </button>
     )

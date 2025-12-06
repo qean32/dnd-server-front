@@ -8,7 +8,11 @@ interface Props {
 }
 
 
-export const NoFindData: React.FC<Props> = ({ className, title, view }: Props) => {
+export const NoFindData: React.FC<Props> = ({
+    className,
+    title,
+    view
+}: Props) => {
     if (!view) {
         return null
     }

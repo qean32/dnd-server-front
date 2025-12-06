@@ -1,6 +1,5 @@
 import React from 'react'
-import { TextInput, Button, ImgInput, Title } from '@component/ui'
-import { Link } from 'react-router-dom'
+import { TextInput, Button, ImgInput, Title, LinkPrime } from '@component/ui'
 import { FormProvider } from 'react-hook-form'
 import { editProfileFormDto, editProfileSchema } from '@/model/schema'
 import { useMyForm } from '@/lib/castom-hook'
@@ -32,7 +31,9 @@ export const EditProfileForm: React.FC<Props> = ({ }: Props) => {
                             />
                             <ImgInput title='фото профиля' className='pl-1 pt-5' />
                         </div>
-                        <Link to={'/change-password'} className='pl-1 cursor-pointer'>Изменить пароль</Link>
+                        <LinkPrime
+                            path='/change-password'
+                        >Востановить пароль</LinkPrime>
                     </div>
                     <Button className="px-5 py-3" variant='acceess' children={<p>Редактировать</p>} />
                 </div>

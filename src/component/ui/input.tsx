@@ -66,7 +66,13 @@ interface PasswordInputProps {
 }
 
 
-export const PasswordInput: React.FC<PasswordInputProps> = ({ className, placeHolder, name, xHint = 'left', yHint = 'center-y' }: PasswordInputProps) => {
+export const PasswordInput: React.FC<PasswordInputProps> = ({
+    className,
+    placeHolder,
+    name,
+    xHint = 'left',
+    yHint = 'center-y'
+}: PasswordInputProps) => {
     const view = useBoolean(false)
     const { register, formState: { errors } } = useFormContext()
     const textError = errors[name]?.message as string;
@@ -93,7 +99,10 @@ interface InputFileProps {
 }
 
 
-export const ImgInput: React.FC<InputFileProps> = ({ className, title }: InputFileProps) => {
+export const ImgInput: React.FC<InputFileProps> = ({
+    className,
+    title
+}: InputFileProps) => {
     const id = generateId().toString()
     const [src, setSrc] = React.useState<any>([]);
     const urls = src.map((file: any) => URL.createObjectURL(file));
@@ -133,7 +142,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({ title, className }: Checkbox
             <input hidden className="checkbox-pop" type="checkbox" id={id} />
             <label htmlFor={id} className='text-sm flex gap-5 text-justify'>
                 {title}
-                <span className='checkbox-pop-label-span pt-0.5'></span>
+                <span className='checkbox-pop-label-span pt-1'></span>
             </label>
         </div>
     );
@@ -146,16 +155,19 @@ interface FileProps {
 }
 
 
-export const FileInput: React.FC<FileProps> = ({ className, name }: FileProps) => {
-    const id = generateId().toString()
-    const { setValue } = useFormContext()
-
+export const FileInput: React.FC<FileProps> = ({
+    className,
+    name
+}: FileProps) => {
+    const { setValue, watch } = useFormContext()
     const changeHandlerFile = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.files) {
+        const arr = Array.from(watch(name) ?? [])
 
-            setValue(name, e.target.files)
+        if (e.target.files) {
+            setValue(name, [...arr, ...Array.from(e.target.files)])
         }
     }
+    const id = generateId().toString()
 
     return (
         <div className={cn('w-fit', className)}>

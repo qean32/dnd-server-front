@@ -11,11 +11,11 @@ import { useQueryParam } from "@/lib/castom-hook";
 export const DatePickerUI = () => {
     const ref = useRef(new Date())
     const [startDate, setStartDate] = useState(ref.current);
-    const [_, setDate] = useQueryParam('data', '')
+    const { pushQ } = useQueryParam('date')
 
     useEffect(() => {
         if (startDate != ref.current)
-            setDate(startDate.toString())
+            pushQ(startDate.toString())
     }, [startDate])
 
     return <>
