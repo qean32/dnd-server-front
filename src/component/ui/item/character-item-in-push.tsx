@@ -8,7 +8,7 @@ interface Props extends characterDto {
 export const CharacterItemInPush: React.FC<Props> = ({
     id,
     name,
-    path = '/img/entity.jpg',
+    path = '/img/carousel-item-7.jpg',
     description,
 }: Props) => {
     return (
@@ -17,7 +17,7 @@ export const CharacterItemInPush: React.FC<Props> = ({
             <div className="bg-shadow-prime absolute inset-0 bg-img z-10" style={{ backgroundImage: `url(${path})` }}></div>
             <div className='py-3 items-center flex absolute inset-0 flex-col gap-2 h-[100px] z-20'>
                 <p className='text-5xl'>{id}</p>
-                <p className='text-sm'>{name.split(' ')[0]}</p>
+                <p className='text-sm w-9/12 overflow-hidden'>{name.split(' ')[0]}</p>
             </div>
         </div>
     )

@@ -23,12 +23,12 @@ export const PushCharacterInGame: React.FC<Props> = ({ view, swap }: Props) => {
         >
             <div className="relative bg-color p-5 w-3/7 px-7 rounded-md overflow-scroll flex flex-col -translate-y-1/12" onClick={stopPropagation}>
                 <ModalCross fn={swap} />
-                <p className='pl-5 py-4 text-2xl'>Персонажи игрока</p>
+                <p className='pb-4 text-2xl'>Персонажи игрока</p>
                 <NoFindData title='У игрока нет персонажей!' view={false} className='py-5' />
                 <div className='grid gap-5 py-5 grid-cols-8 min-h-[33vh] max-h-[33vh] overflow-scroll'>
                     {f_post.slice(0, 14).map((__, _) =>
                         // @ts-ignore
-                        <CharacterItemInPush key={_} id={_ + 1} name='Клиган Клиган' description='' />
+                        <CharacterItemInPush key={_} id={_ + 1} name='КлиганКлиган' description='' />
                     )}
                 </div>
                 <div className="flex justify-end gap-2">

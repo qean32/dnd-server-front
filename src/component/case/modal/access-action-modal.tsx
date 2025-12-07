@@ -1,7 +1,7 @@
 import React from 'react'
 import { stopPropagation } from '@/lib/function'
 import { Modal } from '@component/master/h-order-component'
-import { Button, ModalCross, Title } from '@component/ui'
+import { Button, ModalCross, NoFindData, Title } from '@component/ui'
 
 interface Props {
     view: boolean
@@ -33,7 +33,7 @@ export const AccessAction: React.FC<Props> = ({
                 <ModalCross fn={swap} />
                 <Title className='p-2 pl-5 text-center uppercase'><p style={{ letterSpacing: '2px' }}>Подтвердите действие</p></Title>
                 <div className="flex justify-center items-center flex-col flex-1 gap-2">
-                    <img src="/icon/no-find-data.svg" className='icon-4xl my-3' alt="" />
+                    <NoFindData title='' view />
                     <p className='text-2xl pt-4'>{warning}</p>
                 </div>
                 <div className="flex gap-5 justify-end p-5 items-end h-fit">

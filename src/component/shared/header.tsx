@@ -16,7 +16,7 @@ export const Header: React.FC<Props> = ({ className }: Props) => {
             <div className='flex gap-2'>
                 <p>{slogan}</p>
             </div>
-            <Logo />
+            <Logo variant='short' />
             <Link className='flex gap-4 items-center' to='/auth'>
                 <p className='cursor-pointer'>Профиль</p>
                 <Ava path={''} size='ava-sm' />

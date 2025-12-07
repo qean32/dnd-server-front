@@ -191,7 +191,7 @@ export const FileInput: React.FC<FileProps> = ({
 
     return (
         <div className={cn('w-fit', className)}>
-            <input type="file" name="" id={id} hidden onChange={changeHandlerFile} />
+            <input type="file" name="" multiple id={id} hidden onChange={changeHandlerFile} />
             <label htmlFor={id}>
                 <img src='/icon/upload.svg' className='icon-md cursor-pointer' />
             </label>

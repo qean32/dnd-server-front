@@ -27,29 +27,27 @@ export const Entity: React.FC<entityDto> = React.memo((props: entityDto) => {
 
 
     return (
-        <>
-            <Circle
-                id={props.id.toString()}
-                ref={rectRef}
-                draggable={true}
-                visible={props.status != 'hidden'}
-                {...restObject}
-                {...props.position}
-                radius={image ? (image?.height > image.width ? image.width : image.height) / 2 : 0}
-                fillPatternImage={image}
-                fillPatternX={image ? -image?.width / 2 : 0}
-                fillPatternY={image ? -image?.height / 2 : 0}
-                scale={{
-                    y: image ? ((getSizeInPixel(props.size) / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
-                    x: image ? ((getSizeInPixel(props.size) / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
-                }}
-                onClick={clickHandler}
-                onDragEnd={dragEndHandler}
-                onDragStart={dragStartHandler}
-                onMouseOut={mouseOutHandler}
-                onMouseOver={mouseOverHandler}
-                onDragMove={dragMoveHandler}
-            />
-        </>
+        <Circle
+            id={props.id.toString()}
+            ref={rectRef}
+            draggable={true}
+            visible={props.status != 'hidden'}
+            {...restObject}
+            {...props.position}
+            radius={image ? (image?.height > image.width ? image.width : image.height) / 2 : 0}
+            fillPatternImage={image}
+            fillPatternX={image ? -image?.width / 2 : 0}
+            fillPatternY={image ? -image?.height / 2 : 0}
+            scale={{
+                y: image ? ((getSizeInPixel(props.size) / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
+                x: image ? ((getSizeInPixel(props.size) / 2) / ((image?.height > image.width ? image.width : image.height) / 2)) : 0,
+            }}
+            onClick={clickHandler}
+            onDragEnd={dragEndHandler}
+            onDragStart={dragStartHandler}
+            onMouseOut={mouseOutHandler}
+            onMouseOver={mouseOverHandler}
+            onDragMove={dragMoveHandler}
+        />
     )
 })

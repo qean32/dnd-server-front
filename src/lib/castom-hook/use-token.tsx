@@ -2,10 +2,12 @@ import React from "react";
 import useImage from "use-image";
 import { changeEntity } from "@/store/session-store";
 import { useAppDispatch } from "./redux";
-import { swapTmpEntity } from "@/store/temp-entity";
+import { qParamName } from "@/export";
+import { useQueryParam } from "./use-query-param";
 
 export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
     const [image] = useImage(path);
+    const { pushQ } = useQueryParam(qParamName.actionEntity)
 
     const rectRef = React.useRef<null | HTMLCanvasElement | any>();
 
@@ -43,7 +45,8 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     };
 
     const clickHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        dispath(swapTmpEntity({ id: e.currentTarget.attrs.id }))
+        // dispath(swapTmpEntity({ id: e.currentTarget.attrs.id }))
+        pushQ(e.currentTarget.attrs.id)
     }
 
     return { mouseOutHandler, mouseOverHandler, dragMoveHandler, clickHandler, dragEndHandler, dragStartHandler, image, rectRef }
