@@ -1,5 +1,4 @@
-import { PushCharacterInGame } from "@component/case/modal/push-character-in-game-modal"
-import { ViewImg } from "@component/case/modal/img-view-modal"
+import { PushCharacterInGame, ViewImg, ActionEntity } from "@component/case/modal/index-group"
 import { ToolGameButton, ToolGame } from "@component/shared"
 import { useEntityMore, usePage, useQueryParam } from "@lib/castom-hook"
 import { getParamName } from "@lib/function"
@@ -35,6 +34,7 @@ const Modal: React.FC = () => {
             <ViewImg swap={clearQ} view={!!allQ[qParamName.vImg]} />
             {/* @ts-ignore */}
             <EntityMore swap={clearTmp} view={tmpEntity?.id} />
+            <ActionEntity swap={clearQ} view={allQ[qParamName.actionEntity]} />
         </>
     )
 }

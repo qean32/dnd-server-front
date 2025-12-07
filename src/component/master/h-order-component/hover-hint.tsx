@@ -40,13 +40,13 @@ export const HoverHint: React.FC<Props> = ({
             {children}
             <div
                 className={cn(
-                    "warning-hint p-2 px-4 rounded-sm bg-color-dark absolute outline-bg-light opacity-0 pointer-events-none transition-300 min-w-[240px]",
+                    "warning-hint p-2 px-4 rounded-sm bg-color-dark absolute outline-bg-light opacity-0 pointer-events-none transition-300 min-w-[240px] cursor-pointer",
                     side[x],
                     side[y],
                     (x == "left" ? "origin-right" : "origin-left"),
                     (fit && 'no-min-w')
                 )}>
-                <p className="text-center">
+                <p>
                     {text}
                 </p>
             </div>

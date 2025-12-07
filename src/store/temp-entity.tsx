@@ -3,7 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type stateDto = { tmpEntity: entityDto | objectDto | null | idDto }
 
-const initialState: stateDto = { tmpEntity: { id: 61537 } }
+const initialState: stateDto = { tmpEntity: null }
 
 const tempEntitySlice = createSlice({
     name: 'temp-entity',

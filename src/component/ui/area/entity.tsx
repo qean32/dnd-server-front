@@ -12,7 +12,7 @@ const restObject = {
 }
 
 
-export const Entity: React.FC<entityDto> = (props: entityDto) => {
+export const Entity: React.FC<entityDto> = React.memo((props: entityDto) => {
     const dispath = useAppDispatch()
     const {
         clickHandler,
@@ -32,7 +32,7 @@ export const Entity: React.FC<entityDto> = (props: entityDto) => {
                 id={props.id.toString()}
                 ref={rectRef}
                 draggable={true}
-                // visible={props.status != 'hidden'}
+                visible={props.status != 'hidden'}
                 {...restObject}
                 {...props.position}
                 radius={image ? (image?.height > image.width ? image.width : image.height) / 2 : 0}
@@ -52,4 +52,4 @@ export const Entity: React.FC<entityDto> = (props: entityDto) => {
             />
         </>
     )
-}
+})

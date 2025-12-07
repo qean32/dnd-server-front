@@ -13,13 +13,13 @@ interface sourceDto extends idDto {
     name: string
 }
 
-type statusDto = 'live' | 'dead' | 'stan' | 'hidden'
+export type statusDto = 'live' | 'dead' | 'stan' | 'hidden'
 
 export interface entityDto extends abstractEntity {
     idInBestiary: number
     description: string
     status: statusDto
-    size: 1 | 2 | 3
+    size: 1 | 2 | 3 | 4
     initiative: number
 }
 

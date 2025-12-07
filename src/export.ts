@@ -6,7 +6,8 @@ export const qParamName = {
     pContent: 'pContent',
     vImg: 'vImg',
     sContent: 'sContent',
-    pCharacter: 'pCharacter'
+    pCharacter: 'pCharacter',
+    actionEntity: 'actionEntity'
 }
 
 export const nameProject = 'Reborn Phoenix'
@@ -38,6 +39,12 @@ export const tip = [
     'Получайте удовольствие — игра создается для развлечения.',
     'Будьте терпеливы и уважайте других — командная игра важнее победы.',
     slogan,
+]
+
+export const noFindDataIcon = [
+    '/icon/no-find-data-1.svg',
+    '/icon/no-find-data-2.svg',
+    '/icon/no-find-data-3.svg',
 ]
 
 export const separator = ':separator:'

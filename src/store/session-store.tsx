@@ -30,7 +30,12 @@ const sessionSlice = createSlice({
 
         // """"""""""""""""""""""""""""""""""""""""""" { entity action } """"""""""""""""""""""""""""""""""""""""""" //
 
-        changeEntity: (state: stateDto, { payload: { payload } }: PayloadAction<{ payload: Pick<entityDto, 'position' | 'id'> }>) => {
+        changeEntity: (state: stateDto, { payload: { payload } }: PayloadAction<{
+            payload:
+            Pick<entityDto, 'id' | 'status'> |
+            Pick<entityDto, 'id' | 'size'> |
+            Pick<entityDto, 'position' | 'id'>
+        }>) => {
             state.session.mapsData[state.session.currentMap.id].queue = [
                 // @ts-ignore
                 ...state.session.mapsData[state.session.currentMap.id].queue.filter(item => item.id != payload.id),

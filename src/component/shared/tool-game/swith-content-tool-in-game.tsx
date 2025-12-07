@@ -16,16 +16,16 @@ export const SwithContentLiftSideGame: React.FC<Props> = ({ }: Props) => {
     }
 
     return (
-        <div className='flex justify-between'>
-            <ButtonInGroup value='queue' className='p-4' fn={swapGameView}>
+        <div className='flex'>
+            <ButtonInGroup value='queue' className='w-full' fn={swapGameView}>
                 <img className='icon-sm pointer-events-none' src='/icon/queue.svg' /></ButtonInGroup>
-            <ButtonInGroup value='bestiary' className='p-4' fn={swapGameView}>
+            <ButtonInGroup value='bestiary' className='w-full' fn={swapGameView}>
                 <img className='icon-sm pointer-events-none' src='/icon/dragon.svg' /></ButtonInGroup>
-            <ButtonInGroup value='objects' className='p-4' fn={swapGameView}>
+            <ButtonInGroup value='objects' className='w-full' fn={swapGameView}>
                 <img className='icon-sm pointer-events-none' src='/icon/object.svg' /></ButtonInGroup>
-            <ButtonInGroup value='characters' className='p-4' fn={swapGameView}>
+            <ButtonInGroup value='characters' className='w-full' fn={swapGameView}>
                 <img className='icon-sm pointer-events-none' src='/icon/user.svg' /></ButtonInGroup>
-            <ButtonInGroup className='p-4'>
+            <ButtonInGroup className='w-full'>
                 <img className='icon-sm pointer-events-none' src='/icon/dice-6.svg' /></ButtonInGroup>
         </div>
     )
