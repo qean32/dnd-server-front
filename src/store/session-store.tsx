@@ -56,18 +56,14 @@ const sessionSlice = createSlice({
             const id = generateId()
 
             state.session.mapsData[state.session.currentMap.id].queue = [
-                // @ts-ignore
                 ...state.session.mapsData[state.session.currentMap.id].queue,
-                // @ts-ignore
                 { id, idInBestiary, initiative, status, source, size, path, name }
             ]
 
             if (!state.bestiary.find(item => item.idInBestiary == idInBestiary)) {
                 state.bestiary = [
-                    // @ts-ignore
                     ...state.bestiary,
-                    // @ts-ignore
-                    { id, idInBestiary, initiative, source, path, name, description }
+                    { id, idInBestiary, initiative, source, path, name, description, size, status }
                 ]
             }
         },

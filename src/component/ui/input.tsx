@@ -37,7 +37,8 @@ interface TextInputProps {
     name: string
     validate?: boolean
     xHint?: xPositionHint,
-    yHint?: yPositionHint
+    yHint?: yPositionHint,
+    defaultValue?: string
 }
 
 
@@ -47,7 +48,8 @@ export const TextInput: React.FC<TextInputProps> = ({
     validate = true,
     name,
     xHint = 'left',
-    yHint = 'center-y'
+    yHint = 'center-y',
+    defaultValue = ''
 }: TextInputProps) => {
     const { register, formState: { errors } } = useFormContext()
     const textError = errors[name]?.message as string;
@@ -64,7 +66,7 @@ export const TextInput: React.FC<TextInputProps> = ({
                     <DangerIcon />
                 </HoverHint>
             }
-            <input type="text" placeholder={placeHolder} {...register(name)} />
+            <input type="text" placeholder={placeHolder} {...register(name)} defaultValue={defaultValue} />
         </div>
     )
 }

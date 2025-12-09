@@ -1,6 +1,6 @@
 import React from 'react'
 import { cn, stopPropagation } from '@/lib/function'
-import { useBoolean } from '@/lib/castom-hook'
+import { useBoolean, useClickOutside } from '@/lib/castom-hook'
 
 interface Props {
     className?: string
@@ -12,11 +12,19 @@ export const ContextMenu: React.FC<Props> = ({
     className,
     children
 }: Props) => {
-    const { boolean, swap } = useBoolean()
+    const { boolean, on, off } = useBoolean()
+    const ref = React.useRef<null | HTMLDivElement>(null)
+    useClickOutside(ref, off)
 
     return (
-        <>
-            <div className={cn("relative p-2 white-opacity rounded-full cursor-pointer transition-300 w-fit h-fit", className)} onClick={(e) => { stopPropagation(e); swap() }}>
+        <div ref={ref}>
+            <div
+                className={cn(
+                    "relative p-2 white-opacity rounded-full cursor-pointer transition-300 w-fit h-fit",
+                    className
+                )}
+                onClick={(e) => { stopPropagation(e); on() }}
+            >
                 <img className="icon-sm" src='/icon/menu.svg' />
             </div>
             {boolean &&
@@ -30,6 +38,6 @@ export const ContextMenu: React.FC<Props> = ({
                     </div>
                 </>
             }
-        </>
+        </div>
     )
 }

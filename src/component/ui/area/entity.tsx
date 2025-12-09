@@ -8,7 +8,7 @@ import { getSizeInPixel } from '@/lib/function';
 const restObject = {
     fillPatternRepeat: 'no-repeat',
     strokeWidth: 15,
-    stroke: "white",
+    stroke: "#1f1f1f",
 }
 
 
@@ -24,7 +24,6 @@ export const Entity: React.FC<entityDto> = React.memo((props: entityDto) => {
         image,
         rectRef
     } = useToken(dispath, props.path)
-
 
     return (
         <Circle

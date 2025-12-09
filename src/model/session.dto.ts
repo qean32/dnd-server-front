@@ -11,12 +11,12 @@ export interface sessionDto {
     mapsData: mapsDataDto,
 }
 
-export interface bestiaryItem extends Omit<entityDto, "size" | "status"> {
+export interface bestiaryItem extends entityDto {
 }
 
 export interface mapsDataDto {
     [key: string]: {
         objects: objectDto[]
-        queue: entityDto[]
+        queue: Omit<entityDto, 'description'>[]
     }
 }

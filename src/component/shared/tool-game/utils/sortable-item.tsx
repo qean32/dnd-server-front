@@ -59,7 +59,7 @@ export function SortableItem({ children, id, item }: PropsWithChildren<Props>) {
     return (
         <SortableItemContext.Provider value={context}>
             <div
-                className={cn('flex items-center justify-between px-3 pr-3 py-4 bg-color-hover transition-300', (item.selectId == item.id && 'border-1'))}
+                className={cn('flex items-center justify-between px-3 pr-3 py-4 bg-color-hover transition-300 mount-opacity', (item.selectId == item.id && 'border-1'))}
                 style={{ 'position': 'relative', ...style }}
                 ref={setNodeRef}
             >

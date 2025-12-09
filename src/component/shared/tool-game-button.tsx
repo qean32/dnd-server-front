@@ -15,9 +15,10 @@ interface Props {
 
 export const ToolGameButton: React.FC<Props> = ({ }: Props) => {
     const toast = useToast()
-    const { session } = useAppSelector(state => state.session)
+    const { session, bestiary } = useAppSelector(state => state.session)
     const saveGame = () => {
         localStorage.setItem("game-storage", JSON.stringify(session));
+        localStorage.setItem("bestiary-storage", JSON.stringify(bestiary));
         toast("message", { text: 'Сохранено' });
     }
     const forwardClick = React.useCallback(() => {
