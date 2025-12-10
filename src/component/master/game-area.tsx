@@ -1,7 +1,6 @@
 import React from 'react'
 import { Stage, Layer, Group } from "react-konva"
-import { Entity, GameBackground } from '@component/ui/area';
-import { entityDto } from '@/model';
+import { EntityDM, GameBackground } from '@component/ui/area';
 import { useAppSelector } from '@lib/castom-hook/redux';
 import { useStage } from '@/lib/castom-hook';
 
@@ -36,8 +35,8 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                     <GameBackground />
                 </Group>
                 {!!entities.length &&
-                    entities.map((item: entityDto, _: number) => {
-                        return <Entity {...item} key={_} />
+                    entities.map((item) => {
+                        return <EntityDM {...item} key={item.id} />
                     })
                 }
             </Layer>

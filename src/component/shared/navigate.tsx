@@ -14,8 +14,7 @@ export const Navigate: React.FC<Props> = ({ className }: Props) => {
             <NavigateButton link='/forum' path='/icon/news.svg' />
             <NavigateButton link='/community' path='/icon/community.svg' />
             <NavigateButton link='/profile/777/zxccursed' path='/icon/user.svg' />
-            <NavigateButton link='/session/777/zxccursed' path='/icon/dice-6.svg' />
-            <NavigateButton link='/session/777/zxccursed' path='/icon/game.svg' />
+            <NavigateButton link='/session/777/zxccursed' path='/icon/dice.svg' />
         </div>
     )
 }
