@@ -52,7 +52,7 @@ export const TextArea: React.FC<Props> = ({
                 // @ts-ignore
                 placeholder={title}
                 suppressContentEditableWarning={true}
-                className={cn("outline-0 bg-color-dark w-full rounded-md", className)}
+                className={cn("outline-0 bg-color-dark w-full rounded-md min-h-[200px]", className)}
             >
                 {children}
             </div>

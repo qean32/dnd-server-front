@@ -1,28 +1,30 @@
 import { useEffect, useRef, useState } from "react";
 import DatePicker from "react-datepicker";
 import { ru } from 'date-fns/locale/ru';
-
 import "react-datepicker/dist/react-datepicker.css";
-import { useQueryParam } from "@/lib/castom-hook";
+import { useFormContext } from "react-hook-form";
 
 // CSS Modules, react-datepicker-cssmodules.css
 // import 'react-datepicker/dist/react-datepicker-cssmodules.css';
 
-export const DatePickerUI = () => {
-    const ref = useRef(new Date())
+export const DatePickerInForm = ({ title }: {
+    title: string
+}) => {
+    const { setValue } = useFormContext()
+    var dt = new Date();
+    dt.setTime(dt.getTime() + (24 * 60 * 60 * 1000));
+    const ref = useRef(dt)
     const [startDate, setStartDate] = useState(ref.current);
-    const { pushQ } = useQueryParam('date')
-
     useEffect(() => {
-        if (startDate != ref.current)
-            pushQ(startDate.toString())
-    }, [startDate])
+        setValue('date', startDate.toString())
+    }, [setStartDate])
 
     return <>
-        <p className="pt-5">Дата публикации</p>
+        <p className="pt-5">{title}</p>
         <DatePicker
             selected={startDate}
-            wrapperClassName="date-picker -translate-x-2"
+            value={startDate.toString()}
+            wrapperClassName="date-picker date-picker-form"
             showIcon
             icon={
                 <svg
@@ -50,6 +52,7 @@ export const DatePickerUI = () => {
             // @ts-ignore
             onChange={(date) => setStartDate(date)}
             dateFormat="dd MMMM yyyy"
-            locale={ru} />
+            locale={ru}
+        />
     </>
 };

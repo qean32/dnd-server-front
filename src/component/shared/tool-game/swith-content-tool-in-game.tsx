@@ -9,7 +9,7 @@ interface Props {
 
 
 export const SwithContentLiftSideGame: React.FC<Props> = ({ }: Props) => {
-    const { pushQ } = useQueryParam(qParamName.sContent, 'queue')
+    const { pushQ } = useQueryParam(qParamName.sContent)
 
     const swapGameView = (e: React.MouseEvent<HTMLButtonElement>) => {
         pushQ(getHTMLData(e, false, 'value'))
