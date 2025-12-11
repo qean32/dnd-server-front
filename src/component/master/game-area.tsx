@@ -39,6 +39,12 @@ export const GameArea: React.FC<Props> = ({ }: Props) => {
                         return <EntityDM {...item} key={item.id} />
                     })
                 }
+                {!!mapsData[id].objects.length &&
+                    mapsData[id].objects.map((item) => {
+                        return <></>
+                        // <ObjectDM {...item} key={item.id} />
+                    })
+                }
             </Layer>
         </Stage>
     )

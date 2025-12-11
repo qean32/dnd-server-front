@@ -1,6 +1,7 @@
 import { tokenStorage } from "@/export"
+import Cookies from "js-cookie"
 
 export const setToken = (token: string) => {
     if (token)
-        localStorage.setItem(tokenStorage, JSON.stringify({ 'token': token }))
+        Cookies.set(tokenStorage, token)
 }

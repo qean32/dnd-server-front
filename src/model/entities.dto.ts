@@ -31,5 +31,5 @@ export interface mapDto extends Omit<abstractEntity, "position"> {
 }
 
 export interface objectDto extends abstractEntity {
-    status: statusDto
+    status: '' | 'hidden'
 }
