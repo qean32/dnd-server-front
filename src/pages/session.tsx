@@ -1,4 +1,4 @@
-import { PushCharacterInGame, ViewImg, ActionEntity } from "@component/case/modal/index-group"
+import { PushCharacterInSession, ViewImg, ActionEntity } from "@component/case/modal/index-group"
 import { ToolGameButton, ToolGame } from "@component/shared"
 import { useEntityMore, usePage, useQueryParam } from "@lib/castom-hook"
 import { getParamName } from "@lib/function"
@@ -24,17 +24,17 @@ export const Session = () => {
 }
 
 const Modal: React.FC = () => {
-    const { allQ, clearQ } = useQueryParam('')
+    const { allQ, clearQParam } = useQueryParam('')
     const { clearTmp, tmpEntity } = useEntityMore()
 
 
     return (
         <>
-            <PushCharacterInGame swap={clearQ} view={!!allQ[qParamName.pCharacter]} />
-            <ViewImg swap={clearQ} view={!!allQ[qParamName.vImg]} />
+            <PushCharacterInSession swap={() => clearQParam(qParamName.pCharacter)} view={!!allQ[qParamName.pCharacter]} />
+            <ViewImg swap={() => clearQParam(qParamName.vImg)} view={!!allQ[qParamName.vImg]} />
             {/* @ts-ignore */}
             <EntityMore swap={clearTmp} view={tmpEntity?.id} />
-            <ActionEntity swap={clearQ} view={allQ[qParamName.actionEntity]} />
+            <ActionEntity swap={() => clearQParam(qParamName.actionEntity)} view={allQ[qParamName.actionEntity]} />
         </>
     )
 }

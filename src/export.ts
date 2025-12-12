@@ -1,6 +1,6 @@
 export { axiosInstance } from './service/instance'
 
-export const tokenStorage = 'token-storage'
+export const tokenKey = 'token-storage'
 export const invalidTokenMessage = 'invalid token!'
 export const qParamName = {
     pContent: 'pContent',

@@ -18,5 +18,6 @@ export interface mapsDataDto {
     [key: string]: {
         objects: objectDto[]
         queue: Omit<entityDto, 'description'>[]
+        character: characterDto[]
     }
 }

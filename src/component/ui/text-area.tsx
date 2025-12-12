@@ -13,6 +13,7 @@ interface Props {
     children?: React.ReactNode
     name: string
     convertHTML?: boolean
+    initValue?: boolean
 }
 
 
@@ -23,10 +24,16 @@ export const TextArea: React.FC<Props> = ({
     children,
     name,
     parentDivclassName,
-    convertHTML = false
+    convertHTML = false,
+    initValue = false
 }: Props) => {
     const { register, formState: { errors }, setValue } = useFormContext()
     const textError = errors[name]?.message as string;
+    React.useEffect(() => {
+        if (initValue) {
+            setValue(name, children)
+        }
+    }, [])
 
 
     return (

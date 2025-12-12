@@ -1,13 +1,10 @@
 import React from "react";
 import useImage from "use-image";
-import { changeEntity } from "@/store/session-store";
-import { useAppDispatch } from "./redux";
-import { qParamName } from "@/export";
-import { useQueryParam } from "./use-query-param";
+import { changeObject } from "@/store/session-store";
+import { useAppDispatch } from "../redux";
 
-export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
+export const useSubscriberObject = (dispath: ReturnType<typeof useAppDispatch>, path: string) => {
     const [image] = useImage(path);
-    const { pushQ } = useQueryParam(qParamName.actionEntity)
 
     const rectRef = React.useRef<null | HTMLCanvasElement | any>();
 
@@ -25,7 +22,7 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
 
     const dragEndHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
         e.target.getStage().container().style.cursor = 'pointer';
-        dispath(changeEntity({
+        dispath(changeObject({
             payload: {
                 id: e.currentTarget.attrs.id,
                 position: {
@@ -44,9 +41,7 @@ export const useToken = (dispath: ReturnType<typeof useAppDispatch>, path: strin
     const dragMoveHandler = () => {
     };
 
-    const clickHandler = (e: any | React.MouseEvent<HTMLCanvasElement>) => {
-        // dispath(swapTmpEntity({ id: e.currentTarget.attrs.id }))
-        pushQ(e.currentTarget.attrs.id)
+    const clickHandler = (_e: any | React.MouseEvent<HTMLCanvasElement>) => {
     }
 
     return { mouseOutHandler, mouseOverHandler, dragMoveHandler, clickHandler, dragEndHandler, dragStartHandler, image, rectRef }

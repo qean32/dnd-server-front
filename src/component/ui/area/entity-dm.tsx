@@ -1,6 +1,6 @@
 import React from 'react'
 import { Circle, Group } from "react-konva"
-import { useToken } from '@lib/castom-hook';
+import { useDMEntity } from '@lib/castom-hook/area';
 import { entityDto } from '@/model';
 import { useAppDispatch } from '@lib/castom-hook/redux';
 import { getSizeInPixel } from '@/lib/function';
@@ -25,7 +25,7 @@ export const EntityDM: React.FC<Omit<entityDto, 'description'>> = (props: Omit<e
         dragMoveHandler,
         image,
         rectRef
-    } = useToken(dispath, props.path)
+    } = useDMEntity(dispath, props.path)
 
 
     return (

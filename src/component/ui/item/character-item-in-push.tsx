@@ -8,12 +8,11 @@ interface Props extends characterDto {
 export const CharacterItemInPush: React.FC<Props> = ({
     id,
     name,
-    path = '/img/carousel-item-7.jpg',
-    description,
+    path,
 }: Props) => {
     return (
-        <div data={JSON.stringify({ id, name, description, path })}
-            className='prime-hover relative overflow-hidden rounded-sm running-line-parent h-[100px] cursor-pointer bg-color-dark-hover transition-300 bg-img hover:-translate-y-2'>
+        <div data={JSON.stringify({ id, name, path })}
+            className='prime-hover relative child-no-fill-event overflow-hidden rounded-sm running-line-parent h-[100px] cursor-pointer bg-color-dark-hover transition-300 bg-img hover:-translate-y-2'>
             <div className="bg-shadow-prime absolute inset-0 bg-img z-10" style={{ backgroundImage: `url(${path})` }}></div>
             <div className='py-3 items-center flex absolute inset-0 flex-col gap-2 h-[100px] z-20'>
                 <p className='text-5xl'>{id}</p>

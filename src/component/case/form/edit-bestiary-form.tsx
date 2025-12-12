@@ -1,8 +1,10 @@
 import { TextInput, TextArea, Initiative, Button } from '@/component/ui'
 import { useMyForm } from '@/lib/castom-hook'
+import { useAppDispatch } from '@/lib/castom-hook/redux'
 import { stopPropagation } from '@/lib/function'
 import { entityDto } from '@/model'
 import { pushEntityToSessionFormDto, pushEntityToSessionSchema } from '@/model/schema'
+import { editBestiary } from '@/store/session-store'
 import React from 'react'
 import { FormProvider } from 'react-hook-form'
 
@@ -12,8 +14,12 @@ interface Props {
 
 
 export const EditBestiaryForm: React.FC<Props> = ({ entity }: Props) => {
+    const dispath = useAppDispatch()
     const { form, submitHandler } = useMyForm<pushEntityToSessionFormDto>(pushEntityToSessionSchema,
-        () => { },
+        (data: any) => {
+            dispath(editBestiary(data))
+
+        },
         () => { },
     )
 
@@ -34,6 +40,7 @@ export const EditBestiaryForm: React.FC<Props> = ({ entity }: Props) => {
                         {entity.description}
                     </TextArea>
                     <TextInput name='initiative' placeHolder='' className='d-none' defaultValue={entity ? entity.initiative.toString() : '0'} />
+                    <TextInput name='id' placeHolder='' className='d-none' defaultValue={entity ? entity.idInBestiary.toString() : '0'} />
                     <Initiative title={entity ? entity.initiative : 0} />
                     <div className="flex flex-1 items-end pb-5">
                         <Button className='py-2.5 mt-5 w-full' type='submit' variant='acceess'>

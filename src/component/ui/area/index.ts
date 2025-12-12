@@ -1,3 +1,3 @@
 export { EntityDM } from './entity-dm'
 export { GameBackground } from './game-background'
-export { Object } from './object'
+export { ObjectDM } from './object-dm'

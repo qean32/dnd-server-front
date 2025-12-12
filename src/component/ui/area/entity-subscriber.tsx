@@ -1,6 +1,6 @@
 import React from 'react'
 import { Circle, Group } from "react-konva"
-import { useToken } from '@lib/castom-hook';
+import { useDMEntity } from '@lib/castom-hook';
 import { entityDto } from '@/model';
 import { useAppDispatch } from '@lib/castom-hook/redux';
 import { getSizeInPixel } from '@/lib/function';
@@ -25,7 +25,7 @@ export const EntitySubscriber: React.FC<entityDto> = (props: entityDto) => {
         dragMoveHandler,
         image,
         rectRef
-    } = useToken(dispath, props.path)
+    } = useDMEntity(dispath, props.path)
     const [dead] = useImage('/icon/dead.png')
     const [chart] = useImage('/icon/chart.png')
     React.useEffect(() => {

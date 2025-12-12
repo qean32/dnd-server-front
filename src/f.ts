@@ -314,8 +314,9 @@ export const f_map: Omit<mapDto, 'id'>[] = [
 export const f_object: Omit<objectDto, 'id'>[] = [
     {
         status: '',
-        name: 'Гоблин',
-        path: '/img/f/object1.webp',
+        name: 'Ящик с гоблином внутри',
+        size: 2,
+        path: '/img/f/object1.png',
         source: { id: 1, name: 'Мелкие твари' },
     },
     {
@@ -323,24 +324,28 @@ export const f_object: Omit<objectDto, 'id'>[] = [
         name: 'Гремлин',
         path: '/img/f/object2.webp',
         source: { id: 1, name: 'Мелкие твари' },
+        size: 2,
     },
     {
         status: '',
         name: 'Громовой дракон',
         path: '/img/f/object3.jpg',
         source: { id: 1, name: 'Драконы' },
+        size: 2,
     },
     {
         status: '',
         name: 'Огненый дракон',
         path: '/img/f/object4.jpg',
         source: { id: 1, name: 'Драконы' },
+        size: 2,
     },
     {
         status: '',
         name: 'Стражник',
         path: '/img/f/object5.jpg',
         source: { id: 1, name: 'Стражна' },
+        size: 2,
     }
 ]
 
